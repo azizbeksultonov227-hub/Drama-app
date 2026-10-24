@@ -1,0 +1,39 @@
+Bekor
+Oxirgi qidiruvlar
+Tozalash
+milliarder
+bo'ri
+qasos kelin
+koreys drama
+Ko'p qidirilayotgan
+1
+Milliarderning yashirin kelini
+Hit
+2
+Bo'ri qirolining qasosi
+Hit
+3
+Ajrashgandan keyin boylik
+Yangi
+4
+CEO
+↑ 3
+5
+Shartnomali nikoh
+↑ 1
+6
+Vampir qo'riqchisi
+Yangi
+7
+O'zbekcha dublyaj
+↓ 2
+8
+Turk seriallari
+↑ 5
+Janr bo'yicha
+Romantika
+Qasos
+CEO
+Bo'rilar
+Oilaviy
+Komediya

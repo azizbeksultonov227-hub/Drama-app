@@ -1,0 +1,604 @@
+{
+ "supreme": {
+  "ref": 1,
+  "box": [
+   300,
+   326,
+   430,
+   374
+  ],
+  "text": "SUPREME",
+  "ref_px": [
+   45,
+   109
+  ],
+  "results": [
+   {
+    "font": "Anton",
+    "weight": 400,
+    "iou": 0.325,
+    "iou_free_x": 0.541,
+    "width_ratio": 1.624
+   },
+   {
+    "font": "League Gothic",
+    "weight": 400,
+    "iou": 0.311,
+    "iou_free_x": 0.566,
+    "width_ratio": 1.385
+   },
+   {
+    "font": "Saira Extra Condensed",
+    "weight": 900,
+    "iou": 0.301,
+    "iou_free_x": 0.563,
+    "width_ratio": 1.697
+   },
+   {
+    "font": "Bebas Neue",
+    "weight": 400,
+    "iou": 0.29,
+    "iou_free_x": 0.507,
+    "width_ratio": 1.596
+   },
+   {
+    "font": "Big Shoulders Display",
+    "weight": 900,
+    "iou": 0.275,
+    "iou_free_x": 0.526,
+    "width_ratio": 1.725
+   },
+   {
+    "font": "Six Caps",
+    "weight": 400,
+    "iou": 0.271,
+    "iou_free_x": 0.499,
+    "width_ratio": 0.771
+   },
+   {
+    "font": "Antonio",
+    "weight": 700,
+    "iou": 0.27,
+    "iou_free_x": 0.526,
+    "width_ratio": 1.532
+   },
+   {
+    "font": "Barlow Condensed",
+    "weight": 800,
+    "iou": 0.265,
+    "iou_free_x": 0.626,
+    "width_ratio": 1.908
+   },
+   {
+    "font": "Oswald",
+    "weight": 700,
+    "iou": 0.249,
+    "iou_free_x": 0.573,
+    "width_ratio": 1.899
+   },
+   {
+    "font": "Fjalla One",
+    "weight": 400,
+    "iou": 0.244,
+    "iou_free_x": 0.529,
+    "width_ratio": 1.67
+   },
+   {
+    "font": "Teko",
+    "weight": 700,
+    "iou": 0.214,
+    "iou_free_x": 0.614,
+    "width_ratio": 2.294
+   },
+   {
+    "font": "Archivo Narrow",
+    "weight": 700,
+    "iou": 0.169,
+    "iou_free_x": 0.503,
+    "width_ratio": 2.33
+   }
+  ]
+ },
+ "marty": {
+  "ref": 1,
+  "box": [
+   300,
+   248,
+   430,
+   322
+  ],
+  "text": "MARTY",
+  "ref_px": [
+   69,
+   108
+  ],
+  "results": [
+   {
+    "font": "Antonio",
+    "weight": 700,
+    "iou": 0.359,
+    "iou_free_x": 0.542,
+    "width_ratio": 1.731
+   },
+   {
+    "font": "Bebas Neue",
+    "weight": 400,
+    "iou": 0.358,
+    "iou_free_x": 0.623,
+    "width_ratio": 1.87
+   },
+   {
+    "font": "League Gothic",
+    "weight": 400,
+    "iou": 0.343,
+    "iou_free_x": 0.703,
+    "width_ratio": 1.62
+   },
+   {
+    "font": "Six Caps",
+    "weight": 400,
+    "iou": 0.321,
+    "iou_free_x": 0.581,
+    "width_ratio": 0.889
+   },
+   {
+    "font": "Anton",
+    "weight": 400,
+    "iou": 0.299,
+    "iou_free_x": 0.565,
+    "width_ratio": 1.861
+   },
+   {
+    "font": "Saira Extra Condensed",
+    "weight": 900,
+    "iou": 0.276,
+    "iou_free_x": 0.63,
+    "width_ratio": 2.056
+   },
+   {
+    "font": "Big Shoulders Display",
+    "weight": 900,
+    "iou": 0.271,
+    "iou_free_x": 0.601,
+    "width_ratio": 2.028
+   },
+   {
+    "font": "Oswald",
+    "weight": 700,
+    "iou": 0.233,
+    "iou_free_x": 0.699,
+    "width_ratio": 2.148
+   },
+   {
+    "font": "Barlow Condensed",
+    "weight": 800,
+    "iou": 0.229,
+    "iou_free_x": 0.6,
+    "width_ratio": 2.259
+   }
+  ]
+ },
+ "sarah": {
+  "ref": 1,
+  "box": [
+   755,
+   406,
+   915,
+   450
+  ],
+  "text": "sarah.lg",
+  "ref_px": [
+   35,
+   150
+  ],
+  "results": [
+   {
+    "font": "Libre Caslon Text",
+    "weight": 400,
+    "iou": 0.22,
+    "iou_free_x": 0.552,
+    "width_ratio": 0.753
+   },
+   {
+    "font": "DM Serif Display",
+    "weight": 400,
+    "iou": 0.21,
+    "iou_free_x": 0.54,
+    "width_ratio": 0.88
+   },
+   {
+    "font": "Source Serif 4",
+    "weight": 400,
+    "iou": 0.208,
+    "iou_free_x": 0.538,
+    "width_ratio": 0.9
+   },
+   {
+    "font": "Newsreader",
+    "weight": 400,
+    "iou": 0.204,
+    "iou_free_x": 0.377,
+    "width_ratio": 0.767
+   },
+   {
+    "font": "Noto Serif",
+    "weight": 400,
+    "iou": 0.178,
+    "iou_free_x": 0.564,
+    "width_ratio": 0.867
+   },
+   {
+    "font": "Libre Baskerville",
+    "weight": 400,
+    "iou": 0.17,
+    "iou_free_x": 0.363,
+    "width_ratio": 0.827
+   },
+   {
+    "font": "Instrument Serif",
+    "weight": 400,
+    "iou": 0.153,
+    "iou_free_x": 0.393,
+    "width_ratio": 0.653
+   },
+   {
+    "font": "Gelasio",
+    "weight": 400,
+    "iou": 0.147,
+    "iou_free_x": 0.626,
+    "width_ratio": 0.813
+   },
+   {
+    "font": "PT Serif",
+    "weight": 400,
+    "iou": 0.143,
+    "iou_free_x": 0.426,
+    "width_ratio": 0.847
+   },
+   {
+    "font": "Playfair Display",
+    "weight": 400,
+    "iou": 0.138,
+    "iou_free_x": 0.471,
+    "width_ratio": 0.84
+   },
+   {
+    "font": "Crimson Pro",
+    "weight": 400,
+    "iou": 0.138,
+    "iou_free_x": 0.48,
+    "width_ratio": 0.807
+   },
+   {
+    "font": "EB Garamond",
+    "weight": 400,
+    "iou": 0.135,
+    "iou_free_x": 0.234,
+    "width_ratio": 0.667
+   },
+   {
+    "font": "Lora",
+    "weight": 400,
+    "iou": 0.123,
+    "iou_free_x": 0.535,
+    "width_ratio": 0.807
+   }
+  ]
+ },
+ "beating": {
+  "ref": 1,
+  "box": [
+   296,
+   706,
+   460,
+   734
+  ],
+  "text": "Beating Hearts",
+  "ref_px": [
+   22,
+   155
+  ],
+  "results": [
+   {
+    "font": "Roboto",
+    "weight": 700,
+    "iou": 0.732,
+    "iou_free_x": 0.732,
+    "width_ratio": 1.0
+   },
+   {
+    "font": "Figtree",
+    "weight": 700,
+    "iou": 0.525,
+    "iou_free_x": 0.633,
+    "width_ratio": 1.019
+   },
+   {
+    "font": "Inter",
+    "weight": 700,
+    "iou": 0.381,
+    "iou_free_x": 0.692,
+    "width_ratio": 1.039
+   },
+   {
+    "font": "Manrope",
+    "weight": 700,
+    "iou": 0.367,
+    "iou_free_x": 0.464,
+    "width_ratio": 1.026
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 700,
+    "iou": 0.363,
+    "iou_free_x": 0.661,
+    "width_ratio": 1.039
+   },
+   {
+    "font": "Open Sans",
+    "weight": 700,
+    "iou": 0.344,
+    "iou_free_x": 0.542,
+    "width_ratio": 1.039
+   },
+   {
+    "font": "DM Sans",
+    "weight": 700,
+    "iou": 0.343,
+    "iou_free_x": 0.583,
+    "width_ratio": 1.058
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 700,
+    "iou": 0.337,
+    "iou_free_x": 0.589,
+    "width_ratio": 1.045
+   },
+   {
+    "font": "Geist",
+    "weight": 700,
+    "iou": 0.291,
+    "iou_free_x": 0.64,
+    "width_ratio": 1.161
+   }
+  ]
+ },
+ "meditation": {
+  "ref": 6,
+  "box": [
+   340,
+   400,
+   500,
+   432
+  ],
+  "text": "Meditation",
+  "ref_px": [
+   24,
+   151
+  ],
+  "results": [
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.666,
+    "iou_free_x": 0.802,
+    "width_ratio": 1.007
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.413,
+    "iou_free_x": 0.57,
+    "width_ratio": 1.007
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.377,
+    "iou_free_x": 0.837,
+    "width_ratio": 1.02
+   },
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.346,
+    "iou_free_x": 0.652,
+    "width_ratio": 0.967
+   },
+   {
+    "font": "Mulish",
+    "weight": 400,
+    "iou": 0.342,
+    "iou_free_x": 0.61,
+    "width_ratio": 1.02
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.319,
+    "iou_free_x": 0.641,
+    "width_ratio": 1.026
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.274,
+    "iou_free_x": 0.633,
+    "width_ratio": 1.053
+   },
+   {
+    "font": "Manrope",
+    "weight": 400,
+    "iou": 0.251,
+    "iou_free_x": 0.536,
+    "width_ratio": 1.053
+   },
+   {
+    "font": "Nunito Sans",
+    "weight": 400,
+    "iou": 0.249,
+    "iou_free_x": 0.654,
+    "width_ratio": 1.026
+   }
+  ]
+ },
+ "artexib": {
+  "ref": 3,
+  "box": [
+   47,
+   137,
+   185,
+   165
+  ],
+  "text": "art exibitions",
+  "ref_px": [
+   17,
+   130
+  ],
+  "results": [
+   {
+    "font": "Archivo",
+    "weight": 400,
+    "iou": 0.439,
+    "iou_free_x": 0.576,
+    "width_ratio": 0.992
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.396,
+    "iou_free_x": 0.579,
+    "width_ratio": 1.023
+   },
+   {
+    "font": "Schibsted Grotesk",
+    "weight": 400,
+    "iou": 0.338,
+    "iou_free_x": 0.648,
+    "width_ratio": 1.015
+   },
+   {
+    "font": "Inter Tight",
+    "weight": 400,
+    "iou": 0.308,
+    "iou_free_x": 0.654,
+    "width_ratio": 0.931
+   },
+   {
+    "font": "Hanken Grotesk",
+    "weight": 400,
+    "iou": 0.285,
+    "iou_free_x": 0.459,
+    "width_ratio": 1.069
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.281,
+    "iou_free_x": 0.612,
+    "width_ratio": 1.046
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.277,
+    "iou_free_x": 0.656,
+    "width_ratio": 1.023
+   },
+   {
+    "font": "Manrope",
+    "weight": 400,
+    "iou": 0.251,
+    "iou_free_x": 0.572,
+    "width_ratio": 1.046
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.238,
+    "iou_free_x": 0.646,
+    "width_ratio": 1.046
+   }
+  ]
+ },
+ "upcoming": {
+  "ref": 3,
+  "box": [
+   493,
+   418,
+   660,
+   448
+  ],
+  "text": "upcoming",
+  "ref_px": [
+   28,
+   156
+  ],
+  "results": [
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.178,
+    "iou_free_x": 0.281,
+    "width_ratio": 0.904
+   },
+   {
+    "font": "Inter Tight",
+    "weight": 400,
+    "iou": 0.16,
+    "iou_free_x": 0.331,
+    "width_ratio": 0.776
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.16,
+    "iou_free_x": 0.297,
+    "width_ratio": 0.846
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.15,
+    "iou_free_x": 0.277,
+    "width_ratio": 0.846
+   },
+   {
+    "font": "Hanken Grotesk",
+    "weight": 400,
+    "iou": 0.148,
+    "iou_free_x": 0.299,
+    "width_ratio": 0.846
+   },
+   {
+    "font": "Archivo",
+    "weight": 400,
+    "iou": 0.148,
+    "iou_free_x": 0.27,
+    "width_ratio": 0.865
+   },
+   {
+    "font": "Manrope",
+    "weight": 400,
+    "iou": 0.138,
+    "iou_free_x": 0.344,
+    "width_ratio": 0.814
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.133,
+    "iou_free_x": 0.277,
+    "width_ratio": 0.865
+   },
+   {
+    "font": "Schibsted Grotesk",
+    "weight": 400,
+    "iou": 0.131,
+    "iou_free_x": 0.272,
+    "width_ratio": 0.853
+   }
+  ]
+ }
+}

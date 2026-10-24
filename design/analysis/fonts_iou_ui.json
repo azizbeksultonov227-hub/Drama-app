@@ -1,0 +1,650 @@
+{
+ "addwatch": {
+  "ref": 1,
+  "box": [
+   270,
+   444,
+   380,
+   468
+  ],
+  "text": "Add to watchlist",
+  "ref_px": [
+   10,
+   104
+  ],
+  "results": [
+   {
+    "font": "Figtree",
+    "weight": 600,
+    "iou": 0.432,
+    "iou_free_x": 0.471,
+    "width_ratio": 0.971
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 600,
+    "iou": 0.427,
+    "iou_free_x": 0.631,
+    "width_ratio": 0.981
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 600,
+    "iou": 0.378,
+    "iou_free_x": 0.609,
+    "width_ratio": 0.981
+   },
+   {
+    "font": "Open Sans",
+    "weight": 600,
+    "iou": 0.378,
+    "iou_free_x": 0.611,
+    "width_ratio": 0.971
+   },
+   {
+    "font": "Inter",
+    "weight": 600,
+    "iou": 0.347,
+    "iou_free_x": 0.689,
+    "width_ratio": 0.971
+   },
+   {
+    "font": "Roboto",
+    "weight": 600,
+    "iou": 0.295,
+    "iou_free_x": 0.64,
+    "width_ratio": 0.913
+   },
+   {
+    "font": "Geist",
+    "weight": 600,
+    "iou": 0.291,
+    "iou_free_x": 0.711,
+    "width_ratio": 1.029
+   },
+   {
+    "font": "DM Sans",
+    "weight": 600,
+    "iou": 0.282,
+    "iou_free_x": 0.685,
+    "width_ratio": 1.019
+   }
+  ]
+ },
+ "friends": {
+  "ref": 1,
+  "box": [
+   215,
+   628,
+   300,
+   650
+  ],
+  "text": "Friend\u2019s box",
+  "ref_px": [
+   10,
+   72
+  ],
+  "results": [
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.598,
+    "iou_free_x": 0.416,
+    "width_ratio": 1.014
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.435,
+    "iou_free_x": 0.435,
+    "width_ratio": 1.0
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.415,
+    "iou_free_x": 0.447,
+    "width_ratio": 1.042
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.413,
+    "iou_free_x": 0.459,
+    "width_ratio": 1.028
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.257,
+    "iou_free_x": 0.396,
+    "width_ratio": 0.986
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.244,
+    "iou_free_x": 0.42,
+    "width_ratio": 0.986
+   },
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.212,
+    "iou_free_x": 0.369,
+    "width_ratio": 0.986
+   },
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.205,
+    "iou_free_x": 0.41,
+    "width_ratio": 0.944
+   }
+  ]
+ },
+ "recent": {
+  "ref": 1,
+  "box": [
+   674,
+   738,
+   770,
+   756
+  ],
+  "text": "Recent activity",
+  "ref_px": [
+   13,
+   90
+  ],
+  "results": [
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.46,
+    "iou_free_x": 0.61,
+    "width_ratio": 0.989
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.369,
+    "iou_free_x": 0.379,
+    "width_ratio": 1.044
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.33,
+    "iou_free_x": 0.504,
+    "width_ratio": 1.044
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.329,
+    "iou_free_x": 0.605,
+    "width_ratio": 1.033
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.3,
+    "iou_free_x": 0.332,
+    "width_ratio": 1.044
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.237,
+    "iou_free_x": 0.454,
+    "width_ratio": 0.989
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.225,
+    "iou_free_x": 0.573,
+    "width_ratio": 1.122
+   },
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.193,
+    "iou_free_x": 0.46,
+    "width_ratio": 0.978
+   }
+  ]
+ },
+ "johnwick": {
+  "ref": 1,
+  "box": [
+   764,
+   800,
+   892,
+   824
+  ],
+  "text": "John Wick 3",
+  "ref_px": [
+   16,
+   115
+  ],
+  "results": [
+   {
+    "font": "Roboto",
+    "weight": 700,
+    "iou": 0.718,
+    "iou_free_x": 0.718,
+    "width_ratio": 1.0
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 700,
+    "iou": 0.311,
+    "iou_free_x": 0.496,
+    "width_ratio": 1.052
+   },
+   {
+    "font": "Figtree",
+    "weight": 700,
+    "iou": 0.255,
+    "iou_free_x": 0.641,
+    "width_ratio": 1.043
+   },
+   {
+    "font": "Inter",
+    "weight": 700,
+    "iou": 0.254,
+    "iou_free_x": 0.794,
+    "width_ratio": 1.07
+   },
+   {
+    "font": "DM Sans",
+    "weight": 700,
+    "iou": 0.211,
+    "iou_free_x": 0.717,
+    "width_ratio": 1.104
+   },
+   {
+    "font": "Open Sans",
+    "weight": 700,
+    "iou": 0.195,
+    "iou_free_x": 0.289,
+    "width_ratio": 0.817
+   },
+   {
+    "font": "Geist",
+    "weight": 700,
+    "iou": 0.191,
+    "iou_free_x": 0.607,
+    "width_ratio": 1.122
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 700,
+    "iou": 0.188,
+    "iou_free_x": 0.287,
+    "width_ratio": 0.817
+   }
+  ]
+ },
+ "results": {
+  "ref": 4,
+  "box": [
+   68,
+   345,
+   175,
+   376
+  ],
+  "text": "Results",
+  "ref_px": [
+   21,
+   90
+  ],
+  "results": [
+   {
+    "font": "Roboto",
+    "weight": 600,
+    "iou": 0.759,
+    "iou_free_x": 0.759,
+    "width_ratio": 1.0
+   },
+   {
+    "font": "Open Sans",
+    "weight": 600,
+    "iou": 0.542,
+    "iou_free_x": 0.624,
+    "width_ratio": 1.022
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 600,
+    "iou": 0.512,
+    "iou_free_x": 0.637,
+    "width_ratio": 1.033
+   },
+   {
+    "font": "Geist",
+    "weight": 600,
+    "iou": 0.398,
+    "iou_free_x": 0.723,
+    "width_ratio": 1.133
+   },
+   {
+    "font": "Inter",
+    "weight": 600,
+    "iou": 0.395,
+    "iou_free_x": 0.752,
+    "width_ratio": 1.089
+   },
+   {
+    "font": "DM Sans",
+    "weight": 600,
+    "iou": 0.377,
+    "iou_free_x": 0.569,
+    "width_ratio": 1.089
+   },
+   {
+    "font": "Figtree",
+    "weight": 600,
+    "iou": 0.372,
+    "iou_free_x": 0.726,
+    "width_ratio": 1.056
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 600,
+    "iou": 0.35,
+    "iou_free_x": 0.71,
+    "width_ratio": 1.078
+   }
+  ]
+ },
+ "collect": {
+  "ref": 4,
+  "box": [
+   68,
+   390,
+   168,
+   414
+  ],
+  "text": "Collections",
+  "ref_px": [
+   15,
+   90
+  ],
+  "results": [
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.335,
+    "iou_free_x": 0.605,
+    "width_ratio": 1.067
+   },
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.286,
+    "iou_free_x": 0.416,
+    "width_ratio": 1.078
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.27,
+    "iou_free_x": 0.437,
+    "width_ratio": 1.089
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.242,
+    "iou_free_x": 0.593,
+    "width_ratio": 1.156
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.236,
+    "iou_free_x": 0.596,
+    "width_ratio": 1.144
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.234,
+    "iou_free_x": 0.6,
+    "width_ratio": 1.144
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.215,
+    "iou_free_x": 0.536,
+    "width_ratio": 1.133
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.204,
+    "iou_free_x": 0.632,
+    "width_ratio": 1.133
+   }
+  ]
+ },
+ "solana": {
+  "ref": 4,
+  "box": [
+   98,
+   272,
+   255,
+   300
+  ],
+  "text": "Solana Monkeys",
+  "ref_px": [
+   17,
+   141
+  ],
+  "results": [
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.267,
+    "iou_free_x": 0.787,
+    "width_ratio": 0.979
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.237,
+    "iou_free_x": 0.611,
+    "width_ratio": 0.936
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.235,
+    "iou_free_x": 0.589,
+    "width_ratio": 0.936
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.215,
+    "iou_free_x": 0.597,
+    "width_ratio": 1.021
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.208,
+    "iou_free_x": 0.64,
+    "width_ratio": 0.936
+   },
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.203,
+    "iou_free_x": 0.575,
+    "width_ratio": 0.901
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.182,
+    "iou_free_x": 0.435,
+    "width_ratio": 0.908
+   },
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.175,
+    "iou_free_x": 0.444,
+    "width_ratio": 0.901
+   }
+  ]
+ },
+ "relief": {
+  "ref": 6,
+  "box": [
+   340,
+   368,
+   428,
+   400
+  ],
+  "text": "Relief",
+  "ref_px": [
+   24,
+   78
+  ],
+  "results": [
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.866,
+    "iou_free_x": 0.866,
+    "width_ratio": 1.0
+   },
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.848,
+    "iou_free_x": 0.812,
+    "width_ratio": 0.987
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.711,
+    "iou_free_x": 0.711,
+    "width_ratio": 1.0
+   },
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.686,
+    "iou_free_x": 0.747,
+    "width_ratio": 0.974
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.601,
+    "iou_free_x": 0.725,
+    "width_ratio": 1.013
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.417,
+    "iou_free_x": 0.749,
+    "width_ratio": 1.038
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.366,
+    "iou_free_x": 0.604,
+    "width_ratio": 1.026
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.2,
+    "iou_free_x": 0.43,
+    "width_ratio": 1.077
+   }
+  ]
+ },
+ "takedeep": {
+  "ref": 7,
+  "box": [
+   53,
+   564,
+   222,
+   588
+  ],
+  "text": "Take a deep breath...",
+  "ref_px": [
+   20,
+   161
+  ],
+  "results": [
+   {
+    "font": "Roboto",
+    "weight": 400,
+    "iou": 0.163,
+    "iou_free_x": 0.163,
+    "width_ratio": 1.186
+   },
+   {
+    "font": "Noto Sans",
+    "weight": 400,
+    "iou": 0.155,
+    "iou_free_x": 0.147,
+    "width_ratio": 1.199
+   },
+   {
+    "font": "Instrument Sans",
+    "weight": 400,
+    "iou": 0.154,
+    "iou_free_x": 0.184,
+    "width_ratio": 1.205
+   },
+   {
+    "font": "Geist",
+    "weight": 400,
+    "iou": 0.152,
+    "iou_free_x": 0.243,
+    "width_ratio": 1.329
+   },
+   {
+    "font": "Inter",
+    "weight": 400,
+    "iou": 0.147,
+    "iou_free_x": 0.166,
+    "width_ratio": 1.311
+   },
+   {
+    "font": "Figtree",
+    "weight": 400,
+    "iou": 0.141,
+    "iou_free_x": 0.203,
+    "width_ratio": 1.242
+   },
+   {
+    "font": "DM Sans",
+    "weight": 400,
+    "iou": 0.141,
+    "iou_free_x": 0.182,
+    "width_ratio": 1.236
+   },
+   {
+    "font": "Open Sans",
+    "weight": 400,
+    "iou": 0.123,
+    "iou_free_x": 0.14,
+    "width_ratio": 1.205
+   }
+  ]
+ }
+}
