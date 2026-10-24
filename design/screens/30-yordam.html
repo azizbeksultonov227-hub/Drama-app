@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>30 · Yordam markazi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .find { position: absolute; top: 120px; left: var(--page-x); right: var(--page-x); }
+  .topics { position: absolute; top: 196px; left: var(--page-x); right: var(--page-x); display: flex; gap: var(--s-8); }
+  .topics .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); }
+  .acc { position: absolute; top: 246px; left: var(--page-x); right: var(--page-x); padding: 0; }
+  .q { padding: var(--s-16); display: flex; align-items: center; gap: var(--s-12); }
+  .q + .q, .q + .a + .q { box-shadow: inset 0 1px 0 var(--line-1); }
+  .q span { flex: 1; font: 500 var(--t-body)/1.3 var(--f-ui); letter-spacing: -.01em; }
+  .q .ic { color: var(--text-3); }
+  .a { padding: 0 var(--s-16) var(--s-16); color: var(--text-2); }
+  .more { position: absolute; left: var(--page-x); right: var(--page-x); top: 640px; }
+  .tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-8); margin-top: var(--s-12); }
+  .tile { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-8); height: 96px; border-radius: var(--r-media); text-align: center; font: 500 var(--t-footnote)/1.25 var(--f-ui); }
+  .tile.is-main { background: var(--flame); box-shadow: var(--glow-flame); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><h1 class="t-title-2">Yordam markazi</h1></div>
+
+  <div class="find search"><i class="ic ic-search c-3"></i><span class="search__ph">Savolingizni yozing…</span></div>
+  <div class="topics"><span class="chip chip--selected">Toʻlov</span><span class="chip">Coin</span><span class="chip">VIP</span><span class="chip">Tomosha</span><span class="chip">Hisob</span></div>
+
+  <div class="card acc">
+    <div class="q"><span>Coinlarim qayerga ketdi?</span><i class="ic ic-chev-up ic--20"></i></div>
+    <p class="a t-footnote">Hamyon → Tarix boʻlimida har bir sarf koʻrinadi. Avto-ochish yoqilgan boʻlsa, qismlar oʻzi ochiladi — uni Sozlamalar → Toʻlovʼdan oʻchirishingiz mumkin.</p>
+    <div class="q"><span>VIP obunani qanday bekor qilaman?</span><i class="ic ic-chev-down ic--20"></i></div>
+    <div class="q"><span>Pulimni qaytarib olsam boʻladimi?</span><i class="ic ic-chev-down ic--20"></i></div>
+    <div class="q"><span>Video qotib qolyapti</span><i class="ic ic-chev-down ic--20"></i></div>
+    <div class="q"><span>Bonus coin qachon tugaydi?</span><i class="ic ic-chev-down ic--20"></i></div>
+  </div>
+
+  <section class="more">
+    <h2 class="t-headline">Javob topmadingizmi?</h2>
+    <div class="tiles">
+      <div class="tile is-main"><i class="ic ic-comment"></i>Operator bilan chat</div>
+      <div class="tile card--glass" style="background: var(--glass-bg)"><i class="ic ic-refresh"></i>Qaytarish soʻrovi</div>
+      <div class="tile card--glass" style="background: var(--glass-bg)"><i class="ic ic-star"></i>Fikr yuborish</div>
+    </div>
+  </section>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

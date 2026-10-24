@@ -179,6 +179,7 @@
   --t-caption: 12px;    /* ref-02 nav, ref-07 vaqt */
   --t-micro: 10px;      /* ref-01 nav label */
   --t-mono: 11px;       /* ref-03 */
+  --t-mono-lg: 28px;    /* taklif kodi (PROMPT §23 mono "AZ7K29") */
   --t-tag: 11px;        /* ref-02 nav label 11, ref-04 badge raqami */
   --t-cd: 26px;         /* countdown raqamlari = title-3 o'lchami */
   --t-pack: 32px;       /* coin paket miqdori (Anton) = serif-lg o'lchami */

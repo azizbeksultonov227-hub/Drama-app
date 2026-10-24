@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>26 · Bildirishnomalar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .top h1 { flex: 1; }
+  .top .btn--text { padding: 0; color: var(--text-2); font-size: var(--t-footnote); }
+  .perm { position: absolute; top: 118px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); padding: var(--s-16); border-radius: var(--r-media); }
+  .perm > *:not(.ring) { position: relative; z-index: 3; }
+  .perm .ring--card { width: 760px; height: 760px; left: -400px; top: -340px; }
+  .filters { position: absolute; top: 212px; left: var(--page-x); right: 0; display: flex; gap: var(--s-8); overflow: hidden; }
+  .filters .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); }
+  .feed { position: absolute; top: 260px; left: 0; right: 0; }
+  .grp { padding: var(--s-12) var(--page-x) var(--s-4); font: 600 var(--t-caption)/1 var(--f-ui); color: var(--text-3); text-transform: none; }
+  .nt { position: relative; display: flex; gap: var(--s-12); padding: var(--s-10) var(--page-x); align-items: flex-start; }
+  .nt .art { width: 52px; height: 52px; border-radius: var(--r-tile); flex: none; }
+  .nt__ic { width: 52px; height: 52px; border-radius: var(--r-tile); flex: none; display: grid; place-items: center; background: var(--bg-2); }
+  .nt__b { flex: 1; min-width: 0; }
+  .nt__b p:first-child { font: 600 var(--t-footnote)/1.3 var(--f-ui); }
+  .nt__t { font: 400 var(--t-caption)/1 var(--f-ui); color: var(--text-3); margin-top: 2px; }
+  .nt.unread { background: linear-gradient(90deg, color-mix(in srgb, var(--flame) 10%, transparent), transparent 70%); }
+  .nt.unread .dot { position: absolute; left: 6px; top: 30px; width: 6px; height: 6px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><h1 class="t-headline">Bildirishnomalar</h1><button class="btn btn--text">Hammasi oʻqildi</button></div>
+
+  <div class="perm card--warm grain">
+    <div class="ring ring--card"></div>
+    <i class="ic ic-bell ic--26" style="color: var(--warm-text-1)"></i>
+    <p class="t-footnote-m" style="flex: 1; color: var(--warm-text-1)">Bildirishnomalar oʻchiq — yangi qismlarni oʻtkazib yubormang</p>
+    <button class="btn btn--primary btn--xs" style="height: var(--d-glass-sm)">Yoqish +30</button>
+  </div>
+
+  <div class="filters"><span class="chip chip--selected">Hammasi</span><span class="chip">Yangi qismlar</span><span class="chip">Takliflar</span><span class="chip">Javoblar</span><span class="chip">Tizim</span></div>
+
+  <div class="feed">
+    <p class="grp">Bugun</p>
+    <div class="nt unread"><span class="dot"></span><div class="art art--profile" style="--amb: var(--amb-02)"></div><div class="nt__b"><p>Boʻri qirolining qasosi: 3 ta yangi qism</p><p class="t-caption c-2">73–75-qismlar chiqdi — davom eting</p></div><span class="nt__t">10 daq</span></div>
+    <div class="nt unread"><span class="dot"></span><div class="art art--couple" style="--amb: var(--amb-14)"></div><div class="nt__b"><p>Eslatma: «Taqdir toʻyi» ertaga</p><p class="t-caption c-2">20:00 da premyera, birinchi 10 qism bepul</p></div><span class="nt__t">1 soat</span></div>
+    <div class="nt"><div class="nt__ic"><i class="coin coin--lg"></i></div><div class="nt__b"><p>Check-in mukofoti kutmoqda</p><p class="t-caption c-2">+15 coin · ketma-ket 3-kun</p></div><span class="nt__t">3 soat</span></div>
+    <div class="nt"><div class="art art--portrait" style="--amb: var(--amb-11)"></div><div class="nt__b"><p>Madina izohingizga javob berdi</p><p class="t-caption c-2">«Men ham aynan shunday oʻylagandim!»</p></div><span class="nt__t">5 soat</span></div>
+    <p class="grp">Kecha</p>
+    <div class="nt"><div class="nt__ic"><i class="ic ic-percent c-flame"></i></div><div class="nt__b"><p>Faqat bugun: −60%</p><p class="t-caption c-2">1 200 coin + 800 bonus</p></div><span class="nt__t">kecha</span></div>
+    <div class="nt"><div class="nt__ic"><i class="ic ic-crown crown"></i></div><div class="nt__b"><p>VIP obunangiz 3 kundan keyin yangilanadi</p><p class="t-caption c-2">Profil → Obunani boshqarish</p></div><span class="nt__t">kecha</span></div>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

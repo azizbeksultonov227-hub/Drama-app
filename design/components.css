@@ -172,7 +172,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Kartalar ---------- */
 .card { position: relative; border-radius: var(--r-card); background: var(--card-fill); box-shadow: inset 0 0 0 1px var(--line-1), inset 0 -1px 0 var(--line-2); padding: var(--s-16); }
 .card--ambient { background: radial-gradient(120% 90% at 75% 0%, var(--amb) 0%, color-mix(in srgb, var(--amb) 72%, var(--amb-dark)) 30%, color-mix(in srgb, var(--amb) 36%, var(--amb-dark)) 55%, var(--amb-dark) 100%); box-shadow: inset 0 0 0 1px var(--line-1); overflow: hidden; }
-.card--warm { background: var(--warm-light), var(--warm-bg); overflow: hidden; box-shadow: inset 0 0 0 1px var(--glass-line-soft); }
+.card--warm { position: relative; background: var(--warm-light), var(--warm-bg); overflow: hidden; box-shadow: inset 0 0 0 1px var(--glass-line-soft); }
 .card--glass { background: var(--glass-dark); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
 .card--flat { background: var(--bg-1); }
 

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>24 · Mening roʻyxatim</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  .top .btn--text { padding: 0; color: var(--text-2); font-size: var(--t-footnote); }
+  .tabs { position: absolute; top: 108px; left: 0; right: 0; }
+  .grid { position: absolute; top: 172px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-16) var(--s-12); }
+  .grid .poster { --pw: 100%; }
+  .grid .progress { margin-top: var(--s-8); height: 2px; }
+  .grid .poster__title { margin-top: var(--s-6); }
+  .grid .tag--new3 { background: var(--flame); color: var(--text-1); }
+  .rec { position: absolute; top: 664px; left: 0; right: 0; }
+  .rec .hscroll .poster { --pw: 80px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><h1 class="t-title-2">Mening roʻyxatim</h1><button class="btn btn--text">Tahrirlash</button></div>
+  <div class="tabs"><nav class="utabs" style="gap: var(--s-20)"><span class="utabs__item is-active">Saqlangan · 6</span><span class="utabs__item">Tarix</span><span class="utabs__item">Eslatmalar · 2</span><span class="utabs__item">Yuklanganlar</span></nav></div>
+
+  <div class="grid">
+    <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="tag tag--new3">+3 yangi qism</span></div><div class="progress" style="--p: 12%"><i></i></div><h3 class="poster__title">Milliarderning yashirin kelini</h3><p class="poster__meta">10 / 80-qism</p></article>
+    <article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-02)"></div><div class="progress" style="--p: 17%"><i></i></div><h3 class="poster__title">Boʻri qirolining qasosi</h3><p class="poster__meta">12 / 72-qism</p></article>
+    <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-03)"><span class="tag tag--new3">Yangi qism</span></div><div class="progress" style="--p: 8%"><i></i></div><h3 class="poster__title">Shartnoma boʻyicha xotin</h3><p class="poster__meta">5 / 60-qism</p></article>
+    <article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-12)"></div><div class="progress" style="--p: 46%"><i></i></div><h3 class="poster__title">Imperatorning soʻnggi farmoni</h3><p class="poster__meta">Davom etmoqda</p></article>
+    <article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-07)"></div><div class="progress" style="--p: 100%"><i></i></div><h3 class="poster__title">Uch yildan keyin qaytdim</h3><p class="poster__meta"><i class="ic ic-check"></i>Tugatilgan</p></article>
+    <article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-06)"></div><div class="progress" style="--p: 0%"><i></i></div><h3 class="poster__title">Vampir qoʻriqchisi</h3><p class="poster__meta">Boshlanmagan</p></article>
+  </div>
+
+  <section class="rec">
+    <div class="sec-head"><h2>Sizga yoqishi mumkin</h2></div>
+    <div class="hscroll">
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-13)"></div></article>
+      <article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-11)"></div></article>
+      <article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-05)"></div></article>
+      <article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-09)"></div></article>
+    </div>
+  </section>
+
+  <nav class="nav">
+    <a class="nav__item"><i class="ic ic-home"></i><span>Bosh sahifa</span></a>
+    <a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a>
+    <a class="nav__item"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a>
+    <a class="nav__item is-active"><i class="ic ic-bookmark-fill"></i><span>Roʻyxatim</span></a>
+    <a class="nav__item"><i class="ic ic-user"></i><span>Profil</span></a>
+  </nav>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

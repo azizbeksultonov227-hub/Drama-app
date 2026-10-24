@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>25 · Yuklab olinganlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .top h1 { flex: 1; }
+  .top .btn--text { padding: 0; color: var(--text-2); font-size: var(--t-footnote); }
+  .vip { position: absolute; top: 122px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-10); height: var(--d-glass-sm); padding: 0 var(--s-16); border-radius: var(--r-pill); box-shadow: inset 0 0 0 1px var(--sand); color: var(--sand); }
+  .store { position: absolute; top: 186px; left: var(--page-x); right: var(--page-x); }
+  .bar { display: flex; gap: 2px; height: 10px; border-radius: var(--r-pill); overflow: hidden; }
+  .bar i { display: block; }
+  .bar__leg { display: flex; justify-content: space-between; margin-top: var(--s-8); }
+  .bar__leg span { display: inline-flex; align-items: center; gap: 6px; }
+  .bar__leg i { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .list { position: absolute; top: 246px; left: var(--page-x); right: var(--page-x); display: flex; flex-direction: column; gap: var(--s-10); }
+  .dl { display: flex; align-items: center; gap: var(--s-12); padding: var(--s-10) var(--s-12) var(--s-10) var(--s-10); border-radius: var(--r-media); }
+  .dl .art { width: 56px; height: 76px; border-radius: var(--r-thumb); flex: none; }
+  .dl__b { flex: 1; min-width: 0; }
+  .dl .progress { margin-top: var(--s-8); }
+  .opts { position: absolute; left: var(--page-x); right: var(--page-x); top: 590px; padding: 0; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><h1 class="t-headline">Yuklab olinganlar</h1><button class="btn btn--text">Tahrirlash</button></div>
+
+  <div class="vip"><i class="ic ic-crown ic--20"></i><span class="t-footnote-m">VIP · oflayn koʻrish yoqilgan</span></div>
+
+  <div class="store">
+    <div class="bar"><i style="width: 2%; background: var(--flame)"></i><i style="width: 67%; background: var(--text-3)"></i><i style="flex: 1; background: var(--line-2)"></i></div>
+    <div class="bar__leg t-caption c-3"><span><i style="background: var(--flame)"></i>Ilova: 1.2 GB</span><span><i style="background: var(--text-3)"></i>Boshqa: 40 GB</span><span><i style="background: var(--line-2)"></i>Boʻsh: 18 GB</span></div>
+  </div>
+
+  <div class="list">
+    <div class="dl card--glass" style="background: var(--glass-bg)"><div class="art art--profile" style="--amb: var(--amb-02)"></div><div class="dl__b"><p class="t-body-m">Boʻri qirolining qasosi</p><p class="t-caption c-3" style="margin-top: 2px">8 qism · 240 MB</p><p class="t-caption c-2" style="margin-top: var(--s-6); display: flex; gap: 4px; align-items: center"><i class="ic ic-check ic--16 c-flame"></i>Yuklangan</p></div><button class="gbtn gbtn--sm gbtn--dark" aria-label="Oʻchirish"><i class="ic ic-close ic--20"></i></button></div>
+    <div class="dl card--glass" style="background: var(--glass-bg)"><div class="art art--couple" style="--amb: var(--amb-01)"></div><div class="dl__b"><p class="t-body-m">Milliarderning yashirin kelini</p><p class="t-caption c-3" style="margin-top: 2px">3 / 8 qism · 96 MB</p><div class="progress" style="--p: 45%"><i></i></div><p class="t-caption c-flame" style="margin-top: var(--s-6)">Yuklanmoqda · 45%</p></div><button class="gbtn gbtn--sm gbtn--dark" aria-label="Pauza"><i class="ic ic-pause-fill ic--18"></i></button></div>
+    <div class="dl card--glass" style="background: var(--glass-bg)"><div class="art art--couple" style="--amb: var(--amb-14)"></div><div class="dl__b"><p class="t-body-m">Taqdir toʻyi</p><p class="t-caption c-3" style="margin-top: 2px">5 qism · 150 MB</p><div class="progress" style="--p: 0%"><i></i></div><p class="t-caption c-3" style="margin-top: var(--s-6)">Navbatda</p></div><button class="gbtn gbtn--sm gbtn--dark" aria-label="Bekor qilish"><i class="ic ic-close ic--20"></i></button></div>
+  </div>
+
+  <div class="card opts">
+    <div class="row"><i class="ic ic-wifi"></i><span class="row__label">Faqat Wi-Fi orqali yuklash</span><span class="toggle is-on"></span></div>
+    <div class="row"><i class="ic ic-hd"></i><span class="row__label">Yuklash sifati</span><span class="row__value">720p</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-trash"></i><span class="row__label">Koʻrilgandan 7 kun keyin oʻchirish</span><span class="toggle"></span></div>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

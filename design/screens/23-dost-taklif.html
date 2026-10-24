@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>23 · Doʻstni taklif qilish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  /* ref-04 aurora: avatar pufakchalari (qorong'i versiya) */
+  .bubbles { position: absolute; top: 114px; left: 0; right: 0; height: 140px; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+  .pair { position: absolute; z-index: 3; top: 128px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: var(--s-8); }
+  .pair .art { width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg-0); }
+  .title { position: absolute; top: 262px; left: var(--page-x); right: var(--page-x); text-align: center; }
+  .steps { position: absolute; top: 368px; left: var(--page-x); right: var(--page-x); display: flex; flex-direction: column; gap: var(--s-12); }
+  .step { display: flex; align-items: center; gap: var(--s-12); }
+  .step b { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--glass-bg-strong); box-shadow: inset 0 0 0 1px var(--glass-line-soft); font: 400 var(--t-headline)/1 var(--f-display); }
+  .step.is-on b { background: var(--flame); box-shadow: var(--glow-flame); }
+  .code { position: absolute; top: 504px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; padding: var(--s-16) var(--s-16) var(--s-16) var(--s-20); border-radius: var(--r-media); }
+  .code__v { font: 500 var(--t-mono-lg)/1 var(--f-mono); letter-spacing: .12em; margin-top: var(--s-6); }
+  .share { position: absolute; top: 606px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }
+  .share p { margin-top: var(--s-8); }
+  .share .gbtn { margin: 0 auto; }
+  .stats { position: absolute; left: var(--page-x); right: var(--page-x); bottom: 34px; display: flex; align-items: center; justify-content: space-between; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><h1 class="t-headline">Doʻstni taklif qilish</h1></div>
+
+  <div class="bubbles">
+    <span class="bubble art art--portrait" style="--amb: var(--amb-04); width: 43px; height: 43px; left: 24px; top: 30px"></span>
+    <span class="bubble art art--portrait" style="--amb: var(--amb-13); width: 27px; height: 27px; left: 84px; top: 6px"></span>
+    <span class="bubble art art--portrait" style="--amb: var(--amb-08); width: 19.5px; height: 19.5px; left: 98px; top: 74px"></span>
+    <span class="bubble art art--portrait" style="--amb: var(--amb-05); width: 27px; height: 27px; left: 282px; top: 4px"></span>
+    <span class="bubble art art--portrait" style="--amb: var(--amb-10); width: 43px; height: 43px; left: 326px; top: 34px"></span>
+    <span class="bubble art art--portrait" style="--amb: var(--amb-02); width: 19.5px; height: 19.5px; left: 268px; top: 84px"></span>
+    <span class="bubble bubble--far art art--portrait" style="--amb: var(--amb-07); width: 27px; height: 27px; left: 50px; top: 96px"></span>
+    <span class="bubble bubble--far art art--portrait" style="--amb: var(--amb-12); width: 27px; height: 27px; left: 316px; top: 100px"></span>
+  </div>
+  <div class="pair">
+    <div class="art art--portrait" style="--amb: var(--amb-11)"></div>
+    <span class="gbtn gbtn--sm gbtn--flame"><i class="ic ic-plus"></i></span>
+    <div class="art art--portrait" style="--amb: var(--amb-02)"></div>
+  </div>
+
+  <h2 class="title t-serif-lg">Doʻst chaqiring — ikkalangiz <span class="c-flame">+200 coin</span></h2>
+
+  <div class="steps">
+    <div class="step"><b>1</b><p class="t-body">Havola yoki kodni yuboring</p></div>
+    <div class="step"><b>2</b><p class="t-body">Doʻstingiz ilovani oʻrnatib, roʻyxatdan oʻtadi</p></div>
+    <div class="step is-on"><b>3</b><p class="t-body-m">Ikkalangizga 200 coin tushadi</p></div>
+  </div>
+
+  <div class="code card--glass" style="background: var(--glass-bg)">
+    <div><p class="t-caption c-3">Taklif kodingiz</p><p class="code__v">AZ7K29</p></div>
+    <button class="btn btn--primary btn--sm"><i class="ic ic-copy"></i>Nusxa olish</button>
+  </div>
+
+  <div class="share">
+    <div><span class="gbtn gbtn--dark"><i class="ic ic-send"></i></span><p class="t-caption c-2">Telegram</p></div>
+    <div><span class="gbtn gbtn--dark"><i class="ic ic-video"></i></span><p class="t-caption c-2">Instagram</p></div>
+    <div><span class="gbtn gbtn--dark"><i class="ic ic-comment"></i></span><p class="t-caption c-2">WhatsApp</p></div>
+    <div><span class="gbtn gbtn--dark"><i class="ic ic-more"></i></span><p class="t-caption c-2">Boshqa</p></div>
+  </div>
+
+  <div class="card stats">
+    <div><p class="t-body-m">Taklif qilinganlar: 3</p><p class="t-caption c-3" style="margin-top: 2px">Topilgan: <span class="c-flame">600 coin</span></p></div>
+    <span class="pill-more">Roʻyxat<i class="ic ic-chev-right ic--16"></i></span>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

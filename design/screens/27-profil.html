@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>27 · Profil</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* ref-01 profil: sevimli posterlar kolaji, blur + ambient tonlash, pastga qora */
+  .collage { position: absolute; left: 0; right: 0; top: 0; height: 440px; overflow: hidden; --amb: var(--amb-09); }
+  .collage .art { position: absolute; border-radius: var(--r-poster); filter: blur(5px); opacity: .55; }
+  .collage::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, color-mix(in srgb, var(--amb) 55%, transparent) 0%, color-mix(in srgb, var(--amb) 30%, var(--bg-0)) 55%, var(--bg-0) 100%); }
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 48px; display: flex; align-items: center; justify-content: center; }
+  .top .gbtn { position: absolute; right: 0; }
+  .top h1 { color: var(--text-2); }
+  .head { position: relative; z-index: 3; padding-top: 120px; text-align: center; }
+  .head .box { margin: 0 auto; }
+  .head .box__badge { width: 53px; bottom: -26px; box-shadow: 0 0 0 2px var(--sand); }
+  .name { margin-top: 38px; }
+  .id { display: inline-flex; align-items: center; gap: var(--s-6); margin-top: var(--s-8); color: var(--text-3); }
+  .chips { display: flex; justify-content: center; gap: var(--s-8); margin-top: var(--s-16); }
+  .edit { display: flex; justify-content: center; align-items: center; gap: var(--s-12); margin-top: var(--s-16); }
+  .wallet { margin: var(--s-24) var(--page-x) 0; display: flex; align-items: center; gap: var(--s-20); }
+  .wallet .num { font: 400 var(--t-title-3)/1 var(--f-display); margin-top: 4px; }
+  .vip { margin: var(--gap-card) var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); padding: var(--s-16); }
+  .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-8); margin: var(--gap-card) var(--page-x) 0; }
+  .quick div { display: flex; flex-direction: column; align-items: center; gap: var(--s-8); padding: var(--s-12) 0; border-radius: var(--r-tile); font: 500 var(--t-caption)/1 var(--f-ui); color: var(--text-2); }
+  .quick .ic { color: var(--text-1); }
+  .fav { margin: 0 var(--page-x); padding: var(--s-12) 0 var(--s-12) var(--s-12); overflow: hidden; }
+  .fav .row-flex { gap: var(--s-8); }
+  .fav .poster { --pw: 88px; }
+  .menu { margin: var(--gap-card) var(--page-x) 0; padding: 0; }
+  .menu .badge-sm { height: 20px; padding: 0 8px; border-radius: var(--r-pill); font: 600 var(--t-tag)/20px var(--f-ui); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen" style="height: 1691px">
+  <div class="collage">
+    <div class="art art--couple" style="--amb: var(--amb-01); width: 96px; height: 144px; left: -12px; top: 80px; transform: rotate(-8deg)"></div>
+    <div class="art art--profile" style="--amb: var(--amb-02); width: 92px; height: 138px; left: 64px; top: 196px; transform: rotate(6deg)"></div>
+    <div class="art art--couple" style="--amb: var(--amb-03); width: 104px; height: 150px; left: 278px; top: 52px; transform: rotate(9deg)"></div>
+    <div class="art art--portrait" style="--amb: var(--amb-04); width: 90px; height: 134px; left: 300px; top: 224px; transform: rotate(-6deg)"></div>
+    <div class="art art--walk" style="--amb: var(--amb-07); width: 88px; height: 130px; left: 150px; top: 20px; transform: rotate(-3deg)"></div>
+  </div>
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><h1 class="t-body-m">Profil</h1><button class="gbtn gbtn--side" aria-label="Sozlamalar"><i class="ic ic-settings"></i></button></div>
+
+  <section class="head">
+    <div class="box box--lg" style="--box: var(--flame)"><div class="box__well art art--portrait" style="--amb: var(--amb-11)"></div><div class="box__front"></div><span class="box__badge art art--portrait" style="--amb: var(--amb-08)"></span></div>
+    <h2 class="t-serif-xl name">Foydalanuvchi</h2>
+    <p class="id t-mono">ID: 10482733 <i class="ic ic-copy ic--16"></i></p>
+    <div class="chips">
+      <span class="chip"><i class="ic ic-send"></i>Telegram orqali</span>
+      <span class="chip">12 doʻst<span class="avatars"><span class="art art--portrait" style="--amb: var(--amb-13)"></span><span class="art art--portrait" style="--amb: var(--amb-04)"></span><span class="art art--portrait" style="--amb: var(--amb-02)"></span></span></span>
+      <span class="chip chip--sand"><i class="ic ic-crown"></i>VIP emas</span>
+    </div>
+    <div class="edit"><button class="btn btn--primary btn--sm"><i class="ic ic-edit"></i>Profilni tahrirlash</button><span class="dot-btn"><i class="ic ic-more"></i></span></div>
+  </section>
+
+  <div class="card wallet">
+    <div><p class="t-caption c-3">Coin</p><p class="num">20</p></div>
+    <div style="flex: 1"><p class="t-caption c-3">Bonus coin</p><p class="num">85</p></div>
+    <button class="btn btn--primary btn--sm"><i class="ic ic-plus"></i>Toʻldirish</button>
+  </div>
+  <div class="card vip vip-card">
+    <i class="ic ic-crown ic--28 crown"></i>
+    <div style="flex: 1; min-width: 0"><p class="t-body-m">VIP emassiz</p><p class="t-caption c-2" style="margin-top: 2px">1-hafta −40% · reklamasiz, hammasi ochiq</p></div>
+    <button class="btn btn--primary btn--xs" style="height: var(--h-pill-sm); padding: 0 var(--s-16)">VIP olish</button>
+  </div>
+
+  <div class="quick">
+    <div class="card"><i class="ic ic-clock"></i>Tarix</div>
+    <div class="card"><i class="ic ic-bookmark"></i>Saqlangan</div>
+    <div class="card"><i class="ic ic-download"></i>Yuklangan</div>
+    <div class="card"><i class="ic ic-gift"></i>Mukofot</div>
+  </div>
+
+  <section class="sec">
+    <div class="sec-head"><h2><i class="ic ic-star-fill ic--18 c-sand"></i>Sevimlilar</h2><span class="pill-more">Hammasi<i class="ic ic-chev-right ic--16"></i></span></div>
+    <div class="card fav"><div class="row-flex">
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="poster__name">Milliarderning yashirin kelini</span></div></article>
+      <article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-02)"><span class="poster__name">Boʻri qirolining qasosi</span></div></article>
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-03)"><span class="poster__name">Shartnoma boʻyicha xotin</span></div></article>
+      <article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-07)"><span class="poster__name">Uch yildan keyin qaytdim</span></div></article>
+    </div></div>
+  </section>
+
+  <div class="card menu">
+    <div class="row"><i class="ic ic-wallet"></i><span class="row__label">Hamyon va tranzaksiyalar</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-crown"></i><span class="row__label">Obunani boshqarish</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-unlock"></i><span class="row__label">Avto-ochish (coin bilan)</span><span class="badge-sm" style="background: var(--flame)">Yoqiq</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-user-plus"></i><span class="row__label">Doʻstni taklif qilish</span><span class="badge-sm" style="background: var(--sand); color: var(--cocoa)">+200 coin</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-globe"></i><span class="row__label">Til va dublyaj</span><span class="row__value">Oʻzbekcha</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-bell"></i><span class="row__label">Bildirishnomalar</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-help"></i><span class="row__label">Yordam markazi</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-comment"></i><span class="row__label">Fikr bildirish</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-shield"></i><span class="row__label">Shartlar va maxfiylik</span><i class="ic ic-chev-right"></i></div>
+    <div class="row"><i class="ic ic-settings"></i><span class="row__label">Sozlamalar</span><i class="ic ic-chev-right"></i></div>
+  </div>
+  <p class="t-caption c-3" style="text-align: center; margin-top: var(--s-16)">Versiya 1.0.0</p>
+
+  <div class="scroll-pad"></div>
+  <nav class="nav">
+    <a class="nav__item"><i class="ic ic-home"></i><span>Bosh sahifa</span></a>
+    <a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a>
+    <a class="nav__item"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a>
+    <a class="nav__item"><i class="ic ic-bookmark"></i><span>Roʻyxatim</span></a>
+    <a class="nav__item is-active"><i class="ic ic-user"></i><span>Profil</span></a>
+  </nav>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

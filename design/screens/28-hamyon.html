@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>28 · Hamyon va tranzaksiyalar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .bals { position: absolute; top: 118px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-12); }
+  .bal { padding: var(--s-16); min-height: 132px; display: flex; flex-direction: column; }
+  .bal > *:not(.ring) { position: relative; z-index: 3; }
+  .bal .num { display: flex; align-items: center; gap: var(--s-8); margin-top: var(--s-8); font: 400 var(--t-pack)/1 var(--f-display); }
+  .bal p:last-child { margin-top: auto; }
+  .topup { position: absolute; top: 266px; left: var(--page-x); right: var(--page-x); }
+  .hint { position: absolute; top: 330px; left: var(--page-x); right: var(--page-x); }
+  .tabs { position: absolute; top: 360px; left: 0; right: 0; }
+  .tx { position: absolute; top: 414px; left: 0; right: 0; }
+  .grp { padding: var(--s-12) var(--page-x) var(--s-6); font: 600 var(--t-caption)/1 var(--f-ui); color: var(--text-3); }
+  .t { display: flex; align-items: center; gap: var(--s-12); padding: var(--s-10) var(--page-x); }
+  .t__ic { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line-1); }
+  .t__ic.plus { background: color-mix(in srgb, var(--flame) 18%, transparent); color: var(--flame); box-shadow: none; }
+  .t__b { flex: 1; min-width: 0; }
+  .t__v { font: 600 var(--t-body)/1 var(--f-ui); white-space: nowrap; }
+  .t__v.plus { color: var(--flame); }
+  .refund { position: absolute; left: 0; right: 0; bottom: 40px; text-align: center; }
+  .refund a { color: var(--text-1); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><h1 class="t-title-2">Hamyon</h1></div>
+
+  <div class="bals">
+    <div class="card bal"><p class="t-footnote-m c-2">Pullik coin</p><p class="num"><i class="coin"></i>20</p><p class="t-caption c-3">muddatsiz</p></div>
+    <div class="card bal card--warm grain"><div class="ring ring--card" style="width: 700px; height: 700px; left: -520px; top: -260px"></div><p class="t-footnote-m" style="color: var(--warm-text-1)">Bonus coin</p><p class="num" style="color: var(--warm-text-1)"><i class="coin"></i>85</p><p class="t-caption" style="color: var(--warm-text-1)">40 tasi 3 kunda tugaydi</p></div>
+  </div>
+  <button class="btn btn--primary btn--block abs-x topup"><i class="ic ic-plus"></i>Coin toʻldirish</button>
+  <p class="hint t-caption c-3">Avval bonus coin sarflanadi, keyin pullik coin.</p>
+  <div class="tabs"><nav class="utabs"><span class="utabs__item is-active">Hammasi</span><span class="utabs__item">Toʻldirish</span><span class="utabs__item">Sarflangan</span><span class="utabs__item">Mukofotlar</span></nav></div>
+
+  <div class="tx">
+    <p class="grp">Bugun</p>
+    <div class="t"><span class="t__ic"><i class="ic ic-minus ic--18"></i></span><div class="t__b"><p class="t-body-m">11-qism ochildi</p><p class="t-caption c-3">Milliarderning yashirin kelini · 14:32</p></div><span class="t__v">−60</span></div>
+    <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Kunlik check-in</p><p class="t-caption c-3">Bonus · 7 kun amal qiladi</p></div><span class="t__v plus">+15</span></div>
+    <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Reklama mukofoti</p><p class="t-caption c-3">Bonus · 10:05</p></div><span class="t__v plus">+10</span></div>
+    <p class="grp">Kecha</p>
+    <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Coin xaridi · Payme</p><p class="t-caption c-3">1 200 + 240 bonus · [narx] soʻm</p></div><span class="t__v plus">+1 440</span></div>
+    <div class="t"><span class="t__ic"><i class="ic ic-minus ic--18"></i></span><div class="t__b"><p class="t-body-m">Butun serial ochildi</p><p class="t-caption c-3">Uch yildan keyin qaytdim</p></div><span class="t__v">−1 400</span></div>
+  </div>
+  <p class="refund t-footnote c-2">Toʻlovda muammo bormi? <a>Qaytarish soʻrovi</a></p>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

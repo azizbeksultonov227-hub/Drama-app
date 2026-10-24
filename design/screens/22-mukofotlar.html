@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>22 · Mukofotlar markazi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { padding: 58px var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); height: 102px; }
+  .top h1 { flex: 1; }
+  .top .btn--text { padding: 0; color: var(--text-2); font-size: var(--t-footnote); }
+  .top .chip { height: var(--h-chip-glass); padding: 0 var(--s-12) 0 var(--s-8); color: var(--text-1); font: 600 var(--t-body)/1 var(--f-ui); }
+  .bonus { margin: var(--s-16) var(--page-x) 0; padding: var(--s-20); display: flex; align-items: center; gap: var(--s-12); border-radius: var(--r-card); }
+  .bonus > *:not(.ring) { position: relative; z-index: 3; }
+  .ci { margin: var(--gap-card) var(--page-x) 0; }
+  .ci__head { display: flex; justify-content: space-between; align-items: baseline; }
+  .days { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-12) var(--s-8); margin-top: var(--s-16); justify-items: center; }
+  .day { --tile-box: 70px; }
+  .day .box__well { display: flex; align-items: center; justify-content: center; gap: var(--s-4); color: var(--text-1); }
+  .day .box__well b { font: 400 var(--t-headline)/1 var(--f-display); }
+  .day .box__front { display: grid; place-items: center; font: 600 var(--t-micro)/1 var(--f-ui); color: var(--text-1); }
+  .day--wide { grid-column: span 2; width: 100%; }
+  .day--wide.box { width: 100%; --tile-box: 70px; height: 68px; }
+  .day .done { position: absolute; z-index: 3; top: -5px; right: -5px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--bg-3); color: var(--text-1); }
+  .day .done .ic { width: 12px; height: 12px; }
+  .today-tag { position: absolute; z-index: 3; top: -9px; left: 50%; transform: translateX(-50%); height: 18px; padding: 0 6px; border-radius: var(--r-pill); background: var(--text-1); color: var(--cocoa); font: 600 var(--t-micro)/18px var(--f-ui); }
+  .rem { display: flex; align-items: center; justify-content: space-between; margin-top: var(--s-12); }
+  .tasks { margin: 0 var(--page-x); padding: 0; }
+  .task { display: flex; align-items: center; gap: var(--s-12); padding: var(--s-12) var(--s-16); }
+  .task + .task { box-shadow: inset 0 1px 0 var(--line-1); }
+  .task__ic { width: 36px; height: 36px; border-radius: var(--r-tile); background: var(--bg-3); display: grid; place-items: center; color: var(--text-2); flex: none; }
+  .task__b { flex: 1; min-width: 0; }
+  .task .btn { flex: none; }
+  .btn--got { background: var(--bg-2); color: var(--text-3); box-shadow: none; }
+  .invite { margin: var(--gap-section) var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); padding: var(--s-16); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen" style="height: 1585px">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="top"><h1 class="t-title-2">Mukofotlar</h1><button class="btn btn--text">Qoidalar</button><span class="chip"><i class="coin coin--sm"></i>105</span></div>
+
+  <!-- bonus balansi (warm-gradient) -->
+  <div class="bonus card--warm grain">
+    <div class="ring ring--card"></div>
+    <i class="coin coin--lg"></i>
+    <div style="flex: 1"><p class="t-footnote-m" style="color: var(--warm-text-2)">Bonus coinlaringiz</p><p class="t-num" style="font-size: var(--t-pack); color: var(--warm-text-1); margin-top: 4px">85 coin</p><p class="t-caption" style="color: var(--warm-text-1); margin-top: 4px">40 tasi 3 kundan keyin tugaydi</p></div>
+    <button class="btn btn--glass on-media btn--xs">Tarix</button>
+  </div>
+
+  <!-- check-in: 3D squircle tile'lar (ref-01 Friend's box) -->
+  <section class="card ci">
+    <div class="ci__head"><h2 class="t-headline">Kunlik kirish</h2><span class="t-caption c-flame">ketma-ket 3-kun</span></div>
+    <div class="days">
+      <div class="box box--dim day"><div class="box__well"><b>+10</b></div><div class="box__front">1-kun</div><span class="done"><i class="ic ic-check"></i></span></div>
+      <div class="box box--dim day"><div class="box__well"><b>+10</b></div><div class="box__front">2-kun</div><span class="done"><i class="ic ic-check"></i></span></div>
+      <div class="box day" style="--box: var(--flame); box-shadow: var(--glow-flame)"><span class="today-tag">Bugun</span><div class="box__well"><i class="coin coin--sm"></i><b>+15</b></div><div class="box__front">olish</div></div>
+      <div class="box day" style="--box: var(--bg-3)"><div class="box__well"><b>+15</b></div><div class="box__front">4-kun</div></div>
+      <div class="box day" style="--box: var(--bg-3)"><div class="box__well"><b>+20</b></div><div class="box__front">5-kun</div></div>
+      <div class="box day" style="--box: var(--bg-3)"><div class="box__well"><b>+20</b></div><div class="box__front">6-kun</div></div>
+      <div class="box day day--wide" style="--box: var(--sand)"><div class="box__well" style="gap: var(--s-8); color: var(--sand)"><i class="ic ic-gift ic--20"></i><b style="color: var(--text-1)">+50</b></div><div class="box__front" style="color: var(--cocoa)">7-kun · sovgʻa · +1 kun VIP</div></div>
+    </div>
+    <div class="rslider" style="--v: 36%; margin-top: var(--s-24)"><div class="rslider__dots"><i></i><i></i><i></i><i></i><i></i></div><span class="rslider__knob">3</span></div>
+    <button class="btn btn--primary btn--block" style="margin-top: var(--s-24)">Bugungi +15 coinʼni olish</button>
+    <div class="rem"><span class="t-footnote c-2">Har kuni 20:00 da eslatish</span><span class="toggle is-on"></span></div>
+  </section>
+
+  <!-- reklama -->
+  <section class="card" style="margin: var(--gap-card) var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12)">
+    <span class="task__ic"><i class="ic ic-video"></i></span>
+    <div style="flex: 1"><p class="t-body-m">Reklama koʻrib coin oling</p><p class="t-caption c-3" style="margin-top: 2px">har biri +10 coin · bugun 3 / 10</p><div class="progress" style="--p: 30%; margin-top: var(--s-8)"><i></i></div></div>
+    <button class="btn btn--glass btn--xs">Koʻrish</button>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Kunlik vazifalar</h2></div>
+    <div class="card tasks">
+      <div class="task"><span class="task__ic"><i class="ic ic-play"></i></span><div class="task__b"><p class="t-body-m">3 ta qism tomosha qiling</p><p class="t-caption c-3"><b class="c-flame">+15</b> · 1 / 3</p></div><button class="btn btn--glass btn--xs">Bajarish</button></div>
+      <div class="task"><span class="task__ic"><i class="ic ic-clock"></i></span><div class="task__b"><p class="t-body-m">10 daqiqa tomosha qiling</p><p class="t-caption c-3"><b class="c-flame">+20</b> · 10 / 10</p></div><button class="btn btn--primary btn--xs">Olish</button></div>
+      <div class="task"><span class="task__ic"><i class="ic ic-share"></i></span><div class="task__b"><p class="t-body-m">Dramani doʻstga ulashing</p><p class="t-caption c-3"><b class="c-flame">+20</b> · 0 / 1</p></div><button class="btn btn--glass btn--xs">Bajarish</button></div>
+      <div class="task"><span class="task__ic"><i class="ic ic-comment"></i></span><div class="task__b"><p class="t-body-m">Izoh qoldiring</p><p class="t-caption c-3"><b class="c-flame">+5</b> · 1 / 1</p></div><button class="btn btn--xs btn--got"><i class="ic ic-check ic--16"></i>Olindi</button></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><h2>Bir martalik vazifalar</h2></div>
+    <div class="card tasks">
+      <div class="task"><span class="task__ic"><i class="ic ic-bell"></i></span><div class="task__b"><p class="t-body-m">Bildirishnomalarni yoqing</p><p class="t-caption c-3"><b class="c-flame">+30</b> · bir marta</p></div><button class="btn btn--glass btn--xs">Bajarish</button></div>
+      <div class="task"><span class="task__ic"><i class="ic ic-send"></i></span><div class="task__b"><p class="t-body-m">Telegram kanalga aʼzo boʻling</p><p class="t-caption c-3"><b class="c-flame">+30</b> · bir marta</p></div><button class="btn btn--glass btn--xs">Bajarish</button></div>
+      <div class="task"><span class="task__ic"><i class="ic ic-phone"></i></span><div class="task__b"><p class="t-body-m">Telefon raqamni bogʻlang</p><p class="t-caption c-3"><b class="c-flame">+50</b> · bir marta</p></div><button class="btn btn--glass btn--xs">Bajarish</button></div>
+      <div class="task"><span class="task__ic"><i class="ic ic-star"></i></span><div class="task__b"><p class="t-body-m">Ilovani baholang</p><p class="t-caption c-3"><b class="c-flame">+50</b> · bir marta</p></div><button class="btn btn--glass btn--xs">Bajarish</button></div>
+    </div>
+  </section>
+
+  <div class="card card--ambient invite" style="--amb: var(--amb-03)">
+    <span class="task__ic" style="background: var(--glass-bg-strong); color: var(--text-1)"><i class="ic ic-user-plus"></i></span>
+    <div style="flex: 1"><p class="t-body-m">Doʻstni taklif qiling</p><p class="t-caption c-2" style="margin-top: 2px">har biri uchun ikkalangizga +200 coin</p></div>
+    <button class="btn btn--primary btn--xs">Taklif qilish</button>
+  </div>
+
+  <div class="scroll-pad"></div>
+  <nav class="nav">
+    <a class="nav__item"><i class="ic ic-home"></i><span>Bosh sahifa</span></a>
+    <a class="nav__item is-active"><i class="ic ic-gift"></i><span>Mukofot</span></a>
+    <a class="nav__item"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a>
+    <a class="nav__item"><i class="ic ic-bookmark"></i><span>Roʻyxatim</span></a>
+    <a class="nav__item"><i class="ic ic-user"></i><span>Profil</span></a>
+  </nav>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>
