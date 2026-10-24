@@ -1,0 +1,184 @@
+/* =====================================================================
+   tokens.css — dizayn tizimi qiymatlari
+   Har bir qiymat 1-bosqich o'lchovlaridan (design/analysis/SUMMARY.md).
+   1 pt = 1 CSS px (ekran kengligi 393).
+   ===================================================================== */
+:root {
+  /* ---------- Neytral (ref-01 skelet) ---------- */
+  --bg-0: #000000;            /* ref-01: ekran foni, 6 nuqta #000000–#020101 */
+  --bg-1: #141414;            /* ref-01: Friend's box karta o'rtasi */
+  --bg-2: #1F1F1F;            /* ref-02: janr tugmasi / to'q tugma #1F1F1F–#222222 */
+  --bg-3: #2B2B2B;            /* ref-01: "…" doira #2B2B2B, "See all" #242424 */
+  --surface-tab: #111111;     /* ref-01: tanlangan segmented tab "Today" */
+  --card-fill: linear-gradient(180deg, #0B0B0B 0%, #141414 55%, #161616 100%); /* ref-01: karta vertikal gradienti */
+  --nav-fill: linear-gradient(180deg, #1E1E1E 0%, #151515 100%);               /* ref-01: nav */
+  --nav-active: linear-gradient(90deg, #2B2B2B 0%, #313131 100%);              /* ref-01: nav aktiv element */
+  --line-1: rgba(255, 255, 255, .09);   /* ref-01: karta yuqori/yon cheti #171717 */
+  --line-2: rgba(255, 255, 255, .14);   /* ref-01: karta past cheti #212121–#252525 */
+  --text-1: #FFFFFF;                    /* ref-01 */
+  --text-2: rgba(255, 255, 255, .71);   /* ref-01: "Friend's box" #B4B4B4 */
+  --text-tab: rgba(255, 255, 255, .64); /* ref-01: noaktiv tab #A3A3A3 */
+  --text-3: rgba(255, 255, 255, .50);   /* ref-02: meta #818181 / #797979 */
+  --text-nav-off: rgba(255, 255, 255, .90); /* ref-01: noaktiv nav label #E5E5E5 */
+  --line-outline: rgba(255, 255, 255, .25); /* ref-06: outline chip chegarasi 20–30% */
+  --handle: rgba(255, 255, 255, .30);       /* sheet tutqichi — ref'larda sheet yo'q; iOS grabber (DEVIATIONS) */
+  --scrim: rgba(0, 0, 0, .55);              /* PROMPT §02: blur qilingan fon ustida qora 55% */
+  --gs-track: rgba(255, 255, 255, .05);     /* ref-07 glass slider: to'ldirilmagan oq ~5% */
+  --gs-fill: rgba(255, 255, 255, .16);      /* ref-07 glass slider: to'ldirilgan oq ~16% */
+  --gs-dot: rgba(255, 255, 255, .50);       /* ref-07 slider nuqtalari */
+  --dash-on: rgba(255, 255, 255, .48);      /* ref-06 progress chiziqchasi (aktiv) */
+  --dash-off: rgba(255, 255, 255, .22);     /* ref-06 progress chiziqchasi (noaktiv) */
+  --grade: linear-gradient(180deg, rgba(249, 100, 48, .10) 0%, rgba(25, 18, 9, .22) 100%); /* iliq color-grading (flame → cocoa) */
+
+  /* ---------- Brend (ref-07 style guide, ΔE < 3 tasdiqlangan) ---------- */
+  --flame: #F96430;   /* asosiy aksent: aktiv, progress, coin */
+  --ember: #9A462A;   /* gradientlarning to'q qismi */
+  --sand:  #E2BD99;   /* VIP / premium */
+  --rose:  #D06D6D;   /* like, son badge, yumshoq ogohlantirish */
+  --peach: #FFDBC4;   /* 2-darajali urg'u matni */
+  --cocoa: #191209;   /* oq tugmalardagi matn, iliq to'q fon */
+  --peach-warm: #FFB198;    /* ref-06: "Amelia!" iliq fon ustida */
+  --warm-text-1: #FFF7DE;   /* ref-06: "Relief Meditation" */
+  --warm-text-2: #FFB677;   /* ref-06: subtitle */
+  --white-pill: #FFFDFF;    /* ref-06: "Listen" pill */
+
+  /* ---------- Drama ambient ranglari (posterning dominant rangi) ----------
+     Placeholder holatida har bir drama ref'larda o'lchangan rangdan oladi.   */
+  --amb-01: #96220F;  /* ref-01 Beating Hearts karta (yuqori-o'ng) */
+  --amb-02: #416670;  /* ref-04 NFT foni (k-means) */
+  --amb-03: #8B1D45;  /* ref-01 Recent activity karta */
+  --amb-04: #AC9746;  /* ref-01 Recent activity (oltin) */
+  --amb-05: #20377F;  /* ref-01 profil k-means */
+  --amb-06: #6A182B;  /* ref-01 profil k-means */
+  --amb-07: #6C4933;  /* ref-02 k-means */
+  --amb-08: #A93D6D;  /* ref-04 NFT k-means */
+  --amb-09: #4A4918;  /* ref-01 profil foni k-means */
+  --amb-10: #AD3936;  /* ref-01 profil k-means */
+  --amb-11: #D06D6D;  /* ref-07 rose */
+  --amb-12: #773916;  /* ref-04 NFT k-means */
+  --amb-13: #37595B;  /* ref-03 2-ekran k-means */
+  --amb-14: #B9796E;  /* ref-03 2-ekran k-means */
+  --amb-15: #57453C;  /* ref-04 NFT k-means */
+  --amb-dark: #100B0A;      /* ref-01: ambient karta pastki rangi */
+
+  /* ---------- Glass ---------- */
+  --glass-bg: rgba(255, 255, 255, .08);         /* ref-04 qidiruv maydoni, ref-01 chip (7–8%) */
+  --glass-bg-strong: rgba(215, 215, 215, .25);  /* ref-07 orqaga doira: c≈215, a≈.25 */
+  --glass-bg-frost: rgba(220, 220, 220, .45);   /* ref-06 nav doiralari: c≈215–227, a≈.41–.59 */
+  --glass-chip: rgba(148, 148, 148, .36);       /* ref-06 "Recommended" chip: c≈148, a≈.36 */
+  --glass-dark: rgba(0, 0, 0, .32);             /* ref-04 NFT glass kartalar */
+  --glass-line: rgba(255, 255, 255, .18);       /* ref-04 qidiruv chegarasi 18–20%, ref-01 chip yuqori 17% */
+  --glass-line-soft: rgba(255, 255, 255, .08);  /* ref-01 chip yon chegarasi */
+  --glass-rim: linear-gradient(180deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .08)); /* yuqoridan yoritilgan chet */
+  --glass-filter: blur(24px);                   /* blur o'lchab bo'lmaydi; saturate yo'q (o'lchov: to'yinganlik kamayadi) */
+
+  /* ---------- Glossy pill (ref-01 "Following", 12 nuqta) ---------- */
+  --glossy-fill: linear-gradient(180deg, #FFFFFF 0%, #FDFDFD 10%, #ECECEC 16%, #E1E1E1 24%, #D6D6D6 32%, #CBCBCB 40%, #BEBEBE 50%, #B7B7B7 56%, #C5C5C5 68%, #CCCCCC 79%, #D7D7D7 84%, #E3E3E3 87%, #F1F1F1 92%, #F7F7F7 96%);
+  --glossy-hi: inset 0 1px 0 #FFFFFF;                 /* ref-01: yuqori chet #FFFFFF */
+  --shadow-pill: 0 1px 4px rgba(25, 18, 9, .18);      /* ref-06 "Listen", ref-07 play: 1–2 px −10…12% */
+  --glossy-pressed: linear-gradient(180deg, #E1E1E1 0%, #CBCBCB 40%, #B7B7B7 56%, #C5C5C5 68%, #E3E3E3 92%); /* bosilgan: yuqori highlight bandi olib tashlanadi */
+
+  /* ---------- Nur ---------- */
+  --glow-flame: 0 6px 16px rgba(249, 100, 48, .55);   /* ref-04 glow tugma: pastga 6, blur 16, 55% */
+  --glow-sand: 0 6px 16px rgba(226, 189, 153, .45);   /* ← xuddi shu DNK, sand */
+  --ring-core: #FFD384;     /* ref-06 halqa yadrosi */
+  --ring-glow: #FB9541;     /* ref-06 halqa ichki glow */
+  --light-source: #FED979;  /* ref-06 yorug'lik manbai */
+
+  --shadow-well: inset 0 2px 4px rgba(0, 0, 0, .45);  /* ref-01 3D tile ichki chuqurlik (tepasi #0E0E39 qorong'i) */
+  --rim-hi: rgba(255, 255, 255, .35);                  /* ref-01 slider trek yuqori halqasi */
+  --rim-lo: rgba(255, 255, 255, .22);                  /* ref-01 slider trek past halqasi */
+  --text-shadow: 0 1px 6px rgba(0, 0, 0, .45);         /* rasm ustidagi matn himoyasi (PROMPT: subtitr yumshoq soya) */
+  --ring-shadow: 0 0 0 4px var(--ring-core), 0 0 14px 6px rgba(255, 211, 132, .7), inset 0 0 23px 8px rgba(251, 149, 65, .75), 0 0 0 900px rgba(25, 18, 9, .55); /* ref-06: yadro 4–6, ichki glow 23, tashqari qorong'i (#490B03) */
+  --knob-fill: radial-gradient(70% 55% at 50% 22%, rgba(255, 255, 255, .85) 0%, rgba(255, 255, 255, .25) 55%, rgba(255, 255, 255, 0) 70%), radial-gradient(100% 100% at 50% 50%, #FCA785 0%, #FFDBC4 60%, #FFFFFF 100%); /* ref-01 shisha sfera knob (tepada aks, pastda oq halqa), brend ranglarida */
+  --knob-rim: inset 0 -2px 0 #FFFFFF, inset 0 0 0 1px rgba(255, 255, 255, .6); /* ref-01 knob pastki oq halqa #CCC0C0 */
+
+  /* ---------- Gradientlar ---------- */
+  --poster-fade: linear-gradient(180deg, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, .7) 100%); /* ref-01 hero-fade DNK, poster nomi himoyasi */
+  --hero-fade: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, .35) 68%, rgba(0, 0, 0, .6) 75%, rgba(0, 0, 0, .89) 86%, #000000 100%); /* ref-01 hero */
+  --warm-bg: radial-gradient(170% 110% at 90% 60%, #EC731E 0%, #C24809 34%, #A73406 40%, #962A05 45%, #8B2406 50%, #7E1D05 55%, #7B2D1C 74%); /* ref-06 fit, ΔE 5.6 */
+  --warm-light: radial-gradient(55% 32% at 100% 92%, rgba(254, 217, 121, .95) 0%, rgba(249, 153, 59, .55) 38%, rgba(241, 128, 33, 0) 100%);    /* ref-06 o'ng-past yorug'lik */
+  --grad-sunset: linear-gradient(135deg, #F96430 0%, #F67040 12%, #E2BD99 48%, #B77558 75%, #9A462A 100%); /* ref-07 swatch A */
+  --grad-dusk: linear-gradient(135deg, #191209 0%, #79413E 25%, #D06D6D 48%, #EBB0A2 75%, #FFDBC4 100%);   /* ref-07 swatch B */
+  --grad-vip: linear-gradient(180deg, #E2BD99 0%, #9A462A 48%, #191209 100%);                               /* PROMPT §18, ref-07 palitrasi */
+  --grad-rating: linear-gradient(90deg, rgba(154, 70, 42, 0) 0%, #9A462A 18%, #F96430 58%, #FFDBC4 100%);   /* ref-01 slider shakli, brend ranglari */
+
+  /* ---------- Radiuslar ---------- */
+  --r-screen: 55px;     /* iPhone 15 Pro */
+  --r-sheet: 40px;      /* ref-04 glass karta 41 / ref-03 pastel karta 39 */
+  --r-card-lg: 40px;    /* ← */
+  --r-card: 28px;       /* ref-01 karta 27.8–28.9 */
+  --r-media: 24px;      /* ref-04 post 24.2, ref-03 masonry 22.3 */
+  --r-squircle: 17px;   /* ref-01 3D tile 16.8 (72 pt tile, 23%) */
+  --r-tile: 11px;       /* ref-02 janr 10, tugmalar 10–13 */
+  --r-poster: 11px;     /* ref-02 poster 11.0 */
+  --r-thumb: 6px;       /* ref-02 davom ettirish kartasi 6.2 */
+  --r-pill: 999px;
+
+  /* ---------- Spacing ---------- */
+  --page-x: 18px;       /* ref-01 18, ref-04 18.6 */
+  --gap-card: 14px;     /* ref-01 kartalar orasi 14.6 */
+  --gap-section: 28px;  /* ref-02 bo'limlar orasi 27–35 */
+  --gap-title: 14px;    /* ref-02 sarlavha → kontent ~15 */
+  --s-2: 2px; --s-4: 4px; --s-6: 6px; --s-8: 8px; --s-10: 10px; --s-12: 12px; --s-16: 16px; --s-20: 20px; --s-24: 24px; --s-32: 32px; --s-40: 40px;
+
+  /* ---------- O'lchamlar ---------- */
+  --h-pill: 52px;        /* ref-01 "Add to watchlist" 51.7 */
+  --h-pill-sm: 43px;     /* ref-01 "Following" 42.7 */
+  --h-pill-xs: 29px;     /* ref-01 "See all" */
+  --h-chip: 26px;        /* ref-01 chip 25–27 */
+  --h-chip-glass: 33px;  /* ref-06 "Recommended" 32.7 */
+  --h-tab: 30px;         /* ref-01 "Today" */
+  --h-search: 60px;      /* PROMPT §06 (ref-04 o'lchovi 79 — DEVIATIONS) */
+  --h-row: 52px;         /* PROMPT §29 */
+  --d-glass-sm: 44px;    /* touch target minimumi */
+  --d-glass: 52px;       /* ref-07 boshqaruv 54 / PROMPT 52 */
+  --d-glass-lg: 58px;    /* ref-06/07 orqaga doira 58.5–58.8 */
+  --d-play: 56px;        /* ref-07 play 56 */
+  --d-side: 48px;        /* ref-01 profil orqaga doira 48 */
+  --nav-h: 55px;         /* ref-01 nav */
+  --nav-x: 18px;         /* ref-01 */
+  --nav-bottom: 36px;    /* ref-01: ekran pastidan; home indicator'dan 22 */
+  --nav-active-w: 70px;  /* ref-01 */
+  --nav-active-h: 49px;  /* ref-01 */
+  --nav-center: 42px;    /* ref-01 "+" doira */
+  --slider-h: 18px;      /* ref-01 trek */
+  --knob: 36px;          /* ref-01 knob */
+  --gslider-h: 55px;     /* ref-07 */
+  --tile-box: 72px;      /* ref-01 3D quti */
+  --status-h: 54px;      /* iOS status bar zonasi */
+  --di-w: 126px; --di-h: 37.33px; --di-top: 11px;   /* iOS, ref-01 tasdiqladi */
+  --hi-w: 134px; --hi-h: 5px; --hi-bottom: 8px;      /* home indicator, ref-03 tasdiqladi */
+
+  /* ---------- Tipografiya ---------- */
+  --f-display: 'Anton', 'Impact', sans-serif;               /* ref-01 MARTY SUPREME → Anton (IoU) */
+  --f-serif: 'Gelasio', 'Georgia', serif;                   /* ref-01 sarah.lg → Gelasio (IoU 0.626) */
+  --f-ui: 'Inter', -apple-system, 'SF Pro Text', sans-serif; /* ref-01/04 SF → Inter */
+  --f-edit: 'Inter Tight', 'Inter', sans-serif;             /* ref-03 */
+  --f-mono: 'IBM Plex Mono', ui-monospace, monospace;       /* ref-03 caption */
+
+  --t-num: 72px;        /* display-num */
+  --t-serif-xl: 40px;   /* ref-01 sarah.lg */
+  --t-serif-lg: 32px;
+  --t-edit-xl: 53px;    /* ref-03 events upcoming */
+  --t-edit: 44px;       /* ref-03 ro'yxat */
+  --t-title-1: 36px;    /* ref-06 Relief Meditation */
+  --t-greet: 30px;      /* ref-06 Hi, Amelia! */
+  --t-title-2: 28px;    /* ref-04 Results */
+  --t-title-3: 26px;    /* ref-01 Beating Hearts 28 / John Wick 24 */
+  --t-title-4: 24px;    /* ref-07 Take a deep breath */
+  --t-subtitle: 20px;   /* PROMPT §11 */
+  --t-status: 17px;     /* ref-01 9:41 */
+  --t-headline: 17px;   /* ref-02 bo'lim sarlavhasi */
+  --t-button: 15px;     /* ref-01 */
+  --t-body: 15px;       /* ref-01 */
+  --t-footnote: 13px;   /* ref-02/04/06 */
+  --t-caption: 12px;    /* ref-02 nav, ref-07 vaqt */
+  --t-micro: 10px;      /* ref-01 nav label */
+  --t-mono: 11px;       /* ref-03 */
+  --t-tag: 11px;        /* ref-02 nav label 11, ref-04 badge raqami */
+  --t-cd: 26px;         /* countdown raqamlari = title-3 o'lchami */
+
+  /* ---------- Grain ---------- */
+  --grain-opacity: .10;  /* kalibrlangan: 11-ekran ref-07 masshtabida std ≈ ref-07 (0.8–1.9) */
+}

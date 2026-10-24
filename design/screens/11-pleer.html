@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>11 · Pleer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* to'liq ekranli kadr (ref-07 pleer) + grain + yuqori/past qora gradient */
+  .frame { position: absolute; inset: 0; }
+  .shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, .62) 78%, rgba(0, 0, 0, .86) 100%); }
+  .topbar { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; }
+  .topbar__title { text-align: center; }
+  .topbar__title b { display: block; font: 600 14px/1.25 var(--f-ui); letter-spacing: -.01em; color: var(--text-1); }
+  .rail { position: absolute; z-index: 5; right: 14px; top: 300px; display: flex; flex-direction: column; gap: 30px; }
+  .rail .gbtn { --d-side: 48px; }
+  .subtitle { position: absolute; z-index: 5; left: var(--page-x); right: 84px; top: 548px; color: var(--text-1); text-shadow: var(--text-shadow); }
+  .timerow { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 616px; display: flex; align-items: center; justify-content: space-between; }
+  .scrub { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 664px; height: 18px; }
+  .scrub .progress { position: absolute; left: 0; right: 0; top: 7px; height: 4px; }
+  .scrub__knob { position: absolute; top: 0; left: calc(36% - 9px); width: 18px; height: 18px; border-radius: 50%; background: var(--glossy-fill); box-shadow: var(--glossy-hi), var(--shadow-pill); }
+  .controls { position: absolute; z-index: 5; left: 0; right: 0; top: 694px; display: flex; justify-content: center; align-items: center; gap: var(--s-12); }
+  .controls .gbtn { position: relative; }
+  .controls .sec-num { position: absolute; font: 600 9px/1 var(--f-ui); top: 50%; left: 50%; transform: translate(-50%, -38%); }
+  .play { width: var(--d-play); height: var(--d-play); }
+  .pills { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 770px; display: flex; gap: var(--s-8); }
+  .pills .chip { height: var(--h-chip-glass); padding: 0 var(--s-12); font: 500 var(--t-footnote)/1 var(--f-ui); color: var(--text-1); background: var(--glass-bg-strong); }
+  .pills .chip--selected { background: var(--text-1); color: var(--cocoa); }
+  .pills .chip--selected .ic { color: var(--cocoa); }
+</style>
+</head>
+<body>
+<div class="screen grain" id="screen">
+  <!-- Kadr: drama rasmi (D01), iliq grading + nur halqasi -->
+  <div class="frame art art--couple art--soft" style="--amb: var(--amb-01)"></div>
+  <div class="ring" style="opacity: .55"></div>
+  <div class="shade"></div>
+
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="topbar">
+    <button class="gbtn gbtn--lg" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button>
+    <div class="topbar__title"><b>Milliarderning yashirin kelini</b><span class="t-caption c-2">10-qism / 80</span></div>
+    <button class="gbtn gbtn--lg" aria-label="Yana"><i class="ic ic-more"></i></button>
+  </div>
+
+  <!-- O'ng ustun (05-ekrandagi glass doiralar) -->
+  <div class="rail">
+    <span class="gbtn gbtn--side"><i class="ic ic-heart-fill c-rose"></i><span class="gbtn__label">48K</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-bookmark-fill c-flame"></i><span class="gbtn__label">534K</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-comment"></i><span class="gbtn__label">326</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-share"></i><span class="gbtn__label">Ulashish</span></span>
+  </div>
+
+  <p class="subtitle t-subtitle">— Sen kim ekanimni hali bilmaysan.</p>
+
+  <!-- ref-07 boshqaruvi -->
+  <div class="timerow">
+    <span class="t-caption" style="color: var(--text-2)">0:42 <span class="c-3">/ 1:58</span></span>
+    <span class="chip chip--glass" style="color: var(--text-1); background: var(--glass-bg-strong)">Keyingi: 11-qism<i class="ic ic-chev-right"></i></span>
+  </div>
+  <div class="scrub"><div class="progress" style="--p: 36%"><i></i></div><span class="scrub__knob"></span></div>
+  <div class="controls">
+    <button class="gbtn" aria-label="5 soniya orqaga"><i class="ic ic-rewind ic--28"></i><span class="sec-num">5</span></button>
+    <button class="gbtn gbtn--white play" aria-label="Pauza"><i class="ic ic-pause-fill ic--26"></i></button>
+    <button class="gbtn" aria-label="5 soniya oldinga"><i class="ic ic-forward ic--28"></i><span class="sec-num">5</span></button>
+  </div>
+  <div class="pills">
+    <span class="chip chip--selected"><i class="ic ic-list"></i>Qismlar 10/80</span>
+    <span class="chip">1.0x</span>
+    <span class="chip"><i class="ic ic-cc"></i>CC uz</span>
+    <span class="chip">720p</span>
+  </div>
+
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

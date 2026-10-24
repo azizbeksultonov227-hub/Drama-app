@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Komponentlar galereyasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  body { padding: 40px var(--s-40) 80px; min-width: 980px; }
+  .g-title { font: 400 var(--t-serif-xl)/1 var(--f-serif); letter-spacing: .02em; }
+  .g-sub { margin-top: var(--s-8); }
+  .g-sec { margin-top: var(--s-40); padding-top: var(--s-24); box-shadow: inset 0 1px 0 var(--line-1); }
+  .g-sec > h2 { font: 600 var(--t-headline)/1.2 var(--f-ui); display: flex; align-items: baseline; gap: var(--s-12); }
+  .g-sec > h2 small { font: 400 var(--t-mono)/1 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); }
+  .g-row { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-20) var(--s-24); margin-top: var(--s-16); }
+  .g-cell { display: flex; flex-direction: column; align-items: flex-start; gap: var(--s-8); }
+  .g-cell > .lab { font: 400 var(--t-mono)/1 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); }
+  .g-stage { position: relative; width: 393px; border-radius: var(--r-card); overflow: hidden; }
+  .g-media { position: relative; isolation: isolate; padding: var(--s-24); border-radius: var(--r-card); overflow: hidden; display: flex; flex-wrap: wrap; gap: var(--s-16); align-items: center; }
+  .g-media > .art { position: absolute; inset: 0; z-index: -1; }
+  .g-warm { position: relative; padding: var(--s-24); border-radius: var(--r-card); display: flex; flex-wrap: wrap; gap: var(--s-16); align-items: center; }
+  .g-warm > *:not(.ring) { position: relative; z-index: 1; }
+  .sw { width: 64px; height: 64px; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line-1); }
+</style>
+</head>
+<body>
+  <h1 class="g-title">Komponentlar</h1>
+  <p class="g-sub t-body c-2">Barcha qiymatlar <span class="t-mono">tokens.css</span> dan · manbalar <span class="t-mono">analysis/SUMMARY.md</span> da</p>
+
+  <!-- Tugmalar -->
+  <section class="g-sec"><h2>Tugmalar <small>ref-01 glossy · ref-05 glass · ref-01 "Reviews"</small></h2>
+    <div class="g-row">
+      <div class="g-cell"><span class="lab">primary · default</span><button class="btn btn--primary"><i class="ic ic-play-fill"></i>Tomosha qilish</button></div>
+      <div class="g-cell"><span class="lab">primary · pressed</span><button class="btn btn--primary is-pressed"><i class="ic ic-play-fill"></i>Tomosha qilish</button></div>
+      <div class="g-cell"><span class="lab">primary · disabled</span><button class="btn btn--primary is-disabled"><i class="ic ic-play-fill"></i>Tomosha qilish</button></div>
+      <div class="g-cell"><span class="lab">primary · sm</span><button class="btn btn--primary btn--sm"><i class="ic ic-check"></i>Obunadasiz</button></div>
+    </div>
+    <div class="g-row">
+      <div class="g-cell"><span class="lab">glass · default</span><button class="btn btn--glass"><i class="ic ic-plus"></i>Roʻyxatga</button></div>
+      <div class="g-cell"><span class="lab">glass · pressed</span><button class="btn btn--glass is-pressed"><i class="ic ic-plus"></i>Roʻyxatga</button></div>
+      <div class="g-cell"><span class="lab">glass · disabled</span><button class="btn btn--glass is-disabled"><i class="ic ic-plus"></i>Roʻyxatga</button></div>
+      <div class="g-cell"><span class="lab">text · default / pressed / disabled</span><div class="row-flex gap-8"><button class="btn btn--text"><i class="ic ic-plus"></i>Roʻyxatga</button><button class="btn btn--text is-pressed"><i class="ic ic-plus"></i>Roʻyxatga</button><button class="btn btn--text is-disabled"><i class="ic ic-plus"></i>Roʻyxatga</button></div></div>
+    </div>
+    <div class="g-row">
+      <div class="g-media" style="width: 520px"><div class="art art--couple art--soft" style="--amb: var(--amb-02)"></div>
+        <button class="btn btn--glass on-media"><i class="ic ic-bell"></i>Eslat</button>
+        <button class="btn btn--primary"><i class="ic ic-play-fill"></i>Davom ettirish</button>
+        <span class="pill-more">Hammasi<i class="ic ic-chev-right ic--16"></i></span>
+        <span class="dot-btn"><i class="ic ic-more"></i></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glass doiralar -->
+  <section class="g-sec"><h2>Glass doira tugmalar <small>ref-06/07 · 44 / 52 / 58</small></h2>
+    <div class="g-row"><div class="g-warm warm grain" style="width: 640px"><div class="ring ring--card"></div>
+      <span class="gbtn gbtn--sm"><i class="ic ic-chev-left"></i></span>
+      <span class="gbtn"><i class="ic ic-rewind"></i></span>
+      <span class="gbtn gbtn--lg"><i class="ic ic-more"></i></span>
+      <span class="gbtn gbtn--white" style="width: var(--d-play); height: var(--d-play)"><i class="ic ic-play-fill"></i></span>
+      <span class="gbtn gbtn--frost"><i class="ic ic-moon"></i></span>
+      <span class="gbtn gbtn--flame"><i class="ic ic-bookmark-fill"></i></span>
+      <span class="gbtn gbtn--side"><i class="ic ic-heart-fill c-rose"></i><span class="gbtn__label">48K</span></span>
+    </div></div>
+  </section>
+
+  <!-- Chip'lar -->
+  <section class="g-sec"><h2>Chip'lar <small>ref-01 translucent · ref-06 glass · selected · outline · avatar-stack</small></h2>
+    <div class="g-row">
+      <div class="g-media" style="width: 640px"><div class="art art--portrait art--soft" style="--amb: var(--amb-01)"></div>
+        <span class="chip"><i class="ic ic-flame c-flame"></i>Haftaning hiti</span>
+        <span class="chip">Koʻrmoqda<span class="avatars"><span class="art art--portrait" style="--amb: var(--amb-11)"></span><span class="art art--portrait" style="--amb: var(--amb-02)"></span><span class="art art--portrait" style="--amb: var(--amb-04)"></span></span></span>
+        <span class="chip chip--glass">Tavsiya etiladi</span>
+        <span class="chip chip--selected">Romantika</span>
+        <span class="chip chip--outline">Qasos</span>
+        <span class="chip chip--flame">Bepul 1–10</span>
+        <span class="chip chip--sand"><i class="ic ic-crown"></i>VIP emas</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tablar -->
+  <section class="g-sec"><h2>Tablar <small>segmented ref-01 · underline ref-02 (flame 2pt) · glass segmented ref-05</small></h2>
+    <div class="g-row"><div class="seg"><span class="seg__item is-active">Tavsiya</span><span class="seg__item">Ommabop</span><span class="seg__item">Yangi</span><span class="seg__item">Reyting</span></div></div>
+    <div class="g-row"><div class="utabs" style="padding: 0; width: 393px"><span class="utabs__item is-active">Qismlar (80)</span><span class="utabs__item">Oʻxshash</span><span class="utabs__item">Tafsilotlar</span></div></div>
+    <div class="g-row"><div class="g-media" style="width: 393px"><div class="art art--walk art--soft" style="--amb: var(--amb-12)"></div><div class="seg seg--glass"><span class="seg__item">Kuzatuvdagilar</span><span class="seg__item is-active">Siz uchun</span></div></div></div>
+  </section>
+
+  <!-- Nav -->
+  <section class="g-sec"><h2>Floating bottom nav <small>ref-01 · 55 pt · chetdan 18</small></h2>
+    <div class="g-row">
+      <div class="g-stage" style="height: 120px; background: var(--card-fill)">
+        <nav class="nav" style="bottom: 32px"><a class="nav__item is-active"><i class="ic ic-home-fill"></i><span>Bosh sahifa</span></a><a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a><a class="nav__item"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a><a class="nav__item"><i class="ic ic-bookmark"></i><span>Roʻyxatim</span></a><a class="nav__item"><i class="ic ic-user"></i><span>Profil</span></a></nav>
+      </div>
+      <div class="g-stage" style="height: 120px; background: var(--card-fill)">
+        <nav class="nav" style="bottom: 32px"><a class="nav__item"><i class="ic ic-home"></i><span>Bosh sahifa</span></a><a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a><a class="nav__item is-active"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a><a class="nav__item"><i class="ic ic-bookmark"></i><span>Roʻyxatim</span></a><a class="nav__item"><i class="ic ic-user"></i><span>Profil</span></a></nav>
+      </div>
+    </div>
+  </section>
+
+  <!-- Poster va landscape -->
+  <section class="g-sec"><h2>Poster (2:3) va "davom ettirish" kartasi <small>ref-02 · radius 11 / 6</small></h2>
+    <div class="g-row" style="align-items: flex-start">
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="tag tag--free">Bepul 1–10</span><span class="poster__name" style="bottom: 32px">Milliarderning yashirin kelini</span><span class="poster__eps"><span class="tag tag--eps">80 qism</span></span></div><h3 class="poster__title">Milliarderning yashirin kelini</h3><p class="poster__meta"><i class="ic ic-eye"></i>2.4M</p></article>
+      <article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-05)"><span class="tag tag--new">YANGI</span><span class="poster__name">Direktorning sirli egizagi</span></div><h3 class="poster__title">Direktorning sirli egizagi</h3><p class="poster__meta"><i class="ic ic-eye"></i>980K</p></article>
+      <article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-08)"><span class="tag tag--vip"><i class="ic ic-crown"></i>VIP</span><span class="poster__name">Malika libosidagi xizmatkor</span></div><h3 class="poster__title">Malika libosidagi xizmatkor</h3><p class="poster__meta"><i class="ic ic-eye"></i>640K</p></article>
+      <article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-09)"><span class="tag tag--uz">Oʻzbekcha</span><span class="poster__name">Qishloqdan kelgan merosxoʻr</span></div><h3 class="poster__title">Qishloqdan kelgan merosxoʻr</h3><p class="poster__meta"><i class="ic ic-eye"></i>3.2M</p></article>
+      <article class="lcard"><div class="lcard__media art art--profile" style="--amb: var(--amb-02)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><div class="progress" style="--p: 17%"><i></i></div></div><h3 class="lcard__title">Boʻri qirolining qasosi</h3><p class="lcard__meta">12 / 72-qism</p></article>
+    </div>
+  </section>
+
+  <!-- Kartalar -->
+  <section class="g-sec"><h2>Karta turlari <small>default ref-01 · ambient ref-01 · warm-glow ref-05 · glass ref-04</small></h2>
+    <div class="g-row" style="align-items: stretch">
+      <div class="card" style="width: 240px; height: 150px"><p class="t-footnote c-2">Default</p><p class="t-title-3" style="margin-top: 8px">Friend's box</p></div>
+      <div class="card card--ambient" style="--amb: var(--amb-01); width: 240px; height: 150px"><p class="t-footnote" style="color: var(--peach)">Haftaning hiti</p><p class="t-title-3" style="margin-top: 8px">Ambient</p></div>
+      <div class="card card--warm grain" style="width: 240px; height: 150px"><div class="ring ring--card"></div><p class="t-footnote" style="position: relative; color: var(--warm-text-2)">Sovgʻa</p><p class="t-title-3" style="position: relative; margin-top: 8px; color: var(--warm-text-1)">Warm-glow</p></div>
+      <div class="g-media" style="width: 240px; height: 150px; padding: 0"><div class="art art--couple art--soft" style="--amb: var(--amb-12)"></div><div class="card card--glass" style="margin: 16px; width: 208px; height: 118px"><p class="t-footnote c-2">5 qism</p><p class="t-title-3" style="margin-top: 8px">Glass</p></div></div>
+    </div>
+  </section>
+
+  <!-- 3D quti -->
+  <section class="g-sec"><h2>3D squircle "quti" tile <small>ref-01 Friend's box · 72 pt · R 17 · old panel 63%</small></h2>
+    <div class="g-row">
+      <div class="box"><div class="box__well art art--portrait" style="--amb: var(--amb-11)"></div><div class="box__front"></div><span class="box__badge"><i class="ic ic-gift ic--16"></i></span></div>
+      <div class="box" style="--box: var(--sand)"><div class="box__well"><i class="ic ic-gift ic--28 c-cocoa"></i></div><div class="box__front"></div></div>
+      <div class="box" style="--box: var(--rose)"><div class="box__well art art--couple" style="--amb: var(--amb-03)"></div><div class="box__front"></div><span class="box__badge"><i class="ic ic-user ic--16"></i></span></div>
+      <div class="box box--dim"><div class="box__well"><i class="ic ic-check ic--22"></i></div><div class="box__front"></div></div>
+      <div class="box box--lg" style="--box: var(--flame)"><div class="box__well art art--portrait" style="--amb: var(--amb-04)"></div><div class="box__front"></div><span class="box__badge"><i class="ic ic-user ic--22"></i></span></div>
+    </div>
+  </section>
+
+  <!-- Sliderlar -->
+  <section class="g-sec"><h2>Slider'lar <small>reyting ref-01 (trek 18, knob 36) · nuqtali glass ref-07 (55)</small></h2>
+    <div class="g-row"><div style="width: 300px; padding: 20px 0"><div class="rslider" style="--v: 58%"><div class="rslider__dots"><i></i><i></i><i></i><i></i></div><span class="rslider__knob">4</span></div></div></div>
+    <div class="g-row"><div class="g-warm warm grain" style="width: 393px; flex-direction: column; align-items: stretch"><div class="gslider" style="--v: 46%"><div class="gslider__fill"></div><div class="gslider__dots"><i></i><i></i><i></i><i></i><i></i></div><div class="gslider__knob"></div><span>Tezlik</span><span>1.25x</span></div><div class="gslider" style="--v: 30%"><div class="gslider__fill"></div><div class="gslider__dots"><i></i><i></i><i></i><i></i><i></i></div><div class="gslider__knob"></div><span>Ovoz</span><span>Asl</span></div><div class="dashes" style="align-self: center"><i class="is-on"></i><i></i><i></i><i></i></div></div></div>
+  </section>
+
+  <!-- Qism tile -->
+  <section class="g-sec"><h2>Qism tile holatlari</h2>
+    <div class="g-row">
+      <div class="g-cell"><span class="lab">koʻrilgan</span><span class="ep ep--watched" style="width: 52px">1<i class="ic ic-check"></i></span></div>
+      <div class="g-cell"><span class="lab">hozirgi</span><span class="ep ep--current" style="width: 52px">10</span></div>
+      <div class="g-cell"><span class="lab">bepul</span><span class="ep ep--free" style="width: 52px">3</span></div>
+      <div class="g-cell"><span class="lab">ochilgan</span><span class="ep ep--open" style="width: 52px">11</span></div>
+      <div class="g-cell"><span class="lab">qulflangan</span><span class="ep ep--locked" style="width: 52px">13<i class="ic ic-lock"></i></span></div>
+      <div class="g-cell"><span class="lab">VIP</span><span class="ep ep--vip" style="width: 52px">61<i class="ic ic-crown"></i></span></div>
+    </div>
+  </section>
+
+  <!-- Boshqaruv elementlari -->
+  <section class="g-sec"><h2>Toggle · checkbox · radio</h2>
+    <div class="g-row"><span class="toggle"></span><span class="toggle is-on"></span><span class="check"><i class="ic ic-check"></i></span><span class="check is-on"><i class="ic ic-check"></i></span><span class="radio"></span><span class="radio is-on"></span></div>
+  </section>
+
+  <!-- Input -->
+  <section class="g-sec"><h2>Input <small>glass search ref-04 · maydon · promokod</small></h2>
+    <div class="g-row" style="align-items: stretch; flex-direction: column; width: 393px">
+      <div class="g-media" style="padding: 18px"><div class="art art--walk art--soft" style="--amb: var(--amb-02)"></div><div class="search" style="width: 100%"><span class="search__ph">Drama, aktyor, janr</span><i class="ic ic-search"></i></div></div>
+      <div class="field"><i class="ic ic-phone c-3"></i><span>+998</span><span class="field__ph">90 123 45 67</span></div>
+      <div class="field"><i class="ic ic-ticket c-3"></i><span class="field__ph">Promokod</span><span class="t-footnote-m c-flame">Qoʻllash</span></div>
+    </div>
+  </section>
+
+  <!-- Sheet, row -->
+  <section class="g-sec"><h2>Bottom sheet · list row · bo'lim sarlavhasi</h2>
+    <div class="g-row" style="align-items: flex-start">
+      <div class="g-stage" style="height: 330px; background: var(--bg-0)">
+        <div class="sheet" style="padding-bottom: 24px"><div class="sheet__handle"></div><p class="t-serif-lg">11-qism qulflangan</p><p class="t-footnote c-2" style="margin-top: 8px">Davom etish uchun coin yoki VIP kerak</p>
+          <div class="card" style="padding: 0; margin-top: 16px"><div class="row"><i class="ic ic-bell"></i><span class="row__label">Avto-ochish</span><span class="toggle is-on"></span></div><div class="row"><i class="ic ic-wallet"></i><span class="row__label">Balans</span><span class="row__value">20 coin</span><i class="ic ic-chev-right"></i></div></div>
+        </div>
+      </div>
+      <div style="width: 393px"><div class="sec-head" style="padding: 0"><h2>Siz uchun tavsiya</h2><span class="pill-more">Hammasi<i class="ic ic-chev-right ic--16"></i></span></div></div>
+    </div>
+  </section>
+
+  <!-- Badge, countdown, coin, crown -->
+  <section class="g-sec"><h2>Badge · countdown · coin · toj</h2>
+    <div class="g-row">
+      <span class="badge-count">3</span><span class="badge-count">12</span><span class="dot"></span>
+      <div class="g-warm warm grain" style="padding: 16px"><div class="cd"><span class="cd__box">02</span><span class="cd__sep">:</span><span class="cd__box">45</span><span class="cd__sep">:</span><span class="cd__box">09</span></div></div>
+      <i class="coin coin--sm"></i><i class="coin"></i><i class="coin coin--lg"></i><i class="coin coin--xl"></i>
+      <i class="ic ic-crown ic--32 crown"></i>
+    </div>
+  </section>
+
+  <!-- Avatar pufakchalari -->
+  <section class="g-sec"><h2>Avatar pufakchalari <small>ref-04 aurora · 56 / 43 / 27 / 19.5 · pastdagilar 50%</small></h2>
+    <div class="g-row"><div class="bubbles" style="width: 393px; height: 150px">
+      <span class="bubble art art--portrait" style="--amb: var(--amb-11); width: 56px; height: 56px; left: 168px; top: 4px"></span>
+      <span class="bubble art art--portrait" style="--amb: var(--amb-02); width: 43px; height: 43px; left: 60px; top: 40px"></span>
+      <span class="bubble art art--portrait" style="--amb: var(--amb-04); width: 27px; height: 27px; left: 120px; top: 22px"></span>
+      <span class="bubble art art--portrait" style="--amb: var(--amb-08); width: 43px; height: 43px; left: 262px; top: 30px"></span>
+      <span class="bubble art art--portrait" style="--amb: var(--amb-13); width: 19.5px; height: 19.5px; left: 236px; top: 6px"></span>
+      <span class="bubble bubble--far art art--portrait" style="--amb: var(--amb-05); width: 27px; height: 27px; left: 30px; top: 104px"></span>
+      <span class="bubble bubble--far art art--portrait" style="--amb: var(--amb-10); width: 43px; height: 43px; left: 140px; top: 96px"></span>
+      <span class="bubble bubble--far art art--portrait" style="--amb: var(--amb-07); width: 27px; height: 27px; left: 320px; top: 100px"></span>
+    </div></div>
+  </section>
+
+  <!-- Tizim elementlari -->
+  <section class="g-sec"><h2>Status bar · Dynamic Island · home indicator</h2>
+    <div class="g-row"><div class="g-stage" style="height: 90px; background: var(--bg-1)"><div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div><div class="island"></div><div class="home-ind"></div></div></div>
+  </section>
+</body>
+</html>

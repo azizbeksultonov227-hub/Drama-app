@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>04 · Bosh sahifa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* ekranga xos joylashuv (qiymatlar tokenlardan) */
+  .hero { position: relative; height: 498px; }
+  .hero__media { position: absolute; left: 0; right: 0; top: 0; height: 452px; }
+  .hero__fade { position: absolute; left: 0; right: 0; top: 0; height: 452px; background: var(--hero-fade); }
+  .topbar { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 44px; display: flex; align-items: center; justify-content: space-between; }
+  .logo { position: absolute; left: 50%; transform: translateX(-50%); font: 700 22px/1 var(--f-ui); letter-spacing: -.02em; color: var(--text-2); }
+  .coin-chip { height: var(--d-glass-sm); padding: 0 var(--s-12) 0 var(--s-8); gap: var(--s-6); font: 600 var(--t-body)/1 var(--f-ui); color: var(--text-1); background: var(--glass-bg-strong); }
+  .coin-chip .ic { width: 16px; height: 16px; color: var(--text-2); }
+  .trailer { position: absolute; z-index: 5; top: 116px; right: var(--page-x); }
+  .hero__title { position: absolute; z-index: 4; top: 150px; left: 50%; transform: translateX(-50%); width: 220px; text-align: center; color: var(--text-1); text-shadow: var(--text-shadow); }
+  .hero__title span { display: block; white-space: nowrap; }
+  .hero__meta { position: absolute; z-index: 4; top: 338px; left: 0; right: 0; text-align: center; }
+  .hero__chips { position: absolute; z-index: 4; top: 364px; left: 0; right: 0; display: flex; justify-content: center; gap: var(--s-8); }
+  .hero__cta { position: absolute; z-index: 4; top: 402px; left: 0; right: 0; display: flex; justify-content: center; gap: var(--s-8); }
+  .hero__dashes { position: absolute; z-index: 4; top: 472px; left: 0; right: 0; display: flex; justify-content: center; }
+  .tabs { padding: 0 var(--page-x); margin-top: 2px; overflow: hidden; }
+  .top10 { display: flex; gap: 0; padding: 0 var(--page-x); overflow: hidden; }
+  .top10__item { position: relative; flex: none; display: flex; align-items: flex-start; margin-right: var(--s-8); }
+  .top10__num { height: 156px; display: flex; align-items: flex-end; font: 400 128px/.78 var(--f-display); color: transparent; -webkit-text-stroke: 2px var(--text-2); margin-right: -12px; position: relative; z-index: 0; letter-spacing: -.02em; }
+  .top10__item .poster { position: relative; z-index: 1; }
+  .vip { margin: 0 var(--page-x); padding: var(--s-20) var(--s-20) var(--s-16);
+         background: radial-gradient(120% 120% at 88% 0%, var(--sand) 0%, color-mix(in srgb, var(--sand) 35%, var(--ember)) 30%, var(--ember) 52%, var(--amb-dark) 100%); }
+  .vip__crown { width: 30px; height: 30px; color: var(--sand); filter: drop-shadow(var(--glow-sand)); }
+  .vip__head { display: flex; align-items: flex-start; gap: var(--s-12); }
+  .vip__foot { display: flex; align-items: center; justify-content: space-between; gap: var(--s-12); margin-top: var(--s-16); }
+  .soon { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-12); padding: 0 var(--page-x); }
+  .soon .card { display: flex; gap: var(--s-10); padding: var(--s-10); border-radius: var(--r-media); }
+  .soon .art { flex: none; width: 50px; height: 76px; border-radius: var(--r-thumb); }
+  .soon__body { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
+  .soon__body .btn { margin-top: auto; padding: 0 var(--s-10); }
+  .btn--done { background: var(--flame); color: var(--text-1); box-shadow: none; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen" style="height: 2060px">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <!-- HERO (ref-01 bosh sahifa) -->
+  <section class="hero">
+    <div class="hero__media art art--couple art--soft" style="--amb: var(--amb-01)"></div>
+    <div class="hero__fade"></div>
+
+    <header class="topbar">
+      <span class="chip coin-chip"><i class="coin coin--sm"></i>120<i class="ic ic-plus"></i></span>
+      <span class="logo">LOGO</span>
+      <div class="row-flex gap-8">
+        <button class="gbtn gbtn--sm" aria-label="Qidiruv"><i class="ic ic-search ic--22"></i></button>
+        <button class="gbtn gbtn--sm" aria-label="Bildirishnomalar"><i class="ic ic-bell ic--22"></i><span class="badge-count">3</span></button>
+      </div>
+    </header>
+
+    <span class="chip trailer"><i class="ic ic-volume"></i>Treyler ovozli</span>
+
+    <h1 class="hero__title t-display">
+      <span style="font-size: 36.4px; line-height: 38px">Milliarderning</span>
+      <span style="font-size: 66.7px; line-height: 60px">yashirin</span>
+      <span style="font-size: 98.5px; line-height: 86px">kelini</span>
+    </h1>
+    <p class="hero__meta t-footnote c-2">Romantika · Qasos · 80 qism · Oʻzbekcha dublyaj</p>
+
+    <div class="hero__chips">
+      <span class="chip"><i class="ic ic-flame c-flame"></i>Haftaning hiti</span>
+      <span class="chip">Koʻrmoqda
+        <span class="avatars"><span class="art art--portrait" style="--amb: var(--amb-11)"></span><span class="art art--portrait" style="--amb: var(--amb-02)"></span><span class="art art--portrait" style="--amb: var(--amb-04)"></span></span>
+      </span>
+    </div>
+
+    <div class="hero__cta">
+      <button class="btn btn--primary"><i class="ic ic-play-fill"></i>Tomosha qilish</button>
+      <button class="btn btn--text"><i class="ic ic-plus"></i>Roʻyxatga</button>
+    </div>
+    <div class="hero__dashes"><div class="dashes"><i class="is-on"></i><i></i><i></i><i></i><i></i></div></div>
+  </section>
+
+  <!-- Segmented tablar (ref-01) -->
+  <nav class="tabs">
+    <div class="seg">
+      <span class="seg__item is-active">Tavsiya</span><span class="seg__item">Ommabop</span><span class="seg__item">Yangi</span><span class="seg__item">Reyting</span><span class="seg__item">VIP</span><span class="seg__item">Oʻzbekcha</span><span class="seg__item">Tez kunda</span><span class="seg__item">Janrlar</span>
+    </div>
+  </nav>
+
+  <!-- Davom ettirish (ref-02) -->
+  <section class="sec">
+    <div class="sec-head"><h2>Davom ettirish</h2><span class="pill-more">Tarix<i class="ic ic-chev-right ic--16"></i></span></div>
+    <div class="hscroll" style="--lw: 160px">
+      <article class="lcard"><div class="lcard__media art art--profile" style="--amb: var(--amb-02)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><div class="progress" style="--p: 17%"><i></i></div></div><h3 class="lcard__title">Boʻri qirolining qasosi</h3><p class="lcard__meta">12 / 72-qism</p></article>
+      <article class="lcard"><div class="lcard__media art art--couple" style="--amb: var(--amb-01)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><div class="progress" style="--p: 50%"><i></i></div></div><h3 class="lcard__title">Milliarderning yashirin kelini</h3><p class="lcard__meta">40 / 80-qism</p></article>
+      <article class="lcard"><div class="lcard__media art art--couple" style="--amb: var(--amb-03)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><div class="progress" style="--p: 8%"><i></i></div></div><h3 class="lcard__title">Shartnoma boʻyicha xotin</h3><p class="lcard__meta">5 / 60-qism</p></article>
+    </div>
+  </section>
+
+  <!-- Bugun Top 10 -->
+  <section class="sec">
+    <div class="sec-head"><h2><i class="ic ic-flame ic--20 c-flame"></i>Bugun Top 10</h2><span class="pill-more">Reyting<i class="ic ic-chev-right ic--16"></i></span></div>
+    <div class="top10" style="--pw: 104px">
+      <div class="top10__item"><span class="top10__num">1</span><article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-02)"><span class="poster__name">Boʻri qirolining qasosi</span></div><h3 class="poster__title">Boʻri qirolining qasosi</h3></article></div>
+      <div class="top10__item"><span class="top10__num">2</span><article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-04)"><span class="poster__name">Ajrashgandan keyin boylik</span></div><h3 class="poster__title">Ajrashgandan keyin boylik</h3></article></div>
+      <div class="top10__item"><span class="top10__num">3</span><article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-05)"><span class="poster__name">Direktorning sirli egizagi</span></div><h3 class="poster__title">Direktorning sirli egizagi</h3></article></div>
+      <div class="top10__item"><span class="top10__num">4</span><article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-06)"><span class="poster__name">Vampir qoʻriqchisi</span></div><h3 class="poster__title">Vampir qoʻriqchisi</h3></article></div>
+    </div>
+  </section>
+
+  <!-- VIP banner (ambient: sand → ember) -->
+  <section class="sec">
+    <div class="card vip">
+      <div class="vip__head"><i class="ic ic-crown vip__crown"></i><h3 class="t-serif-lg">VIP — hamma qismlar ochiq</h3></div>
+      <div class="vip__foot">
+        <p class="t-footnote c-2">Reklamasiz · 1080p ·<br>oflayn yuklab olish</p>
+        <button class="btn btn--primary btn--sm">1-hafta −40%</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Siz uchun tavsiya (3.5 ta poster) -->
+  <section class="sec">
+    <div class="sec-head"><h2>Siz uchun tavsiya</h2><span class="pill-more">Hammasi<i class="ic ic-chev-right ic--16"></i></span></div>
+    <div class="hscroll" style="--pw: 98px">
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="tag tag--free">Bepul 1–10</span><span class="poster__name" style="bottom: 32px">Milliarderning yashirin kelini</span><span class="poster__eps"><span class="tag tag--eps">80 qism</span></span></div><h3 class="poster__title">Milliarderning yashirin kelini</h3><p class="poster__meta"><i class="ic ic-eye"></i>2.4M</p></article>
+      <article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-05)"><span class="tag tag--new">YANGI</span><span class="poster__name" style="bottom: 32px">Direktorning sirli egizagi</span><span class="poster__eps"><span class="tag tag--eps">64 qism</span></span></div><h3 class="poster__title">Direktorning sirli egizagi</h3><p class="poster__meta"><i class="ic ic-eye"></i>980K</p></article>
+      <article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-07)"><span class="poster__name" style="bottom: 32px">Uch yildan keyin qaytdim</span><span class="poster__eps"><span class="tag tag--eps">72 qism</span></span></div><h3 class="poster__title">Uch yildan keyin qaytdim</h3><p class="poster__meta"><i class="ic ic-eye"></i>1.1M</p></article>
+      <article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-08)"><span class="tag tag--vip"><i class="ic ic-crown"></i>VIP</span><span class="poster__name" style="bottom: 32px">Malika libosidagi xizmatkor</span><span class="poster__eps"><span class="tag tag--eps">58 qism</span></span></div><h3 class="poster__title">Malika libosidagi xizmatkor</h3><p class="poster__meta"><i class="ic ic-eye"></i>640K</p></article>
+      <article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-09)"><span class="tag tag--uz">Oʻzbekcha</span><span class="poster__name" style="bottom: 32px">Qishloqdan kelgan merosxoʻr</span><span class="poster__eps"><span class="tag tag--eps">90 qism</span></span></div><h3 class="poster__title">Qishloqdan kelgan merosxoʻr</h3><p class="poster__meta"><i class="ic ic-eye"></i>3.2M</p></article>
+      <article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-10)"><span class="poster__name" style="bottom: 32px">Sevgi va qasos oʻrtasida</span><span class="poster__eps"><span class="tag tag--eps">60 qism</span></span></div><h3 class="poster__title">Sevgi va qasos oʻrtasida</h3><p class="poster__meta"><i class="ic ic-eye"></i>512K</p></article>
+    </div>
+  </section>
+
+  <!-- Yangi chiqqanlar -->
+  <section class="sec">
+    <div class="sec-head"><h2>Yangi chiqqanlar</h2><span class="pill-more">Hammasi<i class="ic ic-chev-right ic--16"></i></span></div>
+    <div class="hscroll" style="--pw: 98px">
+      <article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-11)"><span class="tag tag--new">YANGI</span><span class="poster__name">Kelinning ikkinchi hayoti</span></div><h3 class="poster__title">Kelinning ikkinchi hayoti</h3><p class="poster__meta">Bugun · 40 qism</p></article>
+      <article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-12)"><span class="tag tag--new">YANGI</span><span class="poster__name">Imperatorning soʻnggi farmoni</span></div><h3 class="poster__title">Imperatorning soʻnggi farmoni</h3><p class="poster__meta">Kecha · 66 qism</p></article>
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-13)"><span class="tag tag--new">YANGI</span><span class="poster__name">Ofisdagi yolgʻon nikoh</span></div><h3 class="poster__title">Ofisdagi yolgʻon nikoh</h3><p class="poster__meta">2 kun oldin</p></article>
+    </div>
+  </section>
+
+  <!-- Tez kunda -->
+  <section class="sec">
+    <div class="sec-head"><h2>Tez kunda</h2><span class="pill-more">Jadval<i class="ic ic-chev-right ic--16"></i></span></div>
+    <div class="soon">
+      <article class="card"><div class="art art--couple" style="--amb: var(--amb-14)"></div><div class="soon__body"><h3 class="t-footnote-m">Taqdir toʻyi</h3><p class="t-caption c-3" style="margin-top: 3px">Ertaga · 20:00</p><button class="btn btn--glass btn--xs"><i class="ic ic-bell ic--16"></i>Eslat</button></div></article>
+      <article class="card"><div class="art art--walk" style="--amb: var(--amb-15)"></div><div class="soon__body"><h3 class="t-footnote-m">Yashirin chempion</h3><p class="t-caption c-3" style="margin-top: 3px">28-okt</p><button class="btn btn--xs btn--done"><i class="ic ic-check ic--16"></i>Eslatiladi</button></div></article>
+    </div>
+  </section>
+
+  <div class="scroll-pad"></div>
+
+  <!-- Floating nav (ref-01) -->
+  <nav class="nav">
+    <a class="nav__item is-active"><i class="ic ic-home-fill"></i><span>Bosh sahifa</span></a>
+    <a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a>
+    <a class="nav__item"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a>
+    <a class="nav__item"><i class="ic ic-bookmark"></i><span>Roʻyxatim</span></a>
+    <a class="nav__item"><i class="ic ic-user"></i><span>Profil</span></a>
+  </nav>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

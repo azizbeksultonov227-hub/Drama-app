@@ -1,0 +1,293 @@
+/* =====================================================================
+   components.css — komponentlar. Barcha qiymatlar tokens.css'dan.
+   ===================================================================== */
+@import url('icons.css');
+@import url('art.css');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: var(--bg-0); }
+body { font-family: var(--f-ui); color: var(--text-1); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+img { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+/* ---------- Ekran ramkasi ---------- */
+.screen { position: relative; width: 393px; height: 852px; overflow: hidden; background: var(--bg-0); isolation: isolate; }
+.scroll-pad { height: 130px; } /* floating nav ostidagi bo'sh joy */
+
+/* ---------- Status bar · Dynamic Island · Home indicator (hamma ekranda bir xil) ---------- */
+.status { position: absolute; z-index: 90; top: 0; left: 0; right: 0; height: var(--status-h); pointer-events: none; color: var(--text-1); }
+.status__time { position: absolute; left: 0; width: 140px; top: 18px; text-align: center; font: 600 var(--t-status)/22px var(--f-ui); letter-spacing: -.02em; }
+.status__icons { position: absolute; right: 26px; top: 23px; display: flex; gap: 6px; align-items: center; }
+.status__icons i { display: block; background: currentColor; -webkit-mask: var(--m) center/contain no-repeat; mask: var(--m) center/contain no-repeat; }
+.status__sig { width: 18px; height: 12px; --m: var(--sb-signal); }
+.status__wifi { width: 17px; height: 12px; --m: var(--sb-wifi); }
+.status__bat { width: 27px; height: 13px; --m: var(--sb-battery); }
+.status--dark { color: var(--cocoa); }
+.island { position: absolute; z-index: 95; top: var(--di-top); left: calc(50% - var(--di-w) / 2); width: var(--di-w); height: var(--di-h); border-radius: var(--r-pill); background: #000000; }
+.home-ind { position: absolute; z-index: 95; bottom: var(--hi-bottom); left: calc(50% - var(--hi-w) / 2); width: var(--hi-w); height: var(--hi-h); border-radius: var(--r-pill); background: var(--text-1); }
+.home-ind--dark { background: var(--cocoa); }
+
+/* ---------- Tipografiya (shkala) ---------- */
+.t-display { font-family: var(--f-display); font-weight: 400; line-height: .86; text-transform: uppercase; letter-spacing: 0; }
+.t-num { font: 400 var(--t-num)/.9 var(--f-display); }
+.t-serif-xl { font: 400 var(--t-serif-xl)/1 var(--f-serif); letter-spacing: .02em; }
+.t-serif-lg { font: 400 var(--t-serif-lg)/1.05 var(--f-serif); letter-spacing: .02em; }
+.t-edit-xl { font: 400 var(--t-edit-xl)/.98 var(--f-edit); letter-spacing: -.04em; }
+.t-edit { font: 400 var(--t-edit)/1.41 var(--f-edit); letter-spacing: -.04em; }
+.t-title-1 { font: 400 var(--t-title-1)/.97 var(--f-ui); letter-spacing: -.015em; }
+.t-greet { font: 400 var(--t-greet)/1.1 var(--f-ui); letter-spacing: -.01em; }
+.t-title-2 { font: 600 var(--t-title-2)/1.1 var(--f-ui); letter-spacing: -.03em; }
+.t-title-3 { font: 700 var(--t-title-3)/1.15 var(--f-ui); letter-spacing: -.03em; }
+.t-title-4 { font: 400 var(--t-title-4)/1.2 var(--f-ui); letter-spacing: -.01em; }
+.t-subtitle { font: 500 var(--t-subtitle)/1.3 var(--f-ui); letter-spacing: -.01em; }
+.t-headline { font: 600 var(--t-headline)/1.25 var(--f-ui); letter-spacing: -.02em; }
+.t-body { font: 400 var(--t-body)/1.4 var(--f-ui); letter-spacing: -.01em; }
+.t-body-m { font: 500 var(--t-body)/1.4 var(--f-ui); letter-spacing: -.01em; }
+.t-footnote { font: 400 var(--t-footnote)/1.3 var(--f-ui); }
+.t-footnote-m { font: 500 var(--t-footnote)/1.3 var(--f-ui); }
+.t-caption { font: 500 var(--t-caption)/1.25 var(--f-ui); }
+.t-micro { font: 500 var(--t-micro)/1.2 var(--f-ui); }
+.t-mono { font: 400 var(--t-mono)/1.6 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; }
+.c-2 { color: var(--text-2); } .c-3 { color: var(--text-3); } .c-flame { color: var(--flame); } .c-sand { color: var(--sand); }
+.c-peach { color: var(--peach); } .c-rose { color: var(--rose); } .c-cocoa { color: var(--cocoa); }
+.strike { text-decoration: line-through; text-decoration-thickness: 1.5px; }
+
+/* ---------- Tugmalar ---------- */
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--s-8); height: var(--h-pill); padding: 0 var(--s-24); border-radius: var(--r-pill); font: 600 var(--t-button)/1 var(--f-ui); letter-spacing: -.01em; white-space: nowrap; }
+.btn .ic { width: 20px; height: 20px; }
+/* 1-daraja: oq glossy pill (ref-01) */
+.btn--primary { background: var(--glossy-fill); color: var(--cocoa); box-shadow: var(--glossy-hi), var(--shadow-pill); }
+.btn--primary.is-pressed, .btn--primary:active { background: var(--glossy-pressed); transform: scale(.98); }
+.btn--primary.is-disabled { background: var(--glossy-fill); opacity: .38; box-shadow: none; }
+/* 2-daraja: glass pill (ref-05/06/07) */
+.btn--glass { background: var(--glass-bg); color: var(--text-1); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.btn--glass.on-media { background: var(--glass-bg-strong); }
+.btn--glass.is-pressed, .btn--glass:active { background: var(--glass-bg-strong); transform: scale(.98); }
+.btn--glass.is-disabled { opacity: .38; }
+/* 3-daraja: fonsiz matn + ikonka (ref-01 "Reviews") */
+.btn--text { height: var(--h-pill-sm); padding: 0 var(--s-8); background: none; color: var(--text-1); font-weight: 500; }
+.btn--text.is-pressed { opacity: .6; }
+.btn--text.is-disabled { opacity: .38; }
+.btn--sm { height: var(--h-pill-sm); padding: 0 var(--s-20); }
+.btn--xs { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-footnote); }
+.btn--block { display: flex; width: 100%; }
+.btn--flame { background: var(--flame); color: var(--text-1); box-shadow: var(--glow-flame); }
+.pill-more { display: inline-flex; align-items: center; gap: 4px; height: var(--h-pill-xs); padding: 0 var(--s-12); border-radius: var(--r-pill); background: var(--bg-3); font: 400 var(--t-body)/1 var(--f-ui); color: var(--text-1); letter-spacing: -.01em; }
+.dot-btn { display: inline-grid; place-items: center; width: var(--h-pill-xs); height: var(--h-pill-xs); border-radius: 50%; background: var(--bg-3); color: var(--text-2); }
+.dot-btn .ic { width: 16px; height: 16px; }
+
+/* ---------- Glass doira tugma (ref-05/06/07) ---------- */
+.gbtn { position: relative; display: inline-grid; place-items: center; flex: none; width: var(--d-glass); height: var(--d-glass); border-radius: 50%; color: var(--text-1); background: var(--glass-bg-strong); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.gbtn--sm { width: var(--d-glass-sm); height: var(--d-glass-sm); }
+.gbtn--lg { width: var(--d-glass-lg); height: var(--d-glass-lg); }
+.gbtn--side { width: var(--d-side); height: var(--d-side); }
+.gbtn--dark { background: var(--glass-bg); }
+.gbtn--frost { background: var(--glass-bg-frost); }
+.gbtn--white { background: var(--white-pill); color: var(--cocoa); box-shadow: var(--shadow-pill); }
+.gbtn--flame { background: var(--flame); box-shadow: var(--glow-flame); }
+.gbtn .badge-count { position: absolute; top: -2px; right: -2px; }
+.gbtn__label { position: absolute; top: calc(100% + 4px); left: 50%; transform: translateX(-50%); white-space: nowrap; font: 600 var(--t-caption)/1 var(--f-ui); color: var(--text-1); text-shadow: var(--text-shadow); }
+
+/* ---------- Chip'lar ---------- */
+.chip { display: inline-flex; align-items: center; gap: var(--s-6); height: var(--h-chip); padding: 0 var(--s-10); border-radius: var(--r-pill); font: 400 var(--t-footnote)/1 var(--f-ui); color: var(--text-2); white-space: nowrap; background: var(--glass-bg); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.chip .ic { width: 14px; height: 14px; }
+.chip--glass { height: var(--h-chip-glass); padding: 0 var(--s-12); background: var(--glass-chip); color: var(--peach); }
+.chip--selected { background: var(--text-1); color: var(--cocoa); box-shadow: none; font-weight: 500; }
+.chip--outline { background: transparent; box-shadow: inset 0 0 0 1px var(--line-outline); -webkit-backdrop-filter: none; backdrop-filter: none; }
+.chip--flame { background: var(--flame); color: var(--text-1); box-shadow: none; font-weight: 600; }
+.chip--sand { background: transparent; color: var(--sand); box-shadow: inset 0 0 0 1px var(--sand); }
+.chip--lg { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-body); }
+.avatars { display: inline-flex; }
+.avatars > span { width: 20px; height: 20px; border-radius: 50%; margin-left: -7px; box-shadow: 0 0 0 1.5px var(--bg-0); background: var(--amb, var(--bg-3)); overflow: hidden; position: relative; }
+.avatars > span:first-child { margin-left: 0; }
+
+/* ---------- Tablar ---------- */
+.seg { display: flex; align-items: center; gap: var(--s-2); white-space: nowrap; }
+.seg__item { display: inline-flex; align-items: center; height: var(--h-tab); padding: 0 var(--s-12); border-radius: var(--r-pill); font: 400 var(--t-body)/1 var(--f-ui); letter-spacing: -.01em; color: var(--text-tab); }
+.seg__item.is-active { background: var(--surface-tab); color: var(--text-1); font-weight: 500; box-shadow: inset 0 0 0 1px var(--line-1), inset 0 1px 0 var(--line-2); }
+.seg--glass { padding: 3px; border-radius: var(--r-pill); background: var(--glass-bg-strong); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.seg--glass .seg__item { color: var(--text-2); }
+.seg--glass .seg__item.is-active { background: var(--text-1); color: var(--cocoa); box-shadow: none; }
+.utabs { display: flex; gap: var(--s-24); padding: 0 var(--page-x); box-shadow: inset 0 -1px 0 var(--line-1); white-space: nowrap; }
+.utabs__item { position: relative; padding: var(--s-10) 0 var(--s-12); font: 600 var(--t-body)/1.2 var(--f-ui); letter-spacing: -.01em; color: var(--text-tab); }
+.utabs__item.is-active { color: var(--text-1); }
+.utabs__item.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: var(--r-pill); background: var(--flame); }
+
+/* ---------- Floating bottom nav (ref-01) ---------- */
+.nav { position: absolute; z-index: 80; left: var(--nav-x); right: var(--nav-x); bottom: var(--nav-bottom); height: var(--nav-h); border-radius: var(--r-pill); background: var(--nav-fill); display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 0 3px; }
+.nav__item { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; height: var(--nav-active-h); border-radius: var(--r-pill); color: var(--text-nav-off); }
+.nav__item .ic { width: 22px; height: 22px; }
+.nav__item span { font: 500 var(--t-micro)/1 var(--f-ui); }
+.nav__item.is-active { background: var(--nav-active); color: var(--text-1); width: var(--nav-active-w); justify-self: center; }
+.nav__center { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--glossy-fill); color: var(--cocoa); box-shadow: var(--glossy-hi), var(--shadow-pill); margin-top: -12px; }
+.nav__center .ic { width: 16px; height: 16px; margin-left: 2px; }
+.nav__item.is-active .nav__center { box-shadow: var(--glossy-hi), var(--glow-flame); }
+
+/* ---------- Media placeholder (drama rasmi) ---------- */
+.art { position: relative; overflow: hidden; background-color: var(--amb, var(--amb-01));
+  background-image:
+    radial-gradient(70% 55% at 62% 30%, color-mix(in srgb, var(--amb, var(--amb-01)) 45%, var(--peach)) 0%, color-mix(in srgb, var(--amb, var(--amb-01)) 85%, var(--peach)) 26%, transparent 62%),
+    linear-gradient(180deg, color-mix(in srgb, var(--amb, var(--amb-01)) 70%, var(--cocoa)) 0%, var(--amb, var(--amb-01)) 45%, color-mix(in srgb, var(--amb, var(--amb-01)) 35%, var(--cocoa)) 100%); }
+.art::before { content: ''; position: absolute; inset: 0; background-repeat: no-repeat; background-position: 50% 100%; background-size: contain; filter: blur(var(--sil-blur, 0px)); }
+.art--soft { --sil-blur: 2.5px; }
+.art::after { content: ''; position: absolute; inset: 0; background-image: var(--grade), var(--grain-img); background-size: 100% 100%, 180px 180px; mix-blend-mode: soft-light; opacity: 1; pointer-events: none; }
+.art > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.grain::after { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; background-image: var(--grain-img); background-size: 180px 180px; mix-blend-mode: overlay; opacity: var(--grain-opacity); border-radius: inherit; }
+
+/* ---------- Iliq atmosfera (ref-05/06/07) ---------- */
+.warm { position: relative; overflow: hidden; background: var(--warm-light), var(--warm-bg); background-color: var(--ember); }
+.ring { position: absolute; pointer-events: none; z-index: 0; border-radius: 50%; width: 1476px; height: 1476px; left: -1052px; top: -280px;
+  box-shadow: var(--ring-shadow); }
+.ring--card { width: 760px; height: 760px; left: -520px; top: -230px; }
+
+/* ---------- Poster (2:3) ---------- */
+.poster { position: relative; flex: none; width: var(--pw, 104px); }
+.poster__media { position: relative; aspect-ratio: 2 / 3; border-radius: var(--r-poster); overflow: hidden; }
+.poster__media::after { content: ''; position: absolute; inset: 0; background: var(--poster-fade); pointer-events: none; }
+.poster__name { position: absolute; z-index: 2; left: 7px; right: 7px; bottom: 8px; font: 400 var(--t-body)/.92 var(--f-display); text-transform: uppercase; color: var(--text-1); text-shadow: var(--text-shadow); }
+.poster__eps { position: absolute; z-index: 2; right: 6px; bottom: 6px; }
+.poster__title { margin-top: var(--s-8); font: 500 var(--t-footnote)/1.25 var(--f-ui); color: var(--text-1); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.poster__meta { margin-top: 3px; display: flex; align-items: center; gap: 4px; font: 400 var(--t-caption)/1.2 var(--f-ui); color: var(--text-3); }
+.poster__meta .ic { width: 13px; height: 13px; }
+.tag { position: absolute; z-index: 3; top: 6px; left: 6px; display: inline-flex; align-items: center; gap: 3px; height: 20px; padding: 0 7px; border-radius: var(--r-thumb); font: 600 var(--t-tag)/1 var(--f-ui); letter-spacing: .01em; white-space: nowrap; }
+.tag .ic { width: 11px; height: 11px; }
+.tag--free { background: var(--flame); color: var(--text-1); }
+.tag--new { background: var(--text-1); color: var(--cocoa); }
+.tag--vip { background: var(--sand); color: var(--cocoa); }
+.tag--uz { background: var(--glass-bg-strong); color: var(--text-1); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.tag--eps { position: static; background: var(--glass-dark); color: var(--text-1); font-weight: 500; -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.tag--plain { position: static; }
+
+/* ---------- Landscape "davom ettirish" kartasi (ref-02) ---------- */
+.lcard { flex: none; width: var(--lw, 200px); }
+.lcard__media { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-thumb); overflow: hidden; }
+.lcard__play { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; }
+.lcard__title { margin-top: var(--s-8); font: 600 var(--t-footnote)/1.25 var(--f-ui); }
+.lcard__meta { margin-top: 2px; font: 400 var(--t-caption)/1.2 var(--f-ui); color: var(--text-3); }
+.progress { position: relative; height: 3px; border-radius: var(--r-pill); background: var(--line-2); overflow: hidden; }
+.progress > i { position: absolute; left: 0; top: 0; bottom: 0; width: var(--p, 30%); background: var(--flame); border-radius: inherit; }
+.lcard__media .progress { position: absolute; z-index: 3; left: 0; right: 0; bottom: 0; border-radius: 0; }
+
+/* ---------- Kartalar ---------- */
+.card { position: relative; border-radius: var(--r-card); background: var(--card-fill); box-shadow: inset 0 0 0 1px var(--line-1), inset 0 -1px 0 var(--line-2); padding: var(--s-16); }
+.card--ambient { background: radial-gradient(120% 90% at 75% 0%, var(--amb) 0%, color-mix(in srgb, var(--amb) 72%, var(--amb-dark)) 30%, color-mix(in srgb, var(--amb) 36%, var(--amb-dark)) 55%, var(--amb-dark) 100%); box-shadow: inset 0 0 0 1px var(--line-1); overflow: hidden; }
+.card--warm { background: var(--warm-light), var(--warm-bg); overflow: hidden; box-shadow: inset 0 0 0 1px var(--glass-line-soft); }
+.card--glass { background: var(--glass-dark); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.card--flat { background: var(--bg-1); }
+
+/* ---------- 3D squircle "quti" tile (ref-01 Friend's box) ---------- */
+.box { --box: var(--flame); position: relative; flex: none; width: var(--tile-box); height: calc(var(--tile-box) * .97); border-radius: var(--r-squircle);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--box) 78%, var(--text-1)) 0%, var(--box) 7%, color-mix(in srgb, var(--box) 82%, var(--bg-0)) 100%);
+  box-shadow: inset 0 1.5px 0 color-mix(in srgb, var(--box) 55%, var(--text-1)), inset 0 -2px 0 color-mix(in srgb, var(--box) 55%, var(--bg-0)); }
+.box__well { position: absolute; left: 11%; right: 11%; top: 9%; height: 58%; border-radius: calc(var(--r-squircle) * .6) calc(var(--r-squircle) * .6) var(--r-thumb) var(--r-thumb); overflow: hidden;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--box) 25%, var(--bg-0)) 0%, color-mix(in srgb, var(--box) 60%, var(--bg-0)) 100%);
+  box-shadow: var(--shadow-well); display: grid; place-items: center; }
+.box__front { position: absolute; left: 0; right: 0; bottom: 0; height: 37%; border-radius: var(--r-thumb) var(--r-thumb) var(--r-squircle) var(--r-squircle);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--box) 70%, var(--text-1)) 0%, var(--box) 14%, color-mix(in srgb, var(--box) 72%, var(--bg-0)) 100%);
+  box-shadow: inset 0 -2px 0 color-mix(in srgb, var(--box) 50%, var(--bg-0)); }
+.box__badge { position: absolute; z-index: 2; left: 50%; bottom: 7%; transform: translateX(-50%); width: 30%; aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; box-shadow: 0 0 0 1.5px color-mix(in srgb, var(--box) 60%, var(--text-1)); background: var(--cocoa); color: var(--text-1); }
+.box--dim { --box: var(--bg-3); opacity: .55; }
+.box--lg { --r-big: calc(150px * .23); width: 150px; height: 162px; border-radius: var(--r-big); }
+.box--lg .box__well { border-radius: calc(var(--r-big) * .6) calc(var(--r-big) * .6) var(--r-thumb) var(--r-thumb); }
+.box--lg .box__front { border-radius: var(--r-thumb) var(--r-thumb) var(--r-big) var(--r-big); }
+
+/* ---------- Reyting slider + glossy knob (ref-01) ---------- */
+.rslider { position: relative; height: var(--slider-h); border-radius: var(--r-pill); background: var(--grad-rating); box-shadow: inset 0 1px 0 var(--rim-hi), inset 0 -1px 0 var(--rim-lo); }
+.rslider__dots { position: absolute; inset: 0; display: flex; justify-content: space-around; align-items: center; padding: 0 12%; }
+.rslider__dots i { width: 5px; height: 5px; border-radius: 50%; background: var(--cocoa); opacity: .55; }
+.rslider__knob { position: absolute; top: 50%; left: var(--v, 50%); width: var(--knob); height: var(--knob); transform: translate(-50%, -50%); border-radius: 50%; display: grid; place-items: center;
+  background: var(--knob-fill);
+  box-shadow: var(--knob-rim), var(--shadow-pill); font: 700 var(--t-headline)/1 var(--f-ui); color: var(--cocoa); }
+
+/* ---------- Nuqtali glass slider (ref-07) ---------- */
+.gslider { position: relative; height: var(--gslider-h); border-radius: var(--r-pill); background: var(--gs-track); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); overflow: hidden; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--s-20); font: 400 var(--t-footnote)/1 var(--f-ui); color: var(--warm-text-2); }
+.gslider__fill { position: absolute; left: 0; top: 0; bottom: 0; width: var(--v, 50%); background: var(--gs-fill); border-radius: var(--r-pill); }
+.gslider__dots { position: absolute; left: 30%; right: 22%; top: 50%; height: 2px; display: flex; justify-content: space-between; transform: translateY(-50%); }
+.gslider__dots i { width: 3px; height: 3px; border-radius: 50%; background: var(--gs-dot); }
+.gslider__knob { position: absolute; top: 50%; left: var(--v, 50%); width: 2px; height: 22px; border-radius: var(--r-pill); background: var(--text-1); transform: translate(-1px, -50%); }
+.gslider > span { position: relative; z-index: 1; }
+
+/* ---------- Progress chiziqchalari (ref-06) ---------- */
+.dashes { display: flex; gap: 5px; align-items: center; }
+.dashes i { width: 20px; height: 2.3px; border-radius: var(--r-pill); background: var(--dash-off); }
+.dashes i.is-on { width: 51px; background: var(--dash-on); }
+
+/* ---------- Qism tile holatlari ---------- */
+.eps { display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--s-8); }
+.ep { position: relative; aspect-ratio: 1; border-radius: var(--r-tile); display: grid; place-items: center; font: 500 var(--t-body)/1 var(--f-ui); background: var(--bg-2); color: var(--text-1); box-shadow: inset 0 0 0 1px var(--line-1); }
+.ep .ic { position: absolute; top: 5px; right: 5px; width: 12px; height: 12px; }
+.ep--watched { background: var(--bg-1); color: var(--text-3); }
+.ep--watched .ic { color: var(--text-3); }
+.ep--current { background: var(--flame); color: var(--text-1); box-shadow: var(--glow-flame); font-weight: 700; }
+.ep--free { background: var(--bg-2); }
+.ep--free::after { content: ''; position: absolute; bottom: 6px; left: calc(50% - 3px); width: 6px; height: 6px; border-radius: 50%; background: var(--flame); }
+.ep--open { background: var(--bg-2); }
+.ep--locked { background: var(--bg-1); color: var(--text-3); }
+.ep--locked .ic { color: var(--text-3); }
+.ep--vip { background: var(--bg-1); color: var(--sand); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--sand) 55%, transparent); }
+.ep--vip .ic { color: var(--sand); }
+.legend { display: flex; flex-wrap: wrap; gap: var(--s-8) var(--s-16); font: 400 var(--t-caption)/1.2 var(--f-ui); color: var(--text-3); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 12px; height: 12px; border-radius: var(--r-thumb); display: inline-block; }
+
+/* ---------- Toggle · checkbox · radio ---------- */
+.toggle { position: relative; flex: none; width: 51px; height: 31px; border-radius: var(--r-pill); background: var(--bg-3); }
+.toggle::after { content: ''; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: var(--text-1); box-shadow: var(--shadow-pill); }
+.toggle.is-on { background: var(--flame); }
+.toggle.is-on::after { left: 22px; }
+.check { flex: none; width: 22px; height: 22px; border-radius: var(--r-thumb); box-shadow: inset 0 0 0 1.5px var(--text-3); display: grid; place-items: center; color: transparent; }
+.check .ic { width: 16px; height: 16px; }
+.check.is-on { background: var(--flame); box-shadow: none; color: var(--text-1); }
+.radio { flex: none; width: 22px; height: 22px; border-radius: 50%; box-shadow: inset 0 0 0 1.5px var(--text-3); position: relative; }
+.radio.is-on { box-shadow: inset 0 0 0 2px var(--flame); }
+.radio.is-on::after { content: ''; position: absolute; inset: 6px; border-radius: 50%; background: var(--flame); }
+
+/* ---------- Input ---------- */
+.search { display: flex; align-items: center; gap: var(--s-12); height: var(--h-search); padding: 0 var(--s-20) 0 var(--s-24); border-radius: var(--r-pill); background: var(--glass-bg); box-shadow: inset 0 0 0 1px var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); font: 400 var(--t-headline)/1 var(--f-ui); color: var(--text-1); }
+.search__ph { flex: 1; color: var(--text-3); }
+.field { display: flex; align-items: center; gap: var(--s-10); height: var(--h-row); padding: 0 var(--s-16); border-radius: var(--r-tile); background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line-1); font: 400 var(--t-body)/1 var(--f-ui); }
+.field__ph { flex: 1; color: var(--text-3); }
+
+/* ---------- Bottom sheet · modal ---------- */
+.scrim { position: absolute; inset: 0; z-index: 60; background: var(--scrim); }
+.sheet { position: absolute; z-index: 70; left: 0; right: 0; bottom: 0; border-radius: var(--r-sheet) var(--r-sheet) 0 0; background: var(--bg-1); box-shadow: inset 0 1px 0 var(--line-2); padding: var(--s-10) var(--page-x) var(--s-40); }
+.sheet__handle { width: 36px; height: 5px; border-radius: var(--r-pill); background: var(--handle); margin: 0 auto var(--s-16); }
+.modal { position: relative; border-radius: var(--r-sheet); overflow: hidden; }
+
+/* ---------- Ro'yxat qatori · bo'lim sarlavhasi ---------- */
+.row { display: flex; align-items: center; gap: var(--s-12); min-height: var(--h-row); padding: 0 var(--s-16); }
+.row + .row { box-shadow: inset 0 1px 0 var(--line-1); }
+.row > .ic:first-child { color: var(--text-2); }
+.row__label { flex: 1; font: 400 var(--t-body)/1.3 var(--f-ui); letter-spacing: -.01em; }
+.row__value { font: 400 var(--t-body)/1 var(--f-ui); color: var(--text-3); }
+.row > .ic-chev-right { width: 18px; height: 18px; color: var(--text-3); }
+.sec { margin-top: var(--gap-section); }
+.sec-head { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--page-x); margin-bottom: var(--gap-title); }
+.sec-head h2 { font: 600 var(--t-headline)/1.25 var(--f-ui); letter-spacing: -.02em; display: flex; align-items: center; gap: 6px; }
+.hscroll { display: flex; gap: var(--s-12); padding: 0 var(--page-x); overflow: hidden; }
+
+/* ---------- Badge · countdown · coin · toj ---------- */
+.badge-count { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-pill); background: var(--rose); color: var(--text-1); font: 600 var(--t-tag)/1 var(--f-ui); box-shadow: 0 0 0 2px var(--bg-0); }
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--flame); }
+.cd { display: inline-flex; gap: 6px; align-items: center; }
+.cd__box { min-width: 44px; height: 48px; padding: 0 6px; border-radius: var(--r-tile); display: grid; place-items: center; font: 400 var(--t-cd)/1 var(--f-display); background: var(--glass-bg-strong); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.cd__sep { font: 400 var(--t-title-4)/1 var(--f-display); color: var(--text-2); }
+.coin { --cs: 20px; position: relative; flex: none; display: inline-block; width: var(--cs); height: var(--cs); border-radius: 50%;
+  background: radial-gradient(60% 50% at 38% 30%, color-mix(in srgb, var(--flame) 40%, var(--peach)) 0%, var(--flame) 55%, var(--ember) 100%);
+  box-shadow: inset 0 calc(var(--cs) * -.08) 0 var(--ember), inset 0 calc(var(--cs) * .06) 0 color-mix(in srgb, var(--flame) 50%, var(--peach)); }
+.coin::after { content: ''; position: absolute; inset: 24%; border-radius: 50%; box-shadow: inset 0 0 0 calc(var(--cs) * .07) color-mix(in srgb, var(--ember) 70%, var(--flame)), 0 calc(var(--cs) * .03) 0 color-mix(in srgb, var(--flame) 40%, var(--peach)); }
+.coin--sm { --cs: 16px; } .coin--lg { --cs: 32px; } .coin--xl { --cs: 56px; }
+.crown { color: var(--sand); }
+
+/* ---------- Avatar pufakchalari (ref-04 aurora) ---------- */
+.bubbles { position: relative; }
+.bubble { position: absolute; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 2px var(--bg-0); }
+.bubble--far { opacity: .5; filter: grayscale(.6); }
+
+/* ---------- Yordamchi ---------- */
+.row-flex { display: flex; align-items: center; }
+.gap-4 { gap: var(--s-4); } .gap-6 { gap: var(--s-6); } .gap-8 { gap: var(--s-8); } .gap-12 { gap: var(--s-12); } .gap-16 { gap: var(--s-16); }
+.px { padding-left: var(--page-x); padding-right: var(--page-x); }
+.abs { position: absolute; }
+.hairline { height: 1px; background: var(--line-1); }
+.outline-badge { display: inline-flex; align-items: center; height: 18px; padding: 0 5px; border-radius: var(--r-thumb); box-shadow: inset 0 0 0 1px var(--text-3); font: 600 var(--t-tag)/1 var(--f-ui); color: var(--text-2); }

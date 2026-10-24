@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>10 · Drama sahifasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* butun fon drama ambient rangi bilan xira tonlangan (ref-01 profil usuli: tepada ~34%, pastda qora) */
+  .screen { --amb: var(--amb-01); background: linear-gradient(180deg, color-mix(in srgb, var(--amb) 34%, var(--bg-0)) 0%, color-mix(in srgb, var(--amb) 16%, var(--bg-0)) 42%, color-mix(in srgb, var(--amb) 6%, var(--bg-0)) 70%, var(--bg-0) 100%); }
+  .hero { position: relative; height: 468px; }
+  .hero__media { position: absolute; inset: 0; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 50%, transparent 100%); }
+  .hero__fade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, .28) 0%, rgba(0, 0, 0, 0) 22%); }
+  .topbar { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; justify-content: space-between; }
+  .head { position: relative; z-index: 4; margin-top: -132px; padding: 0 var(--page-x); }
+  .head__title { font-size: 48px; line-height: .9; text-shadow: var(--text-shadow); }
+  .meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: var(--s-12); }
+  .chips { display: flex; gap: var(--s-8); margin-top: var(--s-12); }
+  .actions { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: var(--s-20); padding: 0 var(--page-x); }
+  .act { display: flex; flex-direction: column; align-items: center; gap: var(--s-8); text-align: center; }
+  .act .gbtn { --d-glass: 52px; }
+  .act p { font: 500 var(--t-caption)/1.25 var(--f-ui); color: var(--text-2); }
+  .act.is-on p { color: var(--flame); }
+  .desc { padding: 0 var(--page-x); }
+  .desc p.t-body { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; color: var(--text-2); }
+  .more { display: inline-flex; align-items: center; gap: 2px; margin-top: var(--s-6); font: 600 var(--t-footnote)/1 var(--f-ui); color: var(--text-1); }
+  .price { margin: 0 var(--page-x); }
+  .price__line { display: flex; gap: var(--s-10); align-items: flex-start; }
+  .range { display: flex; align-items: center; gap: var(--s-8); padding: 0 var(--page-x); margin-top: var(--s-16); }
+  .range .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-footnote); }
+  .eps-wrap { padding: 0 var(--page-x); margin-top: var(--s-12); }
+  .legend { margin-top: var(--s-12); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen" style="height: 1782px">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <!-- Rasm ~55% (ref-02 serial sahifasi) -->
+  <section class="hero">
+    <div class="hero__media art art--couple art--soft" style="--amb: var(--amb-01)"></div>
+    <div class="hero__fade"></div>
+    <div class="topbar">
+      <button class="gbtn gbtn--side" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button>
+      <div class="row-flex gap-8">
+        <button class="gbtn gbtn--side" aria-label="Ulashish"><i class="ic ic-share"></i></button>
+        <button class="gbtn gbtn--side" aria-label="Yana"><i class="ic ic-more"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <section class="head">
+    <h1 class="t-display head__title">Milliarderning<br>yashirin kelini</h1>
+    <div class="meta t-footnote c-3">
+      <span>2026</span><span>·</span><span class="outline-badge">16+</span><span>·</span><span>80 qism</span><span>·</span><span>Tugallangan</span><span>·</span><span class="outline-badge">HD</span>
+    </div>
+    <div class="chips">
+      <span class="chip"><i class="ic ic-star-fill c-sand"></i>4.8</span>
+      <span class="chip"><i class="ic ic-eye"></i>2.4M koʻrish</span>
+      <span class="chip">Oʻzbekcha dublyaj</span>
+    </div>
+    <p class="t-caption c-3" style="margin-top: var(--s-8)">Subtitr: rus, ingliz</p>
+    <button class="btn btn--primary btn--block" style="margin-top: var(--s-20)"><i class="ic ic-play-fill"></i>Davom ettirish · 10-qism</button>
+  </section>
+
+  <!-- 4 ta harakat -->
+  <div class="actions">
+    <div class="act is-on"><span class="gbtn gbtn--flame"><i class="ic ic-bookmark-fill"></i></span><p>Saqlangan<br>534K</p></div>
+    <div class="act"><span class="gbtn gbtn--dark"><i class="ic ic-bell-plus"></i></span><p>Eslatma<br>&nbsp;</p></div>
+    <div class="act"><span class="gbtn gbtn--dark"><i class="ic ic-comment"></i></span><p>Izohlar<br>3.4K</p></div>
+    <div class="act"><span class="gbtn gbtn--dark"><i class="ic ic-download"></i></span><p>Yuklash<br><span class="c-sand">VIP</span></p></div>
+  </div>
+
+  <!-- Qisqacha -->
+  <section class="sec desc">
+    <h2 class="t-headline" style="margin-bottom: var(--s-8)">Qisqacha</h2>
+    <p class="t-body">Oddiy ofitsiant qiz toʻy kuni kuyovining xiyonatini koʻradi. Shu kecha u notanish milliarder bilan shartnoma tuzadi — lekin uning sirli oʻtmishi hammasini oʻzgartirib yuboradi...</p>
+    <span class="more">Koʻproq<i class="ic ic-chev-down ic--16"></i></span>
+    <p class="t-footnote c-3" style="margin-top: var(--s-12)">Romantika  •  CEO  •  Qasos</p>
+  </section>
+
+  <!-- Narx kartasi -->
+  <section class="sec">
+    <div class="card price">
+      <div class="price__line">
+        <i class="coin"></i>
+        <p class="t-footnote c-2">1–10 qism bepul · keyingi har bir qism <b class="c-flame" style="font-weight: 600">60 coin</b> · VIP bilan hammasi ochiq</p>
+      </div>
+      <button class="btn btn--glass btn--block btn--sm" style="margin-top: var(--s-12); padding: 0 var(--s-16); gap: var(--s-6)">Butun serialni ochish: <span class="strike c-3" style="font-weight: 500">4 200</span> 3 200 coin</button>
+    </div>
+  </section>
+
+  <!-- Qismlar -->
+  <section class="sec">
+    <nav class="utabs"><span class="utabs__item is-active">Qismlar (80)</span><span class="utabs__item">Oʻxshash</span><span class="utabs__item">Tafsilotlar</span></nav>
+    <div class="range">
+      <span class="chip chip--selected">1–30</span><span class="chip">31–60</span><span class="chip">61–80</span>
+      <span class="t-caption c-3" style="margin-left: auto">har biri 1–2 daqiqa</span>
+    </div>
+    <div class="eps-wrap">
+      <div class="eps">
+        <span class="ep ep--watched">1<i class="ic ic-check"></i></span><span class="ep ep--watched">2<i class="ic ic-check"></i></span><span class="ep ep--watched">3<i class="ic ic-check"></i></span><span class="ep ep--watched">4<i class="ic ic-check"></i></span><span class="ep ep--watched">5<i class="ic ic-check"></i></span><span class="ep ep--watched">6<i class="ic ic-check"></i></span>
+        <span class="ep ep--watched">7<i class="ic ic-check"></i></span><span class="ep ep--watched">8<i class="ic ic-check"></i></span><span class="ep ep--watched">9<i class="ic ic-check"></i></span><span class="ep ep--current">10</span><span class="ep ep--open">11</span><span class="ep ep--open">12</span>
+        <span class="ep ep--locked">13<i class="ic ic-lock"></i></span><span class="ep ep--locked">14<i class="ic ic-lock"></i></span><span class="ep ep--locked">15<i class="ic ic-lock"></i></span><span class="ep ep--locked">16<i class="ic ic-lock"></i></span><span class="ep ep--locked">17<i class="ic ic-lock"></i></span><span class="ep ep--locked">18<i class="ic ic-lock"></i></span>
+        <span class="ep ep--locked">19<i class="ic ic-lock"></i></span><span class="ep ep--locked">20<i class="ic ic-lock"></i></span><span class="ep ep--locked">21<i class="ic ic-lock"></i></span><span class="ep ep--locked">22<i class="ic ic-lock"></i></span><span class="ep ep--locked">23<i class="ic ic-lock"></i></span><span class="ep ep--locked">24<i class="ic ic-lock"></i></span>
+        <span class="ep ep--locked">25<i class="ic ic-lock"></i></span><span class="ep ep--locked">26<i class="ic ic-lock"></i></span><span class="ep ep--locked">27<i class="ic ic-lock"></i></span><span class="ep ep--locked">28<i class="ic ic-lock"></i></span><span class="ep ep--locked">29<i class="ic ic-lock"></i></span><span class="ep ep--locked">30<i class="ic ic-lock"></i></span>
+      </div>
+      <div class="legend">
+        <span><i class="ic ic-check ic--16"></i>koʻrilgan</span>
+        <span><i style="background: var(--flame)"></i>hozir</span>
+        <span><i style="background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line-1)"></i>ochilgan</span>
+        <span><i class="ic ic-lock ic--16"></i>qulf — coin / VIP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sizga yoqishi mumkin -->
+  <section class="sec">
+    <div class="sec-head"><h2>Sizga yoqishi mumkin</h2></div>
+    <div class="hscroll" style="--pw: 111px">
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-03)"><span class="poster__name">Shartnoma boʻyicha xotin</span></div><h3 class="poster__title">Shartnoma boʻyicha xotin</h3></article>
+      <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-13)"><span class="poster__name">Ofisdagi yolgʻon nikoh</span></div><h3 class="poster__title">Ofisdagi yolgʻon nikoh</h3></article>
+      <article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-05)"><span class="poster__name">Direktorning sirli egizagi</span></div><h3 class="poster__title">Direktorning sirli egizagi</h3></article>
+    </div>
+  </section>
+
+  <div class="scroll-pad" style="height: 48px"></div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>
