@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>18 · VIP obuna</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* ref-06 sand varianti: sand → ember → cocoa, nur halqasi, grain */
+  .screen { background: linear-gradient(180deg, var(--sand) 0%, var(--ember) 30%, var(--cocoa) 58%, var(--cocoa) 100%); }
+  .ring { opacity: .7; }
+  .content { position: relative; z-index: 3; }
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 58px var(--page-x) 0; }
+  .top .btn--text { padding: 0; color: var(--cocoa); }
+  .top .gbtn { color: var(--cocoa); }
+  .hero { text-align: center; padding: var(--s-16) var(--page-x) 0; color: var(--cocoa); }
+  .hero .box { margin: 0 auto; }
+  .hero h1 { margin-top: var(--s-16); }
+  .perks { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-10) var(--s-12); padding: 0 var(--page-x); margin-top: var(--s-24); }
+  .perks li { list-style: none; display: flex; gap: var(--s-8); align-items: flex-start; font: 500 var(--t-footnote)/1.3 var(--f-ui); color: var(--text-1); }
+  .perks .ic { width: 16px; height: 16px; color: var(--sand); flex: none; margin-top: 1px; }
+  .plans { display: flex; flex-direction: column; gap: var(--s-16); padding: 0 var(--page-x); margin-top: var(--s-24); }
+  .plan { position: relative; display: flex; align-items: center; gap: var(--s-12); padding: var(--s-16); border-radius: var(--r-media); }
+  .plan__b { flex: 1; }
+  .plan__price { font: 600 var(--t-body)/1 var(--f-ui); white-space: nowrap; }
+  .plan .badge { position: absolute; top: -10px; right: var(--s-16); height: 20px; padding: 0 var(--s-8); border-radius: var(--r-pill); display: inline-flex; align-items: center; font: 600 var(--t-tag)/1 var(--f-ui); }
+  .plan.is-on { background: var(--glossy-fill); color: var(--cocoa); box-shadow: var(--glossy-hi), var(--shadow-pill); }
+  .plan.is-on .c-3 { color: var(--cocoa); opacity: .7; }
+  .plan.is-on .radio.is-on { box-shadow: inset 0 0 0 2px var(--cocoa); }
+  .plan.is-on .radio.is-on::after { background: var(--cocoa); }
+  .cmp { margin: var(--s-24) var(--page-x) 0; padding: var(--s-4) 0; border-radius: var(--r-media); }
+  .cmp table { width: 100%; border-collapse: collapse; font: 400 var(--t-footnote)/1.2 var(--f-ui); }
+  .cmp th, .cmp td { padding: var(--s-10) var(--s-16); text-align: center; }
+  .cmp th { font-weight: 600; color: var(--text-2); }
+  .cmp th:first-child, .cmp td:first-child { text-align: left; color: var(--text-2); }
+  .cmp tr + tr td { box-shadow: inset 0 1px 0 var(--glass-line-soft); }
+  .cmp .v { color: var(--sand); font-weight: 600; }
+  .cta { margin: var(--s-24) var(--page-x) 0; width: auto; }
+  .terms { padding: 0 var(--page-x); margin-top: var(--s-12); text-align: center; }
+  .terms a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="screen grain" id="screen" style="height: 1103px">
+  <div class="ring"></div>
+  <div class="status status--dark"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="content">
+    <div class="top">
+      <button class="gbtn gbtn--sm" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
+      <button class="btn btn--text">Xaridlarni tiklash</button>
+    </div>
+    <section class="hero">
+      <div class="box" style="--box: var(--sand)"><div class="box__well"><i class="ic ic-crown ic--32" style="color: var(--sand)"></i></div><div class="box__front"></div></div>
+      <h1 class="t-serif-xl">VIP aʼzolik</h1>
+      <p class="t-body" style="margin-top: var(--s-8)">Qulfsiz va reklamasiz tomosha</p>
+    </section>
+
+    <ul class="perks">
+      <li><i class="ic ic-check"></i>Barcha dramalar va qismlar ochiq</li>
+      <li><i class="ic ic-check"></i>Reklamasiz</li>
+      <li><i class="ic ic-check"></i>1080p Full HD</li>
+      <li><i class="ic ic-check"></i>Yuklab olib oflayn koʻrish</li>
+      <li><i class="ic ic-check"></i>Yangi qismlar birinchi sizda</li>
+      <li><i class="ic ic-check"></i>Har kuni +30 bonus coin</li>
+      <li><i class="ic ic-check"></i>3 ta qurilmada</li>
+      <li><i class="ic ic-check"></i>Faqat VIP dramalar</li>
+    </ul>
+
+    <div class="plans">
+      <div class="plan card--glass"><span class="radio"></span><div class="plan__b"><p class="t-body-m">Haftalik</p><p class="t-caption c-3" style="margin-top: 2px">1-hafta −40%, keyin toʻliq narx</p></div><span class="plan__price">[narx] soʻm</span></div>
+      <div class="plan is-on"><span class="badge" style="background: var(--flame); color: var(--text-1)">Ommabop</span><span class="radio is-on"></span><div class="plan__b"><p class="t-body-m">Oylik</p><p class="t-caption c-3" style="margin-top: 2px">har oy avto-yangilanadi</p></div><span class="plan__price">[narx] soʻm</span></div>
+      <div class="plan card--glass"><span class="badge" style="background: var(--sand); color: var(--cocoa)">Eng tejamkor</span><span class="radio"></span><div class="plan__b"><p class="t-body-m">Yillik</p><p class="t-caption c-3" style="margin-top: 2px">oyiga ≈ [narx] soʻm — eng arzon</p></div><span class="plan__price">[narx] soʻm</span></div>
+    </div>
+
+    <div class="cmp card--glass">
+      <table>
+        <tr><th></th><th>Bepul</th><th class="c-sand">VIP</th></tr>
+        <tr><td>Qismlar</td><td>1–10 bepul</td><td class="v">Hammasi</td></tr>
+        <tr><td>Reklama</td><td>Bor</td><td class="v">Yoʻq</td></tr>
+        <tr><td>Sifat</td><td>720p</td><td class="v">1080p</td></tr>
+        <tr><td>Oflayn</td><td>—</td><td class="v"><i class="ic ic-check ic--16"></i></td></tr>
+      </table>
+    </div>
+
+    <button class="btn btn--primary btn--block cta">VIP olish · [narx] soʻm / oy</button>
+    <p class="terms t-caption c-3">Obuna har oy avtomatik yangilanadi. Istalgan vaqtda Profil → Obunani boshqarish orqali bekor qilasiz. Keyingi toʻlov: 25-noyabr. <a>Shartlar</a> · <a>Maxfiylik</a></p>
+    <div class="scroll-pad" style="height: 48px"></div>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

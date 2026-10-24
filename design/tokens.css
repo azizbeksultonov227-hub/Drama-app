@@ -160,6 +160,7 @@
   --f-mono: 'IBM Plex Mono', ui-monospace, monospace;       /* ref-03 caption */
 
   --t-num: 72px;        /* display-num */
+  --t-num-xl: 96px;     /* PROMPT §20 "−60%" */
   --t-serif-xl: 40px;   /* ref-01 sarah.lg */
   --t-serif-lg: 32px;
   --t-edit-xl: 53px;    /* ref-03 events upcoming */
@@ -180,6 +181,7 @@
   --t-mono: 11px;       /* ref-03 */
   --t-tag: 11px;        /* ref-02 nav label 11, ref-04 badge raqami */
   --t-cd: 26px;         /* countdown raqamlari = title-3 o'lchami */
+  --t-pack: 32px;       /* coin paket miqdori (Anton) = serif-lg o'lchami */
 
   /* ---------- Grain ---------- */
   --grain-opacity: .10;  /* kalibrlangan: 11-ekran ref-07 masshtabida std ≈ ref-07 (0.8–1.9) */

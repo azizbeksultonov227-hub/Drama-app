@@ -292,3 +292,30 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .abs { position: absolute; }
 .hairline { height: 1px; background: var(--line-1); }
 .outline-badge { display: inline-flex; align-items: center; height: 18px; padding: 0 5px; border-radius: var(--r-thumb); box-shadow: inset 0 0 0 1px var(--text-3); font: 600 var(--t-tag)/1 var(--f-ui); color: var(--text-2); }
+
+/* ---------- Qism tile: "bepul" yorlig'i (katta tile'larda) ---------- */
+.ep--free.has-label::after { content: 'bepul'; width: auto; height: auto; left: 0; right: 0; bottom: 7px; border-radius: 0; background: none; text-align: center; font: 500 var(--t-micro)/1 var(--f-ui); color: var(--flame); }
+
+/* ---------- Countdown halqasi (flame) ---------- */
+.cd-ring { --d: 56px; --p: 70%; position: relative; display: inline-grid; place-items: center; width: var(--d); height: var(--d); border-radius: 50%; font: 400 var(--t-cd)/1 var(--f-display); color: var(--text-1); background: var(--glass-bg-strong); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.cd-ring::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: conic-gradient(var(--flame) 0 var(--p), var(--line-2) var(--p) 100%); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3.5px)); mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3.5px)); }
+.cd-ring--sm { --d: 40px; font-size: var(--t-title-4); }
+
+/* ---------- Coin paket kartasi ---------- */
+.pack { position: relative; border-radius: var(--r-media); background: var(--card-fill); box-shadow: inset 0 0 0 1px var(--line-1), inset 0 -1px 0 var(--line-2); padding: var(--s-16) var(--s-12) var(--s-12); text-align: center; display: flex; flex-direction: column; align-items: center; }
+.pack__amt { display: flex; align-items: center; gap: var(--s-6); font: 400 var(--t-pack)/1 var(--f-display); }
+.pack__bonus { margin-top: var(--s-4); font: 600 var(--t-caption)/1.2 var(--f-ui); color: var(--flame); min-height: 15px; }
+.pack__bonus.is-zero { color: var(--text-3); font-weight: 500; }
+.pack__price { margin-top: var(--s-10); height: var(--h-pill-xs); padding: 0 var(--s-12); border-radius: var(--r-pill); display: inline-flex; align-items: center; background: var(--glass-bg); box-shadow: inset 0 0 0 1px var(--glass-line-soft); font: 500 var(--t-footnote)/1 var(--f-ui); white-space: nowrap; }
+.pack__badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); height: 20px; padding: 0 var(--s-8); border-radius: var(--r-pill); display: inline-flex; align-items: center; font: 600 var(--t-tag)/1 var(--f-ui); white-space: nowrap; }
+.pack--popular { box-shadow: inset 0 0 0 1.5px var(--flame), var(--glow-flame); }
+.pack--popular .pack__badge { background: var(--flame); color: var(--text-1); }
+.pack--popular .pack__price { background: var(--text-1); color: var(--cocoa); box-shadow: none; }
+.pack--best { box-shadow: inset 0 0 0 1.5px var(--sand), var(--glow-sand); }
+.pack--best .pack__badge { background: var(--sand); color: var(--cocoa); }
+
+/* ---------- Pleer foni (sheet'lar ostida) ---------- */
+.player-bg { position: absolute; inset: 0; }
+.player-bg .art { position: absolute; inset: 0; }
+.vip-card { background: radial-gradient(120% 120% at 88% 0%, var(--sand) 0%, color-mix(in srgb, var(--sand) 35%, var(--ember)) 30%, var(--ember) 52%, var(--amb-dark) 100%); }
+.t-num-xl { font: 400 var(--t-num-xl)/.9 var(--f-display); }

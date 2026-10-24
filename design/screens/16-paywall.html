@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>16 · Qulflangan qism (paywall)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .lock { position: absolute; z-index: 65; top: 64px; left: 0; right: 0; text-align: center; }
+  .lock .gbtn { margin: 0 auto; }
+  .sheet { top: 150px; padding-bottom: 0; }
+  .bal { display: flex; align-items: center; justify-content: space-between; gap: var(--s-8); margin-top: var(--s-16); padding: 0 var(--s-16); height: var(--d-glass-sm); border-radius: var(--r-pill); }
+  .packs { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-8); margin-top: var(--s-16); }
+  .packs .pack { padding-top: var(--s-20); }
+  .packs .pack__amt { font-size: var(--t-title-3); }
+  .ad { display: flex; align-items: center; gap: var(--s-12); margin-top: var(--s-12); padding: var(--s-12) var(--s-12) var(--s-12) var(--s-16); border-radius: var(--r-media); }
+  .vip { display: flex; align-items: center; gap: var(--s-12); margin-top: var(--s-12); padding: var(--s-14, 14px) var(--s-12) var(--s-14, 14px) var(--s-16); border-radius: var(--r-media); }
+  .auto { display: flex; align-items: center; gap: var(--s-10); margin-top: var(--s-16); }
+  .legal a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="player-bg"><div class="art art--couple art--soft" style="--amb: var(--amb-01)"></div></div>
+  <div class="scrim"></div>
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="lock"><span class="gbtn gbtn--sm"><i class="ic ic-lock-fill ic--20"></i></span><p class="t-caption c-2" style="margin-top: var(--s-6)">Milliarderning yashirin kelini · 11-qism</p></div>
+
+  <section class="sheet">
+    <div class="sheet__handle"></div>
+    <h2 class="t-serif-lg">11-qism qulflangan</h2>
+    <p class="t-footnote c-2" style="margin-top: var(--s-6)">Davom etish uchun bittasini tanlang</p>
+    <div class="bal card--glass"><span class="row-flex gap-8 t-footnote-m"><i class="coin coin--sm"></i>Balans: 20 coin</span><span class="t-footnote-m">Kerak: <b class="c-flame">60 coin</b></span></div>
+    <p class="t-caption c-3" style="margin-top: var(--s-12)">40 coin yetmaydi — tez toʻldirish:</p>
+    <div class="packs">
+      <div class="pack"><div class="pack__amt"><i class="coin coin--sm"></i>300</div><p class="pack__bonus is-zero">+0 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+      <div class="pack pack--popular"><span class="pack__badge">Ommabop</span><div class="pack__amt"><i class="coin coin--sm"></i>600</div><p class="pack__bonus">+60 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+      <div class="pack"><div class="pack__amt"><i class="coin coin--sm"></i>1 200</div><p class="pack__bonus">+240 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+    </div>
+    <div class="ad card">
+      <i class="ic ic-video ic--26 c-2"></i>
+      <div style="flex: 1"><p class="t-body-m">Reklama koʻrib bepul ochish</p><p class="t-caption c-3" style="margin-top: 2px">Bugun 3 / 5 ta qoldi · ~30 soniya</p></div>
+      <button class="btn btn--glass btn--xs">Koʻrish</button>
+    </div>
+    <div class="vip card vip-card">
+      <i class="ic ic-crown ic--28 crown"></i>
+      <div style="flex: 1; min-width: 0"><p class="t-body-m">VIP: hamma qismlar + reklamasiz</p><p class="t-caption c-2" style="margin-top: 2px">[narx] soʻm / hafta · avto-yangilanadi</p></div>
+      <button class="btn btn--primary btn--xs" style="height: var(--h-pill-sm); padding: 0 var(--s-16)">VIP olish</button>
+    </div>
+    <div class="auto"><span class="check is-on"><i class="ic ic-check"></i></span><span class="t-footnote">Keyingi qismlarni ham avtomatik ochish</span></div>
+    <p class="legal t-caption c-3" style="margin-top: var(--s-10)">Ochilgan qism doimiy sizniki. Bonus coin 7 kun amal qiladi. <a>Toʻlov shartlari</a></p>
+  </section>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

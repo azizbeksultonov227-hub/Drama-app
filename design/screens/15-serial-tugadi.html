@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>15 · Serial tugadi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .close { position: absolute; z-index: 80; top: 58px; left: var(--page-x); }
+  .modal { position: absolute; z-index: 70; left: var(--page-x); right: var(--page-x); top: 116px; padding: var(--s-24) var(--s-20) var(--s-20); text-align: center; }
+  .modal > *:not(.ring) { position: relative; z-index: 3; }
+  .done { width: 64px; height: 64px; }
+  .modal h1 { margin-top: var(--s-16); color: var(--warm-text-1); }
+  .stars { display: flex; justify-content: center; gap: var(--s-8); margin-top: var(--s-8); color: var(--sand); }
+  .acts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-10); margin-top: var(--s-20); }
+  .acts .btn { padding: 0 var(--s-12); }
+  .sim { text-align: left; margin-top: var(--s-20); padding-top: var(--s-16); box-shadow: inset 0 1px 0 var(--glass-line-soft); }
+  .sim__row { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-10); margin-top: var(--s-12); }
+  .sim .poster { --pw: 100%; }
+  .sim .poster__media .cd-ring { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+  .next { display: flex; align-items: center; justify-content: space-between; margin-top: var(--s-16); }
+  .next .btn--text { height: auto; padding: 0; color: var(--warm-text-1); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="player-bg"><div class="art art--couple art--soft" style="--amb: var(--amb-01)"></div></div>
+  <div class="scrim"></div>
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <button class="gbtn gbtn--sm close" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
+
+  <section class="modal card--warm grain">
+    <div class="ring ring--card"></div>
+    <span class="gbtn gbtn--flame done"><i class="ic ic-check ic--32"></i></span>
+    <h1><span class="t-serif-xl">Tabriklaymiz!</span><br><span class="t-serif-lg" style="font-size: var(--t-title-3)">Serialni yakunladingiz</span></h1>
+    <p class="t-footnote" style="margin-top: var(--s-8); color: var(--warm-text-2)">Milliarderning yashirin kelini · 80 / 80 qism</p>
+    <p class="t-footnote-m" style="margin-top: var(--s-16); color: var(--warm-text-1)">Serialni baholang</p>
+    <div class="stars"><i class="ic ic-star-fill ic--28"></i><i class="ic ic-star-fill ic--28"></i><i class="ic ic-star-fill ic--28"></i><i class="ic ic-star-fill ic--28"></i><i class="ic ic-star ic--28"></i></div>
+    <div class="acts">
+      <button class="btn btn--glass on-media btn--sm"><i class="ic ic-share"></i>Ulashish +20 coin</button>
+      <button class="btn btn--glass on-media btn--sm"><i class="ic ic-bell"></i>2-fasl: eslat</button>
+    </div>
+    <div class="sim">
+      <h2 class="t-headline" style="color: var(--warm-text-1)">Shunga oʻxshash</h2>
+      <div class="sim__row">
+        <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-03)"><span class="cd-ring" style="--p: 100%">5</span></div><h3 class="poster__title">Shartnoma boʻyicha xotin</h3></article>
+        <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-13)"></div><h3 class="poster__title">Ofisdagi yolgʻon nikoh</h3></article>
+        <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-14)"></div><h3 class="poster__title">Taqdir toʻyi</h3></article>
+      </div>
+    </div>
+    <div class="next"><p class="t-caption" style="color: var(--warm-text-2)">Keyingi drama 5 soniyada boshlanadi...</p><button class="btn btn--text t-caption">Bekor qilish</button></div>
+  </section>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

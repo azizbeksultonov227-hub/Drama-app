@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>17 · Coin doʻkoni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* tepa qism iliq glow + grain (ref-06), pastga qora fonga eriydi */
+  .glow { position: absolute; left: 0; right: 0; top: 0; height: 430px; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+  .top { position: relative; z-index: 5; padding: 58px var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); }
+  .top h1 { flex: 1; }
+  .top .btn--text { padding: 0; color: var(--warm-text-1); }
+  .bal { position: relative; z-index: 5; padding: var(--s-24) var(--page-x) 0; color: var(--warm-text-1); }
+  .bal__num { display: flex; align-items: center; gap: var(--s-12); margin-top: var(--s-8); }
+  .first { position: relative; z-index: 5; margin: var(--s-24) var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); padding: var(--s-12) var(--s-12) var(--s-12) var(--s-16); border-radius: var(--r-media); }
+  .first .cd__box { min-width: 38px; height: 42px; font-size: var(--t-title-4); }
+  .packs { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-16) var(--s-12); padding: 0 var(--page-x); margin-top: var(--s-24); }
+  .packs .pack { padding: var(--s-20) var(--s-12) var(--s-16); }
+  .vipb { margin: var(--gap-section) var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); padding: var(--s-16); border-radius: var(--r-media); }
+  .pay { padding: 0 var(--page-x); margin-top: var(--gap-section); }
+  .pay__chips { display: flex; flex-wrap: wrap; gap: var(--s-8); margin-top: var(--s-12); }
+  .pay__chips .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); color: var(--text-1); }
+  .links { display: flex; justify-content: center; gap: var(--s-20); margin-top: var(--gap-section); font: 500 var(--t-footnote)/1 var(--f-ui); color: var(--text-2); }
+  .links a { text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen" style="height: 1142px">
+  <div class="glow warm grain"><div class="ring" style="opacity: .8"></div></div>
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="top">
+    <button class="gbtn gbtn--sm" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button>
+    <h1 class="t-headline">Coin doʻkoni</h1>
+    <button class="btn btn--text">Tarix</button>
+  </div>
+
+  <section class="bal">
+    <p class="t-footnote-m" style="color: var(--warm-text-2)">Balansingiz</p>
+    <div class="bal__num"><i class="coin coin--xl"></i><span class="t-num">20 coin</span></div>
+    <p class="t-footnote" style="margin-top: var(--s-10); color: var(--warm-text-2)">Pullik: 0 · Bonus: 20 · 1 qism ≈ 60 coin</p>
+  </section>
+
+  <div class="first card--glass">
+    <div style="flex: 1"><p class="t-body-m">Birinchi xarid: <span class="c-flame">−50%</span></p><p class="t-caption c-3" style="margin-top: 2px">faqat yangi foydalanuvchilar uchun</p></div>
+    <div class="cd"><span class="cd__box">23</span><span class="cd__sep">:</span><span class="cd__box">59</span><span class="cd__sep">:</span><span class="cd__box">12</span></div>
+  </div>
+
+  <div class="packs">
+    <div class="pack"><div class="pack__amt"><i class="coin coin--lg"></i>300</div><p class="pack__bonus is-zero">bonussiz</p><span class="pack__price">[narx] soʻm</span></div>
+    <div class="pack"><div class="pack__amt"><i class="coin coin--lg"></i>600</div><p class="pack__bonus">+60 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+    <div class="pack pack--popular"><span class="pack__badge">Ommabop</span><div class="pack__amt"><i class="coin coin--lg"></i>1 200</div><p class="pack__bonus">+240 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+    <div class="pack pack--best"><span class="pack__badge">Eng foydali</span><div class="pack__amt"><i class="coin coin--lg"></i>2 400</div><p class="pack__bonus">+600 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+    <div class="pack"><div class="pack__amt"><i class="coin coin--lg"></i>6 000</div><p class="pack__bonus">+2 000 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+    <div class="pack"><div class="pack__amt"><i class="coin coin--lg"></i>12 000</div><p class="pack__bonus">+5 000 bonus</p><span class="pack__price">[narx] soʻm</span></div>
+  </div>
+
+  <div class="vipb card vip-card">
+    <i class="ic ic-crown ic--28 crown"></i>
+    <p class="t-body-m" style="flex: 1">Koʻp koʻrasizmi? VIP coinʼdan arzonroq chiqadi</p>
+    <i class="ic ic-chev-right"></i>
+  </div>
+
+  <section class="pay">
+    <h2 class="t-headline">Toʻlov usullari</h2>
+    <div class="pay__chips"><span class="chip">Payme</span><span class="chip">Click</span><span class="chip">Uzum</span><span class="chip">UzCard / Humo</span><span class="chip">Visa / MC</span><span class="chip">App Store / Google Play</span></div>
+  </section>
+
+  <div class="links"><a>Xaridlarni tiklash</a><a>Toʻlov shartlari</a><a>Yordam</a></div>
+  <p class="t-caption c-3" style="text-align: center; margin: var(--s-16) var(--page-x) 0">Coinlar faqat ilova ichida ishlatiladi. Bonus coin 7 kun amal qiladi.</p>
+  <div class="scroll-pad" style="height: 48px"></div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

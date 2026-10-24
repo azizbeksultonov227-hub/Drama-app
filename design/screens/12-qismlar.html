@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>12 · Qismlar roʻyxati</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .sheet { top: 150px; padding-bottom: 0; }
+  .mini { display: flex; gap: var(--s-12); align-items: center; }
+  .mini .art { width: 44px; height: 62px; border-radius: var(--r-thumb); flex: none; }
+  .mini__b { flex: 1; min-width: 0; }
+  .auto { display: flex; align-items: center; gap: var(--s-12); margin-top: var(--s-16); padding: var(--s-12) var(--s-16); border-radius: var(--r-tile); }
+  .sheet .utabs { padding: 0; margin-top: var(--s-12); }
+  .eps5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--s-8); margin-top: var(--s-12); }
+  .eps5 .ep { aspect-ratio: auto; height: 52px; font-size: var(--t-headline); }
+  .bar { position: absolute; left: var(--page-x); right: var(--page-x); bottom: 30px; display: flex; gap: var(--s-12); }
+  .bar .btn { padding: 0 var(--s-12); min-width: 0; }
+  .bar .btn--glass { flex: 1; letter-spacing: -.02em; }
+  .bar .btn--primary { flex: none; padding: 0 var(--s-16); }
+  .bar .btn--primary .ic { color: var(--ember); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="player-bg"><div class="art art--couple art--soft" style="--amb: var(--amb-01)"></div></div>
+  <div class="scrim"></div>
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <section class="sheet">
+    <div class="sheet__handle"></div>
+    <div class="mini">
+      <div class="art art--couple" style="--amb: var(--amb-01)"></div>
+      <div class="mini__b"><h2 class="t-headline">Milliarderning yashirin kelini</h2><p class="t-footnote c-3" style="margin-top: 2px">80 qism · Tugallangan · 10-qismda</p></div>
+      <button class="gbtn gbtn--sm gbtn--dark" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
+    </div>
+    <div class="auto card--flat" style="box-shadow: inset 0 0 0 1px var(--line-1)">
+      <div style="flex: 1"><p class="t-body-m">Keyingi qismni avtomatik ochish</p><p class="t-caption c-3" style="margin-top: 2px">har biri 60 coin · istalgan vaqtda oʻchiring</p></div>
+      <span class="toggle is-on"></span>
+    </div>
+    <nav class="utabs"><span class="utabs__item is-active">1–30</span><span class="utabs__item">31–60</span><span class="utabs__item">61–80</span></nav>
+    <div class="eps5">
+      <span class="ep ep--free has-label">1</span><span class="ep ep--free has-label">2</span><span class="ep ep--free has-label">3</span><span class="ep ep--free has-label">4</span><span class="ep ep--free has-label">5</span>
+      <span class="ep ep--free has-label">6</span><span class="ep ep--free has-label">7</span><span class="ep ep--free has-label">8</span><span class="ep ep--free has-label">9</span><span class="ep ep--current">10<i class="ic ic-play-fill"></i></span>
+      <span class="ep ep--open">11</span><span class="ep ep--open">12</span><span class="ep ep--locked">13<i class="ic ic-lock"></i></span><span class="ep ep--locked">14<i class="ic ic-lock"></i></span><span class="ep ep--locked">15<i class="ic ic-lock"></i></span>
+      <span class="ep ep--locked">16<i class="ic ic-lock"></i></span><span class="ep ep--locked">17<i class="ic ic-lock"></i></span><span class="ep ep--locked">18<i class="ic ic-lock"></i></span><span class="ep ep--locked">19<i class="ic ic-lock"></i></span><span class="ep ep--locked">20<i class="ic ic-lock"></i></span>
+      <span class="ep ep--locked">21<i class="ic ic-lock"></i></span><span class="ep ep--locked">22<i class="ic ic-lock"></i></span><span class="ep ep--locked">23<i class="ic ic-lock"></i></span><span class="ep ep--locked">24<i class="ic ic-lock"></i></span><span class="ep ep--locked">25<i class="ic ic-lock"></i></span>
+      <span class="ep ep--locked">26<i class="ic ic-lock"></i></span><span class="ep ep--locked">27<i class="ic ic-lock"></i></span><span class="ep ep--locked">28<i class="ic ic-lock"></i></span><span class="ep ep--locked">29<i class="ic ic-lock"></i></span><span class="ep ep--locked">30<i class="ic ic-lock"></i></span>
+    </div>
+  </section>
+  <div class="bar" style="z-index: 75">
+    <button class="btn btn--glass">Hammasini ochish · 3 200 coin</button>
+    <button class="btn btn--primary"><i class="ic ic-crown"></i>VIP</button>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

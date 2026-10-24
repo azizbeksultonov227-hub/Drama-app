@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>19 · Toʻlov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .order { position: absolute; top: 120px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .order__p { text-align: right; }
+  .methods { position: absolute; top: 236px; left: var(--page-x); right: var(--page-x); }
+  .mlist { display: flex; flex-direction: column; gap: var(--s-8); margin-top: var(--s-12); }
+  .m { display: flex; align-items: center; gap: var(--s-12); height: 60px; padding: 0 var(--s-16) 0 var(--s-12); border-radius: var(--r-squircle); }
+  .m.is-on { box-shadow: inset 0 0 0 1.5px var(--flame); }
+  .m__logo { width: 36px; height: 36px; border-radius: var(--r-tile); display: grid; place-items: center; background: var(--bg-3); color: var(--text-2); flex: none; font: 600 var(--t-caption)/1 var(--f-ui); }
+  .m__b { flex: 1; min-width: 0; }
+  .promo { position: absolute; top: 604px; left: var(--page-x); right: var(--page-x); display: flex; gap: var(--s-8); }
+  .promo .field { flex: 1; }
+  .total { position: absolute; left: var(--page-x); right: var(--page-x); top: 676px; display: flex; align-items: baseline; justify-content: space-between; padding-top: var(--s-12); box-shadow: inset 0 1px 0 var(--line-1); }
+  .pay { position: absolute; left: var(--page-x); right: var(--page-x); top: 730px; }
+  .safe { position: absolute; left: 0; right: 0; top: 794px; display: flex; justify-content: center; align-items: center; gap: var(--s-6); }
+  .safe a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><h1 class="t-title-2">Toʻlov</h1></div>
+
+  <div class="card order">
+    <i class="coin coin--lg"></i>
+    <div style="flex: 1; min-width: 0"><p class="t-body-m">1 200 coin + 240 bonus</p><p class="t-caption c-flame" style="margin-top: 2px">Birinchi xarid chegirmasi −50%</p></div>
+    <div class="order__p"><p class="t-caption c-3 strike">[narx] soʻm</p><p class="t-body-m">[narx] soʻm</p></div>
+  </div>
+
+  <section class="methods">
+    <h2 class="t-headline">Toʻlov usulini tanlang</h2>
+    <div class="mlist">
+      <div class="m card--glass is-on"><span class="m__logo">P</span><div class="m__b"><p class="t-body-m">Payme</p><p class="t-caption c-3">ilovada tasdiqlash</p></div><span class="radio is-on"></span></div>
+      <div class="m card--glass"><span class="m__logo">C</span><div class="m__b"><p class="t-body-m">Click</p><p class="t-caption c-3">ilovada tasdiqlash</p></div><span class="radio"></span></div>
+      <div class="m card--glass"><span class="m__logo">U</span><div class="m__b"><p class="t-body-m">Uzum Bank</p><p class="t-caption c-3">ilovada tasdiqlash</p></div><span class="radio"></span></div>
+      <div class="m card--glass"><span class="m__logo"><i class="ic ic-card ic--20"></i></span><div class="m__b"><p class="t-body-m">Bank kartasi</p><p class="t-caption c-3">UzCard · Humo · Visa · Mastercard</p></div><span class="radio"></span></div>
+      <div class="m card--glass"><span class="m__logo"><i class="ic ic-wallet ic--20"></i></span><div class="m__b"><p class="t-body-m">App Store / Google Play</p><p class="t-caption c-3">doʻkon hisobi orqali</p></div><span class="radio"></span></div>
+    </div>
+  </section>
+
+  <div class="promo"><div class="field"><i class="ic ic-ticket c-3"></i><span class="field__ph">Promokod</span></div><button class="btn btn--glass" style="height: var(--h-row)">Qoʻllash</button></div>
+  <div class="total"><span class="t-body c-2">Jami</span><span class="t-title-3">[narx] soʻm</span></div>
+  <button class="btn btn--primary btn--block abs-x pay">Payme orqali toʻlash</button>
+  <p class="safe t-caption c-3"><i class="ic ic-shield ic--16"></i>Toʻlov provayder orqali himoyalangan · <a>Oferta</a></p>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>
