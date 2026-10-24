@@ -3,6 +3,9 @@
    Har bir qiymat 1-bosqich o'lchovlaridan (design/analysis/SUMMARY.md).
    1 pt = 1 CSS px (ekran kengligi 393).
    ===================================================================== */
+/* Gelasio'da ʻ (U+02BB) glifi bor, lekin kengligi 0 — keyingi harf ustiga tushadi ("Oʻz" → "Ož").
+   Shuning uchun faqat ʻ va ʼ uchun Noto Serif subset'i (Google Fonts text=) serif stekida Gelasio'dan oldin turadi. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500&text=%CA%BB%CA%BC&display=swap');
 :root {
   /* ---------- Neytral (ref-01 skelet) ---------- */
   --bg-0: #000000;            /* ref-01: ekran foni, 6 nuqta #000000–#020101 */
@@ -154,7 +157,7 @@
 
   /* ---------- Tipografiya ---------- */
   --f-display: 'Anton', 'Impact', sans-serif;               /* ref-01 MARTY SUPREME → Anton (IoU) */
-  --f-serif: 'Gelasio', 'Georgia', serif;                   /* ref-01 sarah.lg → Gelasio (IoU 0.626) */
+  --f-serif: 'Noto Serif', 'Gelasio', 'Georgia', serif;     /* ref-01 sarah.lg → Gelasio (IoU 0.626); Noto Serif faqat ʻ ʼ subset (yuqorida) */
   --f-ui: 'Inter', -apple-system, 'SF Pro Text', sans-serif; /* ref-01/04 SF → Inter */
   --f-edit: 'Inter Tight', 'Inter', sans-serif;             /* ref-03 */
   --f-mono: 'IBM Plex Mono', ui-monospace, monospace;       /* ref-03 caption */
@@ -186,4 +189,13 @@
 
   /* ---------- Grain ---------- */
   --grain-opacity: .10;  /* kalibrlangan: 11-ekran ref-07 masshtabida std ≈ ref-07 (0.8–1.9) */
+
+  /* ---------- Taqdimot (index.html, styleguide.html) — ilova UI'si emas ---------- */
+  --dev-ti: 6px;          /* iPhone 15 Pro: titan hoshiya ~1 mm (6.08 pt/mm) */
+  --dev-bezel: 12px;      /* qora ekran hoshiyasi ~2 mm */
+  --r-device: calc(var(--r-screen) + var(--dev-ti) + var(--dev-bezel));   /* konsentrik: 73 */
+  --ti-fill: linear-gradient(135deg, #4B4A48 0%, #2C2B2A 18%, #1D1C1B 46%, #2A2928 74%, #46443F 100%);  /* Black Titanium, mat */
+  --ti-edge: inset 0 0 0 1px rgba(255, 255, 255, .26), inset 0 0 0 2px #121212;   /* ingichka yorug' qirra + ichki chiziq */
+  --ti-btn: linear-gradient(90deg, #1A1918 0%, #4B4A48 45%, #2C2B2A 100%);
+  --sg-bg: linear-gradient(180deg, #E5C4B4 0%, #DFB3A4 45%, #D6A091 100%);   /* styleguide.html: ref-07 style guide foni (k-means 26.6 / 21.1 / 22.7 %) */
 }

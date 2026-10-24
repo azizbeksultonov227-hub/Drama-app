@@ -76,11 +76,24 @@ Bosh harf balandligi 4–5 px — glif shaklini aniqlab bo'lmaydi. O'lchangan xo
 
 **Qaror: butun loyihada to'g'ri o'zbek belgisi `ʻ` (U+02BB) — oʻ, gʻ — va tutuq belgisi `ʼ` (U+02BC) ishlatiladi.** Tanlangan 5 shriftning barchasida bor, shuning uchun U+2019 ga o'tish shart emas.
 
+### 7a. Glif kengligi (5-bosqichda topilgan)
+Qamrov testi glif *borligini* tekshirgan, lekin *kengligini* emas. Canvas `measureText` (100 px):
+
+| Shrift | ʻ U+02BB | ʼ U+02BC | ‘ U+2018 |
+|---|---|---|---|
+| Anton | 29 | 29 | 23 |
+| **Gelasio** | **0** | 23 | 23 |
+| Inter / Inter Tight | 27 / 22 | 26 / 25 | 26 / 25 |
+| IBM Plex Mono | 60 | 60 | 60 |
+| Noto Serif | 25 | 25 | 25 |
+
+Gelasio'da ʻ kengligi 0 — belgi keyingi harf ustiga tushadi ("Oʻzbek" → "Ožbek"). Yechim: `tokens.css` boshida Google Fonts `text=ʻʼ` bilan **faqat shu ikki belgidan iborat Noto Serif subset'i** yuklanadi va `--f-serif: 'Noto Serif', 'Gelasio', …` — boshqa barcha harflar Gelasio'dan (tekshirildi: "Qaysi dramalar sizga yoqadi?" kengligi ikkala stekda 515.4 px). Noto Serif ʻ shakli Gelasio'ning transitional uslubiga mos.
+
 ## Yakuniy shrift to'plami
 | Rol | Shrift | PROMPT'dan farqi |
 |---|---|---|
 | Displey condensed | **Anton** 400 | — |
-| Serif | **Gelasio** 400/500 | Instrument Serif → Gelasio (IoU + ʻ) |
+| Serif | **Gelasio** 400/500 (+ Noto Serif faqat ʻ ʼ) | Instrument Serif → Gelasio (IoU + ʻ) |
 | UI | **Inter** 400/500/600/700 | — (tracking qo'shildi) |
 | Editorial | **Inter Tight** 400 | — |
 | Mono | **IBM Plex Mono** 400/500 | JetBrains Mono → IBM Plex Mono (ʻ) |

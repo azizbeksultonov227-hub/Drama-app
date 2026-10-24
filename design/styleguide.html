@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stil qoʻllanmasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* ref-07 "Styles Guide" formati: iliq och fon + grain, chapda pleer ekrani, o'ngda shrift nomi,
+     alifbo, raqamlar, ikki gradient namunasi (sfera bilan) va HEX doiralar */
+  :root { --ink: var(--cocoa); --ink-2: color-mix(in srgb, var(--cocoa) 72%, transparent); --ink-line: color-mix(in srgb, var(--cocoa) 14%, transparent); --ink-fill: color-mix(in srgb, var(--cocoa) 6%, transparent); }
+  html, body { background: var(--sg-bg); background-color: var(--sand); }
+  body { color: var(--ink); min-height: 100vh; position: relative; }
+  body.grain::after { position: fixed; opacity: calc(var(--grain-opacity) * 1.6); }
+  a { color: inherit; }
+  .page { position: relative; z-index: 3; max-width: 1180px; margin: 0 auto; padding: 0 var(--s-40) 96px; }
+  .back { display: inline-flex; align-items: center; gap: var(--s-4); margin-top: var(--s-24); font: 500 var(--t-footnote)/1 var(--f-ui); color: var(--ink-2); text-decoration: none; }
+
+  /* ---- ref-07 kompozitsiyasi ---- */
+  .hero { position: relative; display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 72px; padding: 72px 0 96px; }
+  .cross { position: absolute; width: 14px; height: 14px; opacity: .35; }
+  .cross::before, .cross::after { content: ''; position: absolute; background: var(--ink); }
+  .cross::before { left: 6.5px; top: 0; width: 1px; height: 14px; }
+  .cross::after { top: 6.5px; left: 0; height: 1px; width: 14px; }
+  .phone { --k: .75; width: calc(393px * var(--k)); height: calc(852px * var(--k)); border-radius: calc(var(--r-screen) * var(--k)); overflow: hidden; clip-path: inset(0 round calc(var(--r-screen) * var(--k))); box-shadow: 0 24px 48px color-mix(in srgb, var(--ember) 30%, transparent); }
+  .phone iframe { width: 393px; height: 852px; border: 0; transform: scale(var(--k)); transform-origin: 0 0; display: block; }
+  .guide__kick { display: inline-flex; align-items: center; gap: var(--s-6); font: 500 var(--t-footnote)/1 var(--f-ui); }
+  .guide__font { margin-top: var(--s-16); font: 600 var(--t-title-1)/1.1 var(--f-ui); letter-spacing: -.02em; }
+  .abc { margin-top: var(--s-16); max-width: 34em; font: 400 var(--t-subtitle)/1.45 var(--f-ui); letter-spacing: -.01em; }
+  .num { margin-top: var(--s-12); font: 400 var(--t-subtitle)/1.45 var(--f-ui); letter-spacing: -.01em; }
+  .swatches { display: flex; gap: var(--s-40); margin-top: var(--s-32); }
+  .sw { position: relative; width: 140px; height: 120px; }
+  .sw__fill { position: absolute; inset: 0; border-radius: var(--r-media); -webkit-mask: radial-gradient(circle at calc(100% - 22px) 22px, transparent 40px, #000 41px); mask: radial-gradient(circle at calc(100% - 22px) 22px, transparent 40px, #000 41px); }
+  .sw__ball { position: absolute; right: -12px; top: -12px; width: 68px; height: 68px; border-radius: 50%; box-shadow: inset -6px -8px 14px color-mix(in srgb, var(--cocoa) 45%, transparent), inset 4px 4px 8px color-mix(in srgb, var(--text-1) 35%, transparent); }
+  .sw--a .sw__fill { background: var(--grad-sunset); }
+  .sw--a .sw__ball { background: radial-gradient(circle at 32% 26%, color-mix(in srgb, var(--text-1) 70%, transparent) 0%, transparent 34%), repeating-linear-gradient(-28deg, var(--ember) 0 5px, var(--sand) 5px 12px, var(--peach) 12px 16px, var(--cocoa) 16px 19px); }
+  .sw--b .sw__fill { background: var(--grad-dusk); }
+  .sw--b .sw__ball { background: radial-gradient(circle at 32% 26%, color-mix(in srgb, var(--text-1) 70%, transparent) 0%, transparent 34%), repeating-linear-gradient(32deg, var(--cocoa) 0 4px, var(--rose) 4px 10px, var(--peach) 10px 15px, var(--ember) 15px 18px); }
+  .hexes { display: grid; grid-template-columns: repeat(2, 180px); gap: var(--s-12) var(--s-40); margin-top: var(--s-32); list-style: none; }
+  .hex { display: flex; align-items: center; gap: var(--s-12); font: 400 var(--t-body)/1 var(--f-ui); }
+  .hex i { width: 22px; height: 22px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px var(--ink-line); }
+
+  /* ---- bo'limlar ---- */
+  .sec-sg { padding-top: 72px; }
+  .sec-sg > header { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s-8) var(--s-24); padding-bottom: var(--s-16); margin-bottom: var(--s-32); box-shadow: inset 0 -1px 0 var(--ink-line); }
+  .sec-sg h2 { font: 400 var(--t-edit)/1 var(--f-edit); letter-spacing: -.04em; }
+  .sec-sg header p { max-width: 56ch; font: 400 var(--t-footnote)/1.5 var(--f-ui); color: var(--ink-2); }
+  .k { font: 400 var(--t-mono)/1.5 var(--f-mono); letter-spacing: .02em; color: var(--ink-2); }
+
+  .fonts { display: grid; gap: var(--s-16); }
+  .font { display: grid; grid-template-columns: 220px 1fr; gap: var(--s-12) var(--s-40); padding: var(--s-24); border-radius: var(--r-card); background: var(--ink-fill); box-shadow: inset 0 0 0 1px var(--ink-line); }
+  .font__name { font-size: var(--t-title-2); line-height: 1.05; }
+  .font__role { margin-top: var(--s-8); }
+  .font__use { margin-top: var(--s-12); font: 400 var(--t-footnote)/1.45 var(--f-ui); color: var(--ink-2); }
+  .font__abc { font-size: var(--t-subtitle); line-height: 1.45; }
+  .font__num { margin-top: var(--s-8); font-size: var(--t-subtitle); line-height: 1.45; }
+  .font__uz { margin-top: var(--s-12); font-size: var(--t-headline); line-height: 1.4; color: var(--ink-2); }
+
+  .scale { display: grid; }
+  .scale__row { display: grid; grid-template-columns: 170px 1fr; align-items: baseline; gap: var(--s-24); padding: var(--s-16) 0; box-shadow: inset 0 -1px 0 var(--ink-line); }
+  .scale__row > div { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  .dots { display: flex; flex-wrap: wrap; gap: var(--s-24) var(--s-32); }
+  .dot-sw { width: 132px; display: grid; gap: var(--s-6); align-content: start; }
+  .dot-sw i { width: 72px; height: 72px; border-radius: 50%; background: var(--c); box-shadow: inset 0 0 0 1px var(--ink-line); margin-bottom: var(--s-6); }
+  .dot-sw b { font: 600 var(--t-footnote)/1.2 var(--f-ui); }
+  .dot-sw span { font: 400 var(--t-caption)/1.35 var(--f-ui); color: var(--ink-2); }
+  .sub { margin: var(--s-40) 0 var(--s-16); font: 600 var(--t-headline)/1.2 var(--f-ui); }
+
+  .panel { padding: var(--s-32); border-radius: var(--r-card-lg); background: var(--bg-0); color: var(--text-1); }
+  .panel .dot-sw i { box-shadow: inset 0 0 0 1px var(--line-2); }
+  .panel .dot-sw span, .panel .k { color: var(--text-3); }
+
+  .grads { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--s-20); }
+  .grad { display: grid; gap: var(--s-8); }
+  .grad > i { position: relative; overflow: hidden; height: 150px; border-radius: var(--r-media); background: var(--g); box-shadow: inset 0 0 0 1px var(--ink-line); }
+  .grad b { font: 600 var(--t-footnote)/1.2 var(--f-ui); }
+  .grad span { font: 400 var(--t-caption)/1.35 var(--f-ui); color: var(--ink-2); }
+
+  .fx { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: var(--s-20); }
+  .fx__cell { display: grid; gap: var(--s-12); align-content: start; }
+  .fx__stage { position: relative; height: 170px; border-radius: var(--r-card); overflow: hidden; display: grid; place-items: center; background: var(--bg-1); box-shadow: inset 0 0 0 1px var(--line-1); isolation: isolate; }
+  .fx__stage.card--warm { background: var(--warm-light), var(--warm-bg); }
+  .fx__stage .art { position: absolute; inset: 0; }
+  .fx__stage > :not(.art):not(.ring) { position: relative; z-index: 3; }
+  .fx__cell > p { font: 400 var(--t-footnote)/1.4 var(--f-ui); color: var(--text-2); }
+  .fx__cell > p b { color: var(--text-1); font-weight: 600; }
+
+  .radii { display: flex; flex-wrap: wrap; gap: var(--s-24); }
+  .rad { display: grid; gap: var(--s-8); justify-items: start; }
+  .rad i { width: 112px; height: 112px; border-radius: var(--r); background: var(--grad-dusk); }
+
+  .spaces { display: grid; gap: var(--s-10); }
+  .space { display: grid; grid-template-columns: 260px 60px 1fr; align-items: center; gap: var(--s-16); }
+  .space i { height: 14px; width: var(--w); border-radius: 3px; background: var(--flame); }
+
+  .icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--s-8); }
+  .icon { display: grid; justify-items: center; gap: var(--s-8); padding: var(--s-16) var(--s-4) var(--s-12); border-radius: var(--r-tile); background: var(--ink-fill); }
+  .icon span { font: 400 var(--t-micro)/1.2 var(--f-mono); color: var(--ink-2); text-align: center; word-break: break-all; }
+
+  @media (max-width: 900px) {
+    .page { padding: 0 var(--s-16) 72px; }
+    .hero { grid-template-columns: 1fr; gap: var(--s-40); padding-top: var(--s-40); }
+    .phone { --k: .6; margin: 0 auto; }
+    .hexes { grid-template-columns: repeat(2, 1fr); gap: var(--s-12) var(--s-16); }
+    .swatches { gap: var(--s-20); }
+    .sw { width: 128px; }
+    .font { grid-template-columns: 1fr; }
+    .scale__row { grid-template-columns: 1fr; gap: var(--s-6); }
+    .space { grid-template-columns: 130px 44px 1fr; }
+    .sec-sg h2 { font-size: var(--t-title-1); }
+  }
+</style>
+</head>
+<body class="grain">
+<div class="page">
+  <a class="back" href="index.html"><i class="ic ic-chev-left ic--16"></i>Barcha ekranlar</a>
+
+  <!-- ===== ref-07: pleer + style guide ===== -->
+  <section class="hero">
+    <span class="cross" style="left: -20px; top: 40px"></span><span class="cross" style="left: 46%; top: 24px"></span><span class="cross" style="right: 8%; top: 70px"></span>
+    <span class="cross" style="left: 38%; bottom: 40px"></span><span class="cross" style="right: 2%; bottom: 120px"></span><span class="cross" style="left: 2%; bottom: 10px"></span>
+    <div class="phone"><iframe src="screens/11-pleer.html" title="11 · Pleer" scrolling="no"></iframe></div>
+    <div class="guide">
+      <p class="guide__kick"><i class="ic ic-sparkle ic--16"></i>Stil qoʻllanmasi</p>
+      <h1 class="guide__font">Inter</h1>
+      <p class="abc">Aa, Bb, Dd, Ee, Ff, Gg, Hh, Ii, Jj, Kk, Ll, Mm, Nn, Oo, Pp, Qq, Rr, Ss, Tt, Uu, Vv, Xx, Yy, Zz, Oʻoʻ, Gʻgʻ, Shsh, Chch, Ngng</p>
+      <p class="num">00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 10</p>
+      <div class="swatches">
+        <div class="sw sw--a"><div class="sw__fill"></div><i class="sw__ball"></i></div>
+        <div class="sw sw--b"><div class="sw__fill"></div><i class="sw__ball"></i></div>
+      </div>
+      <ul class="hexes">
+        <li class="hex" style="--c: var(--flame)"><i></i><span data-token="--flame"></span></li>
+        <li class="hex" style="--c: var(--cocoa)"><i></i><span data-token="--cocoa"></span></li>
+        <li class="hex" style="--c: var(--sand)"><i></i><span data-token="--sand"></span></li>
+        <li class="hex" style="--c: var(--rose)"><i></i><span data-token="--rose"></span></li>
+        <li class="hex" style="--c: var(--ember)"><i></i><span data-token="--ember"></span></li>
+        <li class="hex" style="--c: var(--peach)"><i></i><span data-token="--peach"></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== Shriftlar ===== -->
+  <section class="sec-sg">
+    <header><h2>Shriftlar</h2><p>Beshta oila, barchasi Google Fonts. Oʻzbek lotin belgilari (Oʻ, Gʻ — U+02BB, tutuq ʼ — U+02BC) glif va kenglik boʻyicha tekshirilgan: Gelasio'da ʻ kengligi 0, shuning uchun bu ikki belgi Noto Serif subset'idan olinadi (<code class="k">analysis/fonts.md</code>).</p></header>
+    <div class="fonts" id="fonts"></div>
+  </section>
+
+  <!-- ===== Tipografiya shkalasi ===== -->
+  <section class="sec-sg">
+    <header><h2>Tipografiya shkalasi</h2><p>Ekranlarda faqat shu oʻlchamlar ishlatiladi. Har bir qiymat referensdan oʻlchangan (cap-height / x-height) — manba <code class="k">tokens.css</code> izohida.</p></header>
+    <div class="scale" id="scale"></div>
+  </section>
+
+  <!-- ===== Ranglar ===== -->
+  <section class="sec-sg">
+    <header><h2>Ranglar</h2><p>Aksentlar faqat ref-07 palitrasidan. Neytrallar ref-01 skeletidan, ambient ranglar — har bir dramaning posteri (placeholder) uchun referenslardan oʻlchangan.</p></header>
+    <h3 class="sub" style="margin-top: 0">Brend palitrasi</h3>
+    <div class="dots" id="brand"></div>
+    <h3 class="sub">Iliq ekranlar matni va yorugʻlik</h3>
+    <div class="dots" id="warm"></div>
+    <h3 class="sub">Neytrallar · glass</h3>
+    <div class="panel"><div class="dots" id="neutral"></div></div>
+    <h3 class="sub">Drama ambient ranglari</h3>
+    <div class="dots" id="amb"></div>
+  </section>
+
+  <!-- ===== Gradientlar ===== -->
+  <section class="sec-sg">
+    <header><h2>Gradientlar</h2><p>ref-07 namunalari (sunset, dusk), ref-06 iliq fon (radial fit), ref-01 hero-fade va glossy pill. Iliq fonlarda doimo halqa + grain.</p></header>
+    <div class="grads" id="grads"></div>
+  </section>
+
+  <!-- ===== Effektlar ===== -->
+  <section class="sec-sg">
+    <header><h2>Effektlar</h2><p>Glossy pill (ref-01), glass (ref-04/06/07), glow (ref-04), yorugʻlik halqasi + grain (ref-06), 3D quti (ref-01).</p></header>
+    <div class="panel">
+      <div class="fx">
+        <div class="fx__cell"><div class="fx__stage"><button class="btn btn--primary">Tomosha qilish</button></div><p><b>Glossy pill</b> · <span class="k">--glossy-fill</span>, <span class="k">--glossy-hi</span>, <span class="k">--shadow-pill</span> — har ekranda bitta asosiy tugma</p></div>
+        <div class="fx__cell"><div class="fx__stage"><div class="art art--couple" style="--amb: var(--amb-01)"></div><div class="row-flex gap-12"><span class="gbtn"><i class="ic ic-heart"></i></span><span class="gbtn gbtn--frost"><i class="ic ic-share"></i></span><span class="chip chip--glass">Qasos</span></div></div><p><b>Glass</b> · <span class="k">--glass-bg-strong</span>, <span class="k">--glass-bg-frost</span>, <span class="k">--glass-chip</span>, <span class="k">--glass-filter</span></p></div>
+        <div class="fx__cell"><div class="fx__stage"><button class="btn btn--flame">Ochish · 60 coin</button></div><p><b>Glow</b> · <span class="k">--glow-flame</span> / <span class="k">--glow-sand</span> — faqat flame va sand tugmalarda</p></div>
+        <div class="fx__cell"><div class="fx__stage card--warm grain"><div class="ring ring--card" style="width: 760px; height: 760px; left: -560px; top: -300px"></div><p class="t-serif-lg" style="color: var(--warm-text-1)">+100 coin</p></div><p><b>Halqa + grain</b> · <span class="k">--warm-bg</span>, <span class="k">--warm-light</span>, <span class="k">--ring-shadow</span>, <span class="k">--grain-opacity</span> — emotsional ekranlar 03, 05, 11, 15, 17, 18, 20</p></div>
+        <div class="fx__cell"><div class="fx__stage"><div class="box" style="--tile-box: 92px; --box: var(--flame)"><div class="box__well"><i class="coin coin--lg"></i></div><div class="box__front"></div></div></div><p><b>3D quti</b> · <span class="k">--shadow-well</span>, <span class="k">--r-squircle</span> — check-in, profil avatari</p></div>
+        <div class="fx__cell"><div class="fx__stage"><div class="rslider" style="--v: 62%; width: 200px"><div class="rslider__dots"><i></i><i></i><i></i><i></i><i></i></div><span class="rslider__knob">4</span></div></div><p><b>Shisha sfera knob</b> · <span class="k">--knob-fill</span>, <span class="k">--knob-rim</span>, <span class="k">--grad-rating</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Radiuslar ===== -->
+  <section class="sec-sg">
+    <header><h2>Radiuslar</h2><p>Referensdan eng kichik kvadratlar usulida oʻlchangan (±0.25 px). Boshqa radius ishlatilmaydi.</p></header>
+    <div class="radii" id="radii"></div>
+  </section>
+
+  <!-- ===== Oraliqlar ===== -->
+  <section class="sec-sg">
+    <header><h2>Oraliqlar</h2><p>Chetdan 18 pt (ref-01), kartalar orasi 14 pt, boʻlimlar orasi 28 pt; qolganlari 2–40 shkalasi.</p></header>
+    <div class="spaces" id="spaces"></div>
+  </section>
+
+  <!-- ===== Ikonkalar ===== -->
+  <section class="sec-sg">
+    <header><h2>Ikonkalar</h2><p>Bitta toʻplam: chiziq 1.75–2 pt, yumaloq uchlar, 24 pt toʻr. CSS mask — rangni <code class="k">currentColor</code>'dan oladi (<code class="k">icons.css</code>).</p></header>
+    <div class="icons" id="icons"></div>
+  </section>
+</div>
+
+<script>
+  const css = getComputedStyle(document.documentElement);
+  const tok = n => css.getPropertyValue(n).trim();
+  const $ = id => document.getElementById(id);
+  document.querySelectorAll('[data-token]').forEach(el => el.textContent = tok(el.dataset.token));
+
+  const ABC = 'Aa Bb Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qq Rr Ss Tt Uu Vv Xx Yy Zz Oʻoʻ Gʻgʻ Shsh Chch';
+  const FONTS = [
+    ['Anton', '--f-display', 'Display · 400', 'Hero sarlavha lockup, Top-10 raqamlari, coin miqdori, countdown.', 'ANTON'],
+    ['Gelasio', '--f-serif', 'Serif · 400 / 500', 'Emotsional sarlavhalar: onboarding, sovgʻa, VIP, profil ismi.', ''],
+    ['Inter', '--f-ui', 'UI · 400 / 500 / 600 / 700', 'Barcha interfeys matni: tugma, roʻyxat, meta, nav.', ''],
+    ['Inter Tight', '--f-edit', 'Editorial · 400 / 500', 'Katta tahririy sarlavhalar va roʻyxatlar (ref-03).', ''],
+    ['IBM Plex Mono', '--f-mono', 'Mono · 400 / 500', 'ID, taklif kodi, kichik yorliqlar.', ''],
+  ];
+  $('fonts').innerHTML = FONTS.map(([name, v, role, use, upper]) => `
+    <article class="font" style="font-family: var(${v})">
+      <div><p class="font__name">${name}</p><p class="k font__role">${role} · ${v}</p><p class="font__use">${use}</p></div>
+      <div><p class="font__abc">${(upper ? ABC.toUpperCase() : ABC).split(' ').join(', ')}</p><p class="font__num">00, 11, 22, 33, 44, 55, 66, 77, 88, 99, 10</p><p class="font__uz">Oʻzbekcha dublyaj · Gʻalaba · Taʼm · 1 440 soʻm</p></div>
+    </article>`).join('');
+
+  const SCALE = [
+    ['t-num-xl', '--t-num-xl', '−60%'], ['t-num', '--t-num', '9:41 · 105'], ['t-edit-xl', '--t-edit-xl', 'Tez kunda'], ['t-edit', '--t-edit', 'Romantika, qasos'],
+    ['t-serif-xl', '--t-serif-xl', 'Xush kelibsiz!'], ['t-serif-lg', '--t-serif-lg', 'VIP — hamma qismlar ochiq'], ['t-title-1', '--t-title-1', 'Boʻri qirolining qasosi'],
+    ['t-greet', '--t-greet', 'Salom, Dilnoza!'], ['t-title-2', '--t-title-2', 'Mukofotlar'], ['t-title-3', '--t-title-3', 'Milliarderning yashirin kelini'],
+    ['t-title-4', '--t-title-4', 'Keyingi qism 5 soniyada'], ['t-subtitle', '--t-subtitle', 'Butun serialni ochish'], ['t-headline', '--t-headline', 'Siz uchun tavsiya'],
+    ['t-body', '--t-body', 'Oddiy qiz milliarderga turmushga chiqadi va uning sirini bilib qoladi.'], ['t-footnote', '--t-footnote', '80 qism · Romantika · 2.4M koʻrish'],
+    ['t-caption', '--t-caption', '1–10 qism bepul · har kuni 20:00 da'], ['t-micro', '--t-micro', 'Bosh sahifa · Mukofot · Lenta'], ['t-mono', '--t-mono', 'ID: 10482733 · AZ7K29'],
+  ];
+  $('scale').innerHTML = SCALE.map(([cls, v, s]) => `<div class="scale__row"><span class="k">.${cls} · ${tok(v)}</span><div class="${cls}">${s}</div></div>`).join('');
+
+  const dot = ([v, name, role]) => `<div class="dot-sw" style="--c: var(${v})"><i></i><b>${name}</b><span class="k">${tok(v)}</span><span>${role}</span></div>`;
+  $('brand').innerHTML = [
+    ['--flame', 'Flame', 'Asosiy aksent: aktiv holat, progress, coin, bepul belgisi'], ['--ember', 'Ember', 'Gradientlarning toʻq qismi'],
+    ['--sand', 'Sand', 'VIP / premium'], ['--rose', 'Rose', 'Like, son badge, yumshoq ogohlantirish'],
+    ['--peach', 'Peach', '2-darajali urgʻu matni'], ['--cocoa', 'Cocoa', 'Oq tugmalardagi matn, iliq toʻq fon'],
+  ].map(dot).join('');
+  $('warm').innerHTML = [
+    ['--warm-text-1', 'Warm text 1', 'Iliq fondagi sarlavha (ref-06)'], ['--warm-text-2', 'Warm text 2', 'Iliq fondagi subtitle'], ['--peach-warm', 'Peach warm', 'Iliq fondagi urgʻu'],
+    ['--white-pill', 'White pill', 'Iliq fondagi oq tugma'], ['--ring-core', 'Ring core', 'Yorugʻlik halqasi yadrosi'], ['--ring-glow', 'Ring glow', 'Halqa ichki nuri'], ['--light-source', 'Light source', 'Yorugʻlik manbai'],
+  ].map(dot).join('');
+  $('neutral').innerHTML = [
+    ['--bg-0', 'bg-0', 'Ekran foni'], ['--bg-1', 'bg-1', 'Karta'], ['--bg-2', 'bg-2', 'Toʻq tugma'], ['--bg-3', 'bg-3', '«…» doira, pill-more'], ['--surface-tab', 'surface-tab', 'Tanlangan tab'],
+    ['--text-1', 'text-1', 'Asosiy matn'], ['--text-2', 'text-2', 'Ikkinchi darajali'], ['--text-3', 'text-3', 'Meta, placeholder'], ['--line-1', 'line-1', 'Karta cheti'], ['--line-2', 'line-2', 'Karta past cheti'],
+    ['--glass-bg', 'glass-bg', 'Qidiruv, toʻq glass'], ['--glass-bg-strong', 'glass-bg-strong', 'Media ustidagi doira'], ['--glass-bg-frost', 'glass-bg-frost', 'Muzli doira'], ['--glass-chip', 'glass-chip', 'Glass chip'], ['--glass-dark', 'glass-dark', 'Glass karta'],
+  ].map(dot).join('');
+  const DRAMAS = ['Milliarderning yashirin kelini', 'Boʻri qirolining qasosi', 'Shartnoma boʻyicha xotin', 'Ajrashgandan keyin boylik', 'Direktorning sirli egizagi', 'Vampir qoʻriqchisi', 'Uch yildan keyin qaytdim', 'Malika libosidagi xizmatkor', 'Qishloqdan kelgan merosxoʻr', 'Sevgi va qasos oʻrtasida', 'Kelinning ikkinchi hayoti', 'Imperatorning soʻnggi farmoni', 'Ofisdagi yolgʻon nikoh', 'Taqdir toʻyi', 'Yashirin chempion', 'Qasos kelini', 'Merosxoʻrning qaytishi'];
+  $('amb').innerHTML = DRAMAS.map((d, i) => { const n = String(i + 1).padStart(2, '0'); return dot([`--amb-${n}`, `D${n}`, d]); }).join('') + dot(['--amb-dark', 'amb-dark', 'Ambient karta pastki rangi']);
+
+  const GRADS = [
+    ['--grad-sunset', 'Sunset', 'ref-07 namuna A: flame → sand → ember'], ['--grad-dusk', 'Dusk', 'ref-07 namuna B: cocoa → rose → peach'],
+    ['--warm-bg', 'Warm', 'ref-06 iliq fon (radial fit) + yorugʻlik', 'warm'], ['--grad-vip', 'VIP', 'VIP sahifa foni'], ['--grad-rating', 'Rating', 'Reyting slider treki'],
+    ['--hero-fade', 'Hero fade', 'Rasm ustidagi matn himoyasi (ref-01)', 'fade'], ['--card-fill', 'Card fill', 'Karta vertikal gradienti (ref-01)'], ['--glossy-fill', 'Glossy', 'Glossy pill, 12 nuqta (ref-01)'],
+  ];
+  $('grads').innerHTML = GRADS.map(([v, name, role, kind]) => {
+    const g = kind === 'warm' ? 'var(--warm-light), var(--warm-bg)' : kind === 'fade' ? `var(--hero-fade), var(--grad-sunset)` : `var(${v})`;
+    const inner = kind === 'warm' ? '<span class="ring ring--card" style="width: 900px; height: 900px; left: -680px; top: -360px"></span>' : '';
+    return `<div class="grad"><i class="${kind === 'warm' ? 'grain' : ''}" style="--g: ${g}">${inner}</i><b>${name}</b><span class="k">${v}</span><span>${role}</span></div>`;
+  }).join('');
+
+  $('radii').innerHTML = [['--r-screen', 'Ekran'], ['--r-sheet', 'Sheet / katta karta'], ['--r-card', 'Karta'], ['--r-media', 'Media, paket'], ['--r-squircle', '3D quti, radio qator'], ['--r-tile', 'Janr plitkasi'], ['--r-poster', 'Poster'], ['--r-thumb', 'Tag, mini rasm'], ['--r-pill', 'Pill, chip, nav']]
+    .map(([v, role]) => `<div class="rad" style="--r: var(${v})"><i></i><span class="k">${v} · ${tok(v)}</span><span class="t-caption" style="color: var(--ink-2)">${role}</span></div>`).join('');
+
+  $('spaces').innerHTML = [['--page-x', 'Ekran cheti'], ['--gap-card', 'Kartalar orasi'], ['--gap-section', 'Boʻlimlar orasi'], ['--gap-title', 'Sarlavha → kontent'], ['--s-2'], ['--s-4'], ['--s-6'], ['--s-8'], ['--s-10'], ['--s-12'], ['--s-16'], ['--s-20'], ['--s-24'], ['--s-32'], ['--s-40']]
+    .map(([v, role]) => `<div class="space" style="--w: calc(var(${v}) * 4)"><span class="k">${v}${role ? ' · ' + role : ''}</span><span class="k">${tok(v)}</span><i></i></div>`).join('');
+
+  const ICONS = 'home home-fill play play-fill gift bookmark bookmark-fill user search bell bell-plus plus minus close check chev-left chev-right chev-down chev-up arrow-right arrow-up arrow-down share share-box more more-v heart heart-fill comment comment-fill download lock lock-fill unlock eye eye-off star-fill star crown list grid filter pause-fill rewind forward clock calendar moon copy send send-fill phone info help edit wallet card logout users user-plus trophy sparkle flame settings globe wifi trash ticket megaphone video film refresh shield link cc gauge volume tv flag receipt percent cast swipe-up sort subtitles sliders hd'.split(' ');
+  $('icons').innerHTML = ICONS.map(n => `<div class="icon"><i class="ic ic-${n}"></i><span>${n}</span></div>`).join('');
+</script>
+</body>
+</html>

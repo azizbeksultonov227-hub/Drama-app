@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Short-drama · Ekranlar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Taqdimot sahifasi: qora fon, iPhone 15 Pro ramkalari (titan + ingichka yorug' qirra), 6 bo'lim */
+  :root {
+    --k: .72;   /* ramka masshtabi — JS ekran kengligiga moslaydi */
+    --dev-w: calc(393px + 2 * (var(--dev-ti) + var(--dev-bezel)));
+    --dev-h: calc(852px + 2 * (var(--dev-ti) + var(--dev-bezel)));
+    --page-pad: var(--s-40);
+  }
+  body { background: var(--bg-0); min-height: 100vh; }
+  a { color: inherit; text-decoration: none; }
+  code { font: 400 .92em/1 var(--f-mono); color: var(--text-1); }
+  .page { max-width: 1480px; margin: 0 auto; padding: 0 var(--page-pad) 96px; }
+
+  .hero { padding: 72px 0 var(--s-40); display: grid; gap: var(--s-24); }
+  .hero__kicker { color: var(--text-3); }
+  .hero__title { font: 400 var(--t-edit-xl)/1 var(--f-edit); letter-spacing: -.04em; max-width: 15ch; }
+  .hero__title span { color: var(--peach); }
+  .hero__lead { max-width: 60ch; color: var(--text-2); font: 400 var(--t-body)/1.55 var(--f-ui); }
+  .hero__links { display: flex; flex-wrap: wrap; gap: var(--s-8); }
+  .facts { display: flex; flex-wrap: wrap; gap: var(--s-24) var(--s-40); padding-top: var(--s-8); }
+  .facts div { display: grid; gap: var(--s-4); }
+  .facts b { font: 400 var(--t-title-1)/1 var(--f-display); }
+  .facts span { font: 400 var(--t-footnote)/1.3 var(--f-ui); color: var(--text-3); }
+
+  .bar { position: sticky; top: 0; z-index: 10; margin: 0 calc(var(--page-pad) * -1); padding: var(--s-12) var(--page-pad); display: flex; align-items: center; justify-content: space-between; gap: var(--s-16);
+    background: color-mix(in srgb, var(--bg-0) 78%, transparent); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); box-shadow: inset 0 -1px 0 var(--line-1); }
+  .bar__groups { display: flex; gap: var(--s-6); overflow-x: auto; scrollbar-width: none; }
+  .bar__groups::-webkit-scrollbar { display: none; }
+  .bar__groups .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); }
+  .bar__groups .chip b { font: 500 var(--t-mono)/1 var(--f-mono); color: var(--text-3); }
+  .bar__groups .chip.is-active { background: var(--text-1); color: var(--cocoa); box-shadow: none; }
+  .bar__groups .chip.is-active b { color: var(--ember); }
+
+  .group { padding-top: 64px; scroll-margin-top: 40px; }
+  .group__head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: var(--s-12) var(--s-40); padding-bottom: var(--s-20); margin-bottom: var(--s-40); box-shadow: inset 0 -1px 0 var(--line-1); }
+  .group__num { font: 400 var(--t-mono)/1 var(--f-mono); letter-spacing: .04em; color: var(--flame); }
+  .group__title { margin-top: var(--s-10); font: 400 var(--t-edit)/1 var(--f-edit); letter-spacing: -.04em; }
+  .group__desc { max-width: 52ch; color: var(--text-2); font: 400 var(--t-footnote)/1.5 var(--f-ui); }
+  .group__desc b { display: block; margin-bottom: var(--s-4); color: var(--text-3); font: 400 var(--t-mono)/1.4 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; }
+
+  .grid { display: flex; flex-wrap: wrap; gap: 56px var(--s-40); }
+  .shot { display: grid; gap: var(--s-16); align-content: start; }
+
+  /* ---- iPhone 15 Pro ---- */
+  .dev-wrap { width: calc(var(--dev-w) * var(--k)); height: calc(var(--dev-h) * var(--k)); }
+  .dev { position: relative; width: var(--dev-w); height: var(--dev-h); padding: var(--dev-ti); border-radius: var(--r-device); background: var(--ti-fill); box-shadow: var(--ti-edge); transform: scale(var(--k)); transform-origin: 0 0; }
+  .dev__bezel { height: 100%; padding: var(--dev-bezel); border-radius: calc(var(--r-device) - var(--dev-ti)); background: var(--bg-0); box-shadow: inset 0 0 0 1px var(--line-1); }
+  .dev__screen { width: 393px; height: 852px; border-radius: var(--r-screen); overflow: hidden; clip-path: inset(0 round var(--r-screen)); background: var(--bg-1); }
+  .dev__screen iframe { display: block; width: 393px; height: 852px; border: 0; }
+  .dev__btn { position: absolute; width: 3px; border-radius: 2px 0 0 2px; background: var(--ti-btn); box-shadow: inset 0 0 0 .5px var(--line-2); }
+  .dev__btn--action { left: -3px; top: 124px; height: 30px; }
+  .dev__btn--vup { left: -3px; top: 190px; height: 58px; }
+  .dev__btn--vdn { left: -3px; top: 262px; height: 58px; }
+  .dev__btn--power { right: -3px; top: 220px; height: 92px; border-radius: 0 2px 2px 0; }
+
+  .cap { display: grid; grid-template-columns: auto 1fr; column-gap: var(--s-10); row-gap: var(--s-4); width: calc(var(--dev-w) * var(--k)); }
+  .cap__n { grid-row: span 2; font: 400 var(--t-title-3)/1 var(--f-display); color: var(--text-3); }
+  .cap__t { font: 600 var(--t-body)/1.2 var(--f-ui); letter-spacing: -.01em; }
+  .cap__m { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s-4) var(--s-10); font: 400 var(--t-caption)/1.3 var(--f-ui); color: var(--text-3); }
+  .cap__m a { color: var(--text-2); text-decoration: underline; text-decoration-color: var(--line-outline); text-underline-offset: 3px; }
+  .cap__m a:hover { color: var(--text-1); }
+  .cap__long { display: inline-flex; align-items: center; gap: var(--s-4); color: var(--sand); }
+
+  .foot { margin-top: 96px; padding-top: var(--s-24); box-shadow: inset 0 1px 0 var(--line-1); display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s-12); color: var(--text-3); font: 400 var(--t-footnote)/1.5 var(--f-ui); }
+
+  @media (max-width: 720px) {
+    :root { --page-pad: var(--s-16); }
+    .hero { padding-top: var(--s-40); }
+    .hero__title { font-size: var(--t-edit); }
+    .bar .seg { display: none; }
+    .grid { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <p class="t-mono hero__kicker">Short-drama ilova · UI dizayn · iPhone 15 Pro 393 × 852</p>
+    <h1 class="hero__title">Vertikal mini-seriallar&nbsp;— <span>30 ekran</span></h1>
+    <p class="hero__lead">Har bir ekran — alohida HTML + CSS fayl, barcha qiymatlar <code>tokens.css</code>'dan. Uzun ekranlarni ramka ichida aylantirish mumkin; toʻliq uzunlikdagi koʻrinish uchun «Ochish» yoki @3x PNG.</p>
+    <div class="facts">
+      <div><b>30</b><span>ekran</span></div>
+      <div><b>6</b><span>boʻlim</span></div>
+      <div><b>7</b><span>uzun ekran</span></div>
+      <div><b>87</b><span>ikonka, bitta toʻplam</span></div>
+    </div>
+    <div class="hero__links">
+      <a class="btn btn--glass btn--sm" href="styleguide.html">Stil qoʻllanmasi<i class="ic ic-chev-right ic--18"></i></a>
+      <a class="btn btn--glass btn--sm" href="components.html">Komponentlar<i class="ic ic-chev-right ic--18"></i></a>
+    </div>
+  </header>
+
+  <div class="bar">
+    <nav class="bar__groups" id="groups">
+      <a class="chip" href="#kirish"><b>1</b>Kirish</a>
+      <a class="chip" href="#kashf"><b>2</b>Kashf qilish</a>
+      <a class="chip" href="#tomosha"><b>3</b>Tomosha</a>
+      <a class="chip" href="#monetizatsiya"><b>4</b>Monetizatsiya</a>
+      <a class="chip" href="#mukofotlar"><b>5</b>Mukofotlar</a>
+      <a class="chip" href="#profil"><b>6</b>Profil</a>
+    </nav>
+    <div class="seg seg--glass" id="zoom" role="group" aria-label="Masshtab">
+      <button class="seg__item" data-k=".5">50%</button>
+      <button class="seg__item is-active" data-k=".72">75%</button>
+      <button class="seg__item" data-k="1">100%</button>
+    </div>
+  </div>
+
+  <main id="groupsRoot"></main>
+
+  <footer class="foot">
+    <span>Rasmlar oʻrnida ambient rang + siluet + grain placeholder (Unsplash bu muhitda bloklangan) — <code>data/dramas.md</code></span>
+    <span>Ataylab qilingan farqlar: <code>analysis/DEVIATIONS.md</code></span>
+  </footer>
+</div>
+
+<script>
+  // Ekranlar roʻyxati — fayl nomi, sarlavha, balandlik (uzun ekranlar toʻliq uzunlikda chizilgan)
+  const GROUPS = [
+    { id: 'kirish', n: 1, title: 'Kirish', desc: 'Birinchi ochilish: janr va til tanlash, kirish, yangi foydalanuvchi sovgʻasi.', screens: [
+      ['01-onboarding', 'Onboarding — janr va til'], ['02-kirish', 'Kirish / roʻyxatdan oʻtish'], ['03-sovga', 'Yangi foydalanuvchi sovgʻasi']] },
+    { id: 'kashf', n: 2, title: 'Kashf qilish', desc: 'Bosh sahifa, vertikal lenta, qidiruv, janrlar, reyting va tez kunda chiqadiganlar.', screens: [
+      ['04-bosh-sahifa', 'Bosh sahifa', 2060], ['05-lenta', 'Lenta (vertikal svayp)'], ['06-qidiruv', 'Qidiruv'], ['07-janrlar', 'Janrlar va filtr'], ['08-reyting', 'Reyting / Top'], ['09-tez-kunda', 'Tez kunda']] },
+    { id: 'tomosha', n: 3, title: 'Tomosha', desc: 'Drama sahifasi, pleer va uning qatlamlari — qismlar, izohlar, sozlamalar — hamda serial yakuni.', screens: [
+      ['10-drama', 'Drama sahifasi', 1782], ['11-pleer', 'Pleer'], ['12-qismlar', 'Qismlar roʻyxati'], ['13-izohlar', 'Izohlar'], ['14-pleer-sozlamalari', 'Pleer sozlamalari'], ['15-serial-tugadi', 'Serial tugadi']] },
+    { id: 'monetizatsiya', n: 4, title: 'Monetizatsiya', desc: 'Qulflangan qism, coin doʻkoni, VIP obuna, toʻlov, maxsus taklif va reklama koʻrib ochish.', screens: [
+      ['16-paywall', 'Qulflangan qism (paywall)'], ['17-coin-dokoni', 'Coin doʻkoni', 1142], ['18-vip', 'VIP obuna', 1103], ['19-tolov', 'Toʻlov'], ['20-maxsus-taklif', 'Maxsus taklif popup'], ['21-reklama', 'Reklama koʻrib ochish']] },
+    { id: 'mukofotlar', n: 5, title: 'Mukofotlar', desc: 'Kunlik kirish, vazifalar va doʻstni taklif qilish — bonus coin manbalari.', screens: [
+      ['22-mukofotlar', 'Mukofotlar markazi', 1585], ['23-dost-taklif', 'Doʻstni taklif qilish']] },
+    { id: 'profil', n: 6, title: 'Profil', desc: 'Roʻyxatim, yuklanganlar, bildirishnomalar, profil, hamyon, sozlamalar va yordam markazi.', screens: [
+      ['24-royxatim', 'Mening roʻyxatim'], ['25-yuklanganlar', 'Yuklab olinganlar'], ['26-bildirishnomalar', 'Bildirishnomalar'], ['27-profil', 'Profil', 1691], ['28-hamyon', 'Hamyon va tranzaksiyalar'], ['29-sozlamalar', 'Sozlamalar', 1496], ['30-yordam', 'Yordam markazi']] },
+  ];
+
+  const root = document.getElementById('groupsRoot');
+  root.innerHTML = GROUPS.map(g => {
+    const first = g.screens[0][0].slice(0, 2), last = g.screens[g.screens.length - 1][0].slice(0, 2);
+    return `<section class="group" id="${g.id}">
+      <div class="group__head">
+        <div><p class="group__num">BOʻLIM ${g.n} · ${first}–${last}</p><h2 class="group__title">${g.title}</h2></div>
+        <p class="group__desc"><b>${g.screens.length} ekran</b>${g.desc}</p>
+      </div>
+      <div class="grid">${g.screens.map(([file, name, h]) => {
+        const n = file.slice(0, 2);
+        return `<figure class="shot">
+          <div class="dev-wrap"><div class="dev">
+            <span class="dev__btn dev__btn--action"></span><span class="dev__btn dev__btn--vup"></span><span class="dev__btn dev__btn--vdn"></span><span class="dev__btn dev__btn--power"></span>
+            <div class="dev__bezel"><div class="dev__screen"><iframe src="screens/${file}.html" title="${n} · ${name}" loading="lazy" scrolling="${h ? 'yes' : 'no'}"></iframe></div></div>
+          </div></div>
+          <figcaption class="cap">
+            <span class="cap__n">${n}</span>
+            <span class="cap__t">${name}</span>
+            <span class="cap__m">${h ? `<span class="cap__long"><i class="ic ic-chev-down ic--16"></i>393 × ${h} · aylantiring</span>` : '<span>393 × 852</span>'}<a href="screens/${file}.html" target="_blank" rel="noopener">Ochish</a><a href="shots/${file}@3x.png" target="_blank" rel="noopener">@3x PNG</a></span>
+          </figcaption>
+        </figure>`;
+      }).join('')}</div>
+    </section>`;
+  }).join('');
+
+  // Masshtab: tanlangan qiymat, lekin ekran kengligidan oshmasin
+  const DEV_W = 393 + 2 * (6 + 12);
+  let want = .72;
+  const fit = () => document.documentElement.style.setProperty('--k', Math.min(want, (innerWidth - 32) / DEV_W).toFixed(4));
+  document.getElementById('zoom').addEventListener('click', e => {
+    const b = e.target.closest('[data-k]'); if (!b) return;
+    want = +b.dataset.k;
+    document.querySelectorAll('#zoom .seg__item').forEach(x => x.classList.toggle('is-active', x === b));
+    fit();
+  });
+  addEventListener('resize', fit); fit();
+
+  // Joriy bo'limni yuqori panelda belgilash
+  const chips = [...document.querySelectorAll('#groups .chip')];
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) chips.forEach(c => c.classList.toggle('is-active', c.hash === '#' + en.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('.group').forEach(s => io.observe(s));
+</script>
+</body>
+</html>

@@ -319,3 +319,19 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .player-bg .art { position: absolute; inset: 0; }
 .vip-card { background: radial-gradient(120% 120% at 88% 0%, var(--sand) 0%, color-mix(in srgb, var(--sand) 35%, var(--ember)) 30%, var(--ember) 52%, var(--amb-dark) 100%); }
 .t-num-xl { font: 400 var(--t-num-xl)/.9 var(--f-display); }
+
+/* ---------- Taqdimot ramkasi (index.html: iframe aynan 393×852) ----------
+   Uzun ekranlar (inline height) ramka ichida aylantiriladi; tizim qatlamlari va nav joyida qoladi,
+   status bar ostida iOS "scroll edge" xiralashuvi faqat aylantirilganda paydo bo'ladi.
+   Mustaqil ochilganda va skrinshotda (viewport ≠ 393×852) hech narsa o'zgarmaydi. */
+@media (width: 393px) and (height: 852px) {
+  html { scrollbar-width: none; }
+  html::-webkit-scrollbar { display: none; }
+  .screen[style*="height"] > :is(.status, .island, .home-ind, .nav) { position: fixed; }
+}
+@supports (animation-timeline: scroll()) {
+  @media (width: 393px) and (height: 852px) {
+    .screen[style*="height"] > .status:not(.status--dark)::before { content: ''; position: absolute; inset: 0 0 calc(var(--s-16) * -1); background: linear-gradient(180deg, var(--bg-0) 35%, transparent); opacity: 0; animation: edge-in linear both; animation-timeline: scroll(root); animation-range: 0 64px; }
+  }
+}
+@keyframes edge-in { to { opacity: 1; } }
