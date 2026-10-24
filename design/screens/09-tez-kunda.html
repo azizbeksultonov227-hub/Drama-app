@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>09 · Tez kunda</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .title { position: absolute; top: 108px; left: var(--page-x); right: var(--page-x); display: flex; align-items: flex-start; justify-content: space-between; }
+  .title sup { font: 400 var(--t-title-2)/1 var(--f-serif); color: var(--text-3); margin-top: 6px; }
+  .dates { position: absolute; top: 178px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: repeat(6, 1fr); gap: var(--s-6); }
+  .date { height: 56px; border-radius: var(--r-pill); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; background: var(--glass-bg); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); }
+  .date span { font: 500 var(--t-tag)/1 var(--f-ui); color: var(--text-3); }
+  .date b { font: 400 20px/1 var(--f-display); }
+  .date.is-on { background: var(--text-1); color: var(--cocoa); box-shadow: none; }
+  .date.is-on span { color: var(--cocoa); }
+  .cap { position: absolute; left: var(--page-x); }
+  .mason { position: absolute; top: 278px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-12); align-items: start; }
+  .item .media { position: relative; border-radius: var(--r-media); overflow: hidden; }
+  .item .media .art { position: absolute; inset: 0; }
+  .trailer { position: absolute; z-index: 3; left: 10px; bottom: 10px; display: inline-flex; align-items: center; gap: var(--s-6); height: 28px; padding: 0 var(--s-10) 0 var(--s-4); border-radius: var(--r-pill); background: var(--glass-bg-strong); font: 500 var(--t-caption)/1 var(--f-ui); }
+  .trailer i.gbtn { width: 22px; height: 22px; background: var(--text-1); color: var(--cocoa); }
+  .item h3 { margin-top: var(--s-6); font: 600 var(--t-body)/1.25 var(--f-ui); letter-spacing: -.01em; }
+  .item p { margin-top: 2px; }
+  .item .btn { margin-top: var(--s-8); }
+  .wide { position: absolute; top: 642px; left: var(--page-x); right: var(--page-x); display: flex; gap: var(--s-12); align-items: flex-end; }
+  .wide .media { flex: none; width: 120px; height: 140px; }
+  .btn--done { background: var(--flame); color: var(--text-1); box-shadow: none; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="top"><button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button><i class="ic ic-calendar c-2"></i></div>
+  <div class="title"><h1 class="t-edit-xl">tez kunda</h1><sup>(3)</sup></div>
+
+  <div class="dates">
+    <div class="date"><span>Bugun</span><b>25</b></div>
+    <div class="date is-on"><span>Dush</span><b>26</b></div>
+    <div class="date"><span>Sesh</span><b>27</b></div>
+    <div class="date"><span>Chor</span><b>28</b></div>
+    <div class="date"><span>Pay</span><b>29</b></div>
+    <div class="date"><span>Jum</span><b>30</b></div>
+  </div>
+
+  <p class="cap t-mono c-2" style="top: 252px">Ertaga · 26-oktabr</p>
+  <div class="mason">
+    <article class="item">
+      <div class="media" style="height: 150px"><div class="art art--couple" style="--amb: var(--amb-14)"></div><span class="trailer"><i class="gbtn"><i class="ic ic-play-fill ic--16"></i></i>Treyler</span></div>
+      <p class="t-mono c-3" style="margin-top: var(--s-8)">Ertaga · 20:00</p>
+      <h3>Taqdir toʻyi</h3>
+      <p class="t-caption c-3">Romantika · Shartnomali nikoh</p>
+      <p class="t-caption c-3">40 qism · 20:00 da chiqadi</p>
+      <p class="t-caption c-2">12.4K kishi kutmoqda</p>
+      <button class="btn btn--glass btn--xs"><i class="ic ic-bell ic--16"></i>Eslatib qoʻy</button>
+    </article>
+    <article class="item" style="margin-top: var(--s-24)">
+      <div class="media" style="height: 118px"><div class="art art--profile" style="--amb: var(--amb-17)"></div><span class="trailer"><i class="gbtn"><i class="ic ic-play-fill ic--16"></i></i>Treyler</span></div>
+      <p class="t-mono c-3" style="margin-top: var(--s-8)">Ertaga · 21:00</p>
+      <h3>Merosxoʻrning qaytishi</h3>
+      <p class="t-caption c-3">Qasos · CEO</p>
+      <p class="t-caption c-3">70 qism · 21:00 da chiqadi</p>
+      <p class="t-caption c-2">8.1K kishi kutmoqda</p>
+      <button class="btn btn--xs btn--done"><i class="ic ic-check ic--16"></i>Eslatiladi</button>
+    </article>
+  </div>
+
+  <p class="cap t-mono c-2" style="top: 618px">28-oktabr</p>
+  <article class="item wide">
+    <div class="media"><div class="art art--walk" style="--amb: var(--amb-15)"></div><span class="trailer"><i class="gbtn"><i class="ic ic-play-fill ic--16"></i></i>Treyler</span></div>
+    <div>
+      <p class="t-mono c-3">28-okt · 19:00</p>
+      <h3>Yashirin chempion</h3>
+      <p class="t-caption c-3">Jangari · Qasos · Oʻzbekcha dublyaj</p>
+      <p class="t-caption c-3">56 qism · 19:00 da chiqadi</p>
+      <p class="t-caption c-2">5.3K kishi kutmoqda</p>
+      <button class="btn btn--glass btn--xs"><i class="ic ic-bell ic--16"></i>Eslatib qoʻy</button>
+    </div>
+  </article>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

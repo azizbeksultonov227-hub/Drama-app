@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>02 · Kirish / roʻyxatdan oʻtish</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* fon: blur qilingan bosh sahifa (blur 30 + qora 55%) */
+  .bg { position: absolute; inset: -40px; filter: blur(30px); }
+  .bg .art { position: absolute; }
+  .sheet { padding-top: var(--s-10); }
+  .sheet__close { position: absolute; top: 22px; right: var(--page-x); }
+  .sheet h1 { padding-right: 56px; }
+  .stack { display: flex; flex-direction: column; gap: var(--s-12); margin-top: var(--s-24); }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-12); }
+  .or { display: flex; align-items: center; gap: var(--s-12); margin: var(--s-20) 0 var(--s-8); color: var(--text-3); }
+  .or::before, .or::after { content: ''; flex: 1; height: 1px; background: var(--line-1); }
+  .legal { text-align: center; margin-top: var(--s-16); }
+  .legal a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="bg">
+    <div class="art art--couple" style="--amb: var(--amb-01); left: 0; right: 0; top: 0; height: 500px"></div>
+    <div class="art" style="--amb: var(--amb-02); left: 58px; top: 600px; width: 150px; height: 90px; border-radius: var(--r-thumb)"></div>
+    <div class="art" style="--amb: var(--amb-03); left: 230px; top: 600px; width: 150px; height: 90px; border-radius: var(--r-thumb)"></div>
+  </div>
+  <div class="scrim"></div>
+
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <section class="sheet">
+    <div class="sheet__handle"></div>
+    <button class="gbtn gbtn--sm gbtn--dark sheet__close" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
+    <h1 class="t-serif-lg">Kiring va <span class="c-flame">+50 bonus coin</span> oling</h1>
+    <p class="t-body c-2" style="margin-top: var(--s-10)">Tomosha tarixi, coin va VIP barcha qurilmalaringizda saqlanadi</p>
+
+    <div class="stack">
+      <button class="btn btn--primary btn--block"><i class="ic ic-phone"></i>Telefon raqam orqali</button>
+      <button class="btn btn--glass btn--block"><i class="ic ic-send"></i>Telegram orqali</button>
+      <div class="pair">
+        <button class="btn btn--glass btn--block">Google</button>
+        <button class="btn btn--glass btn--block">Apple</button>
+      </div>
+    </div>
+
+    <div class="or t-footnote">yoki</div>
+    <button class="btn btn--text btn--block">Mehmon sifatida davom etish</button>
+    <p class="legal t-caption c-3">Davom etib, <a>Foydalanish shartlari</a> va <a>Maxfiylik siyosati</a>ga rozilik bildirasiz</p>
+  </section>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

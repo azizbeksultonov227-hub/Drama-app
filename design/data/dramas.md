@@ -20,6 +20,8 @@ Unsplash ochilganda har bir qatorga tanlangan rasm URL'i yoziladi va `.art` ichi
 | D12 | Imperatorning soʻnggi farmoni | `--amb-12` `#773916` | profile | tarixiy | 66 | — |
 | D13 | Ofisdagi yolgʻon nikoh | `--amb-13` `#37595B` | couple | ofis · romantika | 48 | — |
 | D14 | Taqdir toʻyi | `--amb-14` `#B9796E` | couple | romantika (tez kunda) | — | — |
-| D15 | Yashirin chempion | `--amb-15` `#57453C` | walk | sport · qasos (tez kunda) | — | — |
+| D15 | Yashirin chempion | `--amb-15` `#57453C` | walk | jangari · qasos (tez kunda) | 56 | — |
+| D16 | Qasos kelini | `--amb-16` `#A75349` | portrait | qasos · romantika | 80 | — |
+| D17 | Merosxoʻrning qaytishi | `--amb-17` `#955943` | profile | qasos · CEO (tez kunda) | 70 | — |
 
-Ambient ranglarning manbasi — referenslarda o'lchangan ranglar (`tokens.css` izohlari): ref-01 (Beating Hearts, Recent activity, profil foni), ref-03, ref-04, ref-07.
+Ambient ranglarning manbasi — referenslarda o'lchangan ranglar (`tokens.css` izohlari): ref-01 (Beating Hearts, Recent activity, profil foni), ref-03, ref-04, ref-05, ref-07.

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>03 · Yangi foydalanuvchi sovgʻasi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .bg { position: absolute; inset: -40px; filter: blur(30px); }
+  .bg .art { position: absolute; }
+  /* warm-glow modal (ref-05/06): nur halqasi + grain */
+  .modal { position: absolute; z-index: 70; left: var(--page-x); right: var(--page-x); top: 132px; padding: var(--s-24) var(--s-20) var(--s-20); text-align: center; }
+  .modal > *:not(.ring) { position: relative; z-index: 3; }
+  .modal .close { position: absolute; top: 14px; right: 14px; }
+  .gift { margin: 4px auto 0; }
+  .modal h1 { margin-top: var(--s-16); color: var(--warm-text-1); }
+  .amount { display: flex; align-items: center; justify-content: center; gap: var(--s-10); margin-top: var(--s-16); color: var(--warm-text-1); }
+  .perks { text-align: left; display: flex; flex-direction: column; gap: var(--s-10); margin: var(--s-20) var(--s-4) 0; }
+  .perks li { list-style: none; display: flex; gap: var(--s-10); align-items: flex-start; color: var(--warm-text-1); }
+  .perks .ic { color: var(--peach); flex: none; }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="bg">
+    <div class="art art--couple" style="--amb: var(--amb-01); left: 0; right: 0; top: 0; height: 500px"></div>
+    <div class="art" style="--amb: var(--amb-02); left: 58px; top: 600px; width: 150px; height: 90px"></div>
+    <div class="art" style="--amb: var(--amb-03); left: 230px; top: 600px; width: 150px; height: 90px"></div>
+  </div>
+  <div class="scrim"></div>
+
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <section class="modal card--warm grain">
+    <div class="ring ring--card"></div>
+    <button class="gbtn gbtn--sm close" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
+    <div class="box gift" style="--box: var(--flame)"><div class="box__well"><i class="ic ic-gift ic--28" style="color: var(--peach)"></i></div><div class="box__front"></div></div>
+    <h1 class="t-serif-xl">Xush kelibsiz!</h1>
+    <span class="chip chip--glass" style="margin-top: var(--s-12)">Yangi foydalanuvchi sovgʻasi</span>
+    <div class="amount"><span class="t-num" style="white-space: nowrap">+100 coin</span></div>
+    <ul class="perks t-body">
+      <li><i class="ic ic-check"></i>Har dramaning birinchi 10 qismi bepul</li>
+      <li><i class="ic ic-check"></i>Har kuni kirgani uchun bonus coin</li>
+      <li><i class="ic ic-check"></i>Birinchi toʻldirishda −50% chegirma</li>
+    </ul>
+    <button class="btn btn--primary btn--block" style="margin-top: var(--s-24)">Sovgʻani olish</button>
+    <p class="t-caption" style="margin-top: var(--s-12); color: var(--warm-text-2)">Bonus coinlar 7 kun amal qiladi</p>
+  </section>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>06 · Qidiruv</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  /* ref-04 chap: qorong'i fon, blur qilingan iliq dog'lar (flame, ember, rose) */
+  .screen { background:
+      radial-gradient(42% 26% at 70% 28%, color-mix(in srgb, var(--flame) 46%, transparent) 0%, transparent 100%),
+      radial-gradient(40% 24% at 18% 58%, color-mix(in srgb, var(--rose) 34%, transparent) 0%, transparent 100%),
+      radial-gradient(60% 30% at 60% 92%, color-mix(in srgb, var(--ember) 55%, transparent) 0%, transparent 100%),
+      var(--bg-0); }
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-8); }
+  .top .search { flex: 1; min-width: 0; padding: 0 var(--s-16) 0 var(--s-20); font-size: var(--t-body); }
+  .top .search__ph { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top .btn--text { padding: 0 0 0 var(--s-4); }
+  .body { position: absolute; top: 134px; left: 0; right: 0; }
+  .head { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--page-x); }
+  .head .btn--text { height: auto; padding: 0; color: var(--text-2); font-size: var(--t-footnote); }
+  .recent { display: flex; flex-wrap: wrap; gap: var(--s-8); padding: 0 var(--page-x); margin-top: var(--s-12); }
+  .recent .chip { height: var(--h-chip-glass); padding: 0 var(--s-10) 0 var(--s-12); font-size: var(--t-footnote); color: var(--text-1); }
+  .recent .chip .ic { color: var(--text-3); }
+  .count { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--glass-bg-strong); font: 500 var(--t-footnote)/1 var(--f-ui); margin-left: var(--s-8); vertical-align: middle; }
+  .top-list { padding: 0 var(--page-x); margin-top: var(--s-6); }
+  .top-list li { list-style: none; display: flex; align-items: center; gap: var(--s-12); height: 38px; box-shadow: inset 0 -1px 0 var(--line-1); }
+  .top-list .n { width: 18px; font: 400 22px/1 var(--f-display); color: var(--text-2); text-align: center; }
+  .top-list li:nth-child(-n+3) .n { color: var(--flame); }
+  .top-list .t { flex: 1; font: 400 var(--t-body)/1 var(--f-ui); letter-spacing: -.01em; }
+  .st { height: 22px; padding: 0 8px; font: 600 var(--t-tag)/1 var(--f-ui); }
+  .st.up .ic { color: var(--flame); } .st.down .ic { color: var(--rose); }
+  .genres { display: flex; gap: var(--s-12); padding: 0 var(--page-x); margin-top: var(--s-12); overflow: hidden; }
+  .genre { flex: none; width: 72px; text-align: center; }
+  .genre .art { width: 72px; height: 72px; border-radius: 50%; }
+  .genre p { margin-top: var(--s-6); font: 500 var(--t-footnote)/1.2 var(--f-ui); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="top">
+    <button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button>
+    <div class="search"><span class="search__ph">Drama, aktyor yoki janr…</span><i class="ic ic-search"></i></div>
+    <button class="btn btn--text">Bekor</button>
+  </div>
+
+  <div class="body">
+    <div class="head"><h2 class="t-headline">Oxirgi qidiruvlar</h2><button class="btn btn--text">Tozalash</button></div>
+    <div class="recent">
+      <span class="chip">milliarder<i class="ic ic-close"></i></span>
+      <span class="chip">boʻri<i class="ic ic-close"></i></span>
+      <span class="chip">qasos kelin<i class="ic ic-close"></i></span>
+      <span class="chip">koreys drama<i class="ic ic-close"></i></span>
+    </div>
+
+    <div class="head" style="margin-top: var(--s-24)"><h2 class="t-title-2">Koʻp qidirilayotgan<span class="count">8</span></h2></div>
+    <ol class="top-list">
+      <li><span class="n">1</span><span class="t">Milliarderning yashirin kelini</span><span class="chip chip--flame st">Hit</span></li>
+      <li><span class="n">2</span><span class="t">Boʻri qirolining qasosi</span><span class="chip chip--flame st">Hit</span></li>
+      <li><span class="n">3</span><span class="t">Ajrashgandan keyin boylik</span><span class="chip chip--sand st">Yangi</span></li>
+      <li><span class="n">4</span><span class="t">CEO</span><span class="chip st up"><i class="ic ic-arrow-up"></i>3</span></li>
+      <li><span class="n">5</span><span class="t">Shartnomali nikoh</span><span class="chip st up"><i class="ic ic-arrow-up"></i>1</span></li>
+      <li><span class="n">6</span><span class="t">Vampir qoʻriqchisi</span><span class="chip chip--sand st">Yangi</span></li>
+      <li><span class="n">7</span><span class="t">Oʻzbekcha dublyaj</span><span class="chip st down"><i class="ic ic-arrow-down"></i>2</span></li>
+      <li><span class="n">8</span><span class="t">Turk seriallari</span><span class="chip st up"><i class="ic ic-arrow-up"></i>5</span></li>
+    </ol>
+
+    <div class="head" style="margin-top: var(--s-24)"><h2 class="t-headline">Janr boʻyicha</h2><span class="gbtn gbtn--sm gbtn--dark"><i class="ic ic-arrow-right ic--20"></i></span></div>
+    <div class="genres">
+      <div class="genre"><div class="art art--couple" style="--amb: var(--amb-11)"></div><p>Romantika</p></div>
+      <div class="genre"><div class="art art--duo" style="--amb: var(--amb-10)"></div><p>Qasos</p></div>
+      <div class="genre"><div class="art art--portrait" style="--amb: var(--amb-05)"></div><p>CEO</p></div>
+      <div class="genre"><div class="art art--profile" style="--amb: var(--amb-02)"></div><p>Boʻrilar</p></div>
+      <div class="genre"><div class="art art--walk" style="--amb: var(--amb-09)"></div><p>Oilaviy</p></div>
+      <div class="genre"><div class="art art--couple" style="--amb: var(--amb-04)"></div><p>Komediya</p></div>
+    </div>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

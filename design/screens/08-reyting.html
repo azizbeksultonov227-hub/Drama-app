@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>08 · Reyting / Top</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
+  .top h1 { display: flex; align-items: center; gap: var(--s-8); }
+  .tabs { position: absolute; top: 112px; left: 0; right: 0; overflow: hidden; }
+  .tabs .utabs { gap: var(--s-20); }
+  .period { position: absolute; top: 166px; left: var(--page-x); right: var(--page-x); }
+  .period .seg { width: 100%; padding: 3px; border-radius: var(--r-pill); background: var(--bg-1); box-shadow: inset 0 0 0 1px var(--line-1); }
+  .period .seg__item { flex: 1; justify-content: center; }
+  /* podium: 3 ta ambient karta, 1-o'rin markazda va baland (sand chegara + glow) */
+  .podium { position: absolute; top: 218px; left: var(--page-x); right: var(--page-x); height: 248px; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-8); align-items: end; }
+  .pod { position: relative; padding: var(--s-10); border-radius: var(--r-media); text-align: center; }
+  .pod .art { width: 100%; aspect-ratio: 2 / 3; border-radius: var(--r-poster); }
+  .pod__n { position: absolute; z-index: 3; top: -6px; left: 50%; transform: translateX(-50%); font: 400 44px/1 var(--f-display); color: var(--text-1); text-shadow: var(--text-shadow); }
+  .pod h3 { margin-top: var(--s-8); font: 600 var(--t-caption)/1.25 var(--f-ui); height: 30px; overflow: hidden; }
+  .pod p { margin-top: 2px; }
+  .pod:not(.pod--first) .art { aspect-ratio: 4 / 5; }
+  .pod--first { box-shadow: inset 0 0 0 1.5px var(--sand), var(--glow-sand); padding-top: var(--s-16); }
+  .pod--first .pod__n { color: var(--sand); }
+  .list { position: absolute; top: 482px; left: var(--page-x); right: var(--page-x); padding: var(--s-4) 0; }
+  .lrow { display: flex; align-items: center; gap: var(--s-12); padding: var(--s-10) var(--s-16); }
+  .lrow + .lrow { box-shadow: inset 0 1px 0 var(--line-1); }
+  .lrow__n { width: 22px; font: 400 26px/1 var(--f-display); color: var(--text-2); text-align: center; }
+  .lrow .art { width: 40px; height: 56px; border-radius: var(--r-thumb); flex: none; }
+  .lrow__b { flex: 1; min-width: 0; }
+  .mv { height: 24px; padding: 0 var(--s-8); font: 600 var(--t-tag)/1 var(--f-ui); }
+  .mv .ic { width: 12px; height: 12px; }
+  .mv.up .ic { color: var(--flame); } .mv.down .ic { color: var(--rose); }
+</style>
+</head>
+<body>
+<div class="screen" id="screen">
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="top">
+    <button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button>
+    <h1 class="t-title-2"><i class="ic ic-trophy ic--26 c-sand"></i>Reyting</h1>
+  </div>
+  <div class="tabs"><nav class="utabs"><span class="utabs__item is-active">Trendda</span><span class="utabs__item">Koʻp koʻrilgan</span><span class="utabs__item">Koʻp saqlangan</span><span class="utabs__item">Yangi hitlar</span></nav></div>
+  <div class="period"><div class="seg"><span class="seg__item is-active">Bugun</span><span class="seg__item">Hafta</span><span class="seg__item">Oy</span></div></div>
+
+  <div class="podium">
+    <div class="pod card--ambient" style="--amb: var(--amb-04)"><span class="pod__n">2</span><div class="art art--portrait" style="--amb: var(--amb-04)"></div><h3>Ajrashgandan keyin boylik</h3><p class="t-caption c-3">1.8M</p></div>
+    <div class="pod pod--first card--ambient" style="--amb: var(--amb-02)"><span class="pod__n">1</span><div class="art art--profile" style="--amb: var(--amb-02)"></div><h3>Boʻri qirolining qasosi</h3><p class="t-caption c-2">2.9M</p></div>
+    <div class="pod card--ambient" style="--amb: var(--amb-05); margin-bottom: 0"><span class="pod__n">3</span><div class="art art--duo" style="--amb: var(--amb-05)"></div><h3>Direktorning sirli egizagi</h3><p class="t-caption c-3">1.2M</p></div>
+  </div>
+
+  <div class="card list">
+    <div class="lrow"><span class="lrow__n">4</span><div class="art art--couple" style="--amb: var(--amb-01)"></div><div class="lrow__b"><p class="t-body-m">Milliarderning yashirin kelini</p><p class="t-caption c-3">Romantika · 980K</p></div><span class="chip mv up"><i class="ic ic-arrow-up"></i>2</span></div>
+    <div class="lrow"><span class="lrow__n">5</span><div class="art art--portrait" style="--amb: var(--amb-11)"></div><div class="lrow__b"><p class="t-body-m">Kelinning ikkinchi hayoti</p><p class="t-caption c-3">Qasos · 870K</p></div><span class="chip chip--sand mv">YANGI</span></div>
+    <div class="lrow"><span class="lrow__n">6</span><div class="art art--profile" style="--amb: var(--amb-06)"></div><div class="lrow__b"><p class="t-body-m">Vampir qoʻriqchisi</p><p class="t-caption c-3">Fantastika · 760K</p></div><span class="chip mv down"><i class="ic ic-arrow-down"></i>1</span></div>
+    <div class="lrow"><span class="lrow__n">7</span><div class="art art--walk" style="--amb: var(--amb-09)"></div><div class="lrow__b"><p class="t-body-m">Qishloqdan kelgan merosxoʻr</p><p class="t-caption c-3">Oilaviy · 640K</p></div><span class="chip mv"><i class="ic ic-minus"></i></span></div>
+  </div>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

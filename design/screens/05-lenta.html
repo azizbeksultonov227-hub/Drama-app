@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=393">
+<title>05 · Lenta (vertikal svayp)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="stylesheet" href="../components.css">
+<style>
+  .frame { position: absolute; inset: 0; }
+  .shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .7) 74%, rgba(0, 0, 0, .9) 100%); }
+  .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 44px; display: flex; align-items: center; justify-content: center; }
+  .top .gbtn { position: absolute; right: 0; }
+  .toast { position: absolute; z-index: 5; left: 72px; right: 72px; top: 214px; padding: var(--s-16); text-align: center; border-radius: var(--r-card); }
+  .toast .ic { color: var(--text-1); }
+  .rail { position: absolute; z-index: 5; right: 14px; top: 290px; display: flex; flex-direction: column; gap: 26px; }
+  .info { position: absolute; z-index: 5; left: var(--page-x); right: 84px; top: 506px; }
+  .info .chip { height: var(--h-chip); }
+  .info h1 { margin-top: var(--s-12); }
+  .info p { margin-top: var(--s-8); color: var(--text-2); }
+  .vprog { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 674px; height: 2px; }
+  .cta { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 690px; }
+</style>
+</head>
+<body>
+<div class="screen grain" id="screen">
+  <div class="frame art art--profile art--soft" style="--amb: var(--amb-02)"></div>
+  <div class="ring" style="opacity: .5"></div>
+  <div class="shade"></div>
+
+  <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
+  <div class="island"></div>
+
+  <div class="top">
+    <div class="seg seg--glass"><span class="seg__item">Kuzatuvdagilar</span><span class="seg__item is-active">Siz uchun</span></div>
+    <button class="gbtn gbtn--sm" aria-label="Qidiruv"><i class="ic ic-search ic--22"></i></button>
+  </div>
+
+  <!-- birinchi kirishda ko'rinadigan glass toast -->
+  <div class="toast card--glass">
+    <i class="ic ic-swipe-up ic--28"></i>
+    <p class="t-body-m" style="margin-top: var(--s-8)">Keyingi drama uchun yuqoriga suring</p>
+    <p class="t-caption c-3" style="margin-top: var(--s-4)">faqat birinchi marta koʻrinadi</p>
+  </div>
+
+  <div class="rail">
+    <span class="gbtn gbtn--side"><i class="ic ic-heart-fill c-rose"></i><span class="gbtn__label">48K</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-bookmark"></i><span class="gbtn__label">534K</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-comment"></i><span class="gbtn__label">1.2K</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-share"></i><span class="gbtn__label">Ulashish</span></span>
+    <span class="gbtn gbtn--side"><i class="ic ic-list"></i><span class="gbtn__label">Qismlar</span></span>
+  </div>
+
+  <div class="info">
+    <div class="row-flex gap-8"><span class="chip">Qasos</span><span class="chip">Boʻrilar</span><span class="chip chip--flame">Bepul 1–10</span></div>
+    <h1 class="t-title-1">Boʻri qirolining qasosi</h1>
+    <p class="t-footnote">1-qism / 72 · U toʻyda xiyonatni koʻrdi... endi esa butun toʻda uning qoʻlida.</p>
+  </div>
+  <div class="vprog progress" style="--p: 34%"><i></i></div>
+  <button class="btn btn--primary btn--block abs-x cta"><i class="ic ic-play-fill"></i>Butun serialni koʻrish · 72 qism</button>
+
+  <nav class="nav">
+    <a class="nav__item"><i class="ic ic-home"></i><span>Bosh sahifa</span></a>
+    <a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a>
+    <a class="nav__item is-active"><span class="nav__center"><i class="ic ic-play-fill"></i></span><span>Lenta</span></a>
+    <a class="nav__item"><i class="ic ic-bookmark"></i><span>Roʻyxatim</span></a>
+    <a class="nav__item"><i class="ic ic-user"></i><span>Profil</span></a>
+  </nav>
+  <div class="home-ind"></div>
+</div>
+</body>
+</html>

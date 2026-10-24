@@ -71,6 +71,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn--sm { height: var(--h-pill-sm); padding: 0 var(--s-20); }
 .btn--xs { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-footnote); }
 .btn--block { display: flex; width: 100%; }
+.btn--block.abs-x { width: auto; } /* left/right bilan joylashtirilganda */
 .btn--flame { background: var(--flame); color: var(--text-1); box-shadow: var(--glow-flame); }
 .pill-more { display: inline-flex; align-items: center; gap: 4px; height: var(--h-pill-xs); padding: 0 var(--s-12); border-radius: var(--r-pill); background: var(--bg-3); font: 400 var(--t-body)/1 var(--f-ui); color: var(--text-1); letter-spacing: -.01em; }
 .dot-btn { display: inline-grid; place-items: center; width: var(--h-pill-xs); height: var(--h-pill-xs); border-radius: 50%; background: var(--bg-3); color: var(--text-2); }
@@ -138,7 +139,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .warm { position: relative; overflow: hidden; background: var(--warm-light), var(--warm-bg); background-color: var(--ember); }
 .ring { position: absolute; pointer-events: none; z-index: 0; border-radius: 50%; width: 1476px; height: 1476px; left: -1052px; top: -280px;
   box-shadow: var(--ring-shadow); }
-.ring--card { width: 760px; height: 760px; left: -520px; top: -230px; }
+.ring--card { width: 1360px; height: 1360px; left: -993px; top: -380px; } /* r = 1.9 × karta kengligi (ref-06), cheti o'ng chetda */
 
 /* ---------- Poster (2:3) ---------- */
 .poster { position: relative; flex: none; width: var(--pw, 104px); }
