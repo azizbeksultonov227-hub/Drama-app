@@ -18,7 +18,7 @@
 ## 4. Matn kontrasti (WCAG: oddiy 4.5, katta 3.0)
 Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va ota-ona opacity bilan aralashtiriladi; koʻrsatkich — matn bbox'idagi eng yomon 10 % piksel (p10).
 
-- Matn elementlari: 977; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
+- Matn elementlari: 975; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
   - 01 `ul.list.t-edit > li` «Shartnomali nikoh» 44px — p10 2.78 < 3.0 (mask: ataylab soʻndirilgan)
 
 ## 5. Tipografiya shkalasi
@@ -70,10 +70,7 @@ Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va o
   - Yashirin chempion: --amb-15 art--walk
 
 ## 8. Ekran CSS'idagi xom qiymatlar (tokens.css'dan tashqari)
-- Jami: **3**
-  - 04 [font-size] `font-size: 36.4px; line-height: 38px`
-  - 04 [font-size] `font-size: 66.7px; line-height: 60px`
-  - 04 [font-size] `font-size: 98.5px; line-height: 86px`
+- Jami: **0**
 
 ## 9. PROMPT 5-bosqich ro'yxati — yakuniy holat
 | Band | Holat | Dalil |
