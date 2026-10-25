@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Drama ilova</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Gelasio:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="components.css">
+<style>
+  /* Interaktiv prototip qobig'i: chapda iPhone 15 Pro (ichida ekranlar o'zaro bog'langan), o'ngda boshqaruv paneli.
+     Telefon kengligida — faqat ekran (ramkasiz), panel pastda. Ranglar tokens.css'dan. */
+  :root { color-scheme: dark; --k: .9; --dev-w: calc(393px + 2 * (var(--dev-ti) + var(--dev-bezel))); --dev-h: calc(852px + 2 * (var(--dev-ti) + var(--dev-bezel))); }
+  html, body { background: var(--bg-0); }
+  body { min-height: 100%; color: var(--text-1); }
+  body::before { content: ''; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg-0); }
+  a { color: inherit; text-decoration: none; }
+
+  .shell { min-height: 100vh; display: grid; grid-template-columns: auto minmax(0, 380px); justify-content: center; align-items: center; gap: 64px;
+    padding-block: var(--s-24); padding-left: max(var(--s-40), env(safe-area-inset-left, 0px)); padding-right: max(var(--s-40), env(safe-area-inset-right, 0px)); }
+
+  /* ---- telefon ---- */
+  .dev-wrap { width: calc(var(--dev-w) * var(--k)); height: calc(var(--dev-h) * var(--k)); }
+  .dev { position: relative; width: var(--dev-w); height: var(--dev-h); padding: var(--dev-ti); border-radius: var(--r-device); background: var(--ti-fill); box-shadow: var(--ti-edge); transform: scale(var(--k)); transform-origin: 0 0; }
+  .dev__bezel { height: 100%; padding: var(--dev-bezel); border-radius: calc(var(--r-device) - var(--dev-ti)); background: var(--bg-0); box-shadow: inset 0 0 0 1px var(--line-1); }
+  .dev__screen { width: 393px; height: 852px; border-radius: var(--r-screen); overflow: hidden; clip-path: inset(0 round var(--r-screen)); background: var(--bg-0); }
+  .dev__screen iframe { display: block; width: 393px; height: 852px; border: 0; background: var(--bg-0); }
+  .dev__btn { position: absolute; width: 3px; border-radius: 2px 0 0 2px; background: var(--ti-btn); box-shadow: inset 0 0 0 .5px var(--line-2); }
+  .dev__btn--action { left: -3px; top: 124px; height: 30px; }
+  .dev__btn--vup { left: -3px; top: 190px; height: 58px; }
+  .dev__btn--vdn { left: -3px; top: 262px; height: 58px; }
+  .dev__btn--power { right: -3px; top: 220px; height: 92px; border-radius: 0 2px 2px 0; }
+
+  /* ---- panel ---- */
+  .panel { display: grid; gap: var(--s-24); align-content: center; min-width: 0; }
+  .panel__kicker { color: var(--flame); }
+  .panel__title { margin-top: var(--s-8); font: 400 var(--t-edit)/1 var(--f-edit); letter-spacing: -.04em; text-wrap: balance; }
+  .panel__lead { color: var(--text-2); font: 400 var(--t-body)/1.55 var(--f-ui); max-width: 42ch; }
+  .panel__acts { display: flex; flex-wrap: wrap; gap: var(--s-8); }
+  .now { display: flex; align-items: center; gap: var(--s-10); padding: var(--s-12) var(--s-16); border-radius: var(--r-media); background: var(--bg-1); box-shadow: inset 0 0 0 1px var(--line-1); font: 500 var(--t-footnote)/1.3 var(--f-ui); color: var(--text-2); }
+  .now b { color: var(--text-1); font-weight: 600; }
+  .now .dot { flex: none; }
+  .groups { display: grid; gap: var(--s-16); }
+  .grp p { margin-bottom: var(--s-8); font: 400 var(--t-mono)/1 var(--f-mono); letter-spacing: .04em; text-transform: uppercase; color: var(--text-3); }
+  .grp div { display: flex; flex-wrap: wrap; gap: var(--s-6); }
+  .grp button { height: var(--h-pill-xs); padding: 0 var(--s-10); border-radius: var(--r-pill); background: var(--glass-bg); box-shadow: inset 0 0 0 1px var(--glass-line-soft); font: 500 var(--t-caption)/1 var(--f-ui); color: var(--text-2); white-space: nowrap; }
+  .grp button b { font: 500 var(--t-micro)/1 var(--f-mono); color: var(--text-3); margin-right: var(--s-4); }
+  .grp button.is-on { background: var(--text-1); color: var(--cocoa); box-shadow: none; }
+  .grp button.is-on b { color: var(--ember); }
+  .grp button:focus-visible, .panel .btn:focus-visible { outline: 2px solid var(--flame); outline-offset: 2px; }
+  .links { display: flex; flex-wrap: wrap; gap: var(--s-16); font: 500 var(--t-footnote)/1 var(--f-ui); color: var(--text-2); }
+  .links a { text-decoration: underline; text-decoration-color: var(--line-outline); text-underline-offset: 3px; }
+
+  /* ---- telefon kengligi: ramkasiz ekran, panel pastda ---- */
+  @media (max-width: 820px) {
+    .shell { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: var(--s-32); align-items: start; padding-left: max(var(--s-16), env(safe-area-inset-left, 0px)); padding-right: max(var(--s-16), env(safe-area-inset-right, 0px)); padding-block: var(--s-12) var(--s-40); }
+    .dev-wrap { width: calc(393px * var(--k)); height: calc(852px * var(--k)); }
+    .dev { width: 393px; height: 852px; padding: 0; background: none; box-shadow: none; border-radius: var(--r-screen); }
+    .dev__bezel { padding: 0; border-radius: var(--r-screen); box-shadow: none; }
+    .dev__btn { display: none; }
+    .panel { width: 100%; max-width: 420px; }
+    .panel__title { font-size: var(--t-title-1); }
+  }
+</style>
+</head>
+<body>
+<main class="shell">
+  <div class="dev-wrap"><div class="dev">
+    <span class="dev__btn dev__btn--action"></span><span class="dev__btn dev__btn--vup"></span><span class="dev__btn dev__btn--vdn"></span><span class="dev__btn dev__btn--power"></span>
+    <div class="dev__bezel"><div class="dev__screen"><iframe id="app" title="Drama ilova" src="screens/01-onboarding.html?reset=1"></iframe></div></div>
+  </div></div>
+
+  <aside class="panel">
+    <div>
+      <p class="t-mono panel__kicker">Interaktiv prototip · iPhone 15 Pro</p>
+      <h1 class="panel__title">Vertikal mini-seriallar ilovasi</h1>
+    </div>
+    <p class="panel__lead">Ekrandagi posterlar, tugmalar, pastki nav, orqaga va yopish tugmalari ishlaydi. Lentada yuqoriga suring — keyingi drama ochiladi. Pleerda pauza, ±5 soniya va qismlar; toʻlovda tarif va usul tanlanadi.</p>
+    <div class="now" aria-live="polite"><span class="dot"></span><span>Hozir: <b id="now">01 · Onboarding</b></span></div>
+    <div class="panel__acts">
+      <button class="btn btn--primary btn--sm" id="restart"><i class="ic ic-refresh ic--18"></i>Boshidan boshlash</button>
+      <button class="btn btn--glass btn--sm" id="home"><i class="ic ic-home ic--18"></i>Bosh sahifa</button>
+    </div>
+    <nav class="groups" id="groups" aria-label="Ekranlar"></nav>
+    <div class="links"><a href="index.html">Barcha ekranlar ramkada</a><a href="styleguide.html">Stil qoʻllanmasi</a><a href="components.html">Komponentlar</a></div>
+  </aside>
+</main>
+
+<script>
+  const GROUPS = [
+    ['Kirish', [['01-onboarding', 'Onboarding'], ['02-kirish', 'Kirish'], ['03-sovga', 'Sovgʻa']]],
+    ['Kashf qilish', [['04-bosh-sahifa', 'Bosh sahifa'], ['05-lenta', 'Lenta'], ['06-qidiruv', 'Qidiruv'], ['07-janrlar', 'Janrlar'], ['08-reyting', 'Reyting'], ['09-tez-kunda', 'Tez kunda']]],
+    ['Tomosha', [['10-drama', 'Drama'], ['11-pleer', 'Pleer'], ['12-qismlar', 'Qismlar'], ['13-izohlar', 'Izohlar'], ['14-pleer-sozlamalari', 'Sozlamalar'], ['15-serial-tugadi', 'Serial tugadi']]],
+    ['Monetizatsiya', [['16-paywall', 'Paywall'], ['17-coin-dokoni', 'Coin doʻkoni'], ['18-vip', 'VIP'], ['19-tolov', 'Toʻlov'], ['20-maxsus-taklif', 'Maxsus taklif'], ['21-reklama', 'Reklama']]],
+    ['Mukofotlar', [['22-mukofotlar', 'Mukofotlar'], ['23-dost-taklif', 'Doʻst taklifi']]],
+    ['Profil', [['24-royxatim', 'Roʻyxatim'], ['25-yuklanganlar', 'Yuklanganlar'], ['26-bildirishnomalar', 'Bildirishnomalar'], ['27-profil', 'Profil'], ['28-hamyon', 'Hamyon'], ['29-sozlamalar', 'Sozlamalar'], ['30-yordam', 'Yordam']]],
+  ];
+  const NAME = Object.fromEntries(GROUPS.flatMap(g => g[1]));
+  const frame = document.getElementById('app');
+  document.getElementById('groups').innerHTML = GROUPS.map(([t, list]) =>
+    `<div class="grp"><p>${t}</p><div>${list.map(([id, n]) => `<button type="button" data-id="${id}"><b>${id.slice(0, 2)}</b>${n}</button>`).join('')}</div></div>`).join('');
+  const openScreen = id => { frame.src = `screens/${id}.html?reset=1`; };
+  document.getElementById('groups').addEventListener('click', e => { const b = e.target.closest('[data-id]'); if (b) openScreen(b.dataset.id); });
+  document.getElementById('restart').addEventListener('click', () => openScreen('01-onboarding'));
+  document.getElementById('home').addEventListener('click', () => openScreen('04-bosh-sahifa'));
+
+  // joriy ekran (ekrandagi app.js xabar beradi)
+  addEventListener('message', e => {
+    const d = e.data; if (!d || d.type !== 'drama-proto' || !NAME[d.id]) return;
+    document.getElementById('now').textContent = `${d.id.slice(0, 2)} · ${NAME[d.id]}`;
+    document.querySelectorAll('#groups [data-id]').forEach(b => b.classList.toggle('is-on', b.dataset.id === d.id));
+    try { localStorage.setItem('drama-proto-last', d.id); } catch (err) { /* — */ }
+  });
+  try { const last = localStorage.getItem('drama-proto-last'); if (last && NAME[last] && last !== '01-onboarding') frame.src = `screens/${last}.html?reset=1`; } catch (err) { /* — */ }
+
+  // masshtab: kompyuterda ramka ekran balandligiga, telefonda ekran kengligi va balandligiga sig'adi
+  const fit = () => {
+    const narrow = innerWidth <= 820;
+    const k = narrow ? Math.max(.6, Math.min((innerWidth - 32) / 393, (innerHeight - 24) / 852)) : Math.min(1, (innerHeight - 48) / (852 + 36));
+    document.documentElement.style.setProperty('--k', k.toFixed(4));
+  };
+  addEventListener('resize', fit); fit();
+</script>
+</body>
+</html>

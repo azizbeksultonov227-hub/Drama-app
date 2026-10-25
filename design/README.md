@@ -1,10 +1,11 @@
 # Short-drama ilova — UI dizayn
 
-Faqat HTML + CSS (+ index/styleguide'da minimal vanilla JS). Framework va build yo'q. Ekran o'lchami 393 × 852 (iPhone 15 Pro), 1 pt = 1 CSS px. Barcha matnlar o'zbek lotinida.
+Faqat HTML + CSS + minimal vanilla JS (prototip xatti-harakati — `app.js`). Framework va build yo'q. Ekran o'lchami 393 × 852 (iPhone 15 Pro), 1 pt = 1 CSS px. Barcha matnlar o'zbek lotinida.
 
 ## Qanday ochish
 1. Repozitoriyni yuklab oling (yoki klonlang).
 2. Chrome / Safari'da oching:
+   - **`design/app.html`** — **interaktiv prototip**: iPhone ramkasida ilova o'zi ishlaydi (telefonda — ramkasiz, to'liq ekran). O'ng paneldan istalgan ekranga o'tish, «Boshidan boshlash».
    - **`design/index.html`** — 30 ekran iPhone 15 Pro ramkalarida, 6 bo'lim. Uzun ekranlarni ramka ichida aylantirish mumkin (status bar va nav joyida qoladi). Yuqoridagi panelda masshtab: 50 / 75 / 100 %.
    - **`design/styleguide.html`** — ref-07 formatidagi stil qo'llanmasi: shrift alifbolari va raqamlar, HEX doiralar, gradient namunalari, tipografiya shkalasi, effektlar, radiuslar, oraliqlar, ikonkalar.
    - **`design/components.html`** — barcha komponentlar va holatlari.
@@ -24,6 +25,7 @@ Faqat HTML + CSS (+ index/styleguide'da minimal vanilla JS). Framework va build 
 ## Tuzilma
 ```
 design/
+├── app.html         interaktiv prototip (ilova qobig'i) · app.js — o'tishlar va holatlar
 ├── index.html       4-bosqich: taqdimot (iPhone ramkalari, 6 bo'lim)
 ├── styleguide.html  4-bosqich: ref-07 formatidagi stil qo'llanmasi
 ├── components.html  komponentlar galereyasi
@@ -37,8 +39,18 @@ design/
 │                    5-bosqich: CHECKLIST.md (avtomatik audit), DELTA_E.md (render ↔ ref), DEVIATIONS.md
 ├── shots/           Playwright skrinshotlari, 3x (30 ta)
 ├── compare/         sketch | dizayn | ref montajlari (30 ta)
-└── tools/           shoot.js, compare.py, audit.js + audit.py, delta_e.py, build_*.py
+└── tools/           shoot.js, compare.py, audit.js + audit.py, delta_e.py, flow_test.js, build_*.py
 ```
+
+## Interaktiv prototip (`app.js`)
+Har bir ekran oxirida `app.js` ulangan — statik dizayn o'zgarmaydi, faqat xatti-harakat qo'shiladi:
+- **O'tishlar:** posterlar → drama sahifasi, «Davom ettirish» → pleer, qulflangan qism → paywall → to'lov → pleerga qaytish, pastki nav (5 tab), orqaga / yopish (o'z steki bilan), bildirishnomalar → tegishli ekran, profil menyusi → hamyon / VIP / sozlamalar / yordam va h.k.
+- **Holatlar:** onboarding'da janr tanlash (hisoblagich), chip / segment / underline tab tanlovi, toggle va checkbox, VIP tarifi va to'lov usuli (tugma matni o'zgaradi), «Eslat ↔ Eslatiladi», yoqtirish / saqlash, izoh yoqtirish, spoyler ochish, check-in mukofotini olish, vazifalar, yuklanmalarni o'chirish / pauza, akkordeon (yordam).
+- **Jonli elementlar:** pleerda ijro / pauza, ±5 soniya va progress; lentada yuqoriga/pastga surish (sichqoncha g'ildiragi, ↑↓) — 5 ta drama almashadi; taklif va birinchi xarid taymerlari; reklama 15 soniyalik hisoblagich; «Serial tugadi» 5 soniyalik avto-o'tish.
+- Qisqa bildirishnomalar (toast) — «Roʻyxatga qoʻshildi», «Toʻlov tasdiqlandi» kabi.
+- Oqim testi: `node design/tools/flow_test.js` (30 ekran xatosiz yuklanadi + ~50 qadamli bosish ssenariysi).
+
+Bu — dizayn prototipi: video, to'lov va hisob haqiqiy serverga ulanmagan. App Store / Google Play uchun haqiqiy ilova (Flutter yoki React Native + backend) — alohida bosqich.
 
 ## Tekshiruv (5-bosqich)
 ```
