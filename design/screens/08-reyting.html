@@ -20,7 +20,9 @@
   .podium { position: absolute; top: 218px; left: var(--page-x); right: var(--page-x); height: 248px; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-8); align-items: end; }
   .pod { position: relative; padding: var(--s-10); border-radius: var(--r-media); text-align: center; }
   .pod .art { width: 100%; aspect-ratio: 2 / 3; border-radius: var(--r-poster); }
-  .pod__n { position: absolute; z-index: 3; top: -6px; left: 50%; transform: translateX(-50%); font: 400 44px/1 var(--f-display); color: var(--text-1); text-shadow: var(--text-shadow); }
+  .pod__n { position: absolute; z-index: 3; top: -6px; left: 50%; transform: translateX(-50%); font: 400 var(--t-edit)/1 var(--f-display); color: var(--text-1); text-shadow: var(--text-shadow); }
+  .pod::after { content: ''; position: absolute; z-index: 2; left: var(--s-10); right: var(--s-10); top: var(--s-10); height: 42%; border-radius: var(--r-poster) var(--r-poster) 0 0; background: var(--shade-top); pointer-events: none; }
+  .pod--first::after { top: var(--s-16); }
   .pod h3 { margin-top: var(--s-8); font: 600 var(--t-caption)/1.25 var(--f-ui); height: 30px; overflow: hidden; }
   .pod p { margin-top: 2px; }
   .pod:not(.pod--first) .art { aspect-ratio: 4 / 5; }

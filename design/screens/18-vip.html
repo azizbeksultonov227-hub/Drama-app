@@ -10,13 +10,13 @@
 <link rel="stylesheet" href="../components.css">
 <style>
   /* ref-06 sand varianti: sand → ember → cocoa, nur halqasi, grain */
-  .screen { background: linear-gradient(180deg, var(--sand) 0%, var(--ember) 30%, var(--cocoa) 58%, var(--cocoa) 100%); }
+  .screen { background: linear-gradient(180deg, var(--sand) 0%, var(--ember) 26%, var(--cocoa) 56%, var(--cocoa) 100%); }
   .ring { opacity: .7; }
   .content { position: relative; z-index: 3; }
   .top { display: flex; align-items: center; justify-content: space-between; padding: 58px var(--page-x) 0; }
   .top .btn--text { padding: 0; color: var(--cocoa); }
   .top .gbtn { color: var(--cocoa); }
-  .hero { text-align: center; padding: var(--s-16) var(--page-x) 0; color: var(--cocoa); }
+  .hero { text-align: center; padding: var(--s-16) var(--page-x) 0; color: var(--warm-text-1); }
   .hero .box { margin: 0 auto; }
   .hero h1 { margin-top: var(--s-16); }
   .perks { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-10) var(--s-12); padding: 0 var(--page-x); margin-top: var(--s-24); }
@@ -38,7 +38,7 @@
   .cmp th:first-child, .cmp td:first-child { text-align: left; color: var(--text-2); }
   .cmp tr + tr td { box-shadow: inset 0 1px 0 var(--glass-line-soft); }
   .cmp .v { color: var(--sand); font-weight: 600; }
-  .cta { margin: var(--s-24) var(--page-x) 0; width: auto; }
+  .cta { margin: var(--s-24) var(--page-x) 0; width: calc(100% - 2 * var(--page-x)); }
   .terms { padding: 0 var(--page-x); margin-top: var(--s-12); text-align: center; }
   .terms a { color: var(--text-2); text-decoration: underline; text-underline-offset: 2px; }
 </style>
@@ -51,8 +51,8 @@
 
   <div class="content">
     <div class="top">
-      <button class="gbtn gbtn--sm" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
       <button class="btn btn--text">Xaridlarni tiklash</button>
+      <button class="gbtn gbtn--sm" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
     </div>
     <section class="hero">
       <div class="box" style="--box: var(--sand)"><div class="box__well"><i class="ic ic-crown ic--32" style="color: var(--sand)"></i></div><div class="box__front"></div></div>
@@ -73,7 +73,7 @@
 
     <div class="plans">
       <div class="plan card--glass"><span class="radio"></span><div class="plan__b"><p class="t-body-m">Haftalik</p><p class="t-caption c-3" style="margin-top: 2px">1-hafta −40%, keyin toʻliq narx</p></div><span class="plan__price">[narx] soʻm</span></div>
-      <div class="plan is-on"><span class="badge" style="background: var(--flame); color: var(--text-1)">Ommabop</span><span class="radio is-on"></span><div class="plan__b"><p class="t-body-m">Oylik</p><p class="t-caption c-3" style="margin-top: 2px">har oy avto-yangilanadi</p></div><span class="plan__price">[narx] soʻm</span></div>
+      <div class="plan is-on"><span class="badge" style="background: var(--flame); color: var(--on-flame)">Ommabop</span><span class="radio is-on"></span><div class="plan__b"><p class="t-body-m">Oylik</p><p class="t-caption c-3" style="margin-top: 2px">har oy avto-yangilanadi</p></div><span class="plan__price">[narx] soʻm</span></div>
       <div class="plan card--glass"><span class="badge" style="background: var(--sand); color: var(--cocoa)">Eng tejamkor</span><span class="radio"></span><div class="plan__b"><p class="t-body-m">Yillik</p><p class="t-caption c-3" style="margin-top: 2px">oyiga ≈ [narx] soʻm — eng arzon</p></div><span class="plan__price">[narx] soʻm</span></div>
     </div>
 
@@ -88,7 +88,7 @@
     </div>
 
     <button class="btn btn--primary btn--block cta">VIP olish · [narx] soʻm / oy</button>
-    <p class="terms t-caption c-3">Obuna har oy avtomatik yangilanadi. Istalgan vaqtda Profil → Obunani boshqarish orqali bekor qilasiz. Keyingi toʻlov: 25-noyabr. <a>Shartlar</a> · <a>Maxfiylik</a></p>
+    <p class="terms t-caption c-2">Obuna har oy avtomatik yangilanadi. Istalgan vaqtda Profil → Obunani boshqarish orqali bekor qilasiz. Keyingi toʻlov: 25-noyabr. <a>Shartlar</a> · <a>Maxfiylik</a></p>
     <div class="scroll-pad" style="height: 48px"></div>
   </div>
   <div class="home-ind"></div>

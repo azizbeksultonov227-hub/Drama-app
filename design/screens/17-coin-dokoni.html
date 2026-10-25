@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../components.css">
 <style>
   /* tepa qism iliq glow + grain (ref-06), pastga qora fonga eriydi */
-  .glow { position: absolute; left: 0; right: 0; top: 0; height: 430px; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+  .glow { position: absolute; left: 0; right: 0; top: 0; height: 430px; background: var(--warm-light-card), var(--warm-card); -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 60%, transparent 100%); mask-image: linear-gradient(180deg, var(--bg-0) 60%, transparent 100%); }
   .top { position: relative; z-index: 5; padding: 58px var(--page-x) 0; display: flex; align-items: center; gap: var(--s-12); }
   .top h1 { flex: 1; }
   .top .btn--text { padding: 0; color: var(--warm-text-1); }
@@ -43,11 +43,11 @@
   <section class="bal">
     <p class="t-footnote-m" style="color: var(--warm-text-2)">Balansingiz</p>
     <div class="bal__num"><i class="coin coin--xl"></i><span class="t-num">20 coin</span></div>
-    <p class="t-footnote" style="margin-top: var(--s-10); color: var(--warm-text-2)">Pullik: 0 · Bonus: 20 · 1 qism ≈ 60 coin</p>
+    <p class="t-footnote" style="margin-top: var(--s-10); color: var(--warm-text-1)">Pullik: 0 · Bonus: 20 · 1 qism ≈ 60 coin</p>
   </section>
 
   <div class="first card--glass">
-    <div style="flex: 1"><p class="t-body-m">Birinchi xarid: <span class="c-flame">−50%</span></p><p class="t-caption c-3" style="margin-top: 2px">faqat yangi foydalanuvchilar uchun</p></div>
+    <div style="flex: 1"><p class="t-body-m">Birinchi xarid: <span class="c-peach">−50%</span></p><p class="t-caption c-2" style="margin-top: 2px">faqat yangi foydalanuvchilar uchun</p></div>
     <div class="cd"><span class="cd__box">23</span><span class="cd__sep">:</span><span class="cd__box">59</span><span class="cd__sep">:</span><span class="cd__box">12</span></div>
   </div>
 
@@ -71,7 +71,7 @@
     <div class="pay__chips"><span class="chip">Payme</span><span class="chip">Click</span><span class="chip">Uzum</span><span class="chip">UzCard / Humo</span><span class="chip">Visa / MC</span><span class="chip">App Store / Google Play</span></div>
   </section>
 
-  <div class="links"><a>Xaridlarni tiklash</a><a>Toʻlov shartlari</a><a>Yordam</a></div>
+  <div class="links"><a class="hit">Xaridlarni tiklash</a><a class="hit">Toʻlov shartlari</a><a class="hit">Yordam</a></div>
   <p class="t-caption c-3" style="text-align: center; margin: var(--s-16) var(--page-x) 0">Coinlar faqat ilova ichida ishlatiladi. Bonus coin 7 kun amal qiladi.</p>
   <div class="scroll-pad" style="height: 48px"></div>
   <div class="home-ind"></div>

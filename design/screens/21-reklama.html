@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../components.css">
 <style>
   .frame { position: absolute; inset: 0; }
-  .shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 66%, rgba(0, 0, 0, .7) 100%); }
+  .shade { position: absolute; inset: 0; z-index: 1; background: var(--shade-player); }
   .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; }
   .top .chip { height: var(--h-chip-glass); padding: 0 var(--s-12); color: var(--text-1); background: var(--glass-bg-strong); }
   .reward { position: absolute; z-index: 5; top: 124px; left: var(--page-x); right: var(--page-x); padding: var(--s-16); border-radius: var(--r-media); }
@@ -32,9 +32,9 @@
   </div>
 
   <div class="reward card--glass">
-    <p class="t-body-m" style="display: flex; gap: var(--s-10); align-items: flex-start"><i class="ic ic-gift c-flame"></i><span>Oxirigacha koʻring — <span class="c-flame">11-qism bepul ochiladi</span></span></p>
+    <p class="t-body-m" style="display: flex; gap: var(--s-10); align-items: flex-start"><i class="ic ic-gift c-flame"></i><span>Oxirigacha koʻring — <span class="c-peach">11-qism bepul ochiladi</span></span></p>
     <div class="progress" style="--p: 34%"><i></i></div>
-    <p class="t-caption c-3" style="margin-top: var(--s-8)">Bugungi limit: 4 / 5 reklama</p>
+    <p class="t-caption c-2" style="margin-top: var(--s-8)">Bugungi limit: 4 / 5 reklama</p>
   </div>
 
   <div class="adv card--glass">

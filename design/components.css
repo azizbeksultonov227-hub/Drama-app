@@ -72,7 +72,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .btn--xs { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-footnote); }
 .btn--block { display: flex; width: 100%; }
 .btn--block.abs-x { width: auto; } /* left/right bilan joylashtirilganda */
-.btn--flame { background: var(--flame); color: var(--text-1); box-shadow: var(--glow-flame); }
+.btn--flame { background: var(--flame); color: var(--on-flame); box-shadow: var(--glow-flame); }
 .pill-more { display: inline-flex; align-items: center; gap: 4px; height: var(--h-pill-xs); padding: 0 var(--s-12); border-radius: var(--r-pill); background: var(--bg-3); font: 400 var(--t-body)/1 var(--f-ui); color: var(--text-1); letter-spacing: -.01em; }
 .dot-btn { display: inline-grid; place-items: center; width: var(--h-pill-xs); height: var(--h-pill-xs); border-radius: 50%; background: var(--bg-3); color: var(--text-2); }
 .dot-btn .ic { width: 16px; height: 16px; }
@@ -95,7 +95,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .chip--glass { height: var(--h-chip-glass); padding: 0 var(--s-12); background: var(--glass-chip); color: var(--peach); }
 .chip--selected { background: var(--text-1); color: var(--cocoa); box-shadow: none; font-weight: 500; }
 .chip--outline { background: transparent; box-shadow: inset 0 0 0 1px var(--line-outline); -webkit-backdrop-filter: none; backdrop-filter: none; }
-.chip--flame { background: var(--flame); color: var(--text-1); box-shadow: none; font-weight: 600; }
+.chip--flame { background: var(--flame); color: var(--on-flame); box-shadow: none; font-weight: 600; }
 .chip--sand { background: transparent; color: var(--sand); box-shadow: inset 0 0 0 1px var(--sand); }
 .chip--lg { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-body); }
 .avatars { display: inline-flex; }
@@ -139,7 +139,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .warm { position: relative; overflow: hidden; background: var(--warm-light), var(--warm-bg); background-color: var(--ember); }
 .ring { position: absolute; pointer-events: none; z-index: 0; border-radius: 50%; width: 1476px; height: 1476px; left: -1052px; top: -280px;
   box-shadow: var(--ring-shadow); }
-.ring--card { width: 1360px; height: 1360px; left: -993px; top: -380px; } /* r = 1.9 × karta kengligi (ref-06), cheti o'ng chetda */
+.ring--card { width: 1360px; height: 1360px; left: -993px; top: -380px; }
+.ring--tall { width: 2000px; height: 2000px; left: calc(100% - 1985px); top: calc(50% - 1000px); } /* baland modal: yoy o'ng chetga yaqin, matn ustidan o'tmaydi */ /* r = 1.9 × karta kengligi (ref-06), cheti o'ng chetda */
 
 /* ---------- Poster (2:3) ---------- */
 .poster { position: relative; flex: none; width: var(--pw, 104px); }
@@ -152,7 +153,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .poster__meta .ic { width: 13px; height: 13px; }
 .tag { position: absolute; z-index: 3; top: 6px; left: 6px; display: inline-flex; align-items: center; gap: 3px; height: 20px; padding: 0 7px; border-radius: var(--r-thumb); font: 600 var(--t-tag)/1 var(--f-ui); letter-spacing: .01em; white-space: nowrap; }
 .tag .ic { width: 11px; height: 11px; }
-.tag--free { background: var(--flame); color: var(--text-1); }
+.tag--free { background: var(--flame); color: var(--on-flame); }
 .tag--new { background: var(--text-1); color: var(--cocoa); }
 .tag--vip { background: var(--sand); color: var(--cocoa); }
 .tag--uz { background: var(--glass-bg-strong); color: var(--text-1); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
@@ -172,7 +173,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Kartalar ---------- */
 .card { position: relative; border-radius: var(--r-card); background: var(--card-fill); box-shadow: inset 0 0 0 1px var(--line-1), inset 0 -1px 0 var(--line-2); padding: var(--s-16); }
 .card--ambient { background: radial-gradient(120% 90% at 75% 0%, var(--amb) 0%, color-mix(in srgb, var(--amb) 72%, var(--amb-dark)) 30%, color-mix(in srgb, var(--amb) 36%, var(--amb-dark)) 55%, var(--amb-dark) 100%); box-shadow: inset 0 0 0 1px var(--line-1); overflow: hidden; }
-.card--warm { position: relative; background: var(--warm-light), var(--warm-bg); overflow: hidden; box-shadow: inset 0 0 0 1px var(--glass-line-soft); }
+.card--warm .btn--glass { background: var(--glass-dark); }
+.card--warm { position: relative; background: var(--warm-light-card), var(--warm-card); overflow: hidden; box-shadow: inset 0 0 0 1px var(--glass-line-soft); }
 .card--glass { background: var(--glass-dark); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
 .card--flat { background: var(--bg-1); }
 
@@ -219,7 +221,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .ep .ic { position: absolute; top: 5px; right: 5px; width: 12px; height: 12px; }
 .ep--watched { background: var(--bg-1); color: var(--text-3); }
 .ep--watched .ic { color: var(--text-3); }
-.ep--current { background: var(--flame); color: var(--text-1); box-shadow: var(--glow-flame); font-weight: 700; }
+.ep--current { background: var(--flame); color: var(--on-flame); box-shadow: var(--glow-flame); font-weight: 700; }
 .ep--free { background: var(--bg-2); }
 .ep--free::after { content: ''; position: absolute; bottom: 6px; left: calc(50% - 3px); width: 6px; height: 6px; border-radius: 50%; background: var(--flame); }
 .ep--open { background: var(--bg-2); }
@@ -268,7 +270,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .hscroll { display: flex; gap: var(--s-12); padding: 0 var(--page-x); overflow: hidden; }
 
 /* ---------- Badge · countdown · coin · toj ---------- */
-.badge-count { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-pill); background: var(--rose); color: var(--text-1); font: 600 var(--t-tag)/1 var(--f-ui); box-shadow: 0 0 0 2px var(--bg-0); }
+.badge-count { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-pill); background: var(--rose); color: var(--on-flame); font: 600 var(--t-tag)/1 var(--f-ui); box-shadow: 0 0 0 2px var(--bg-0); }
 .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--flame); }
 .cd { display: inline-flex; gap: 6px; align-items: center; }
 .cd__box { min-width: 44px; height: 48px; padding: 0 6px; border-radius: var(--r-tile); display: grid; place-items: center; font: 400 var(--t-cd)/1 var(--f-display); background: var(--glass-bg-strong); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
@@ -309,7 +311,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .pack__price { margin-top: var(--s-10); height: var(--h-pill-xs); padding: 0 var(--s-12); border-radius: var(--r-pill); display: inline-flex; align-items: center; background: var(--glass-bg); box-shadow: inset 0 0 0 1px var(--glass-line-soft); font: 500 var(--t-footnote)/1 var(--f-ui); white-space: nowrap; }
 .pack__badge { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); height: 20px; padding: 0 var(--s-8); border-radius: var(--r-pill); display: inline-flex; align-items: center; font: 600 var(--t-tag)/1 var(--f-ui); white-space: nowrap; }
 .pack--popular { box-shadow: inset 0 0 0 1.5px var(--flame), var(--glow-flame); }
-.pack--popular .pack__badge { background: var(--flame); color: var(--text-1); }
+.pack--popular .pack__badge { background: var(--flame); color: var(--on-flame); }
 .pack--popular .pack__price { background: var(--text-1); color: var(--cocoa); box-shadow: none; }
 .pack--best { box-shadow: inset 0 0 0 1.5px var(--sand), var(--glow-sand); }
 .pack--best .pack__badge { background: var(--sand); color: var(--cocoa); }
@@ -335,3 +337,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   }
 }
 @keyframes edge-in { to { opacity: 1; } }
+
+/* ---------- Bosish maydoni ≥ 44 pt (HIG) ----------
+   Vizual o'lcham ref'lardan (chip 26, pill 29–43, glass doira 40); bosish maydoni ko'rinmas ::before bilan 44 ga kengaytiriladi. */
+:where(.chip, .pill-more, .dot-btn, .seg__item) { position: relative; }
+:where(.hit) { position: relative; }
+:is(.btn, .gbtn, .chip, .pill-more, .dot-btn, .seg__item, .utabs__item, .hit)::before { content: ''; position: absolute; left: 50%; top: 50%; width: max(100%, var(--hit)); height: max(100%, var(--hit)); transform: translate(-50%, -50%); }

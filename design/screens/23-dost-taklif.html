@@ -11,14 +11,14 @@
 <style>
   .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
   /* ref-04 aurora: avatar pufakchalari (qorong'i versiya) */
-  .bubbles { position: absolute; top: 114px; left: 0; right: 0; height: 140px; -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent 100%); mask-image: linear-gradient(180deg, #000 60%, transparent 100%); }
+  .bubbles { position: absolute; top: 114px; left: 0; right: 0; height: 140px; -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 60%, transparent 100%); mask-image: linear-gradient(180deg, var(--bg-0) 60%, transparent 100%); }
   .pair { position: absolute; z-index: 3; top: 128px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: var(--s-8); }
   .pair .art { width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 2px var(--bg-0); }
   .title { position: absolute; top: 262px; left: var(--page-x); right: var(--page-x); text-align: center; }
   .steps { position: absolute; top: 368px; left: var(--page-x); right: var(--page-x); display: flex; flex-direction: column; gap: var(--s-12); }
   .step { display: flex; align-items: center; gap: var(--s-12); }
   .step b { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--glass-bg-strong); box-shadow: inset 0 0 0 1px var(--glass-line-soft); font: 400 var(--t-headline)/1 var(--f-display); }
-  .step.is-on b { background: var(--flame); box-shadow: var(--glow-flame); }
+  .step.is-on b { background: var(--flame); box-shadow: var(--glow-flame); color: var(--on-flame); }
   .code { position: absolute; top: 504px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; padding: var(--s-16) var(--s-16) var(--s-16) var(--s-20); border-radius: var(--r-media); }
   .code__v { font: 500 var(--t-mono-lg)/1 var(--f-mono); letter-spacing: .12em; margin-top: var(--s-6); }
   .share { position: absolute; top: 606px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: repeat(4, 1fr); text-align: center; }

@@ -44,6 +44,7 @@
   --warm-text-1: #FFF7DE;   /* ref-06: "Relief Meditation" */
   --warm-text-2: #FFB677;   /* ref-06: subtitle */
   --white-pill: #FFFDFF;    /* ref-06: "Listen" pill */
+  --on-flame: var(--cocoa); /* flame/rose fondagi kichik matn: cocoa 6.1:1 / 5.4:1 (oq atigi 3.05:1 / 3.45:1 — WCAG AA'dan past) */
 
   /* ---------- Drama ambient ranglari (posterning dominant rangi) ----------
      Placeholder holatida har bir drama ref'larda o'lchangan rangdan oladi.   */
@@ -68,8 +69,8 @@
 
   /* ---------- Glass ---------- */
   --glass-bg: rgba(255, 255, 255, .08);         /* ref-04 qidiruv maydoni, ref-01 chip (7–8%) */
-  --glass-bg-strong: rgba(215, 215, 215, .25);  /* ref-07 orqaga doira: c≈215, a≈.25 */
-  --glass-bg-frost: rgba(220, 220, 220, .45);   /* ref-06 nav doiralari: c≈215–227, a≈.41–.59 */
+  --glass-bg-strong: rgba(148, 148, 148, .36);  /* 5-bosqich ΔE: ref-07 orqaga doira 0.80, "−10/+10" 4.79 (sof alfa chegarasi 4.63), ref-06 chip 2.27 — (215, .25) esa 1.02 / 8.58 / 10.5 */
+  --glass-bg-frost: rgba(188, 188, 188, .58);   /* ref-06 nav doiralari, ikki nuqta bo'yicha eng kichik ΔE fit (7.07 — blur tufayli sof alfa chegarasi) */
   --glass-chip: rgba(148, 148, 148, .36);       /* ref-06 "Recommended" chip: c≈148, a≈.36 */
   --glass-dark: rgba(0, 0, 0, .32);             /* ref-04 NFT glass kartalar */
   --glass-line: rgba(255, 255, 255, .18);       /* ref-04 qidiruv chegarasi 18–20%, ref-01 chip yuqori 17% */
@@ -94,15 +95,19 @@
   --rim-hi: rgba(255, 255, 255, .35);                  /* ref-01 slider trek yuqori halqasi */
   --rim-lo: rgba(255, 255, 255, .22);                  /* ref-01 slider trek past halqasi */
   --text-shadow: 0 1px 6px rgba(0, 0, 0, .45);         /* rasm ustidagi matn himoyasi (PROMPT: subtitr yumshoq soya) */
-  --ring-shadow: 0 0 0 4px var(--ring-core), 0 0 14px 6px rgba(255, 211, 132, .7), inset 0 0 23px 8px rgba(251, 149, 65, .75), 0 0 0 900px rgba(25, 18, 9, .55); /* ref-06: yadro 4–6, ichki glow 23, tashqari qorong'i (#490B03) */
+  --ring-shadow: 0 0 0 4px var(--ring-core), 0 0 14px 6px rgba(255, 211, 132, .7), inset 0 0 23px 8px rgba(251, 149, 65, .75), 0 0 0 900px rgba(73, 11, 3, .5); /* ref-06: yadro 4–6, ichki glow 23, tashqari qorong'i #490B03 (ΔE tashqarida 12.8 → 8.0) */
   --knob-fill: radial-gradient(70% 55% at 50% 22%, rgba(255, 255, 255, .85) 0%, rgba(255, 255, 255, .25) 55%, rgba(255, 255, 255, 0) 70%), radial-gradient(100% 100% at 50% 50%, #FCA785 0%, #FFDBC4 60%, #FFFFFF 100%); /* ref-01 shisha sfera knob (tepada aks, pastda oq halqa), brend ranglarida */
   --knob-rim: inset 0 -2px 0 #FFFFFF, inset 0 0 0 1px rgba(255, 255, 255, .6); /* ref-01 knob pastki oq halqa #CCC0C0 */
 
   /* ---------- Gradientlar ---------- */
   --poster-fade: linear-gradient(180deg, rgba(0, 0, 0, 0) 52%, rgba(0, 0, 0, .7) 100%); /* ref-01 hero-fade DNK, poster nomi himoyasi */
+  --shade-top: linear-gradient(180deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, 0) 100%);   /* rasm ustidagi yuqori matn himoyasi (podium raqami, hero tepasi); balandlik/opacity element'da */
+  --shade-player: linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, .68) 76%, rgba(0, 0, 0, .9) 100%), linear-gradient(270deg, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 0) 30%);   /* pleer/lenta: status, o'ng rail va pastki matn himoyasi */
   --hero-fade: linear-gradient(180deg, rgba(0, 0, 0, 0) 58%, rgba(0, 0, 0, .35) 68%, rgba(0, 0, 0, .6) 75%, rgba(0, 0, 0, .89) 86%, #000000 100%); /* ref-01 hero */
   --warm-bg: radial-gradient(170% 110% at 90% 60%, #EC731E 0%, #C24809 34%, #A73406 40%, #962A05 45%, #8B2406 50%, #7E1D05 55%, #7B2D1C 74%); /* ref-06 fit, ΔE 5.6 */
   --warm-light: radial-gradient(55% 32% at 100% 92%, rgba(254, 217, 121, .95) 0%, rgba(249, 153, 59, .55) 38%, rgba(241, 128, 33, 0) 100%);    /* ref-06 o'ng-past yorug'lik */
+  --warm-card: radial-gradient(100% 80% at 112% 64%, #EC731E 0%, #C24809 30%, #A73406 42%, #962A05 52%, #8B2406 62%, #7E1D05 74%, #7B2D1C 100%);  /* --warm-bg stoplari; karta/modal uchun yorug' yadro o'ng chetga (halqa ostiga) surilgan — matn ustida kontrast ≥ 4.5 */
+  --warm-light-card: radial-gradient(28% 14% at 100% 100%, rgba(254, 217, 121, .5) 0%, rgba(249, 153, 59, .24) 45%, rgba(241, 128, 33, 0) 100%);
   --grad-sunset: linear-gradient(135deg, #F96430 0%, #F67040 12%, #E2BD99 48%, #B77558 75%, #9A462A 100%); /* ref-07 swatch A */
   --grad-dusk: linear-gradient(135deg, #191209 0%, #79413E 25%, #D06D6D 48%, #EBB0A2 75%, #FFDBC4 100%);   /* ref-07 swatch B */
   --grad-vip: linear-gradient(180deg, #E2BD99 0%, #9A462A 48%, #191209 100%);                               /* PROMPT §18, ref-07 palitrasi */
@@ -141,6 +146,7 @@
   --d-glass-lg: 58px;    /* ref-06/07 orqaga doira 58.5–58.8 */
   --d-play: 56px;        /* ref-07 play 56 */
   --d-side: 48px;        /* ref-01 profil orqaga doira 48 */
+  --hit: 44px;           /* Apple HIG: minimal bosish maydoni (vizual kichik boshqaruvlarga ko'rinmas kengaytma) */
   --nav-h: 55px;         /* ref-01 nav */
   --nav-x: 18px;         /* ref-01 */
   --nav-bottom: 36px;    /* ref-01: ekran pastidan; home indicator'dan 22 */
@@ -185,6 +191,7 @@
   --t-mono-lg: 28px;    /* taklif kodi (PROMPT §23 mono "AZ7K29") */
   --t-tag: 11px;        /* ref-02 nav label 11, ref-04 badge raqami */
   --t-cd: 26px;         /* countdown raqamlari = title-3 o'lchami */
+  --t-rank: 128px;      /* 04 Top-10 kontur raqami (PROMPT §04) — poster balandligining 0.82 */
   --t-pack: 32px;       /* coin paket miqdori (Anton) = serif-lg o'lchami */
 
   /* ---------- Grain ---------- */

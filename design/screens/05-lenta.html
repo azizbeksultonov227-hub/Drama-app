@@ -10,12 +10,12 @@
 <link rel="stylesheet" href="../components.css">
 <style>
   .frame { position: absolute; inset: 0; }
-  .shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0, 0, 0, .45) 0%, rgba(0, 0, 0, 0) 18%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, .7) 74%, rgba(0, 0, 0, .9) 100%); }
+  .shade { position: absolute; inset: 0; z-index: 1; background: var(--shade-player); }
   .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 44px; display: flex; align-items: center; justify-content: center; }
   .top .gbtn { position: absolute; right: 0; }
   .toast { position: absolute; z-index: 5; left: 72px; right: 72px; top: 214px; padding: var(--s-16); text-align: center; border-radius: var(--r-card); }
   .toast .ic { color: var(--text-1); }
-  .rail { position: absolute; z-index: 5; right: 14px; top: 290px; display: flex; flex-direction: column; gap: 26px; }
+  .rail { position: absolute; z-index: 5; right: calc(var(--page-x) + var(--s-4)); top: 290px; display: flex; flex-direction: column; gap: 26px; }
   .info { position: absolute; z-index: 5; left: var(--page-x); right: 84px; top: 506px; }
   .info .chip { height: var(--h-chip); }
   .info h1 { margin-top: var(--s-12); }
@@ -34,7 +34,7 @@
   <div class="island"></div>
 
   <div class="top">
-    <div class="seg seg--glass"><span class="seg__item">Kuzatuvdagilar</span><span class="seg__item is-active">Siz uchun</span></div>
+    <div class="seg seg--glass" style="background: var(--glass-dark)"><span class="seg__item">Kuzatuvdagilar</span><span class="seg__item is-active">Siz uchun</span></div>
     <button class="gbtn gbtn--sm" aria-label="Qidiruv"><i class="ic ic-search ic--22"></i></button>
   </div>
 
@@ -42,7 +42,7 @@
   <div class="toast card--glass">
     <i class="ic ic-swipe-up ic--28"></i>
     <p class="t-body-m" style="margin-top: var(--s-8)">Keyingi drama uchun yuqoriga suring</p>
-    <p class="t-caption c-3" style="margin-top: var(--s-4)">faqat birinchi marta koʻrinadi</p>
+    <p class="t-caption" style="margin-top: var(--s-4)">faqat birinchi marta koʻrinadi</p>
   </div>
 
   <div class="rail">

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../components.css">
 <style>
   .sheet { top: 118px; padding-bottom: 0; }
-  .bubbles { height: 74px; margin: -4px calc(var(--page-x) * -1) 0; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+  .bubbles { height: 74px; margin: -4px calc(var(--page-x) * -1) 0; -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 55%, transparent 100%); mask-image: linear-gradient(180deg, var(--bg-0) 55%, transparent 100%); }
   .head { display: flex; align-items: center; justify-content: space-between; margin-top: var(--s-4); }
   .sort { display: flex; gap: var(--s-8); margin-top: var(--s-12); }
   .sort .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); }
@@ -29,7 +29,7 @@
   .spoiler > span { position: relative; z-index: 1; font: 500 var(--t-footnote)/1 var(--f-ui); }
   .compose { position: absolute; z-index: 75; left: 0; right: 0; bottom: 0; padding: var(--s-12) var(--page-x) 34px; background: var(--bg-1); box-shadow: inset 0 1px 0 var(--line-1); display: flex; align-items: center; gap: var(--s-10); }
   .compose .search { flex: 1; height: var(--d-glass-sm); padding: 0 var(--s-16); font-size: var(--t-body); }
-  .compose label { display: flex; align-items: center; gap: var(--s-6); font: 500 var(--t-caption)/1 var(--f-ui); color: var(--text-2); }
+  .compose label { display: flex; align-items: center; gap: var(--s-6); min-height: var(--hit); font: 500 var(--t-caption)/1 var(--f-ui); color: var(--text-2); }
 </style>
 </head>
 <body>

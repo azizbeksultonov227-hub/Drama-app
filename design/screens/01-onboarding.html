@@ -16,14 +16,14 @@
   .intro p { margin-top: var(--s-10); color: var(--text-2); }
   /* ref-03 editorial ro'yxat: aktivlar oq + "→", qolganlari text-3 va pastga qarab xiralashadi */
   .list { position: absolute; z-index: 2; top: 244px; left: var(--page-x); right: 0; height: 344px; overflow: hidden;
-          -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 62%, transparent 100%); }
+          -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 62%, transparent 100%); mask-image: linear-gradient(180deg, var(--bg-0) 62%, transparent 100%); }
   .list li { list-style: none; white-space: nowrap; color: var(--text-3); position: relative; z-index: 2; }
   .list li.is-on { color: var(--text-1); }
   .list li.is-on .dot { position: relative; top: -22px; margin-left: 6px; }
   .collage { position: absolute; z-index: 1; }
   .collage .shade { position: absolute; left: 176px; top: 214px; width: 190px; height: 130px; border-radius: var(--r-media); background: var(--line-1); }
   .collage .art { position: absolute; border-radius: var(--r-media); box-shadow: var(--shadow-pill); }
-  .cap { position: absolute; z-index: 3; right: var(--page-x); top: 392px; text-align: right; color: var(--text-3); }
+  .cap { position: absolute; z-index: 3; right: var(--page-x); top: 392px; text-align: right; color: var(--text-1); }
   .lang { position: absolute; top: 604px; left: var(--page-x); right: var(--page-x); }
   .lang .chip { height: var(--h-chip-glass); padding: 0 var(--s-16); font-size: var(--t-body); }
   .guest { position: absolute; top: 684px; left: var(--page-x); right: var(--page-x); display: flex; gap: var(--s-12); align-items: center; padding: var(--s-12) var(--s-16); border-radius: var(--r-tile); }

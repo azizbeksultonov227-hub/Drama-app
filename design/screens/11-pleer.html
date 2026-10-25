@@ -11,11 +11,11 @@
 <style>
   /* to'liq ekranli kadr (ref-07 pleer) + grain + yuqori/past qora gradient */
   .frame { position: absolute; inset: 0; }
-  .shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, 0) 54%, rgba(0, 0, 0, .62) 78%, rgba(0, 0, 0, .86) 100%); }
+  .shade { position: absolute; inset: 0; z-index: 1; background: var(--shade-player); }
   .topbar { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; }
   .topbar__title { text-align: center; }
-  .topbar__title b { display: block; font: 600 14px/1.25 var(--f-ui); letter-spacing: -.01em; color: var(--text-1); }
-  .rail { position: absolute; z-index: 5; right: 14px; top: 300px; display: flex; flex-direction: column; gap: 30px; }
+  .topbar__title b { display: block; font: 600 var(--t-footnote)/1.25 var(--f-ui); letter-spacing: -.01em; color: var(--text-1); }
+  .rail { position: absolute; z-index: 5; right: calc(var(--page-x) + var(--s-4)); top: 300px; display: flex; flex-direction: column; gap: 30px; }
   .rail .gbtn { --d-side: 48px; }
   .subtitle { position: absolute; z-index: 5; left: var(--page-x); right: 84px; top: 548px; color: var(--text-1); text-shadow: var(--text-shadow); }
   .timerow { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 616px; display: flex; align-items: center; justify-content: space-between; }
@@ -24,7 +24,7 @@
   .scrub__knob { position: absolute; top: 0; left: calc(36% - 9px); width: 18px; height: 18px; border-radius: 50%; background: var(--glossy-fill); box-shadow: var(--glossy-hi), var(--shadow-pill); }
   .controls { position: absolute; z-index: 5; left: 0; right: 0; top: 694px; display: flex; justify-content: center; align-items: center; gap: var(--s-12); }
   .controls .gbtn { position: relative; }
-  .controls .sec-num { position: absolute; font: 600 9px/1 var(--f-ui); top: 50%; left: 50%; transform: translate(-50%, -38%); }
+  .controls .sec-num { position: absolute; font: 600 var(--t-micro)/1 var(--f-ui); top: 50%; left: 50%; transform: translate(-50%, -38%); }
   .play { width: var(--d-play); height: var(--d-play); }
   .pills { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 770px; display: flex; gap: var(--s-8); }
   .pills .chip { height: var(--h-chip-glass); padding: 0 var(--s-12); font: 500 var(--t-footnote)/1 var(--f-ui); color: var(--text-1); background: var(--glass-bg-strong); }

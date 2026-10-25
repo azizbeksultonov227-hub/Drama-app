@@ -14,10 +14,10 @@
   .hero__media { position: absolute; left: 0; right: 0; top: 0; height: 452px; }
   .hero__fade { position: absolute; left: 0; right: 0; top: 0; height: 452px; background: var(--hero-fade); }
   .topbar { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 44px; display: flex; align-items: center; justify-content: space-between; }
-  .logo { position: absolute; left: 50%; transform: translateX(-50%); font: 700 22px/1 var(--f-ui); letter-spacing: -.02em; color: var(--text-2); }
+  .logo { position: absolute; left: 50%; transform: translateX(-50%); font: 700 var(--t-subtitle)/1 var(--f-ui); letter-spacing: -.02em; color: var(--text-2); }
   .coin-chip { height: var(--d-glass-sm); padding: 0 var(--s-12) 0 var(--s-8); gap: var(--s-6); font: 600 var(--t-body)/1 var(--f-ui); color: var(--text-1); background: var(--glass-bg-strong); }
   .coin-chip .ic { width: 16px; height: 16px; color: var(--text-2); }
-  .trailer { position: absolute; z-index: 5; top: 116px; right: var(--page-x); }
+  .trailer { position: absolute; z-index: 5; top: 116px; right: var(--page-x); background: var(--glass-dark); color: var(--text-1); }
   .hero__title { position: absolute; z-index: 4; top: 150px; left: 50%; transform: translateX(-50%); width: 220px; text-align: center; color: var(--text-1); text-shadow: var(--text-shadow); }
   .hero__title span { display: block; white-space: nowrap; }
   .hero__meta { position: absolute; z-index: 4; top: 338px; left: 0; right: 0; text-align: center; }
@@ -27,7 +27,7 @@
   .tabs { padding: 0 var(--page-x); margin-top: 2px; overflow: hidden; }
   .top10 { display: flex; gap: 0; padding: 0 var(--page-x); overflow: hidden; }
   .top10__item { position: relative; flex: none; display: flex; align-items: flex-start; margin-right: var(--s-8); }
-  .top10__num { height: 156px; display: flex; align-items: flex-end; font: 400 128px/.78 var(--f-display); color: transparent; -webkit-text-stroke: 2px var(--text-2); margin-right: -12px; position: relative; z-index: 0; letter-spacing: -.02em; }
+  .top10__num { height: 156px; display: flex; align-items: flex-end; font: 400 var(--t-rank)/.78 var(--f-display); color: transparent; -webkit-text-stroke: 2px var(--text-2); margin-right: -12px; position: relative; z-index: 0; letter-spacing: -.02em; }
   .top10__item .poster { position: relative; z-index: 1; }
   .vip { margin: 0 var(--page-x); padding: var(--s-20) var(--s-20) var(--s-16);
          background: radial-gradient(120% 120% at 88% 0%, var(--sand) 0%, color-mix(in srgb, var(--sand) 35%, var(--ember)) 30%, var(--ember) 52%, var(--amb-dark) 100%); }
@@ -39,7 +39,7 @@
   .soon .art { flex: none; width: 50px; height: 76px; border-radius: var(--r-thumb); }
   .soon__body { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; }
   .soon__body .btn { margin-top: auto; padding: 0 var(--s-10); }
-  .btn--done { background: var(--flame); color: var(--text-1); box-shadow: none; }
+  .btn--done { background: var(--flame); color: var(--on-flame); box-shadow: none; }
 </style>
 </head>
 <body>
