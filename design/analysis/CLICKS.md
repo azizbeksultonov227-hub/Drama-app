@@ -2,19 +2,9 @@
 
 Har bir ekran yangidan yuklanib, har bir bosiladigan element markaziga bosildi. Natija: «→» boshqa ekran, «💬» bildirishnoma, «✎» holat oʻzgardi, «↕» scroll.
 
-- Jami bosilgan: **661** (+ 32 ta allaqachon tanlangan element — qayta bosish holatni oʻzgartirmaydi)
-- Oʻlik (hech narsa boʻlmadi): **4**
-  - 13 div.player-bg «»
-  - 13 div.scrim «»
-  - 14 div.player-bg «»
-  - 14 div.scrim «»
-- Markazi boshqa element bilan yopilgan: **6**
-  - 12 div.player-bg «» — ustida span.ep
-  - 12 div.scrim «» — ustida span.ep
-  - 13 div.player-bg «» — ustida div.cmts
-  - 13 div.scrim «» — ustida div.cmts
-  - 14 div.player-bg «» — ustida p
-  - 14 div.scrim «» — ustida p
+- Jami bosilgan: **658** (+ 32 ta allaqachon tanlangan element — qayta bosish holatni oʻzgartirmaydi)
+- Oʻlik (hech narsa boʻlmadi): **0**
+- Markazi boshqa element bilan yopilgan: **0**
 - JS xatolari: yoʻq
 
 ### 01-onboarding
@@ -376,8 +366,7 @@ Har bir ekran yangidan yuklanib, har bir bosiladigan element markaziga bosildi. 
 ### 12-qismlar
 | Element | Natija |
 |---|---|
-| div.player-bg «» | → 11-pleer · yopilgan: span.ep |
-| div.scrim «» | → 11-pleer · yopilgan: span.ep |
+| div.scrim «» | → 04-bosh-sahifa |
 | button.gbtn.gbtn--sm «Yopish» | → 04-bosh-sahifa |
 | div.auto.card--flat «Keyingi qismni avtomatik och» | 💬 Avto-ochish oʻchirildi |
 | span.toggle.is-on «» | 💬 Avto-ochish oʻchirildi |
@@ -418,8 +407,7 @@ Har bir ekran yangidan yuklanib, har bir bosiladigan element markaziga bosildi. 
 ### 13-izohlar
 | Element | Natija |
 |---|---|
-| div.player-bg «» | **OʻLIK** · yopilgan: div.cmts |
-| div.scrim «» | **OʻLIK** · yopilgan: div.cmts |
+| div.scrim «» | → 04-bosh-sahifa |
 | button.gbtn.gbtn--sm «Yopish» | → 04-bosh-sahifa |
 | span.chip.choice «Yangi» | ✎ holat (10) |
 | span.chip.choice «Shu qism» | ✎ holat (12) |
@@ -447,8 +435,7 @@ Har bir ekran yangidan yuklanib, har bir bosiladigan element markaziga bosildi. 
 ### 14-pleer-sozlamalari
 | Element | Natija |
 |---|---|
-| div.player-bg «» | **OʻLIK** · yopilgan: p |
-| div.scrim «» | **OʻLIK** · yopilgan: p |
+| div.scrim «» | → 04-bosh-sahifa |
 | button.gbtn.gbtn--sm «Yopish» | → 04-bosh-sahifa |
 | span «0.75x» | 💬 Tezlik: 0.75x |
 | b «1.0x» | 💬 Tezlik: 1.0x |
