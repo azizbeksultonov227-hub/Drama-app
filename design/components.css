@@ -30,8 +30,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Tipografiya (shkala) ---------- */
 .t-display { font-family: var(--f-display); font-weight: 400; line-height: .86; text-transform: uppercase; letter-spacing: 0; }
 .t-num { font: 400 var(--t-num)/.9 var(--f-display); }
-.t-serif-xl { font: 400 var(--t-serif-xl)/1.05 var(--f-serif); letter-spacing: -.01em; font-variant-numeric: lining-nums; }
-.t-serif-lg { font: 400 var(--t-serif-lg)/1.1 var(--f-serif); letter-spacing: -.01em; font-variant-numeric: lining-nums; }
+.t-serif-xl { font: 400 var(--t-serif-xl)/1.05 var(--f-serif); letter-spacing: 0; font-variant-numeric: lining-nums; }
+.t-serif-lg { font: 400 var(--t-serif-lg)/1.1 var(--f-serif); letter-spacing: 0; font-variant-numeric: lining-nums; }
 .t-edit-xl { font: 400 var(--t-edit-xl)/.98 var(--f-edit); letter-spacing: -.04em; }
 .t-edit { font: 400 var(--t-edit)/1.41 var(--f-edit); letter-spacing: -.04em; }
 .t-title-1 { font: 400 var(--t-title-1)/.97 var(--f-ui); letter-spacing: -.015em; }

@@ -103,3 +103,6 @@ Gelasio'da ʻ kengligi 0 — belgi keyingi harf ustiga tushadi ("Oʻzbek" → "O
 Foydalanuvchi serif sarlavhalar uchun **Awesome Serif** (Nicky Laatz, 2023) ni so'radi. Bu tijoriy shrift — Google Fonts'da yo'q, repoga qo'shib bo'lmaydi.
 `tokens.css`: `--f-serif: 'Awesome Serif', 'Playfair Display', Georgia, serif` va `@font-face { src: local('Awesome Serif') … }` — shrift qurilmada o'rnatilgan bo'lsa yoki litsenziyali `.woff2` qo'shilsa (`src`ga `url()`), avtomatik ishlaydi.
 O'rinbosar **Playfair Display** (yuqori kontrastli displey serif): `ʻ` U+02BB glifi bor va kengligi to'g'ri (100 px da 26 px) — Noto Serif subset'i endi kerak emas, olib tashlandi. Raqamlar `lining-nums` (Playfair'da standart — old-style).
+
+**Yangilanish:** foydalanuvchi litsenziyali fayllarni berdi (`Awesome Serif Desktop Fonts.zip`). Ishlatilgani: `AwesomeSerif-Regular.otf` (400) va `AwesomeSerif-MediumRegular.otf` (500) — `design/fonts/`, `.gitignore`'da (ochiq GitHub repoga tijoriy shrift qo'yilmaydi; "Desktop" litsenziya veb-joylashtirishni qamramasligi mumkin — ommaga chiqarishdan oldin web litsenziya kerak).
+Glif qamrovi (canvas, ikki xil fallback bilan): **yo'q** — `ʻ` `ʼ` `«` `»` `−` `№` `×` `→` `↓` → Playfair Display'dan olinadi (ʻ kengligi to'g'ri). `+` bor, lekin juda kichik — `unicode-range` dan chiqarilib, Playfair'dan olinadi.

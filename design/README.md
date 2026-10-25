@@ -10,7 +10,7 @@ Faqat HTML + CSS + minimal vanilla JS (prototip xatti-harakati — `app.js`). Fr
    - **`design/styleguide.html`** — ref-07 formatidagi stil qo'llanmasi: shrift alifbolari va raqamlar, HEX doiralar, gradient namunalari, tipografiya shkalasi, effektlar, radiuslar, oraliqlar, ikonkalar.
    - **`design/components.html`** — barcha komponentlar va holatlari.
    - Alohida ekran: `design/screens/04-bosh-sahifa.html` va h.k. (393 px kenglikda).
-3. Shriftlar Google Fonts'dan yuklanadi (internet kerak): Anton, Gelasio (+ faqat ʻ ʼ uchun Noto Serif subset'i), Inter, Inter Tight, IBM Plex Mono.
+3. Shriftlar: Anton, Inter, Inter Tight, IBM Plex Mono, Playfair Display — Google Fonts'dan (internet kerak). Serif sarlavhalar — **Awesome Serif** (tijoriy): fayllarni `design/fonts/` ga qo'ying (`AwesomeSerif-Regular.otf`, `AwesomeSerif-MediumRegular.otf`) yoki shriftni kompyuterga o'rnating. Bu papka `.gitignore`'da — ochiq repoda shrift yo'q; fayl bo'lmasa Playfair Display ko'rinadi.
 
 ## Ekranlar
 | Bo'lim | Ekranlar |
@@ -31,7 +31,8 @@ design/
 ├── components.html  komponentlar galereyasi
 ├── tokens.css       barcha ranglar, soyalar, radiuslar, o'lchamlar, shriftlar (har birining manbasi izohda)
 ├── components.css   komponentlar (icons.css va art.css ni import qiladi)
-├── icons.css        bitta ikonka to'plami — 87 ta, stroke 1.75, round cap (tools/build_icons.py)
+├── icons.css        bitta ikonka to'plami — Lucide 0.460.0, 87 ta, stroke 2.4, round cap (tools/build_icons.py)
+├── fonts/           Awesome Serif (litsenziyali, .gitignore — repoda yo'q)
 ├── art.css          rasm placeholder'lari, grain, status bar glifi (tools/build_art.py)
 ├── screens/         01…30
 ├── data/dramas.md   har bir drama ↔ ambient rang + siluet (17 drama)

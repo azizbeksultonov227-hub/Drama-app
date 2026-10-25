@@ -136,7 +136,7 @@ for n, d in A.items():
 w(f'- Shkala: {sorted(SCALE)}')
 w(f'- Shkaladan tashqari oʻlchamlar: ' + ('yoʻq' if not off else ''))
 for s, l in sorted(off.items()): w(f'  - {s}px × {len(l)}: ' + ', '.join(l[:6]))
-fams = sorted({t['family'].replace('Awesome Serif', 'Awesome Serif (oʻrinbosar Playfair Display)') for d in A.values() for t in d['text']})
+fams = sorted({t['family'].replace('Awesome Serif', 'Awesome Serif (+ Playfair Display: ʻ ʼ « » +)') for d in A.values() for t in d['text']})
 w(f'- Shrift oilalari: {", ".join(fams)}\n')
 
 # ---------------------------------------------------------------- 6. radiuslar
@@ -210,7 +210,7 @@ w("| Sahifa cheti, bo'limlar orasi bir xil | ✓ (18 pt — DEVIATIONS S7) | §7
 w("| Glossy pill ref-01 bilan farqsiz | ✓ | `DELTA_E.md`: 13 nuqtali profil, oʻrtacha ΔE 0.41, max 1.47 |")
 w("| Glass (blur, alfa, chegara) ref-04/05/06/07 bilan | ✓ | `DELTA_E.md`: bir xil fon ustida render; `--glass-filter` blur 24, saturate yoʻq (S10) |")
 w('| Nur halqasi va grain iliq ekranlarda, kuchi bir xil | ✓ | §7c; bitta `--ring-shadow`, bitta `--grain-opacity` |')
-w("| Tipografiya faqat shkaladan; oʻ/gʻ toʻgʻri | ✓ | §5; serif — Awesome Serif / Playfair Display, ʻ toʻgʻri kenglikda (`fonts.md` §7b) |")
+w("| Tipografiya faqat shkaladan; oʻ/gʻ toʻgʻri | ✓ | §5; serif — Awesome Serif, unda yoʻq ʻ ʼ Playfair Display'dan toʻgʻri kenglikda (`fonts.md` §7b) |")
 w('| Ikonkalar bitta toʻplamdan, round cap | ✓ (stroke 2.4 — foydalanuvchi soʻrovi bilan qalinlashtirildi) | §7b |')
 w('| Bottom nav 5 ekranda piksel aniqligida bir joyda | ✓ | §2 |')
 w('| Status bar, Dynamic Island, home indicator bir xil | ✓ | §1 |')

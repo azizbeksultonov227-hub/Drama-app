@@ -3,11 +3,12 @@
    Har bir qiymat 1-bosqich o'lchovlaridan (design/analysis/SUMMARY.md).
    1 pt = 1 CSS px (ekran kengligi 393).
    ===================================================================== */
-/* Serif — foydalanuvchi tanlovi: Awesome Serif (Nicky Laatz, tijoriy litsenziya). Fayl repoda yo'q: qurilmada o'rnatilgan
-   bo'lsa local() orqali ishlaydi; litsenziyali .woff2 fayllar qo'shilsa, src'ga url('fonts/AwesomeSerif-Regular.woff2') yoziladi.
-   Ungacha eng yaqin bepul o'rinbosar — Playfair Display (yuqori kontrast, ʻ U+02BB glifi to'g'ri kenglikda). */
-@font-face { font-family: 'Awesome Serif'; font-weight: 400; font-display: swap; src: local('Awesome Serif'), local('Awesome Serif Regular'), local('AwesomeSerif-Regular'); }
-@font-face { font-family: 'Awesome Serif'; font-weight: 500; font-display: swap; src: local('Awesome Serif Medium'), local('AwesomeSerif-Medium'); }
+/* Serif — foydalanuvchi tanlovi: Awesome Serif (Nicky Laatz, tijoriy litsenziya; foydalanuvchi o'z fayllarini berdi).
+   Fayllar design/fonts/ da — .gitignore'da: ochiq repoga qo'yilmaydi (litsenziya). Fayl bo'lmasa — o'rnatilgan shrift (local),
+   u ham bo'lmasa Playfair Display. Awesome Serif'da yo'q belgilar (ʻ ʼ « » − № × →) avtomatik Playfair Display'dan olinadi;
+   «+» belgisi ham (unicode-range'dan chiqarilgan): Awesome Serif'dagi «+» juda kichik — «+50 bonus» «· 50» bo'lib o'qilardi. */
+@font-face { font-family: 'Awesome Serif'; font-weight: 400; font-display: swap; src: local('Awesome Serif Regular'), local('AwesomeSerif-Regular'), url('fonts/AwesomeSerif-Regular.otf') format('opentype'); unicode-range: U+0000-002A, U+002C-10FFFF; }
+@font-face { font-family: 'Awesome Serif'; font-weight: 500; font-display: swap; src: local('Awesome Serif Medium Regular'), local('AwesomeSerif-MediumRegular'), url('fonts/AwesomeSerif-MediumRegular.otf') format('opentype'); unicode-range: U+0000-002A, U+002C-10FFFF; }
 :root {
   /* ---------- Neytral (ref-01 skelet) ---------- */
   --bg-0: #000000;            /* ref-01: ekran foni, 6 nuqta #000000–#020101 */
@@ -172,7 +173,7 @@
 
   /* ---------- Tipografiya ---------- */
   --f-display: 'Anton', 'Impact', sans-serif;               /* ref-01 MARTY SUPREME → Anton (IoU) */
-  --f-serif: 'Awesome Serif', 'Playfair Display', 'Georgia', serif;   /* foydalanuvchi: Awesome Serif (yuqoridagi izoh); o'rinbosar Playfair Display */
+  --f-serif: 'Awesome Serif', 'Playfair Display', 'Georgia', serif;   /* foydalanuvchi: Awesome Serif (yuqoridagi izoh); yo'q belgilar va fayl bo'lmasa — Playfair Display */
   --f-ui: 'Inter', -apple-system, 'SF Pro Text', sans-serif; /* ref-01/04 SF → Inter */
   --f-edit: 'Inter Tight', 'Inter', sans-serif;             /* ref-03 */
   --f-mono: 'IBM Plex Mono', ui-monospace, monospace;       /* ref-03 caption */
