@@ -17,7 +17,7 @@ const [,, scale, outDir, ...files] = process.argv;
       const s = document.getElementById('screen') || document.querySelector('.screen');
       const pad = s.querySelector('.scroll-pad');
       const natural = pad ? Math.ceil(pad.getBoundingClientRect().bottom - s.getBoundingClientRect().top) : null;
-      const fontsOk = ['Anton', 'Gelasio', 'Inter', 'Inter Tight', 'IBM Plex Mono'].map(n => n + ':' + document.fonts.check(`16px "${n}"`));
+      const fontsOk = ['Anton', 'Playfair Display', 'Inter', 'Inter Tight', 'IBM Plex Mono'].map(n => n + ':' + document.fonts.check(`16px "${n}"`));
       return { h: s.getBoundingClientRect().height, natural, fontsOk };
     });
     await page.setViewportSize({ width: 393, height: Math.ceil(info.h) });

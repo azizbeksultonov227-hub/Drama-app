@@ -18,23 +18,23 @@
 ## 4. Matn kontrasti (WCAG: oddiy 4.5, katta 3.0)
 Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va ota-ona opacity bilan aralashtiriladi; koʻrsatkich — matn bbox'idagi eng yomon 10 % piksel (p10).
 
-- Matn elementlari: 977; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
+- Matn elementlari: 979; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
   - 01 `ul.list.t-edit > li` «Shartnomali nikoh» 44px — p10 2.78 < 3.0 (mask: ataylab soʻndirilgan)
 
 ## 5. Tipografiya shkalasi
 - Shkala: [10, 11, 12, 13, 15, 17, 20, 24, 26, 28, 30, 32, 36, 40, 44, 53, 72, 96, 128]
 - Shkaladan tashqari oʻlchamlar: yoʻq
-- Shrift oilalari: Anton, Gelasio (+ Noto Serif faqat ʻ ʼ), IBM Plex Mono, Inter, Inter Tight
+- Shrift oilalari: Anton, Awesome Serif (oʻrinbosar Playfair Display), IBM Plex Mono, Inter, Inter Tight
 
 ## 6. Radiuslar
-- Token radiuslari: [6, 10.2, 11, 17, 20.7, 24, 28, 34.5, 40, 55, 999] (+ 50 % / pill)
+- Token radiuslari: [6, 10.2, 11, 12, 14, 16, 17, 20.7, 24, 28, 34.5, 40, 55, 999] (+ 50 % / pill)
 - Tokendan tashqari: yoʻq
 
 ## 7. Chekka 18 pt
 - Gorizontal scroll'dan tashqaridagi matn 18 pt chegaraga kirgan holatlar: **0**
 
 ## 7b. Ikonkalar
-- `icons.css`: 87 ikonka, stroke-width ['1.75'], linecap ['round'] — bitta toʻplam (`tools/build_icons.py`)
+- `icons.css`: 87 ikonka, stroke-width ['2.4'], linecap ['round'] — bitta toʻplam (`tools/build_icons.py`)
 
 ## 7c. Nur halqasi + grain (iliq ekranlar 03, 05, 11, 15, 17, 18, 20 va iliq kartalar)
 - 03: ekran: halqa ✓, grain ✓; iliq yuzalar 1 — hammasida halqa + grain ✓
@@ -84,8 +84,8 @@ Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va o
 | Glossy pill ref-01 bilan farqsiz | ✓ | `DELTA_E.md`: 13 nuqtali profil, oʻrtacha ΔE 0.41, max 1.47 |
 | Glass (blur, alfa, chegara) ref-04/05/06/07 bilan | ✓ | `DELTA_E.md`: bir xil fon ustida render; `--glass-filter` blur 24, saturate yoʻq (S10) |
 | Nur halqasi va grain iliq ekranlarda, kuchi bir xil | ✓ | §7c; bitta `--ring-shadow`, bitta `--grain-opacity` |
-| Tipografiya faqat shkaladan; oʻ/gʻ toʻgʻri | ✓ | §5; Gelasio ʻ kengligi 0 tuzatildi (S19, `fonts.md` §7a) |
-| Ikonkalar bitta toʻplamdan, stroke 1.75–2, round cap | ✓ | §7b |
+| Tipografiya faqat shkaladan; oʻ/gʻ toʻgʻri | ✓ | §5; serif — Awesome Serif / Playfair Display, ʻ toʻgʻri kenglikda (`fonts.md` §7b) |
+| Ikonkalar bitta toʻplamdan, round cap | ✓ (stroke 2.4 — foydalanuvchi soʻrovi bilan qalinlashtirildi) | §7b |
 | Bottom nav 5 ekranda piksel aniqligida bir joyda | ✓ | §2 |
 | Status bar, Dynamic Island, home indicator bir xil | ✓ | §1 |
 | Touch ≥ 44 pt; kontrast 4.5 / 3 | ✓ | §3, §4 (S23, S24, S28) |

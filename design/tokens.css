@@ -3,9 +3,11 @@
    Har bir qiymat 1-bosqich o'lchovlaridan (design/analysis/SUMMARY.md).
    1 pt = 1 CSS px (ekran kengligi 393).
    ===================================================================== */
-/* Gelasio'da ʻ (U+02BB) glifi bor, lekin kengligi 0 — keyingi harf ustiga tushadi ("Oʻz" → "Ož").
-   Shuning uchun faqat ʻ va ʼ uchun Noto Serif subset'i (Google Fonts text=) serif stekida Gelasio'dan oldin turadi. */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500&text=%CA%BB%CA%BC&display=swap');
+/* Serif — foydalanuvchi tanlovi: Awesome Serif (Nicky Laatz, tijoriy litsenziya). Fayl repoda yo'q: qurilmada o'rnatilgan
+   bo'lsa local() orqali ishlaydi; litsenziyali .woff2 fayllar qo'shilsa, src'ga url('fonts/AwesomeSerif-Regular.woff2') yoziladi.
+   Ungacha eng yaqin bepul o'rinbosar — Playfair Display (yuqori kontrast, ʻ U+02BB glifi to'g'ri kenglikda). */
+@font-face { font-family: 'Awesome Serif'; font-weight: 400; font-display: swap; src: local('Awesome Serif'), local('Awesome Serif Regular'), local('AwesomeSerif-Regular'); }
+@font-face { font-family: 'Awesome Serif'; font-weight: 500; font-display: swap; src: local('Awesome Serif Medium'), local('AwesomeSerif-Medium'); }
 :root {
   /* ---------- Neytral (ref-01 skelet) ---------- */
   --bg-0: #000000;            /* ref-01: ekran foni, 6 nuqta #000000–#020101 */
@@ -68,6 +70,7 @@
   --amb-dark: #100B0A;      /* ref-01: ambient karta pastki rangi */
 
   /* ---------- Glass ---------- */
+  --glass-btn: rgba(255, 255, 255, .12);        /* foydalanuvchi: glass tugmalar «jirniy» — to'qroq fon */
   --glass-bg: rgba(255, 255, 255, .08);         /* ref-04 qidiruv maydoni, ref-01 chip (7–8%) */
   --glass-bg-strong: rgba(148, 148, 148, .36);  /* 5-bosqich ΔE: ref-07 orqaga doira 0.80, "−10/+10" 4.79 (sof alfa chegarasi 4.63), ref-06 chip 2.27 — (215, .25) esa 1.02 / 8.58 / 10.5 */
   --glass-bg-frost: rgba(188, 188, 188, .58);   /* ref-06 nav doiralari, ikki nuqta bo'yicha eng kichik ΔE fit (7.07 — blur tufayli sof alfa chegarasi) */
@@ -124,6 +127,9 @@
   --r-poster: 11px;     /* ref-02 poster 11.0 */
   --r-thumb: 6px;       /* ref-02 davom ettirish kartasi 6.2 */
   --r-pill: 999px;
+  --r-btn: 16px;        /* foydalanuvchi: tugma burchaklari kamroq yumaloq, «qo'polroq» (pill edi) */
+  --r-btn-sm: 14px;
+  --r-btn-xs: 12px;
 
   /* ---------- Spacing ---------- */
   --page-x: 18px;       /* ref-01 18, ref-04 18.6 */
@@ -134,6 +140,9 @@
 
   /* ---------- O'lchamlar ---------- */
   --h-pill: 52px;        /* ref-01 "Add to watchlist" 51.7 */
+  --h-btn: 58px;         /* foydalanuvchi: tugmalar kattaroq va qalinroq (52 edi) */
+  --h-btn-sm: 48px;
+  --h-btn-xs: 34px;
   --h-pill-sm: 43px;     /* ref-01 "Following" 42.7 */
   --h-pill-xs: 29px;     /* ref-01 "See all" */
   --h-chip: 26px;        /* ref-01 chip 25–27 */
@@ -163,7 +172,7 @@
 
   /* ---------- Tipografiya ---------- */
   --f-display: 'Anton', 'Impact', sans-serif;               /* ref-01 MARTY SUPREME → Anton (IoU) */
-  --f-serif: 'Noto Serif', 'Gelasio', 'Georgia', serif;     /* ref-01 sarah.lg → Gelasio (IoU 0.626); Noto Serif faqat ʻ ʼ subset (yuqorida) */
+  --f-serif: 'Awesome Serif', 'Playfair Display', 'Georgia', serif;   /* foydalanuvchi: Awesome Serif (yuqoridagi izoh); o'rinbosar Playfair Display */
   --f-ui: 'Inter', -apple-system, 'SF Pro Text', sans-serif; /* ref-01/04 SF → Inter */
   --f-edit: 'Inter Tight', 'Inter', sans-serif;             /* ref-03 */
   --f-mono: 'IBM Plex Mono', ui-monospace, monospace;       /* ref-03 caption */

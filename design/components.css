@@ -30,8 +30,8 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* ---------- Tipografiya (shkala) ---------- */
 .t-display { font-family: var(--f-display); font-weight: 400; line-height: .86; text-transform: uppercase; letter-spacing: 0; }
 .t-num { font: 400 var(--t-num)/.9 var(--f-display); }
-.t-serif-xl { font: 400 var(--t-serif-xl)/1 var(--f-serif); letter-spacing: .02em; }
-.t-serif-lg { font: 400 var(--t-serif-lg)/1.05 var(--f-serif); letter-spacing: .02em; }
+.t-serif-xl { font: 400 var(--t-serif-xl)/1.05 var(--f-serif); letter-spacing: -.01em; font-variant-numeric: lining-nums; }
+.t-serif-lg { font: 400 var(--t-serif-lg)/1.1 var(--f-serif); letter-spacing: -.01em; font-variant-numeric: lining-nums; }
 .t-edit-xl { font: 400 var(--t-edit-xl)/.98 var(--f-edit); letter-spacing: -.04em; }
 .t-edit { font: 400 var(--t-edit)/1.41 var(--f-edit); letter-spacing: -.04em; }
 .t-title-1 { font: 400 var(--t-title-1)/.97 var(--f-ui); letter-spacing: -.015em; }
@@ -53,23 +53,25 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .strike { text-decoration: line-through; text-decoration-thickness: 1.5px; }
 
 /* ---------- Tugmalar ---------- */
-.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--s-8); height: var(--h-pill); padding: 0 var(--s-24); border-radius: var(--r-pill); font: 600 var(--t-button)/1 var(--f-ui); letter-spacing: -.01em; white-space: nowrap; }
-.btn .ic { width: 20px; height: 20px; }
+.btn { position: relative; display: inline-flex; align-items: center; justify-content: center; gap: var(--s-10); height: var(--h-btn); padding: 0 var(--s-24); border-radius: var(--r-btn); font: 700 var(--t-headline)/1 var(--f-ui); letter-spacing: -.015em; white-space: nowrap; }
+.btn .ic { width: 22px; height: 22px; }
 /* 1-daraja: oq glossy pill (ref-01) */
 .btn--primary { background: var(--glossy-fill); color: var(--cocoa); box-shadow: var(--glossy-hi), var(--shadow-pill); }
 .btn--primary.is-pressed, .btn--primary:active { background: var(--glossy-pressed); transform: scale(.98); }
 .btn--primary.is-disabled { background: var(--glossy-fill); opacity: .38; box-shadow: none; }
 /* 2-daraja: glass pill (ref-05/06/07) */
-.btn--glass { background: var(--glass-bg); color: var(--text-1); box-shadow: inset 0 0 0 1px var(--glass-line-soft), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
+.btn--glass { background: var(--glass-btn); color: var(--text-1); box-shadow: inset 0 0 0 1.5px var(--line-2), inset 0 1px 0 var(--glass-line); -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
 .btn--glass.on-media { background: var(--glass-bg-strong); }
 .btn--glass.is-pressed, .btn--glass:active { background: var(--glass-bg-strong); transform: scale(.98); }
 .btn--glass.is-disabled { opacity: .38; }
 /* 3-daraja: fonsiz matn + ikonka (ref-01 "Reviews") */
-.btn--text { height: var(--h-pill-sm); padding: 0 var(--s-8); background: none; color: var(--text-1); font-weight: 500; }
+.btn--text { height: var(--h-btn-sm); padding: 0 var(--s-8); background: none; color: var(--text-1); font-weight: 600; font-size: var(--t-body); }
 .btn--text.is-pressed { opacity: .6; }
 .btn--text.is-disabled { opacity: .38; }
-.btn--sm { height: var(--h-pill-sm); padding: 0 var(--s-20); }
-.btn--xs { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-footnote); }
+.btn--sm { height: var(--h-btn-sm); padding: 0 var(--s-20); border-radius: var(--r-btn-sm); font-size: var(--t-body); }
+.btn--sm .ic { width: 20px; height: 20px; }
+.btn--xs { height: var(--h-btn-xs); padding: 0 var(--s-12); border-radius: var(--r-btn-xs); font-size: var(--t-footnote); gap: var(--s-6); }
+.btn--xs .ic { width: 16px; height: 16px; }
 .btn--block { display: flex; width: 100%; }
 .btn--block.abs-x { width: auto; } /* left/right bilan joylashtirilganda */
 .btn--flame { background: var(--flame); color: var(--on-flame); box-shadow: var(--glow-flame); }
@@ -160,10 +162,12 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .tag--eps { position: static; background: var(--glass-dark); color: var(--text-1); font-weight: 500; -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); }
 .tag--plain { position: static; }
 
-/* ---------- Landscape "davom ettirish" kartasi (ref-02) ---------- */
-.lcard { flex: none; width: var(--lw, 200px); }
-.lcard__media { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-thumb); overflow: hidden; }
-.lcard__play { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; }
+/* ---------- "Davom ettirish" kartasi — Reels formatida, vertikal 9:16 (foydalanuvchi so'rovi; avval ref-02 landscape 16:9) ---------- */
+.lcard { flex: none; width: var(--lw, 132px); }
+.lcard__media { position: relative; aspect-ratio: 9 / 16; border-radius: var(--r-tile); overflow: hidden; }
+.lcard__media > .shade-b { position: absolute; z-index: 2; inset: 45% 0 0; background: var(--poster-fade); pointer-events: none; }
+.lcard__play { position: absolute; z-index: 3; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; }
+.lcard__ep { position: absolute; z-index: 3; left: var(--s-8); bottom: var(--s-10); font: 600 var(--t-caption)/1 var(--f-ui); color: var(--text-1); text-shadow: var(--text-shadow); }
 .lcard__title { margin-top: var(--s-8); font: 600 var(--t-footnote)/1.25 var(--f-ui); }
 .lcard__meta { margin-top: 2px; font: 400 var(--t-caption)/1.2 var(--f-ui); color: var(--text-3); }
 .progress { position: relative; height: 3px; border-radius: var(--r-pill); background: var(--line-2); overflow: hidden; }

@@ -1,109 +1,74 @@
-"""Generates design/icons.css: one icon set, 24-pt grid, stroke 1.75, round cap/join.
-Icons are CSS masks (data-URI SVG) so they inherit currentColor and work from file://."""
-import urllib.parse, os
-S = 'fill="none" stroke="#000" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"'
-F = 'fill="#000"'
-ICONS = {
-  # navigation
-  'home':        f'<path {S} d="M3.5 10.6 12 3.9l8.5 6.7v8.4a1.5 1.5 0 0 1-1.5 1.5h-4.2v-5.6H9.2v5.6H5a1.5 1.5 0 0 1-1.5-1.5z"/>',
-  'home-fill':   f'<path {F} d="M2.9 10.1 12 2.9l9.1 7.2c.25.2.4.5.4.8v8.1a2.25 2.25 0 0 1-2.25 2.25h-4.7v-5.9H9.45v5.9h-4.7A2.25 2.25 0 0 1 2.5 19V10.9c0-.3.15-.6.4-.8z"/>',
-  'play':        f'<path {S} d="M8 5.6v12.8a.8.8 0 0 0 1.2.7l10.3-6.4a.8.8 0 0 0 0-1.4L9.2 4.9A.8.8 0 0 0 8 5.6z"/>',
-  'play-fill':   f'<path {F} d="M7.2 5.2v13.6c0 1 1.1 1.6 1.95 1.05l10.6-6.8a1.25 1.25 0 0 0 0-2.1L9.15 4.15C8.3 3.6 7.2 4.2 7.2 5.2z"/>',
-  'gift':        f'<path {S} d="M4.5 11h15v8.5a1 1 0 0 1-1 1h-13a1 1 0 0 1-1-1zM3.5 7.5h17V11h-17zM12 7.5v13M12 7.5c-.8-2.2-2.4-3.6-4-3.3-1.7.3-1.8 2.6.2 3.1 1 .2 2.4.2 3.8.2zm0 0c.8-2.2 2.4-3.6 4-3.3 1.7.3 1.8 2.6-.2 3.1-1 .2-2.4.2-3.8.2z"/>',
-  'bookmark':    f'<path {S} d="M6.5 3.5h11a1 1 0 0 1 1 1v16l-6.5-4.1-6.5 4.1v-16a1 1 0 0 1 1-1z"/>',
-  'bookmark-fill': f'<path {F} d="M6.5 2.6h11a1.9 1.9 0 0 1 1.9 1.9v16a.9.9 0 0 1-1.38.76L12 17.46l-6.02 3.8A.9.9 0 0 1 4.6 20.5v-16a1.9 1.9 0 0 1 1.9-1.9z"/>',
-  'user':        f'<circle {S} cx="12" cy="8.3" r="3.8"/><path {S} d="M4.6 20.4c.8-3.6 3.8-5.9 7.4-5.9s6.6 2.3 7.4 5.9"/>',
-  'search':      f'<circle {S} cx="11" cy="11" r="6.6"/><path {S} d="m20 20-4.3-4.3"/>',
-  'bell':        f'<path {S} d="M6 16.6V11a6 6 0 1 1 12 0v5.6l1.6 2.1H4.4zM10 20.6a2 2 0 0 0 4 0"/>',
-  'bell-plus':   f'<path {S} d="M6 16.6V11a6 6 0 0 1 8.2-5.6M18 11v5.6l1.6 2.1H4.4L6 16.6M10 20.6a2 2 0 0 0 4 0M18 3v5M15.5 5.5h5"/>',
-  # actions
-  'plus':        f'<path {S} d="M12 5v14M5 12h14"/>',
-  'minus':       f'<path {S} d="M5 12h14"/>',
-  'close':       f'<path {S} d="M6.5 6.5l11 11M17.5 6.5l-11 11"/>',
-  'check':       f'<path {S} d="M5 12.6l4.4 4.4L19 7.4"/>',
-  'chev-left':   f'<path {S} d="M14.8 5.2 8 12l6.8 6.8"/>',
-  'chev-right':  f'<path {S} d="M9.2 5.2 16 12l-6.8 6.8"/>',
-  'chev-down':   f'<path {S} d="M6 9.2 12 15.2l6-6"/>',
-  'chev-up':     f'<path {S} d="M6 14.8 12 8.8l6 6"/>',
-  'arrow-right': f'<path {S} d="M4.5 12h15M13.5 6l6 6-6 6"/>',
-  'arrow-up':    f'<path {S} d="M12 19.5v-15M6 10.5l6-6 6 6"/>',
-  'arrow-down':  f'<path {S} d="M12 4.5v15M6 13.5l6 6 6-6"/>',
-  'share':       f'<path {S} d="M13.6 4.6 20 10.8l-6.4 6.2M20 10.8h-7.4A7.6 7.6 0 0 0 5 18.4v1"/>',
-  'share-box':   f'<path {S} d="M12 3.6v11M8 7.6l4-4 4 4M5 12.6v6a1.8 1.8 0 0 0 1.8 1.8h10.4a1.8 1.8 0 0 0 1.8-1.8v-6"/>',
-  'more':        f'<circle {F} cx="5.5" cy="12" r="1.7"/><circle {F} cx="12" cy="12" r="1.7"/><circle {F} cx="18.5" cy="12" r="1.7"/>',
-  'more-v':      f'<circle {F} cx="12" cy="5.5" r="1.7"/><circle {F} cx="12" cy="12" r="1.7"/><circle {F} cx="12" cy="18.5" r="1.7"/>',
-  'heart':       f'<path {S} d="M12 20.2s-7.6-4.5-7.6-10.3A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.6 2.6c0 5.8-7.6 10.3-7.6 10.3z"/>',
-  'heart-fill':  f'<path {F} d="M12 21.2a.9.9 0 0 1-.46-.13C11.2 20.9 3.5 16.2 3.5 9.9A5.2 5.2 0 0 1 12 6a5.2 5.2 0 0 1 8.5 3.9c0 6.3-7.7 11-8.04 11.17a.9.9 0 0 1-.46.13z"/>',
-  'comment':     f'<path {S} d="M5 5h14a1.5 1.5 0 0 1 1.5 1.5v9A1.5 1.5 0 0 1 19 17h-8.6L6 20.4V17H5a1.5 1.5 0 0 1-1.5-1.5v-9A1.5 1.5 0 0 1 5 5z"/>',
-  'comment-fill': f'<path {F} d="M5 4.1h14a2.4 2.4 0 0 1 2.4 2.4v9a2.4 2.4 0 0 1-2.4 2.4h-8.3l-4.15 3.2A.9.9 0 0 1 5.1 20.4v-2.5A2.4 2.4 0 0 1 2.6 15.5v-9A2.4 2.4 0 0 1 5 4.1z"/>',
-  'download':    f'<path {S} d="M12 4v11M7.4 10.6 12 15.2l4.6-4.6M5 19.6h14"/>',
-  'lock':        f'<rect {S} x="5" y="10.4" width="14" height="10" rx="2.2"/><path {S} d="M8.2 10.4V7.9a3.8 3.8 0 0 1 7.6 0v2.5"/>',
-  'lock-fill':   f'<path {F} d="M7.3 9.5V7.9a4.7 4.7 0 0 1 9.4 0v1.6h.1a3 3 0 0 1 3 3v6.1a3 3 0 0 1-3 3H7.2a3 3 0 0 1-3-3v-6.1a3 3 0 0 1 3-3zm1.8 0h5.8V7.9a2.9 2.9 0 0 0-5.8 0z"/>',
-  'unlock':      f'<rect {S} x="5" y="10.4" width="14" height="10" rx="2.2"/><path {S} d="M8.2 10.4V7.9a3.8 3.8 0 0 1 7.3-1.4"/>',
-  'eye':         f'<path {S} d="M2.6 12S6 5.6 12 5.6 21.4 12 21.4 12 18 18.4 12 18.4 2.6 12 2.6 12z"/><circle {S} cx="12" cy="12" r="2.9"/>',
-  'eye-off':     f'<path {S} d="M4 4l16 16M9.9 6A9.9 9.9 0 0 1 12 5.6C18 5.6 21.4 12 21.4 12a17 17 0 0 1-2.6 3.4M6.4 7.6A16.6 16.6 0 0 0 2.6 12S6 18.4 12 18.4c1.5 0 2.8-.4 4-1"/>',
-  'star-fill':   f'<path {F} d="M12 3.2l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 16.6l-5.3 2.9 1.1-5.9-4.4-4.1 6-.8z"/>',
-  'star':        f'<path {S} d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.6L12 16.5l-5.1 2.7 1-5.6-4.1-4 5.7-.8z"/>',
-  'crown':       f'<path {F} d="M3.2 8.1a.8.8 0 0 1 1.25-.73l3.85 2.7 3.03-5.1a.8.8 0 0 1 1.34 0l3.03 5.1 3.85-2.7a.8.8 0 0 1 1.25.73l-1.3 9.4a1.2 1.2 0 0 1-1.19 1.05H5.69A1.2 1.2 0 0 1 4.5 17.5zM5.4 20h13.2a.75.75 0 0 1 0 1.5H5.4a.75.75 0 0 1 0-1.5z"/>',
-  'list':        f'<path {S} d="M8.5 6.5H20M8.5 12H20M8.5 17.5H20M4.2 6.5h.1M4.2 12h.1M4.2 17.5h.1"/>',
-  'grid':        f'<rect {S} x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect {S} x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect {S} x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect {S} x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/>',
-  'filter':      f'<path {S} d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle {S} cx="15" cy="7" r="2.1"/><circle {S} cx="9" cy="17" r="2.1"/>',
-  'pause-fill':  f'<rect {F} x="6.4" y="4.6" width="4" height="14.8" rx="1.3"/><rect {F} x="13.6" y="4.6" width="4" height="14.8" rx="1.3"/>',
-  'rewind':      f'<path {S} d="M4.6 12a7.6 7.6 0 1 0 2.3-5.5M4.4 4.4v4.2h4.2"/>',
-  'forward':     f'<path {S} d="M19.4 12a7.6 7.6 0 1 1-2.3-5.5M19.6 4.4v4.2h-4.2"/>',
-  'clock':       f'<circle {S} cx="12" cy="12" r="8.4"/><path {S} d="M12 7.6V12l3 1.9"/>',
-  'calendar':    f'<rect {S} x="4" y="5.4" width="16" height="15" rx="2.2"/><path {S} d="M4 10h16M8.4 3.4v3.8M15.6 3.4v3.8"/>',
-  'moon':        f'<path {S} d="M19.8 14.6A8 8 0 1 1 9.4 4.2a6.4 6.4 0 0 0 10.4 10.4z"/>',
-  'copy':        f'<rect {S} x="8.6" y="8.6" width="11.4" height="11.4" rx="2"/><path {S} d="M15.4 8.6V5.8A1.8 1.8 0 0 0 13.6 4H5.8A1.8 1.8 0 0 0 4 5.8v7.8a1.8 1.8 0 0 0 1.8 1.8h2.8"/>',
-  'send':        f'<path {S} d="M20.4 3.6 10.6 13.4M20.4 3.6 14.2 20.4l-3.6-7-7-3.6z"/>',
-  'send-fill':   f'<path {F} d="M21.2 2.8a.9.9 0 0 1 .2.95l-6.3 17a.9.9 0 0 1-1.65.1l-3.3-6.6-6.6-3.3a.9.9 0 0 1 .1-1.65l17-6.3a.9.9 0 0 1 .55.0z"/>',
-  'phone':       f'<path {S} d="M6.6 3.8h2.6l1.4 4.1-2 1.5a11 11 0 0 0 6 6l1.5-2 4.1 1.4v2.6a1.8 1.8 0 0 1-1.9 1.8A15.6 15.6 0 0 1 4.8 5.7a1.8 1.8 0 0 1 1.8-1.9z"/>',
-  'info':        f'<circle {S} cx="12" cy="12" r="8.6"/><path {S} d="M12 11v5.4M12 7.7h.1"/>',
-  'help':        f'<circle {S} cx="12" cy="12" r="8.6"/><path {S} d="M9.6 9.6a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.2.9-1.2 1.7v.4M12 16.9h.1"/>',
-  'edit':        f'<path {S} d="M4.5 19.5h4L19 9a2.1 2.1 0 0 0-3-3L5.5 16.5zM14.5 7.5l3 3"/>',
-  'wallet':      f'<path {S} d="M4.2 7.4a2.4 2.4 0 0 1 2.4-2.4H17v3M4.2 7.4v10.8a1.8 1.8 0 0 0 1.8 1.8h13.8V8H6.6a2.4 2.4 0 0 1-2.4-.6zM15.8 14h.1"/>',
-  'card':        f'<rect {S} x="3.4" y="5.6" width="17.2" height="12.8" rx="2.2"/><path {S} d="M3.4 10h17.2M7 14.6h3"/>',
-  'logout':      f'<path {S} d="M14 4.4h3.6a1.4 1.4 0 0 1 1.4 1.4v12.4a1.4 1.4 0 0 1-1.4 1.4H14M9.4 8 5.4 12l4 4M5.4 12H15"/>',
-  'users':       f'<circle {S} cx="9" cy="8.6" r="3.3"/><path {S} d="M3.4 19.4c.6-3.1 2.8-5 5.6-5s5 1.9 5.6 5M15.6 5.6a3.2 3.2 0 0 1 0 6.1M17.4 14.6c1.8.6 2.9 2.2 3.2 4.6"/>',
-  'user-plus':   f'<circle {S} cx="10" cy="8.4" r="3.6"/><path {S} d="M3.6 19.6c.7-3.4 3.2-5.4 6.4-5.4 1.2 0 2.3.3 3.2.8M18 13.4v6M15 16.4h6"/>',
-  'trophy':      f'<path {S} d="M8 4.4h8v5a4 4 0 0 1-8 0zM8 6.4H4.6v1.4A3.2 3.2 0 0 0 8 11M16 6.4h3.4v1.4A3.2 3.2 0 0 1 16 11M12 13.4v3.4M8.6 20h6.8M9.6 16.8h4.8"/>',
-  'sparkle':     f'<path {S} d="M12 4l1.7 4.6L18.4 10.3l-4.7 1.7L12 16.6l-1.7-4.6-4.7-1.7 4.7-1.7zM18.4 15.6l.7 1.9 1.9.7-1.9.7-.7 1.9-.7-1.9-1.9-.7 1.9-.7z"/>',
-  'flame':       f'<path {S} d="M12 20.6a6.2 6.2 0 0 0 6.2-6.2c0-3.6-2.6-5.7-3.6-8.8-1.6 1.4-2 3.2-2 4.6-1.4-.8-2.2-2.6-2.2-4.2-2.6 2-4.6 5-4.6 8.4a6.2 6.2 0 0 0 6.2 6.2z"/>',
-  'settings':    f'<circle {S} cx="12" cy="12" r="3"/><path {S} d="M19.2 13.6a7.6 7.6 0 0 0 0-3.2l1.9-1.4-1.9-3.3-2.2.9a7.4 7.4 0 0 0-2.8-1.6L13.9 2.7h-3.8L9.8 5a7.4 7.4 0 0 0-2.8 1.6l-2.2-.9L2.9 9l1.9 1.4a7.6 7.6 0 0 0 0 3.2L2.9 15l1.9 3.3 2.2-.9a7.4 7.4 0 0 0 2.8 1.6l.3 2.3h3.8l.3-2.3a7.4 7.4 0 0 0 2.8-1.6l2.2.9 1.9-3.3z"/>',
-  'globe':       f'<circle {S} cx="12" cy="12" r="8.6"/><path {S} d="M3.4 12h17.2M12 3.4c2.4 2.4 3.6 5.3 3.6 8.6s-1.2 6.2-3.6 8.6c-2.4-2.4-3.6-5.3-3.6-8.6S9.6 5.8 12 3.4z"/>',
-  'wifi':        f'<path {S} d="M3.4 9.4a12.4 12.4 0 0 1 17.2 0M6.4 12.6a8.2 8.2 0 0 1 11.2 0M9.4 15.8a4 4 0 0 1 5.2 0M12 19.2h.1"/>',
-  'trash':       f'<path {S} d="M4.6 6.8h14.8M9.6 6.8V4.6h4.8v2.2M6.6 6.8l.9 12.4a1.4 1.4 0 0 0 1.4 1.3h6.2a1.4 1.4 0 0 0 1.4-1.3l.9-12.4M10 10.6v6M14 10.6v6"/>',
-  'ticket':      f'<path {S} d="M4 7.4A1.4 1.4 0 0 1 5.4 6h13.2A1.4 1.4 0 0 1 20 7.4v2.4a2.2 2.2 0 0 0 0 4.4v2.4a1.4 1.4 0 0 1-1.4 1.4H5.4A1.4 1.4 0 0 1 4 16.6v-2.4a2.2 2.2 0 0 0 0-4.4zM14.4 6v12"/>',
-  'megaphone':   f'<path {S} d="M4 10.2v3.6a1 1 0 0 0 1 1h2.4l6.6 4V5.2L7.4 9.2H5a1 1 0 0 0-1 1zM17.4 9a4 4 0 0 1 0 6M8 14.8l1.2 4.4"/>',
-  'video':       f'<rect {S} x="3.4" y="6" width="12.4" height="12" rx="2.4"/><path {S} d="m15.8 10.4 4.8-2.8v8.8l-4.8-2.8"/>',
-  'film':        f'<rect {S} x="4" y="3.6" width="16" height="16.8" rx="2.4"/><path {S} d="M8 3.6v16.8M16 3.6v16.8M4 8.6h4M4 15.4h4M16 8.6h4M16 15.4h4M8 12h8"/>',
-  'refresh':     f'<path {S} d="M19.6 11.4a7.6 7.6 0 1 0-2.2 6M19.6 4.6v6.8h-6.8" transform="translate(0 .4)"/>',
-  'shield':      f'<path {S} d="M12 3.6 5 6.2v5.4c0 4.4 3 7.6 7 8.8 4-1.2 7-4.4 7-8.8V6.2z"/>',
-  'link':        f'<path {S} d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/>',
-  'cc':          f'<rect {S} x="3.4" y="5.6" width="17.2" height="12.8" rx="2.6"/><path {S} d="M10.6 10.2a2.2 2.2 0 1 0 0 3.6M16.8 10.2a2.2 2.2 0 1 0 0 3.6"/>',
-  'gauge':       f'<path {S} d="M4.4 16.6a8.6 8.6 0 1 1 15.2 0M12 13.4l3.6-4"/><circle {S} cx="12" cy="13.6" r="1.2"/>',
-  'volume':      f'<path {S} d="M4.6 9.6v4.8h3.2l4.6 3.8V5.8L7.8 9.6zM15.6 9a4.2 4.2 0 0 1 0 6M18.2 6.6a7.6 7.6 0 0 1 0 10.8"/>',
-  'tv':          f'<rect {S} x="3.4" y="5.4" width="17.2" height="11.6" rx="2.2"/><path {S} d="M9 20.4h6M12 17v3.4"/>',
-  'flag':        f'<path {S} d="M5.4 20.4V4.4M5.4 4.6c4.6-2 8.2 2 12.8 0v8.8c-4.6 2-8.2-2-12.8 0"/>',
-  'receipt':     f'<path {S} d="M6 3.6h12v16.8l-2-1.4-2 1.4-2-1.4-2 1.4-2-1.4-2 1.4zM9 8.4h6M9 12h6M9 15.6h3.6"/>',
-  'percent':     f'<path {S} d="M18.6 5.4 5.4 18.6"/><circle {S} cx="7.4" cy="7.4" r="2.2"/><circle {S} cx="16.6" cy="16.6" r="2.2"/>',
-  'cast':        f'<path {S} d="M3.6 8.2V6.6A1.8 1.8 0 0 1 5.4 4.8h13.2a1.8 1.8 0 0 1 1.8 1.8v10.8a1.8 1.8 0 0 1-1.8 1.8h-5M3.6 11.6a7.6 7.6 0 0 1 7.6 7.6M3.6 15a4.2 4.2 0 0 1 4.2 4.2M3.6 19.2h.1"/>',
-  'swipe-up':    f'<path {S} d="M12 20.4V6M7.2 10.8 12 6l4.8 4.8M7.2 3.6h9.6"/>',
-  'sort':        f'<path {S} d="M7.4 4.6v14.8M3.6 8.4l3.8-3.8 3.8 3.8M16.6 19.4V4.6M20.4 15.6l-3.8 3.8-3.8-3.8"/>',
-  'subtitles':   f'<rect {S} x="3.4" y="5.6" width="17.2" height="12.8" rx="2.6"/><path {S} d="M7 12h3M12.6 12H17M7 15.2h6M15.4 15.2H17"/>',
-  'sliders':     f'<path {S} d="M5 20V13.4M5 9.6V4M12 20v-8M12 8.2V4M19 20v-4.6M19 11.6V4M2.6 13.4h4.8M9.6 8.2h4.8M16.6 15.4h4.8"/>',
-  'hd':          f'<rect {S} x="3.4" y="5.6" width="17.2" height="12.8" rx="2.6"/><path {S} d="M7.4 9.4v5.2M10.6 9.4v5.2M7.4 12h3.2M13.6 9.4v5.2h1.4a2.6 2.6 0 0 0 0-5.2z"/>',
+"""Generates design/icons.css: one icon set — Lucide 0.460.0 (ISC, tools/icons-src/), stroke 2.4, round cap/join.
+Foydalanuvchi so'rovi: ikonkalar qalinroq va sifatliroq (avvalgi o'z chizgan to'plam, stroke 1.75 o'rniga).
+Icons are CSS masks (data-URI SVG) so they inherit currentColor and work from file://.
+"-fill" variantlari: shakl to'ldiriladi (+ kontur), uy ikonkasida eshik evenodd bilan kesiladi."""
+import urllib.parse, os, re
+HERE = os.path.dirname(os.path.abspath(__file__))
+SRC = os.path.join(HERE, 'icons-src', 'lucide-0.460.0')
+SW = 2.4
+G = f'<g fill="none" stroke="#000" stroke-width="{SW}" stroke-linecap="round" stroke-linejoin="round">'
+
+# nom → (lucide fayli, to'ldirish: None | 'all' | [element indekslari] | 'evenodd')
+MAP = {
+  'home': ('house', None), 'home-fill': ('house', 'evenodd'),
+  'play': ('play', None), 'play-fill': ('play', 'all'),
+  'gift': ('gift', None), 'bookmark': ('bookmark', None), 'bookmark-fill': ('bookmark', 'all'),
+  'user': ('user', None), 'search': ('search', None), 'bell': ('bell', None), 'bell-plus': ('bell-plus', None),
+  'plus': ('plus', None), 'minus': ('minus', None), 'close': ('x', None), 'check': ('check', None),
+  'chev-left': ('chevron-left', None), 'chev-right': ('chevron-right', None), 'chev-down': ('chevron-down', None), 'chev-up': ('chevron-up', None),
+  'arrow-right': ('arrow-right', None), 'arrow-up': ('arrow-up', None), 'arrow-down': ('arrow-down', None),
+  'share': ('forward', None), 'share-box': ('share', None),
+  'more': ('ellipsis', None), 'more-v': ('ellipsis-vertical', None),
+  'heart': ('heart', None), 'heart-fill': ('heart', 'all'),
+  'comment': ('message-square', None), 'comment-fill': ('message-square', 'all'),
+  'download': ('download', None), 'lock': ('lock', None), 'lock-fill': ('lock', [0]), 'unlock': ('lock-open', None),
+  'eye': ('eye', None), 'eye-off': ('eye-off', None), 'star': ('star', None), 'star-fill': ('star', 'all'),
+  'crown': ('crown', None), 'list': ('list', None), 'grid': ('layout-grid', None), 'filter': ('sliders-horizontal', None),
+  'pause-fill': ('pause', 'all'), 'rewind': ('rotate-ccw', None), 'forward': ('rotate-cw', None),
+  'clock': ('clock', None), 'calendar': ('calendar', None), 'moon': ('moon', None), 'copy': ('copy', None),
+  'send': ('send', None), 'send-fill': ('send', 'all'), 'phone': ('phone', None), 'info': ('info', None), 'help': ('circle-help', None),
+  'edit': ('pencil', None), 'wallet': ('wallet', None), 'card': ('credit-card', None), 'logout': ('log-out', None),
+  'users': ('users', None), 'user-plus': ('user-plus', None), 'trophy': ('trophy', None), 'sparkle': ('sparkles', None), 'flame': ('flame', None),
+  'settings': ('settings', None), 'globe': ('globe', None), 'wifi': ('wifi', None), 'trash': ('trash-2', None), 'ticket': ('ticket', None),
+  'megaphone': ('megaphone', None), 'video': ('video', None), 'film': ('film', None), 'refresh': ('refresh-cw', None), 'shield': ('shield', None),
+  'link': ('link', None), 'gauge': ('gauge', None), 'volume': ('volume-2', None), 'tv': ('tv', None), 'flag': ('flag', None),
+  'receipt': ('receipt', None), 'percent': ('percent', None), 'cast': ('cast', None), 'swipe-up': ('arrow-up-to-line', None),
+  'sort': ('arrow-up-down', None), 'subtitles': ('captions', None), 'sliders': ('sliders-vertical', None),
 }
+# Lucide'da yo'q — xuddi shu to'r va kontur bilan chizilgan
+CUSTOM = {
+  'cc': '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M10.5 10.2a2.1 2.1 0 1 0 0 3.6M16.5 10.2a2.1 2.1 0 1 0 0 3.6"/>',
+  'hd': '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7.5 9.5v5M10.5 9.5v5M7.5 12h3M13.5 9.5v5h1.25a2.5 2.5 0 0 0 0-5z"/>',
+}
+EL = re.compile(r'<(path|circle|rect|line|polyline|polygon|ellipse)\b([^>]*?)/?>', re.S)
 
-def uri(svg_inner):
-    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">{svg_inner}</svg>'
-    return 'url("data:image/svg+xml,' + urllib.parse.quote(svg, safe=' =:/"<>.,-') .replace('"', "'") + '")'
+def elements(name):
+    svg = open(os.path.join(SRC, name + '.svg')).read()
+    return [(t, ' '.join(a.split())) for t, a in EL.findall(svg)]
 
-out = ['/* icons.css — tools/build_icons.py tomonidan yaratiladi. Bitta to\'plam: 24 pt grid, stroke 1.75, round cap/join\n   (ref-01/02/04/06/07 ikonkalari: outline 1.5–2 pt, round; aktivda filled). */',
+def build(name, mode):
+    els = elements(name)
+    if mode == 'evenodd':   # barcha path'lar bitta shaklga, ichki kontur (eshik) teshik bo'ladi
+        ds = [re.search(r'd="([^"]+)"', a).group(1) for t, a in els if t == 'path']
+        ds = sorted(ds, key=len, reverse=True)
+        return f'<path fill="#000" fill-rule="evenodd" d="{" ".join(d if d.rstrip().endswith("z") else d + "z" for d in ds)}"/>'
+    out = []
+    for i, (t, a) in enumerate(els):
+        fill = mode == 'all' or (isinstance(mode, list) and i in mode)
+        out.append(f'<{t} {a}{" fill=\"#000\"" if fill else ""}/>')
+    return ''.join(out)
+
+def uri(inner):
+    svg = f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">{G}{inner}</g></svg>'
+    return 'url("data:image/svg+xml,' + urllib.parse.quote(svg, safe=' =:/"<>.,-#').replace('#', '%23').replace('"', "'") + '")'
+
+icons = {n: build(f, m) for n, (f, m) in MAP.items()}
+icons.update(CUSTOM)
+out = [f'/* icons.css — tools/build_icons.py tomonidan yaratiladi. Bitta to\'plam: Lucide 0.460.0 (ISC litsenziya — tools/icons-src/),\n   24 pt to\'r, stroke {SW}, round cap/join; aktiv holatda to\'ldirilgan variant. */',
        '.ic{display:inline-block;flex:none;width:24px;height:24px;background-color:currentColor;-webkit-mask:var(--i) center/contain no-repeat;mask:var(--i) center/contain no-repeat;vertical-align:middle}',
        '.ic--16{width:16px;height:16px}.ic--18{width:18px;height:18px}.ic--20{width:20px;height:20px}.ic--22{width:22px;height:22px}.ic--26{width:26px;height:26px}.ic--28{width:28px;height:28px}.ic--32{width:32px;height:32px}']
-for name, inner in ICONS.items():
-    out.append(f'.ic-{name}{{--i:{uri(inner)}}}')
-p = os.path.join(os.path.dirname(__file__), '..', 'icons.css')
+for name in sorted(icons, key=lambda n: list(MAP).index(n) if n in MAP else 999):
+    out.append(f'.ic-{name}{{--i:{uri(icons[name])}}}')
+p = os.path.join(HERE, '..', 'icons.css')
 open(p, 'w').write('\n'.join(out) + '\n')
-print('icons:', len(ICONS), '->', os.path.abspath(p))
+print('icons:', len(icons), '->', os.path.abspath(p))
