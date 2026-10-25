@@ -8,9 +8,9 @@
 
 ## 2. Nav (04, 05, 22, 24, 27)
 - Nav bor ekranlar: 04, 05, 22, 24, 27
-- Joylashuv (x, pastdan, w, h): bir xil (18, 36, 357, 55)
+- Joylashuv (x, pastdan, w, h): bir xil (18, 32, 357, 62)
 - Markup (is-active va to'ldirilgan ikonka hisobga olinmasa): bir xil
-- Piksel (pill ichi, aktiv slotlar ±6 pt chiqarilgan), juftlar orasida max farq = **9** / 255
+- Piksel (orqa kontent yashirilgan — liquid glass; burchaklar va aktiv slotlar ±6 pt chiqarilgan), juftlar orasida max farq = **0** / 255 (aynan bir xil)
 
 ## 3. Touch target ≥ 44 pt
 - Interaktiv elementlar: 390; 44 dan kichik (qator/karta ichida boʻlmagan): **0**
@@ -27,7 +27,7 @@ Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va o
 - Shrift oilalari: Anton, Awesome Serif (+ Playfair Display: ʻ ʼ « » +), IBM Plex Mono, Inter, Inter Tight
 
 ## 6. Radiuslar
-- Token radiuslari: [6, 10.2, 11, 12, 14, 16, 17, 20.7, 24, 28, 34.5, 40, 55, 999] (+ 50 % / pill)
+- Token radiuslari: [6, 10.2, 11, 12, 14, 16, 17, 20, 20.7, 24, 28, 34.5, 40, 55, 999] (+ 50 % / pill)
 - Tokendan tashqari: yoʻq
 
 ## 7. Chekka 18 pt

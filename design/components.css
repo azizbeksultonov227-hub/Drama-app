@@ -123,14 +123,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .utabs__item.is-active::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: var(--r-pill); background: var(--flame); }
 
 /* ---------- Floating bottom nav (ref-01) ---------- */
-.nav { position: absolute; z-index: 80; left: var(--nav-x); right: var(--nav-x); bottom: var(--nav-bottom); height: var(--nav-h); border-radius: var(--r-pill); background: var(--nav-fill); display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 0 3px; }
-.nav__item { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; height: var(--nav-active-h); border-radius: var(--r-pill); color: var(--text-nav-off); }
-.nav__item .ic { width: 22px; height: 22px; }
-.nav__item span { font: 500 var(--t-micro)/1 var(--f-ui); }
-.nav__item.is-active { background: var(--nav-active); color: var(--text-1); width: var(--nav-active-w); justify-self: center; }
-.nav__center { width: 34px; height: 34px; border-radius: 50%; display: grid; place-items: center; background: var(--glossy-fill); color: var(--cocoa); box-shadow: var(--glossy-hi), var(--shadow-pill); margin-top: -12px; }
-.nav__center .ic { width: 16px; height: 16px; margin-left: 2px; }
-.nav__item.is-active .nav__center { box-shadow: var(--glossy-hi), var(--glow-flame); }
+/* Foydalanuvchi: qalinroq, burchaklari tugmalar kabi (20), liquid glass; Lenta — flame rangda ajralib turadi */
+.nav { position: absolute; z-index: 80; left: var(--nav-x); right: var(--nav-x); bottom: var(--nav-bottom); height: var(--nav-h); border-radius: var(--r-nav); background: var(--lg-fill); box-shadow: var(--lg-edge); -webkit-backdrop-filter: var(--lg-filter); backdrop-filter: var(--lg-filter); display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 0 var(--s-6); }
+.nav__item { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--s-4); height: var(--nav-active-h); border-radius: var(--r-nav-item); color: var(--text-nav-off); }
+.nav__item .ic { width: 24px; height: 24px; }
+.nav__item span { font: 600 var(--t-tag)/1 var(--f-ui); letter-spacing: -.01em; }
+.nav__item.is-active { background: var(--lg-active); box-shadow: var(--lg-active-edge); color: var(--text-1); width: var(--nav-active-w); justify-self: center; }
+.nav__center { width: 46px; height: 46px; border-radius: var(--r-btn); display: grid; place-items: center; background: var(--flame); color: var(--text-1); box-shadow: var(--flame-hi), var(--glow-flame); margin-top: -20px; }
+.nav__center .ic { width: 22px; height: 22px; margin-left: 2px; }
+.nav__center + span { color: var(--text-1); font-weight: 700; }
 
 /* ---------- Media placeholder (drama rasmi) ---------- */
 .art { position: relative; overflow: hidden; background-color: var(--amb, var(--amb-01));

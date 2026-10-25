@@ -44,7 +44,7 @@ def ratio(a, b):
     return (np.maximum(la, lb) + 0.05) / (np.minimum(la, lb) + 0.05)
 
 SCALE = {128, 96, 72, 53, 44, 40, 36, 32, 30, 28, 26, 24, 20, 17, 15, 13, 12, 11, 10}
-RADII = {55, 40, 28, 24, 17, 16, 14, 12, 11, 6, 999, 10.2, 34.5, 20.7}   # + token hosilalari; 16/14/12 — tugmalar (--r-btn*)
+RADII = {55, 40, 28, 24, 20, 17, 16, 14, 12, 11, 6, 999, 10.2, 34.5, 20.7}   # + token hosilalari; 16/14/12 — tugmalar (--r-btn*)
 
 # ---------------------------------------------------------------- 2. tizim qatlamlari va nav
 w('# 5-bosqich: avtomatik tekshiruv hisoboti\n')
@@ -83,7 +83,7 @@ if NAVS:
             m = inside.copy()
             for act in (ai, bi): m[:, max(0, round(act * W5) - 6):round((act + 1) * W5) + 6] = False   # aktiv slot va uning nuri
             worst = max(worst, int(np.abs(a_ - b2).max(2)[m].max()))
-    w(f'- Piksel (pill ichi, aktiv slotlar ±6 pt chiqarilgan), juftlar orasida max farq = **{worst}** / 255' + (' (aynan bir xil)' if worst == 0 else '') + '\n')
+    w(f'- Piksel (orqa kontent yashirilgan — liquid glass; burchaklar va aktiv slotlar ±6 pt chiqarilgan), juftlar orasida max farq = **{worst}** / 255' + (' (aynan bir xil)' if worst == 0 else '') + '\n')
 
 
 # ---------------------------------------------------------------- 3. touch

@@ -80,7 +80,14 @@
   --glass-line: rgba(255, 255, 255, .18);       /* ref-04 qidiruv chegarasi 18–20%, ref-01 chip yuqori 17% */
   --glass-line-soft: rgba(255, 255, 255, .08);  /* ref-01 chip yon chegarasi */
   --glass-rim: linear-gradient(180deg, rgba(255, 255, 255, .18), rgba(255, 255, 255, .08)); /* yuqoridan yoritilgan chet */
-  --glass-filter: blur(24px);                   /* blur o'lchab bo'lmaydi; saturate yo'q (o'lchov: to'yinganlik kamayadi) */
+  --glass-filter: blur(24px);
+  /* Liquid glass (foydalanuvchi so'rovi, iOS 26 uslubi): shaffof qatlam + yuqoridan yoritilgan sheen, yorqin qirralar, chuqur soya */
+  --lg-fill: linear-gradient(180deg, rgba(255, 255, 255, .17) 0%, rgba(255, 255, 255, .06) 40%, rgba(255, 255, 255, .03) 62%, rgba(255, 255, 255, .09) 100%), rgba(20, 20, 20, .62);
+  --lg-edge: inset 0 1px 0 rgba(255, 255, 255, .34), inset 0 -1px 0 rgba(255, 255, 255, .10), inset 0 0 0 1px rgba(255, 255, 255, .08), 0 12px 30px rgba(0, 0, 0, .50), 0 2px 6px rgba(0, 0, 0, .30);
+  --lg-filter: blur(22px) saturate(180%);
+  --lg-active: linear-gradient(180deg, rgba(255, 255, 255, .24) 0%, rgba(255, 255, 255, .09) 100%);
+  --lg-active-edge: inset 0 1px 0 rgba(255, 255, 255, .38), inset 0 0 0 1px rgba(255, 255, 255, .08);
+  --flame-hi: inset 0 1px 0 rgba(255, 255, 255, .40), inset 0 -2px 4px rgba(154, 70, 42, .45);   /* flame tugma: yuqori aks + pastki chuqurlik */                   /* blur o'lchab bo'lmaydi; saturate yo'q (o'lchov: to'yinganlik kamayadi) */
 
   /* ---------- Glossy pill (ref-01 "Following", 12 nuqta) ---------- */
   --glossy-fill: linear-gradient(180deg, #FFFFFF 0%, #FDFDFD 10%, #ECECEC 16%, #E1E1E1 24%, #D6D6D6 32%, #CBCBCB 40%, #BEBEBE 50%, #B7B7B7 56%, #C5C5C5 68%, #CCCCCC 79%, #D7D7D7 84%, #E3E3E3 87%, #F1F1F1 92%, #F7F7F7 96%);
@@ -159,11 +166,13 @@
   --d-play: 56px;        /* ref-07 play 56 */
   --d-side: 48px;        /* ref-01 profil orqaga doira 48 */
   --hit: 44px;           /* Apple HIG: minimal bosish maydoni (vizual kichik boshqaruvlarga ko'rinmas kengaytma) */
-  --nav-h: 55px;         /* ref-01 nav */
+  --nav-h: 62px;         /* foydalanuvchi: navbar qalinroq (ref-01: 55) */
   --nav-x: 18px;         /* ref-01 */
-  --nav-bottom: 36px;    /* ref-01: ekran pastidan; home indicator'dan 22 */
-  --nav-active-w: 70px;  /* ref-01 */
-  --nav-active-h: 49px;  /* ref-01 */
+  --nav-bottom: 32px;    /* ekran pastidan; home indicator'dan 19 (ref-01: 36) */
+  --nav-active-w: 66px;  /* aktiv element (ref-01: 70×49) */
+  --nav-active-h: 52px;
+  --r-nav: 20px;         /* foydalanuvchi: nav burchagi kamroq yumaloq, tugmalar kabi (pill edi) */
+  --r-nav-item: 14px;
   --nav-center: 42px;    /* ref-01 "+" doira */
   --slider-h: 18px;      /* ref-01 trek */
   --knob: 36px;          /* ref-01 knob */

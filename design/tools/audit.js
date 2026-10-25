@@ -17,7 +17,14 @@ const INTERACTIVE = 'button, a, .btn, .gbtn, .chip, .seg__item, .utabs__item, .n
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(400);
     // nav: 393×852 viewport'da (uzun ekranlarda ramka rejimi — nav fixed) bir xil joyda suratga olinadi
-    if (await page.$('.nav')) await page.screenshot({ path: path.join(outDir, name + '.nav.png'), clip: { x: 18, y: 852 - 36 - 55, width: 357, height: 55 } });
+    // nav liquid glass — orqadagi kontentga bog'liq; o'zini solishtirish uchun orqa fon yashiriladi
+    if (await page.$('.nav')) {
+      const hide = await page.addStyleTag({ content: '#screen > :not(.nav) { visibility: hidden !important; }' });
+      const nb = await page.evaluate(() => { const r = document.querySelector('.nav').getBoundingClientRect(); return { x: r.left, y: r.top, width: r.width, height: r.height }; });
+      await page.waitForTimeout(80);
+      await page.screenshot({ path: path.join(outDir, name + '.nav.png'), clip: nb });
+      await hide.evaluate(el => el.remove());
+    }
     const h = await page.evaluate(() => document.getElementById('screen').getBoundingClientRect().height);
     await page.setViewportSize({ width: 393, height: Math.ceil(h) });
     await page.waitForTimeout(150);
