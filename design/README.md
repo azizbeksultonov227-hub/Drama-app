@@ -6,6 +6,8 @@ Faqat HTML + CSS + minimal vanilla JS (prototip xatti-harakati — `app.js`). Fr
 1. Repozitoriyni yuklab oling (yoki klonlang).
 2. Chrome / Safari'da oching:
    - **`design/app.html`** — **interaktiv prototip**: faqat ilovaning o'zi, oynaga sig'adigan eng katta o'lchamda; Onboarding'dan boshlanadi. Istalgan ekranni alohida ochish — `index.html` dagi «Ochish».
+     - Ochiq havola (GitHub Pages): **https://azizbeksultonov227-hub.github.io/Drama-app/**
+     - Telefonda ramkasiz ochiladi: ilova ekranni egallaydi, soxta status bar / island / home indicator yashiriladi. **Bosh ekranga qo'shilsa** (iPhone: Ulashish → «Bosh ekranga qoʻshish»; Android: ⋮ → «Bosh ekranga qoʻshish») — o'z ikonkasi bilan, brauzer panellarisiz, to'liq ekranda ilova kabi ochiladi (`manifest.webmanifest`, `icons/`). Sinov: `app.html?mode=web` / `?mode=app`.
    - **`design/index.html`** — 30 ekran iPhone 15 Pro ramkalarida, 6 bo'lim. Uzun ekranlarni ramka ichida aylantirish mumkin (status bar va nav joyida qoladi). Yuqoridagi panelda masshtab: 50 / 75 / 100 %.
    - **`design/styleguide.html`** — ref-07 formatidagi stil qo'llanmasi: shrift alifbolari va raqamlar, HEX doiralar, gradient namunalari, tipografiya shkalasi, effektlar, radiuslar, oraliqlar, ikonkalar.
    - **`design/components.html`** — barcha komponentlar va holatlari.

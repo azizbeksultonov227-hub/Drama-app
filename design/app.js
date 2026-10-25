@@ -32,6 +32,9 @@
     },
   };
 
+  // telefonda (app.html ramkasiz rejimi): soxta status bar, island va home indicator yashiriladi — qurilmaning o'zinikilari bor
+  if (store.get('drama-proto-device')) document.documentElement.classList.add('proto-device');
+
   /* ---------- yordamchilar ---------- */
   const $ = (sel, root = screen) => root.querySelector(sel);
   const $$ = (sel, root = screen) => [...root.querySelectorAll(sel)];
@@ -174,6 +177,7 @@
   const css = document.createElement('style');
   css.textContent = `
     [hidden] { display: none !important; }
+    .proto-device :is(.status__time, .status__icons, .island, .home-ind) { visibility: hidden; }
     #screen { -webkit-user-select: none; user-select: none; touch-action: pan-y; }
     #screen :is(.xscroll, .hscroll) { touch-action: pan-x pan-y; }
     #screen input { -webkit-user-select: text; user-select: text; }

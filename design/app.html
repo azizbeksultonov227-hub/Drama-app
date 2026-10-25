@@ -2,35 +2,95 @@
 <html lang="uz">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Drama ilova</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Drama</title>
 <meta name="claude:viewport-fit-sides" content="cover">
+<!-- telefon: bosh ekranga qo'shilganda ilova kabi to'liq ekranda ochiladi -->
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Drama">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@400;500&display=swap">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="components.css">
 <style>
-  /* Faqat ilova: 393×852 ekran oynaga sig'adigan eng katta masshtabda, markazda. Ranglar tokens.css'dan. */
-  :root { color-scheme: dark; --k: 1; }
+  /* Kompyuter: 393×852 ekran oynaga sig'adigan eng katta masshtabda, markazda. Ranglar tokens.css'dan. */
+  :root { color-scheme: dark; --k: 1; --vis: 852px; --crop: 0px; }
   html, body { height: 100%; background: var(--bg-0); }
   body { display: grid; place-items: center; overflow: hidden;
     padding-block: var(--s-12); padding-left: max(var(--s-16), env(safe-area-inset-left, 0px)); padding-right: max(var(--s-16), env(safe-area-inset-right, 0px)); }
   .app { width: calc(393px * var(--k)); height: calc(852px * var(--k)); border-radius: calc(var(--r-screen) * var(--k)); overflow: hidden;
     clip-path: inset(0 round calc(var(--r-screen) * var(--k))); background: var(--bg-0); box-shadow: inset 0 0 0 1px var(--line-1); }
   .app iframe { display: block; width: 393px; height: 852px; border: 0; background: var(--bg-0); transform: scale(var(--k)); transform-origin: 0 0; }
+
+  /* Telefon: ramka yo'q — ilova butun ekranni egallaydi. Soxta status bar / island / home indicator
+     yashiriladi (telefonning o'zinikilari bor). Brauzerda tepadagi status zonasi va pastki 14 pt kesiladi. */
+  html.is-device, html.is-device body { position: fixed; inset: 0; overflow: hidden; overscroll-behavior: none; touch-action: manipulation; }
+  html.is-device body { padding: 0; display: block; }
+  html.is-device .app { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: calc(393px * var(--k)); height: calc(var(--vis) * var(--k));
+    border-radius: 0; clip-path: none; box-shadow: none; }
+  html.is-device .app iframe { margin-top: calc(var(--crop) * var(--k) * -1); }
+  .hint { position: fixed; z-index: 10; left: max(var(--s-12), env(safe-area-inset-left, 0px)); right: max(var(--s-12), env(safe-area-inset-right, 0px)); bottom: max(var(--s-12), env(safe-area-inset-bottom, 0px));
+    display: flex; align-items: center; gap: var(--s-10); padding: var(--s-12) var(--s-12) var(--s-12) var(--s-16); border-radius: var(--r-btn);
+    background: color-mix(in srgb, var(--bg-2) 94%, transparent); box-shadow: inset 0 0 0 1px var(--line-2), var(--shadow-pill);
+    -webkit-backdrop-filter: var(--glass-filter); backdrop-filter: var(--glass-filter); font: 500 var(--t-footnote)/1.35 var(--f-ui); color: var(--text-1); }
+  .hint b { color: var(--flame); font-weight: 600; }
+  .hint button { flex: none; width: var(--hit); height: var(--hit); border: 0; border-radius: 50%; background: var(--glass-btn); color: var(--text-1); display: grid; place-items: center; }
+  .hint[hidden] { display: none; }
 </style>
 </head>
 <body>
 <div class="app"><iframe id="app" title="Drama ilova" src="screens/01-onboarding.html?reset=1"></iframe></div>
+<div class="hint" id="hint" hidden><span id="hint-text"></span><button type="button" aria-label="Yopish"><i class="ic ic-close ic--18"></i></button></div>
 <script>
-  // ekranni oynaning bo'sh joyiga sig'diradi (kenglik va balandlik bo'yicha kichigi)
+  // Rejim: kompyuter (ramka) · telefon brauzeri (ramkasiz, tepasi kesilgan) · telefon ilovasi (bosh ekrandan, to'liq ekran).
+  // Sinov uchun majburlash: app.html?mode=web | ?mode=app
+  const q = new URLSearchParams(location.search).get('mode');
+  const touch = matchMedia('(pointer: coarse)').matches && Math.min(screen.width, screen.height) < 600;
+  const standalone = q === 'app' || matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const device = q === 'app' || q === 'web' || touch;
+  if (device) {
+    document.documentElement.classList.add('is-device');
+    try { sessionStorage.setItem('drama-proto-device', JSON.stringify(standalone ? 'app' : 'web')); } catch (e) { /* xotirasiz rejim */ }
+  }
+  const root = document.documentElement.style;
+  let lastW = 0, lastH = 0;
   const fit = () => {
+    if (device) {
+      // klaviatura ochilganda (kenglik o'sha, balandlik keskin kamaysa) masshtab o'zgarmaydi
+      if (lastW && Math.abs(innerWidth - lastW) < 2 && lastH - innerHeight > 150) return;
+      lastW = innerWidth; lastH = innerHeight;
+      const top = standalone ? 0 : 44, bottom = standalone ? 0 : 14, vis = 852 - top - bottom;
+      root.setProperty('--k', Math.min(innerWidth / 393, innerHeight / vis).toFixed(4));
+      root.setProperty('--vis', vis + 'px'); root.setProperty('--crop', top + 'px');
+      return;
+    }
     const b = document.body, cs = getComputedStyle(b);
     const w = b.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
     const h = b.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
-    document.documentElement.style.setProperty('--k', Math.max(.35, Math.min(w / 393, h / 852)).toFixed(4));
+    root.setProperty('--k', Math.max(.35, Math.min(w / 393, h / 852)).toFixed(4));
   };
-  addEventListener('resize', fit); fit();
+  addEventListener('resize', fit); addEventListener('orientationchange', () => { lastW = 0; setTimeout(fit, 300); }); fit();
+
+  // telefon brauzerida bir marta: «bosh ekranga qo'shing — ilova kabi to'liq ekranda ochiladi»
+  if (device && !standalone && q !== 'web') {
+    let seen = false; try { seen = localStorage.getItem('drama-proto-hint') === '1'; } catch (e) { /* — */ }
+    if (!seen) {
+      const ios = /iPhone|iPad|iPod/.test(navigator.userAgent);
+      document.getElementById('hint-text').innerHTML = ios
+        ? 'Ilova kabi toʻliq ekranda ochish: pastdagi <b>Ulashish</b> → <b>«Bosh ekranga qoʻshish»</b>'
+        : 'Ilova kabi toʻliq ekranda ochish: <b>⋮</b> menyu → <b>«Bosh ekranga qoʻshish»</b>';
+      const hint = document.getElementById('hint'); hint.hidden = false;
+      const close = () => { hint.hidden = true; try { localStorage.setItem('drama-proto-hint', '1'); } catch (e) { /* — */ } };
+      hint.querySelector('button').addEventListener('click', close);
+      setTimeout(close, 9000);
+    }
+  }
 </script>
 </body>
 </html>
