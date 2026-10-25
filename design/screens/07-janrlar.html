@@ -14,10 +14,10 @@
   .filters { position: absolute; top: 124px; left: 0; right: 0; display: flex; flex-direction: column; gap: var(--s-8); }
   .frow { display: flex; align-items: center; gap: var(--s-8); padding-left: var(--page-x); overflow: hidden; white-space: nowrap; }
   .frow > span:first-child { flex: none; width: 58px; font: 500 var(--t-caption)/1 var(--f-ui); color: var(--text-3); }
-  .frow .chip { height: var(--h-pill-xs); padding: 0 var(--s-12); font-size: var(--t-footnote); }
-  .found { position: absolute; top: 290px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; padding-top: var(--s-12); box-shadow: inset 0 1px 0 var(--line-1); }
+  .found { position: absolute; top: 318px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; justify-content: space-between; padding-top: var(--s-12); box-shadow: inset 0 1px 0 var(--line-1); }
   .found .btn--text { height: auto; padding: 0; font-size: var(--t-footnote); color: var(--text-2); }
-  .results { position: absolute; top: 336px; left: var(--page-x); right: var(--page-x); display: flex; flex-direction: column; gap: var(--s-16); }
+  .results { position: absolute; top: 364px; bottom: 30px; left: var(--page-x); right: var(--page-x); display: flex; flex-direction: column; gap: var(--s-16); overflow: hidden;
+    -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 82%, transparent 100%); mask-image: linear-gradient(180deg, var(--bg-0) 82%, transparent 100%); }
   .res { display: flex; gap: var(--s-12); align-items: center; }
   .res .poster { --pw: 76px; }
   .res__body { flex: 1; min-width: 0; }
@@ -37,10 +37,10 @@
   </div>
 
   <div class="filters">
-    <div class="frow"><span>Janr</span><span class="chip">Hammasi</span><span class="chip">Romantika</span><span class="chip chip--selected">Qasos</span><span class="chip">CEO</span><span class="chip">Boʻrilar</span><span class="chip">Oilaviy</span></div>
-    <div class="frow"><span>Til</span><span class="chip">Hammasi</span><span class="chip chip--selected">Oʻzbekcha</span><span class="chip">Ruscha</span><span class="chip">Inglizcha</span></div>
-    <div class="frow"><span>Holati</span><span class="chip chip--selected">Hammasi</span><span class="chip">Tugallangan</span><span class="chip">Davom etmoqda</span></div>
-    <div class="frow"><span>Saralash</span><span class="chip chip--selected">Ommabop</span><span class="chip">Yangi</span><span class="chip">Reyting</span><span class="chip">Koʻp saqlangan</span></div>
+    <div class="frow"><span>Janr</span><span class="chip choice choice--sm">Hammasi</span><span class="chip choice choice--sm">Romantika</span><span class="chip choice choice--sm chip--selected">Qasos</span><span class="chip choice choice--sm">CEO</span><span class="chip choice choice--sm">Boʻrilar</span><span class="chip choice choice--sm">Oilaviy</span></div>
+    <div class="frow"><span>Til</span><span class="chip choice choice--sm">Hammasi</span><span class="chip choice choice--sm chip--selected">Oʻzbekcha</span><span class="chip choice choice--sm">Ruscha</span><span class="chip choice choice--sm">Inglizcha</span></div>
+    <div class="frow"><span>Holati</span><span class="chip choice choice--sm chip--selected">Hammasi</span><span class="chip choice choice--sm">Tugallangan</span><span class="chip choice choice--sm">Davom etmoqda</span></div>
+    <div class="frow"><span>Saralash</span><span class="chip choice choice--sm chip--selected">Ommabop</span><span class="chip choice choice--sm">Yangi</span><span class="chip choice choice--sm">Reyting</span><span class="chip choice choice--sm">Koʻp saqlangan</span></div>
   </div>
 
   <div class="found"><span class="t-mono c-2">1 284 ta drama topildi</span><button class="btn btn--text">Tozalash</button></div>

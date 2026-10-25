@@ -144,6 +144,8 @@
   --h-btn: 58px;         /* foydalanuvchi: tugmalar kattaroq va qalinroq (52 edi) */
   --h-btn-sm: 48px;
   --h-btn-xs: 34px;
+  --h-choice: 44px;      /* tanlov tugmasi (chip o'rnida) — foydalanuvchi: «pastdagi tugmaga o'xshasin» */
+  --h-choice-sm: 36px;   /* zich qatorlar: filtrlar, sifat, oraliq */
   --h-pill-sm: 43px;     /* ref-01 "Following" 42.7 */
   --h-pill-xs: 29px;     /* ref-01 "See all" */
   --h-chip: 26px;        /* ref-01 chip 25–27 */

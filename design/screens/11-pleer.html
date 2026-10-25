@@ -27,9 +27,7 @@
   .controls .sec-num { position: absolute; font: 600 var(--t-micro)/1 var(--f-ui); top: 50%; left: 50%; transform: translate(-50%, -38%); }
   .play { width: var(--d-play); height: var(--d-play); }
   .pills { position: absolute; z-index: 5; left: var(--page-x); right: var(--page-x); top: 770px; display: flex; gap: var(--s-8); }
-  .pills .chip { height: var(--h-chip-glass); padding: 0 var(--s-12); font: 500 var(--t-footnote)/1 var(--f-ui); color: var(--text-1); background: var(--glass-bg-strong); }
-  .pills .chip--selected { background: var(--text-1); color: var(--cocoa); }
-  .pills .chip--selected .ic { color: var(--cocoa); }
+  .pills .choice:not(.chip--selected) { background: var(--glass-bg-strong); }
 </style>
 </head>
 <body>
@@ -70,10 +68,10 @@
     <button class="gbtn" aria-label="5 soniya oldinga"><i class="ic ic-forward ic--28"></i><span class="sec-num">5</span></button>
   </div>
   <div class="pills">
-    <span class="chip chip--selected"><i class="ic ic-list"></i>Qismlar 10/80</span>
-    <span class="chip">1.0x</span>
-    <span class="chip"><i class="ic ic-cc"></i>CC uz</span>
-    <span class="chip">720p</span>
+    <span class="chip choice choice--sm chip--selected"><i class="ic ic-list"></i>Qismlar 10/80</span>
+    <span class="chip choice choice--sm">1.0x</span>
+    <span class="chip choice choice--sm"><i class="ic ic-cc"></i>CC uz</span>
+    <span class="chip choice choice--sm">720p</span>
   </div>
 
   <div class="home-ind"></div>

@@ -10,7 +10,7 @@
 - Nav bor ekranlar: 04, 05, 22, 24, 27
 - Joylashuv (x, pastdan, w, h): bir xil (18, 36, 357, 55)
 - Markup (is-active va to'ldirilgan ikonka hisobga olinmasa): bir xil
-- Piksel (pill ichi, aktiv slotlar ±6 pt chiqarilgan), juftlar orasida max farq = **1** / 255
+- Piksel (pill ichi, aktiv slotlar ±6 pt chiqarilgan), juftlar orasida max farq = **9** / 255
 
 ## 3. Touch target ≥ 44 pt
 - Interaktiv elementlar: 390; 44 dan kichik (qator/karta ichida boʻlmagan): **0**
@@ -18,7 +18,7 @@
 ## 4. Matn kontrasti (WCAG: oddiy 4.5, katta 3.0)
 Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va ota-ona opacity bilan aralashtiriladi; koʻrsatkich — matn bbox'idagi eng yomon 10 % piksel (p10).
 
-- Matn elementlari: 979; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
+- Matn elementlari: 977; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
   - 01 `ul.list.t-edit > li` «Shartnomali nikoh» 44px — p10 2.78 < 3.0 (mask: ataylab soʻndirilgan)
 
 ## 5. Tipografiya shkalasi
