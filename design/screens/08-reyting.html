@@ -11,7 +11,7 @@
 <style>
   .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); }
   .top h1 { display: flex; align-items: center; gap: var(--s-8); }
-  .tabs { position: absolute; top: 112px; left: 0; right: 0; overflow: hidden; }
+  .tabs { position: absolute; top: 112px; left: 0; right: 0; }
   .tabs .utabs { gap: var(--s-20); }
   .period { position: absolute; top: 166px; left: var(--page-x); right: var(--page-x); }
   .period .seg { width: 100%; padding: 3px; border-radius: var(--r-pill); background: var(--bg-1); box-shadow: inset 0 0 0 1px var(--line-1); }
@@ -48,7 +48,7 @@
     <button class="gbtn gbtn--sm gbtn--dark" aria-label="Orqaga"><i class="ic ic-chev-left"></i></button>
     <h1 class="t-title-2"><i class="ic ic-trophy ic--26 c-sand"></i>Reyting</h1>
   </div>
-  <div class="tabs"><nav class="utabs"><span class="utabs__item is-active">Trendda</span><span class="utabs__item">Koʻp koʻrilgan</span><span class="utabs__item">Koʻp saqlangan</span><span class="utabs__item">Yangi hitlar</span></nav></div>
+  <div class="tabs xscroll"><nav class="utabs"><span class="utabs__item is-active">Trendda</span><span class="utabs__item">Koʻp koʻrilgan</span><span class="utabs__item">Koʻp saqlangan</span><span class="utabs__item">Yangi hitlar</span></nav></div>
   <div class="period"><div class="seg"><span class="seg__item is-active">Bugun</span><span class="seg__item">Hafta</span><span class="seg__item">Oy</span></div></div>
 
   <div class="podium">

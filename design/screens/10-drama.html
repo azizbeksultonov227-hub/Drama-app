@@ -18,7 +18,7 @@
   .head { position: relative; z-index: 4; margin-top: -141px; padding: 0 var(--page-x); }
   .head__title { font-size: var(--t-edit); text-shadow: var(--text-shadow); }
   .meta { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; margin-top: var(--s-12); }
-  .chips { display: flex; gap: var(--s-8); margin-top: var(--s-12); }
+  .chips { display: flex; gap: var(--s-8); margin-top: calc(var(--s-12) - var(--s-4)); }
   .actions { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: var(--s-20); padding: 0 var(--page-x); }
   .act { display: flex; flex-direction: column; align-items: center; gap: var(--s-8); text-align: center; }
   .act .gbtn { --d-glass: 52px; }
@@ -57,7 +57,7 @@
     <div class="meta t-footnote c-3">
       <span>2026</span><span>·</span><span class="outline-badge">16+</span><span>·</span><span>80 qism</span><span>·</span><span>Tugallangan</span><span>·</span><span class="outline-badge">HD</span>
     </div>
-    <div class="chips">
+    <div class="chips xscroll">
       <span class="chip"><i class="ic ic-star-fill c-sand"></i>4.8</span>
       <span class="chip"><i class="ic ic-eye"></i>2.4M koʻrish</span>
       <span class="chip">Oʻzbekcha dublyaj</span>

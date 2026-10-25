@@ -18,8 +18,8 @@
 ## 4. Matn kontrasti (WCAG: oddiy 4.5, katta 3.0)
 Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va ota-ona opacity bilan aralashtiriladi; koʻrsatkich — matn bbox'idagi eng yomon 10 % piksel (p10).
 
-- Matn elementlari: 975; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
-  - 01 `ul.list.t-edit > li` «Shartnomali nikoh» 44px — p10 2.78 < 3.0 (mask: ataylab soʻndirilgan)
+- Matn elementlari: 976; chegaradan past: **0** (+ 1 disabled / placeholder / mask bilan ataylab soʻndirilgan)
+  - 01 `ul.list.t-edit.yscroll > li` «Shartnomali nikoh» 44px — p10 2.78 < 3.0 (mask: ataylab soʻndirilgan)
 
 ## 5. Tipografiya shkalasi
 - Shkala: [10, 11, 12, 13, 15, 17, 20, 24, 26, 28, 30, 32, 36, 40, 44, 53, 72, 96, 128]
@@ -50,7 +50,7 @@ Fon — matnsiz render (`*{color:transparent}`) piksellari; matn rangi alfa va o
 - Grain kuchi: bitta token `--grain-opacity` (hamma joyda bir xil); halqa: bitta `--ring-shadow`
 
 ## 7d. Har bir drama — bitta rasm (ambient + siluet)
-- Nomi aniqlangan rasmlar: 54; dramalar: 17; nomuvofiq: **0**
+- Nomi aniqlangan rasmlar: 60; dramalar: 17; nomuvofiq: **0**
   - Ajrashgandan keyin boylik: --amb-04 art--portrait
   - Boʻri qirolining qasosi: --amb-02 art--profile
   - Direktorning sirli egizagi: --amb-05 art--duo

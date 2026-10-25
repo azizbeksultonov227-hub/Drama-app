@@ -14,7 +14,7 @@
   .modal { position: absolute; z-index: 70; left: var(--page-x); right: var(--page-x); top: 150px; padding: 0 var(--s-20) var(--s-20); text-align: center; }
   .modal > *:not(.ring) { position: relative; z-index: 3; }
   .ribbon { margin: 0 calc(var(--s-20) * -1); height: 40px; display: grid; place-items: center; background: var(--flame); color: var(--on-flame); font: 500 var(--t-mono)/1 var(--f-mono); letter-spacing: .3em; text-transform: uppercase; }
-  .close { position: absolute !important; top: 52px; right: 14px; }
+  .close { position: absolute; z-index: 80; top: 58px; left: var(--page-x); }
   .pct { margin-top: var(--s-24); color: var(--warm-text-1); }
   .modal .cd { justify-content: center; margin-top: var(--s-20); align-items: flex-start; }
   .cd__u { display: flex; flex-direction: column; align-items: center; gap: var(--s-6); }
@@ -34,10 +34,11 @@
   <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
   <div class="island"></div>
 
+  <button class="gbtn gbtn--sm close" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
+
   <section class="modal card--warm grain">
     <div class="ring ring--card"></div>
     <div class="ribbon">Faqat bugun</div>
-    <button class="gbtn gbtn--sm close" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button>
     <p class="pct t-num-xl">−60%</p>
     <p class="t-body-m" style="margin-top: var(--s-12); color: var(--warm-text-1)">1 200 coin + 800 bonus</p>
     <p style="margin-top: var(--s-6)"><span class="t-footnote strike" style="color: var(--warm-text-1)">[narx] soʻm</span>  <span class="t-title-3" style="color: var(--warm-text-1)">[narx] soʻm</span></p>

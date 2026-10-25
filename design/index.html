@@ -139,7 +139,7 @@
     { id: 'mukofotlar', n: 5, title: 'Mukofotlar', desc: 'Kunlik kirish, vazifalar va doʻstni taklif qilish — bonus coin manbalari.', screens: [
       ['22-mukofotlar', 'Mukofotlar markazi', 1598], ['23-dost-taklif', 'Doʻstni taklif qilish']] },
     { id: 'profil', n: 6, title: 'Profil', desc: 'Roʻyxatim, yuklanganlar, bildirishnomalar, profil, hamyon, sozlamalar va yordam markazi.', screens: [
-      ['24-royxatim', 'Mening roʻyxatim'], ['25-yuklanganlar', 'Yuklab olinganlar'], ['26-bildirishnomalar', 'Bildirishnomalar'], ['27-profil', 'Profil', 1701], ['28-hamyon', 'Hamyon va tranzaksiyalar'], ['29-sozlamalar', 'Sozlamalar', 1507], ['30-yordam', 'Yordam markazi']] },
+      ['24-royxatim', 'Mening roʻyxatim', 951], ['25-yuklanganlar', 'Yuklab olinganlar'], ['26-bildirishnomalar', 'Bildirishnomalar'], ['27-profil', 'Profil', 1701], ['28-hamyon', 'Hamyon va tranzaksiyalar'], ['29-sozlamalar', 'Sozlamalar', 1507], ['30-yordam', 'Yordam markazi']] },
   ];
 
   const root = document.getElementById('groupsRoot');
@@ -155,7 +155,7 @@
         return `<figure class="shot">
           <div class="dev-wrap"><div class="dev">
             <span class="dev__btn dev__btn--action"></span><span class="dev__btn dev__btn--vup"></span><span class="dev__btn dev__btn--vdn"></span><span class="dev__btn dev__btn--power"></span>
-            <div class="dev__bezel"><div class="dev__screen"><iframe src="screens/${file}.html" title="${n} · ${name}" loading="lazy" scrolling="${h ? 'yes' : 'no'}"></iframe></div></div>
+            <div class="dev__bezel"><div class="dev__screen"><iframe src="screens/${file}.html?static" title="${n} · ${name}" loading="lazy" scrolling="${h ? 'yes' : 'no'}"></iframe></div></div>
           </div></div>
           <figcaption class="cap">
             <span class="cap__n">${n}</span>

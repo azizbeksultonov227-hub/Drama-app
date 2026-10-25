@@ -23,8 +23,9 @@
   .hero__chips { position: absolute; z-index: 4; top: 364px; left: 0; right: 0; display: flex; justify-content: center; gap: var(--s-8); }
   .hero__cta { position: absolute; z-index: 4; top: 402px; left: 0; right: 0; display: flex; justify-content: center; gap: var(--s-8); }
   .hero__dashes { position: absolute; z-index: 4; top: 472px; left: 0; right: 0; display: flex; justify-content: center; }
-  .tabs { padding: 0 var(--page-x); margin-top: 2px; overflow: hidden; }
-  .top10 { display: flex; gap: 0; padding: 0 var(--page-x); overflow: hidden; }
+  .tabs { padding: var(--s-4) var(--page-x); margin-top: -2px; }
+  .top10 { display: flex; gap: 0; padding: var(--s-4) var(--page-x); scroll-snap-type: x proximity; }
+  .top10__item { scroll-snap-align: start; }
   .top10__item { position: relative; flex: none; display: flex; align-items: flex-start; margin-right: var(--s-8); }
   .top10__num { height: 156px; display: flex; align-items: flex-end; font: 400 var(--t-rank)/.78 var(--f-display); color: transparent; -webkit-text-stroke: 2px var(--text-2); margin-right: -12px; position: relative; z-index: 0; letter-spacing: -.02em; }
   .top10__item .poster { position: relative; z-index: 1; }
@@ -52,7 +53,7 @@
     <div class="hero__fade"></div>
 
     <header class="topbar">
-      <span class="chip coin-chip"><i class="coin coin--sm"></i>120<i class="ic ic-plus"></i></span>
+      <span class="chip coin-chip"><i class="coin coin--sm"></i>105<i class="ic ic-plus"></i></span>
       <span class="logo">LOGO</span>
       <div class="row-flex gap-8">
         <button class="gbtn gbtn--sm" aria-label="Qidiruv"><i class="ic ic-search ic--22"></i></button>
@@ -80,7 +81,7 @@
   </section>
 
   <!-- Segmented tablar (ref-01) -->
-  <nav class="tabs">
+  <nav class="tabs xscroll">
     <div class="seg">
       <span class="seg__item is-active">Tavsiya</span><span class="seg__item">Ommabop</span><span class="seg__item">Yangi</span><span class="seg__item">Reyting</span><span class="seg__item">VIP</span><span class="seg__item">Oʻzbekcha</span><span class="seg__item">Tez kunda</span><span class="seg__item">Janrlar</span>
     </div>
@@ -91,7 +92,7 @@
     <div class="sec-head"><h2>Davom ettirish</h2><span class="pill-more">Tarix<i class="ic ic-chev-right ic--16"></i></span></div>
     <div class="hscroll" style="--lw: 132px">
       <article class="lcard"><div class="lcard__media art art--profile" style="--amb: var(--amb-02)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><span class="shade-b"></span><span class="lcard__ep">12 / 72-qism</span><div class="progress" style="--p: 17%"><i></i></div></div><h3 class="lcard__title">Boʻri qirolining qasosi</h3></article>
-      <article class="lcard"><div class="lcard__media art art--couple" style="--amb: var(--amb-01)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><span class="shade-b"></span><span class="lcard__ep">40 / 80-qism</span><div class="progress" style="--p: 50%"><i></i></div></div><h3 class="lcard__title">Milliarderning yashirin kelini</h3></article>
+      <article class="lcard"><div class="lcard__media art art--couple" style="--amb: var(--amb-01)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><span class="shade-b"></span><span class="lcard__ep">10 / 80-qism</span><div class="progress" style="--p: 12%"><i></i></div></div><h3 class="lcard__title">Milliarderning yashirin kelini</h3></article>
       <article class="lcard"><div class="lcard__media art art--couple" style="--amb: var(--amb-03)"><span class="gbtn lcard__play"><i class="ic ic-play-fill ic--18"></i></span><span class="shade-b"></span><span class="lcard__ep">5 / 60-qism</span><div class="progress" style="--p: 8%"><i></i></div></div><h3 class="lcard__title">Shartnoma boʻyicha xotin</h3></article>
     </div>
   </section>
@@ -99,11 +100,17 @@
   <!-- Bugun Top 10 -->
   <section class="sec">
     <div class="sec-head"><h2><i class="ic ic-flame ic--20 c-flame"></i>Bugun Top 10</h2><span class="pill-more">Reyting<i class="ic ic-chev-right ic--16"></i></span></div>
-    <div class="top10" style="--pw: 104px">
+    <div class="top10 xscroll" style="--pw: 104px">
       <div class="top10__item"><span class="top10__num">1</span><article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-02)"><span class="poster__name">Boʻri qirolining qasosi</span></div><h3 class="poster__title">Boʻri qirolining qasosi</h3></article></div>
       <div class="top10__item"><span class="top10__num">2</span><article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-04)"><span class="poster__name">Ajrashgandan keyin boylik</span></div><h3 class="poster__title">Ajrashgandan keyin boylik</h3></article></div>
       <div class="top10__item"><span class="top10__num">3</span><article class="poster"><div class="poster__media art art--duo" style="--amb: var(--amb-05)"><span class="poster__name">Direktorning sirli egizagi</span></div><h3 class="poster__title">Direktorning sirli egizagi</h3></article></div>
-      <div class="top10__item"><span class="top10__num">4</span><article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-06)"><span class="poster__name">Vampir qoʻriqchisi</span></div><h3 class="poster__title">Vampir qoʻriqchisi</h3></article></div>
+      <div class="top10__item"><span class="top10__num">4</span><article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="poster__name">Milliarderning yashirin kelini</span></div><h3 class="poster__title">Milliarderning yashirin kelini</h3></article></div>
+      <div class="top10__item"><span class="top10__num">5</span><article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-11)"><span class="poster__name">Kelinning ikkinchi hayoti</span></div><h3 class="poster__title">Kelinning ikkinchi hayoti</h3></article></div>
+      <div class="top10__item"><span class="top10__num">6</span><article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-06)"><span class="poster__name">Vampir qoʻriqchisi</span></div><h3 class="poster__title">Vampir qoʻriqchisi</h3></article></div>
+      <div class="top10__item"><span class="top10__num">7</span><article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-09)"><span class="poster__name">Qishloqdan kelgan merosxoʻr</span></div><h3 class="poster__title">Qishloqdan kelgan merosxoʻr</h3></article></div>
+      <div class="top10__item"><span class="top10__num">8</span><article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-03)"><span class="poster__name">Shartnoma boʻyicha xotin</span></div><h3 class="poster__title">Shartnoma boʻyicha xotin</h3></article></div>
+      <div class="top10__item"><span class="top10__num">9</span><article class="poster"><div class="poster__media art art--walk" style="--amb: var(--amb-07)"><span class="poster__name">Uch yildan keyin qaytdim</span></div><h3 class="poster__title">Uch yildan keyin qaytdim</h3></article></div>
+      <div class="top10__item"><span class="top10__num">10</span><article class="poster"><div class="poster__media art art--portrait" style="--amb: var(--amb-08)"><span class="poster__name">Malika libosidagi xizmatkor</span></div><h3 class="poster__title">Malika libosidagi xizmatkor</h3></article></div>
     </div>
   </section>
 

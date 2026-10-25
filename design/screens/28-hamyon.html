@@ -18,7 +18,7 @@
   .topup { position: absolute; top: 266px; left: var(--page-x); right: var(--page-x); }
   .hint { position: absolute; top: 330px; left: var(--page-x); right: var(--page-x); }
   .tabs { position: absolute; top: 360px; left: 0; right: 0; }
-  .tx { position: absolute; top: 414px; left: 0; right: 0; }
+  .tx { position: absolute; top: 414px; bottom: 72px; left: 0; right: 0; }
   .grp { padding: var(--s-12) var(--page-x) var(--s-6); font: 600 var(--t-caption)/1 var(--f-ui); color: var(--text-3); }
   .t { display: flex; align-items: center; gap: var(--s-12); padding: var(--s-10) var(--page-x); }
   .t__ic { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; flex: none; background: var(--bg-2); box-shadow: inset 0 0 0 1px var(--line-1); }
@@ -44,12 +44,12 @@
   <p class="hint t-caption c-3">Avval bonus coin sarflanadi, keyin pullik coin.</p>
   <div class="tabs"><nav class="utabs" style="gap: var(--s-20)"><span class="utabs__item is-active">Hammasi</span><span class="utabs__item">Toʻldirish</span><span class="utabs__item">Sarflangan</span><span class="utabs__item">Mukofotlar</span></nav></div>
 
-  <div class="tx">
+  <div class="tx yscroll">
     <p class="grp">Bugun</p>
     <div class="t"><span class="t__ic"><i class="ic ic-minus ic--18"></i></span><div class="t__b"><p class="t-body-m">11-qism ochildi</p><p class="t-caption c-3">Milliarderning yashirin kelini · 14:32</p></div><span class="t__v">−60</span></div>
-    <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Kunlik check-in</p><p class="t-caption c-3">Bonus · 7 kun amal qiladi</p></div><span class="t__v plus">+15</span></div>
     <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Reklama mukofoti</p><p class="t-caption c-3">Bonus · 10:05</p></div><span class="t__v plus">+10</span></div>
     <p class="grp">Kecha</p>
+    <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Kunlik check-in · 2-kun</p><p class="t-caption c-3">Bonus · 7 kun amal qiladi</p></div><span class="t__v plus">+10</span></div>
     <div class="t"><span class="t__ic plus"><i class="ic ic-plus ic--18"></i></span><div class="t__b"><p class="t-body-m">Coin xaridi · Payme</p><p class="t-caption c-3">1 200 + 240 bonus · [narx] soʻm</p></div><span class="t__v plus">+1 440</span></div>
     <div class="t"><span class="t__ic"><i class="ic ic-minus ic--18"></i></span><div class="t__b"><p class="t-body-m">Butun serial ochildi</p><p class="t-caption c-3">Uch yildan keyin qaytdim</p></div><span class="t__v">−1 400</span></div>
   </div>

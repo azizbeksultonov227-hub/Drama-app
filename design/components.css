@@ -279,7 +279,14 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .sec { margin-top: var(--gap-section); }
 .sec-head { display: flex; align-items: center; justify-content: space-between; padding: 0 var(--page-x); margin-bottom: var(--gap-title); }
 .sec-head h2 { font: 600 var(--t-headline)/1.25 var(--f-ui); letter-spacing: -.02em; display: flex; align-items: center; gap: 6px; }
-.hscroll { display: flex; gap: var(--s-12); padding: 0 var(--page-x); overflow: hidden; }
+.hscroll { display: flex; gap: var(--s-12); padding: 0 var(--page-x); }
+/* Scroll konteynerlari: barmoq, trackpad, sichqoncha (sudrab) bilan suriladi; scrollbar ko'rinmaydi.
+   Gorizontal qatorda vertikal 4 pt ichki joy — 44 pt bosish maydoni kesilmasin (margin bilan qoplanadi). */
+:is(.hscroll, .xscroll) { overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scrollbar-width: none; scroll-padding-inline: var(--page-x); padding-block: var(--s-4); margin-block: calc(var(--s-4) * -1); }
+.hscroll { scroll-snap-type: x proximity; }
+.hscroll > * { scroll-snap-align: start; }
+.yscroll { overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: none; }
+:is(.hscroll, .xscroll, .yscroll)::-webkit-scrollbar { display: none; }
 
 /* ---------- Badge · countdown · coin · toj ---------- */
 .badge-count { display: inline-grid; place-items: center; min-width: 18px; height: 18px; padding: 0 5px; border-radius: var(--r-pill); background: var(--rose); color: var(--on-flame); font: 600 var(--t-tag)/1 var(--f-ui); box-shadow: 0 0 0 2px var(--bg-0); }

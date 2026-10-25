@@ -29,7 +29,7 @@
   .quick { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--s-8); margin: var(--gap-card) var(--page-x) 0; }
   .quick div { display: flex; flex-direction: column; align-items: center; gap: var(--s-8); padding: var(--s-12) 0; border-radius: var(--r-tile); font: 500 var(--t-caption)/1 var(--f-ui); color: var(--text-2); }
   .quick .ic { color: var(--text-1); }
-  .fav { margin: 0 var(--page-x); padding: var(--s-12) 0 var(--s-12) var(--s-12); overflow: hidden; }
+  .fav { margin: 0 var(--page-x); padding: var(--s-12); }
   .fav .row-flex { gap: var(--s-8); }
   .fav .poster { --pw: 88px; }
   .menu { margin: var(--gap-card) var(--page-x) 0; padding: 0; }
@@ -81,7 +81,7 @@
 
   <section class="sec">
     <div class="sec-head"><h2><i class="ic ic-star-fill ic--18 c-sand"></i>Sevimlilar</h2><span class="pill-more">Hammasi<i class="ic ic-chev-right ic--16"></i></span></div>
-    <div class="card fav"><div class="row-flex">
+    <div class="card fav xscroll"><div class="row-flex">
       <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="poster__name">Milliarderning yashirin kelini</span></div></article>
       <article class="poster"><div class="poster__media art art--profile" style="--amb: var(--amb-02)"><span class="poster__name">Boʻri qirolining qasosi</span></div></article>
       <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-03)"><span class="poster__name">Shartnoma boʻyicha xotin</span></div></article>

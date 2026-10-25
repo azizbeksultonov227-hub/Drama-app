@@ -59,8 +59,8 @@ FOL = [(0.05, '#FFFFFF'), (0.16, '#ECECEC'), (0.24, '#E1E1E1'), (0.32, '#D6D6D6'
 g = [de76(h2r(c), smp('glossy', .5, f, 0)) for f, c in FOL]
 for f, c in FOL: add(f'Glossy pill {round(f * 100)}%', h2r(c), smp('glossy', .5, f, 0), 'ref-01 "Following"')
 # 2. nav, karta, qora fon
-add('Nav foni (tepa)', h2r('#1E1E1E'), smp('nav', .2, .12, 1), 'ref-01 nav')
-add('Nav foni (past)', h2r('#151515'), smp('nav', .2, .88, 1), 'ref-01 nav')
+add('Nav foni (tepa)', h2r('#1E1E1E'), smp('nav', .2, .12, 1), 'ref-01 nav → U6: liquid glass (ataylab shaffof, orqa kontent koʻrinadi)')
+add('Nav foni (past)', h2r('#151515'), smp('nav', .2, .88, 1), 'ref-01 nav → U6: liquid glass (ataylab shaffof, orqa kontent koʻrinadi)')
 add('Karta (o\'rta)', h2r('#141414'), smp('card', .5, .55), 'ref-01 Friend\'s box')
 add('Ekran foni', h2r('#000000'), [0, 0, 0], 'ref-01')
 add('Flame', h2r('#FC6532'), smp('flame', .5, .5), 'ref-07 doira (o\'lchangan)')

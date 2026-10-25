@@ -37,19 +37,37 @@ design/
 ├── screens/         01…30
 ├── data/dramas.md   har bir drama ↔ ambient rang + siluet (17 drama)
 ├── analysis/        1-bosqich: ref-01…07.md, SUMMARY.md, fonts.md
-│                    5-bosqich: CHECKLIST.md (avtomatik audit), DELTA_E.md (render ↔ ref), DEVIATIONS.md
+│                    5-bosqich: CHECKLIST.md (avtomatik audit), DELTA_E.md (render ↔ ref), DEVIATIONS.md, CLICKS.md (har bir tugma)
 ├── shots/           Playwright skrinshotlari, 3x (30 ta)
 ├── compare/         sketch | dizayn | ref montajlari (30 ta)
-└── tools/           shoot.js, compare.py, audit.js + audit.py, delta_e.py, flow_test.js, build_*.py
+└── tools/           shoot.js, compare.py, audit.js + audit.py, delta_e.py, flow_test.js, click_test.js, build_*.py
 ```
 
 ## Interaktiv prototip (`app.js`)
-Har bir ekran oxirida `app.js` ulangan — statik dizayn o'zgarmaydi, faqat xatti-harakat qo'shiladi:
-- **O'tishlar:** posterlar → drama sahifasi, «Davom ettirish» → pleer, qulflangan qism → paywall → to'lov → pleerga qaytish, pastki nav (5 tab), orqaga / yopish (o'z steki bilan), bildirishnomalar → tegishli ekran, profil menyusi → hamyon / VIP / sozlamalar / yordam va h.k.
-- **Holatlar:** onboarding'da janr tanlash (hisoblagich), chip / segment / underline tab tanlovi, toggle va checkbox, VIP tarifi va to'lov usuli (tugma matni o'zgaradi), «Eslat ↔ Eslatiladi», yoqtirish / saqlash, izoh yoqtirish, spoyler ochish, check-in mukofotini olish, vazifalar, yuklanmalarni o'chirish / pauza, akkordeon (yordam).
-- **Jonli elementlar:** pleerda ijro / pauza, ±5 soniya va progress; lentada yuqoriga/pastga surish (sichqoncha g'ildiragi, ↑↓) — 5 ta drama almashadi; taklif va birinchi xarid taymerlari; reklama 15 soniyalik hisoblagich; «Serial tugadi» 5 soniyalik avto-o'tish.
-- Qisqa bildirishnomalar (toast) — «Roʻyxatga qoʻshildi», «Toʻlov tasdiqlandi» kabi.
-- Oqim testi: `node design/tools/flow_test.js` (30 ekran xatosiz yuklanadi + ~50 qadamli bosish ssenariysi).
+Har bir ekran oxirida `app.js` ulangan. Statik dizayn (skrinshot, `index.html` ramkalari — `?static`) o'zgarmaydi; `app.html` da va ekran alohida ochilganda to'liq mantiq ishlaydi.
+
+**Holat — ekranlar orasida umumiy** (`sessionStorage`, `?reset` bilan tozalanadi; Sozlamalar → Chiqish ham tozalaydi):
+- **Coin:** pullik + bonus (avval bonus sarflanadi). Kirish +50, sovg'a +100, check-in +15, vazifalar, reklama +10, xarid — hammasi balansga va Hamyon tarixiga (28) tushadi; bosh sahifa chipi, coin do'koni, mukofotlar, profil, hamyon bir xil raqamni ko'rsatadi.
+- **Qismlar:** har dramaning 1–10 qismi bepul (ba'zilari 1–8; VIP dramalar faqat VIP). Qulflangan qism: avto-ochish yoqiq va coin yetarli → −60 coin bilan ochiladi; aks holda paywall (16): balans yetarli bo'lsa «N-qismni ochish · 60 coin», yetmasa paketlar → to'lov (19) → pleerga o'sha qism bilan qaytadi; yoki reklama (21, 15 s) → qism bepul ochiladi; yoki VIP.
+- **VIP:** tarif → to'lov → barcha qismlar ochiq, 1080p va yuklab olish ochiladi, profil / sozlamalar / yuklanganlar VIP holatini ko'rsatadi; obunani bekor qilish mumkin.
+- **Kontekst:** qaysi posterni bossangiz, drama sahifasi (10), pleer (11), qismlar (12), izohlar (13), paywall (16), «Serial tugadi» (15) o'sha drama bilan ochiladi (17 dramalik katalog, `data/dramas.md` bilan bir xil rasm).
+- Saqlanganlar, tarix (oxirgi ko'rilgan birinchi), eslatmalar, yoqtirishlar, izohlar, qidiruv tarixi, pleer sozlamalari (tezlik, sifat, ovoz, subtitr, uyqu taymeri), vazifalar holati, bildirishnomalar «o'qildi» — barchasi saqlanadi va tegishli ekranlarda ko'rinadi.
+
+**Navigatsiya:** har bir tarix yozuvi o'z orqaga stekini saqlaydi — ilova ichidagi «orqaga / yopish», brauzerning orqaga / oldinga tugmalari, chap chetdan o'ngga surish va **Esc** bir xil ishlaydi; qaytilganda vertikal va gorizontal scroll joyi tiklanadi. Pastki nav — 5 tab (faol tabni bosish → tepaga). Uzun ekranlarda status bar'ni bosish → tepaga.
+
+**Scroll va imo-ishoralar:** barcha gorizontal qatorlar (tablar, posterlar, Top-10, filtrlar, chiplar) barmoq / trackpad / sichqoncha bilan sudrab suriladi (inersiya bilan); ichki ro'yxatlar (janrlar, natijalar, izohlar, bildirishnomalar, tranzaksiyalar) va uzun sahifalar vertikal aylanadi. Lenta va pleer: yuqoriga / pastga surish (g'ildirak, ↑↓) — keyingi drama / qism; bosh sahifa hero — chapga / o'ngga surish va nuqtalar; pastki oynalarni pastga surib yopish.
+
+**Haqiqiy kiritish maydonlari:** qidiruv (06 — natijalar va bo'sh holat), izoh yozish (13 — spoyler bilan), promokod (19: `DRAMA10`), yordam qidiruvi (30), telefon raqam, profil ismi, operator chati.
+
+**Pastki oynalar (action sheet):** «Yana» menyulari, ulashish, shikoyat sabablari, baholash yulduzlari, tasdiqlash (chiqish, hisobni o'chirish, butun serialni ochish), tranzaksiya tafsiloti, qurilmalar, ulangan hisoblar.
+
+Barcha bosiladigan elementlar klaviatura bilan ham ishlaydi (Tab → Enter / Space).
+
+**Testlar:**
+```
+node design/tools/flow_test.js    # 86 qadam: onboarding → coin → qism ochish → paywall → to'lov → reklama → VIP → mukofotlar → ro'yxat → qidiruv → filtr → izoh → bildirishnoma → hamyon → brauzer orqaga/oldinga, scroll tiklash, chetdan surish, Esc, klaviatura → chiqish
+node design/tools/click_test.js   # har bir ekrandagi har bir tugmani bosadi → analysis/CLICKS.md (natijasiz yoki yopilgan element yo'qligi)
+```
 
 Bu — dizayn prototipi: video, to'lov va hisob haqiqiy serverga ulanmagan. App Store / Google Play uchun haqiqiy ilova (Flutter yoki React Native + backend) — alohida bosqich.
 

@@ -32,7 +32,7 @@
   .top-list .t { flex: 1; font: 400 var(--t-body)/1 var(--f-ui); letter-spacing: -.01em; }
   .st { height: 22px; padding: 0 8px; font: 600 var(--t-tag)/1 var(--f-ui); }
   .st.up .ic { color: var(--flame); } .st.down .ic { color: var(--rose); }
-  .genres { display: flex; gap: var(--s-12); padding: 0 var(--page-x); margin-top: var(--s-12); overflow: hidden; }
+  .genres { display: flex; gap: var(--s-12); padding: var(--s-4) var(--page-x); margin-top: calc(var(--s-12) - var(--s-4)); }
   .genre { flex: none; width: 72px; text-align: center; }
   .genre .art { width: 72px; height: 72px; border-radius: 50%; }
   .genre p { margin-top: var(--s-6); font: 500 var(--t-footnote)/1.2 var(--f-ui); }
@@ -71,7 +71,7 @@
     </ol>
 
     <div class="head" style="margin-top: var(--s-24)"><h2 class="t-headline">Janr boʻyicha</h2><span class="gbtn gbtn--sm gbtn--dark"><i class="ic ic-arrow-right ic--20"></i></span></div>
-    <div class="genres">
+    <div class="genres xscroll">
       <div class="genre"><div class="art art--couple" style="--amb: var(--amb-11)"></div><p>Romantika</p></div>
       <div class="genre"><div class="art art--duo" style="--amb: var(--amb-10)"></div><p>Qasos</p></div>
       <div class="genre"><div class="art art--portrait" style="--amb: var(--amb-05)"></div><p>CEO</p></div>

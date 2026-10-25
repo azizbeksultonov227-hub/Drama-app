@@ -13,7 +13,7 @@
   .bubbles { height: 74px; margin: -4px calc(var(--page-x) * -1) 0; -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 55%, transparent 100%); mask-image: linear-gradient(180deg, var(--bg-0) 55%, transparent 100%); }
   .head { display: flex; align-items: center; justify-content: space-between; margin-top: var(--s-4); }
   .sort { display: flex; gap: var(--s-8); margin-top: var(--s-12); }
-  .cmts { margin-top: var(--s-16); display: flex; flex-direction: column; gap: var(--s-16); }
+  .cmts { margin-top: var(--s-16); max-height: 439px; padding-bottom: var(--s-16); display: flex; flex-direction: column; gap: var(--s-16); }
   .cmt { display: flex; gap: var(--s-12); }
   .cmt > .art { width: 32px; height: 32px; border-radius: 50%; flex: none; }
   .cmt__b { flex: 1; min-width: 0; }
@@ -54,7 +54,7 @@
     <div class="head"><h2 class="t-serif-lg">Izohlar · 3.4K</h2><button class="gbtn gbtn--sm gbtn--dark" aria-label="Yopish"><i class="ic ic-close ic--20"></i></button></div>
     <div class="sort"><span class="chip choice choice--sm chip--selected">Ommabop</span><span class="chip choice choice--sm">Yangi</span><span class="chip choice choice--sm">Shu qism</span></div>
 
-    <div class="cmts">
+    <div class="cmts yscroll">
       <div class="cmt"><div class="art art--portrait" style="--amb: var(--amb-11)"></div><div class="cmt__b">
         <p class="cmt__who">Madina <span>· 2 soat oldin</span></p>
         <p class="cmt__txt t-body">Bu qismda yuragim toʻxtab qoldi! 11-qismni kutolmayman</p>

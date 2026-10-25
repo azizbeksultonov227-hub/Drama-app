@@ -11,22 +11,22 @@
 <style>
   .top { position: absolute; z-index: 5; top: 58px; left: var(--page-x); right: var(--page-x); height: 44px; display: flex; align-items: center; justify-content: space-between; }
   .top .btn--text { padding: 0; color: var(--text-2); font-size: var(--t-footnote); }
-  .tabs { position: absolute; top: 108px; left: 0; right: 0; overflow-x: auto; scrollbar-width: none; }
-  .grid { position: absolute; top: 172px; left: var(--page-x); right: var(--page-x); display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-16) var(--s-12); }
+  .tabs { position: absolute; top: 108px; left: 0; right: 0; }
+  .grid { position: relative; margin: 172px var(--page-x) 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s-16) var(--s-12); }
   .grid .poster { --pw: 100%; }
   .grid .progress { margin-top: var(--s-8); height: 2px; }
   .grid .poster__title { margin-top: var(--s-6); }
   .grid .tag--new3 { background: var(--flame); color: var(--on-flame); }
-  .rec { position: absolute; top: 664px; left: 0; right: 0; }
+  .rec { position: relative; margin-top: var(--s-12); }
   .rec .hscroll .poster { --pw: 80px; }
 </style>
 </head>
 <body>
-<div class="screen" id="screen">
+<div class="screen" id="screen" style="height: 951px">
   <div class="status"><div class="status__time">9:41</div><div class="status__icons"><i class="status__sig"></i><i class="status__wifi"></i><i class="status__bat"></i></div></div>
   <div class="island"></div>
   <div class="top"><h1 class="t-title-2">Mening roʻyxatim</h1><button class="btn btn--text">Tahrirlash</button></div>
-  <div class="tabs"><nav class="utabs" style="gap: var(--s-20)"><span class="utabs__item is-active">Saqlangan · 6</span><span class="utabs__item">Tarix</span><span class="utabs__item">Eslatmalar · 2</span><span class="utabs__item">Yuklanganlar</span></nav></div>
+  <div class="tabs xscroll"><nav class="utabs" style="gap: var(--s-20)"><span class="utabs__item is-active">Saqlangan · 6</span><span class="utabs__item">Tarix</span><span class="utabs__item">Eslatmalar · 2</span><span class="utabs__item">Yuklanganlar</span></nav></div>
 
   <div class="grid">
     <article class="poster"><div class="poster__media art art--couple" style="--amb: var(--amb-01)"><span class="tag tag--new3">+3 yangi qism</span></div><div class="progress" style="--p: 12%"><i></i></div><h3 class="poster__title">Milliarderning yashirin kelini</h3><p class="poster__meta">10 / 80-qism</p></article>
@@ -47,6 +47,7 @@
     </div>
   </section>
 
+  <div class="scroll-pad"></div>
   <nav class="nav">
     <a class="nav__item"><i class="ic ic-home"></i><span>Bosh sahifa</span></a>
     <a class="nav__item"><i class="ic ic-gift"></i><span>Mukofot</span></a>

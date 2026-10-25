@@ -15,8 +15,8 @@
   .perm { position: absolute; top: 118px; left: var(--page-x); right: var(--page-x); display: flex; align-items: center; gap: var(--s-12); padding: var(--s-16); border-radius: var(--r-media); }
   .perm > *:not(.ring) { position: relative; z-index: 3; }
   .perm .ring--card { width: 760px; height: 760px; left: -400px; top: -340px; }
-  .filters { position: absolute; top: 212px; left: var(--page-x); right: 0; display: flex; gap: var(--s-8); overflow: hidden; }
-  .feed { position: absolute; top: 260px; left: 0; right: 0; }
+  .filters { position: absolute; top: 212px; left: var(--page-x); right: 0; display: flex; gap: var(--s-8); padding-right: var(--page-x); }
+  .feed { position: absolute; top: 260px; bottom: 34px; left: 0; right: 0; }
   .grp { padding: var(--s-12) var(--page-x) var(--s-4); font: 600 var(--t-caption)/1 var(--f-ui); color: var(--text-3); text-transform: none; }
   .nt { position: relative; display: flex; gap: var(--s-12); padding: var(--s-10) var(--page-x); align-items: flex-start; }
   .nt .art { width: 52px; height: 52px; border-radius: var(--r-tile); flex: none; }
@@ -41,9 +41,9 @@
     <button class="btn btn--primary btn--xs" style="height: var(--d-glass-sm)">Yoqish +30</button>
   </div>
 
-  <div class="filters"><span class="chip choice choice--sm chip--selected">Hammasi</span><span class="chip choice choice--sm">Yangi qismlar</span><span class="chip choice choice--sm">Takliflar</span><span class="chip choice choice--sm">Javoblar</span><span class="chip choice choice--sm">Tizim</span></div>
+  <div class="filters xscroll"><span class="chip choice choice--sm chip--selected">Hammasi</span><span class="chip choice choice--sm">Yangi qismlar</span><span class="chip choice choice--sm">Takliflar</span><span class="chip choice choice--sm">Javoblar</span><span class="chip choice choice--sm">Tizim</span></div>
 
-  <div class="feed">
+  <div class="feed yscroll">
     <p class="grp">Bugun</p>
     <div class="nt unread"><span class="dot"></span><div class="art art--profile" style="--amb: var(--amb-02)"></div><div class="nt__b"><p>Boʻri qirolining qasosi: 3 ta yangi qism</p><p class="t-caption c-2">73–75-qismlar chiqdi — davom eting</p></div><span class="nt__t">10 daq</span></div>
     <div class="nt unread"><span class="dot"></span><div class="art art--couple" style="--amb: var(--amb-14)"></div><div class="nt__b"><p>Eslatma: «Taqdir toʻyi» ertaga</p><p class="t-caption c-2">20:00 da premyera, birinchi 10 qism bepul</p></div><span class="nt__t">1 soat</span></div>
@@ -51,7 +51,7 @@
     <div class="nt"><div class="art art--portrait" style="--amb: var(--amb-11)"></div><div class="nt__b"><p>Madina izohingizga javob berdi</p><p class="t-caption c-2">«Men ham aynan shunday oʻylagandim!»</p></div><span class="nt__t">5 soat</span></div>
     <p class="grp">Kecha</p>
     <div class="nt"><div class="nt__ic"><i class="ic ic-percent c-flame"></i></div><div class="nt__b"><p>Faqat bugun: −60%</p><p class="t-caption c-2">1 200 coin + 800 bonus</p></div><span class="nt__t">kecha</span></div>
-    <div class="nt"><div class="nt__ic"><i class="ic ic-crown crown"></i></div><div class="nt__b"><p>VIP obunangiz 3 kundan keyin yangilanadi</p><p class="t-caption c-2">Profil → Obunani boshqarish</p></div><span class="nt__t">kecha</span></div>
+    <div class="nt"><div class="nt__ic"><i class="ic ic-crown crown"></i></div><div class="nt__b"><p>VIP: 1-hafta −40%</p><p class="t-caption c-2">Reklamasiz, hamma qismlar ochiq</p></div><span class="nt__t">kecha</span></div>
   </div>
   <div class="home-ind"></div>
 </div>

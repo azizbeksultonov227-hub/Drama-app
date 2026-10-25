@@ -11,7 +11,7 @@
 <style>
   /* ref-06 sand varianti: sand → ember → cocoa, nur halqasi, grain */
   .screen { background: linear-gradient(180deg, var(--sand) 0%, var(--ember) 26%, var(--cocoa) 56%, var(--cocoa) 100%); }
-  .ring { opacity: .7; }
+  .ring { opacity: .7; -webkit-mask-image: linear-gradient(180deg, var(--bg-0) 58%, transparent 80%); mask-image: linear-gradient(180deg, var(--bg-0) 58%, transparent 80%); } /* yoy pastdagi mayda matn ustidan o'tmaydi */
   .content { position: relative; z-index: 3; }
   .top { display: flex; align-items: center; justify-content: space-between; padding: 58px var(--page-x) 0; }
   .top .btn--text { padding: 0; color: var(--cocoa); }
@@ -88,7 +88,7 @@
     </div>
 
     <button class="btn btn--primary btn--block cta">VIP olish · [narx] soʻm / oy</button>
-    <p class="terms t-caption c-2">Obuna har oy avtomatik yangilanadi. Istalgan vaqtda Profil → Obunani boshqarish orqali bekor qilasiz. Keyingi toʻlov: 25-noyabr. <a>Shartlar</a> · <a>Maxfiylik</a></p>
+    <p class="terms t-caption c-2">Obuna har oy avtomatik yangilanadi. Istalgan vaqtda Profil → Obunani boshqarish orqali bekor qilasiz. Keyingi toʻlov: <span style="white-space: nowrap">25-noyabr</span>. <a>Shartlar</a> · <a>Maxfiylik</a></p>
     <div class="scroll-pad" style="height: 48px"></div>
   </div>
   <div class="home-ind"></div>
